@@ -1,4 +1,5 @@
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux && exit
+#zmodload zsh/zprof && zprof
 
 fpath=(~/.zsh_plugins/zsh-completions/src $fpath)
 
@@ -25,7 +26,7 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} r:|[._-]=*'
 zstyle ':completion:*' keep-prefix
 zstyle ':completion:*' recent-dirs-insert both
-zstyle ':completion:*' completer _expand _complete _list _oldlist _history
+#zstyle ':completion:*' completer _expand _complete _list _oldlist _history
 zstyle ':completion:*' use-cache yes
 zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle ':completion:*' verbose yes
@@ -77,39 +78,39 @@ setopt globdots
 
 alias mkdir='mkdir -p'
 alias d='popd'
-alias login='wget -q -O - www.cr.kisarazu.ac.jp/login.gsp --post-data="login=1&user=j16435&pass=NITpasokon96" > /dev/null'
+alias login='wget -O - www.cr.kisarazu.ac.jp/login.gsp --post-data="login=1&user=j16435&pass=NITpasokon96"'
 alias bat="upower -i /org/freedesktop/UPower/devices/battery_BAT0|grep 'percentage'|sed -e 's/ //g'|sed -e 's/percentage://'|sed -e 's/%//'"
 alias gcc-win="/usr/bin/i686-w64-mingw32-gcc"
 alias nano="vim"
 alias grep="grep --color -n -I"
 alias ls='ls -hqp --color=auto'
 alias l='ls -hqp --color=auto'
+alias wget='wget -4'
 
 chpwd() { ls -hqp --color=auto }
+precmd () { vcs_info }
 function command_not_found_handler(){
 	echo "ハァ…？$1とか何言ってんの？"
 }
-precmd () { vcs_info }
-
-UUU="%B%F{white}（」・ω・）」うー%b"
-NYA="%B%F{white}\（・ω・\）にゃー！%b"
-SAN="%B%F{red}＼（・ω・＼）SAN値！%b"
-PIN="%B%F{red}（／・ω・）／ピンチ！%b"
-
-PROMPT="%K{green}%(?,${UUU},${SAN})%k %F{cyan}%~ %f$ "
-RPROMPT="%K{green}%(?,${NYA},${PIN})%k${vcs_info_msg_0_}"
 
 if [ ${UID} -eq 0 ]; then
 	PROMPT="%K{green}%B%F{black}ROOT%b%k %F{cyan}%~ %f$ "
-	RPROMPT=""
+else
+	UUU="%B%F{white}（」・ω・）」うー%b"
+	NYA="%B%F{white}\（・ω・\）にゃー！%b"
+	SAN="%B%F{red}＼（・ω・＼）SAN値！%b"
+	PIN="%B%F{red}（／・ω・）／ピンチ！%b"
+	PROMPT="%K{green}%(?,${UUU},${SAN})%k %F{cyan}%~ %f$ "
+	RPROMPT="%K{green}%(?,${NYA},${PIN})%k${vcs_info_msg_0_}"
 fi
 
 source ~/.zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+#source ~/.zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
   zcompile ~/.zshrc
 fi
-
+#if (which zprof > /dev/null) ;then
+#	  zprof
+#fi
 echo "\n「私は確かにアニメが好きだし、エロゲーも超好き・・・ううん、愛してると言ってもいい！学校の友達といるのも楽しいよ。でもこっちも同じくらい好き！どっちかを選ぶなんて出来ない！両方好きで好きで堪らないのが私なの！」\n"
