@@ -1,4 +1,3 @@
-#[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux && exit
 #zmodload zsh/zprof && zprof
 
 case `tty|sed -E 's/.*\/[a-z]*([0-9]*)$/\1/'` in
@@ -20,6 +19,9 @@ case `tty|sed -E 's/.*\/[a-z]*([0-9]*)$/\1/'` in
 				exit
 			fi
 		fi
+	;;
+	* )
+		[[ -z "$TMUX" ]] && tmux && exit
 	;;
 esac
 
