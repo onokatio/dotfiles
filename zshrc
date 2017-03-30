@@ -9,7 +9,7 @@ case `tty|sed -E 's/.*\/[a-z]*([0-9]*)$/\1/'` in
 					export FBTERM_EXIS=1
 					mode=`fbterm --vesa-mode=list|tail -1|sed -E 's/^\[([0-9]*)\].*$/\1/'`
 					fbterm --vesa-mode=$mode --font-names="Ubuntu mono,TakaoGothic" --font-size=16 tmux
-					#exit
+					exit
 				fi
 			fi
 		fi
