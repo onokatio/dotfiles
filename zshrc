@@ -2,7 +2,7 @@
 #zmodload zsh/zprof && zprof
 
 case `tty|sed -E 's/.*\/[a-z]*([0-9]*)$/\1/'` in
-	[1-7])
+	[1-6])
 		if [ -e /usr/bin/fbterm ];then
 			if [ -c /dev/fb0 ];then
 				if [ "$FBTERM_EXIS" -eq "0" ];then
