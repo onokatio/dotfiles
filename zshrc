@@ -1,6 +1,27 @@
 #[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux && exit
 #zmodload zsh/zprof && zprof
 
+case `tty|sed -E 's/.*\/[a-z]*([0-9]*)$/\1/'` in
+	[1-7])
+		if [ -e /usr/bin/fbterm ];then
+			if [ -c /dev/fb0 ];then
+				if [ "$FBTERM_EXIS" -eq "0" ];then
+					export FBTERM_EXIS=1
+					mode=`fbterm --vesa-mode=list|tail -1|sed -E 's/^\[([0-9]*)\].*$/\1/'`
+					fbterm --vesa-mode=$mode tmux
+					exit
+				fi
+			fi
+		fi
+		if [ -e /usr/bin/uim-fep ];then
+			if [ "$UIM_EXIS" -eq "0" ];then
+				export UIM_EXIS=1
+				uim-fep -u anthy
+			fi
+		fi
+	;;
+esac
+
 for i ($HOME/.zshrc.d/*.zsh) source $i
 
 fpath=(~/.zsh_plugins/zsh-completions/src $fpath)

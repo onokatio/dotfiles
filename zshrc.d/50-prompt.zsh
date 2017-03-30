@@ -1,7 +1,11 @@
 chpwd() { ls -hqp --color=auto }
 precmd () { vcs_info }
 function command_not_found_handler(){
-	jp2a ~/kirino.jpg -i
+	if [ -e /usr/bin/jp2a ];then
+		if [ -e ~/kirino.jpg ];then
+			jp2a ~/kirino.jpg -i
+		fi
+	fi
 	echo "ハァ…？$1とか何言ってんの？
 コマンドもろくに覚えられないなんて、アンタどうしようもないクズね。"
 }
