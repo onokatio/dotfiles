@@ -1,16 +1,13 @@
 #zmodload zsh/zprof && zprof
 
 case `tty|sed -E 's/.*\/[a-z]*([0-9]*)$/\1/'` in
-	[1-6])
+	[1-6] )
 		if [ -e /usr/bin/fbterm ];then
 			if [ -c /dev/fb0 ];then
 				if [ "$FBTERM_EXIS" -eq "0" ];then
 					export FBTERM_EXIS=1
 					mode=`fbterm --vesa-mode=list|tail -1|sed -E 's/^\[([0-9]*)\].*$/\1/'`
-					if [-e ~/.fbtermrc ];then
-						fbterm --vesa-mode=$mode tmux
-					else
-						fbterm --vesa-mode=$mode --font-names="Ubuntu mono,TakaoGothic" --font-size=16 tmux
+					fbterm --vesa-mode=$mode --font-names="Ubuntu mono,TakaoGothic" --font-size=16 tmux
 					exit
 				fi
 			fi
@@ -21,11 +18,8 @@ case `tty|sed -E 's/.*\/[a-z]*([0-9]*)$/\1/'` in
 				uim-fep -u anthy
 				exit
 			fi
-		fi
-	;;
-	* )
-		[[ -z "$TMUX" ]] && tmux && exit
-	;;
+		fi ;;
+	*) test -z "$TMUX" && tmux && exit
 esac
 
 for i ($HOME/.zshrc.d/*.zsh) source $i
