@@ -17,6 +17,7 @@ case `tty|sed -E 's/.*\/[a-z]*([0-9]*)$/\1/'` in
 			if [ "$UIM_EXIS" -eq "0" ];then
 				export UIM_EXIS=1
 				uim-fep -u anthy
+				exit
 			fi
 		fi
 	;;
