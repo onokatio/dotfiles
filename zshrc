@@ -1,34 +1,12 @@
+test -z "$TMUX" && tmux && exit
 #zmodload zsh/zprof && zprof
 
-case `tty|sed -E 's/.*\/[a-z]*([0-9]*)$/\1/'` in
-	[1-6] )
-		if [ -e /usr/bin/fbterm ];then
-			if [ -c /dev/fb0 ];then
-				if [ "$FBTERM_EXIS" -eq "0" ];then
-					export FBTERM_EXIS=1
-					mode=`fbterm --vesa-mode=list|tail -1|sed -E 's/^\[([0-9]*)\].*$/\1/'`
-					fbterm --vesa-mode=$mode --font-names="Ubuntu mono,TakaoGothic" --font-size=16 tmux
-					exit
-				fi
-			fi
-		fi
-		if [ -e /usr/bin/uim-fep ];then
-			if [ "$UIM_EXIS" -eq "0" ];then
-				export UIM_EXIS=1
-				uim-fep -u anthy
-				exit
-			fi
-		fi ;;
-	*) test -z "$TMUX" && tmux && exit
-esac
-
-for i ($HOME/.zshrc.d/*.zsh) source $i
-
-fpath=(~/.zsh_plugins/zsh-completions/src $fpath)
 export PATH=$HOME/usr/bin:$PATH
 export PATH=$PATH:$HOME/usr/local/tools
 export ZPLUG_HOME=$HOME/.zsh_plugins/zplug
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
+for i ($HOME/.zshrc.d/*.zsh) source $i
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -41,7 +19,7 @@ bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 
 source ~/.zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-#source ~/.zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
   zcompile ~/.zshrc
