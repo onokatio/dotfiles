@@ -1,4 +1,14 @@
-test -z "$TMUX" && tmux && exit
+####################
+# use for nomal gui mashine
+#test -z "$TMUX" && tmux && exit
+#
+####################
+
+####################
+# use for cui only mashine
+#
+####################
+
 #zmodload zsh/zprof && zprof
 
 export PATH=$HOME/usr/bin:$PATH
@@ -18,8 +28,8 @@ bindkey "^[[1;5D" backward-word
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 
-source ~/.zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source ~/.zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source ~/.zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
   zcompile ~/.zshrc
