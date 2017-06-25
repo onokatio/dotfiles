@@ -20,6 +20,7 @@ set incsearch
 set wrapscan
 set hlsearch
 set clipboard=unnamed
+set relativenumber
 noremap PP "0p
 noremap x "_x
 

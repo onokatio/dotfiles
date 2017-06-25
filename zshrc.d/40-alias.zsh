@@ -13,6 +13,7 @@ alias sudo='sudo -E '
 alias apt='apt-fast '
 alias apt-get='apt-fast '
 alias crontab='echo "dont use crontab !!"'
+alias chromef='ps ax|/bin/grep [c]hrome|cut -c-6|xargs sudo renice -19'
 function targz(){tar xvf $@ --use-compress-prog=pigz }
 function tarxz(){tar xvf $@ --use-compress-prog=pixz }
 function tarbzip2(){tar xvf $@ --use-compress-prog=pbzip2 }
