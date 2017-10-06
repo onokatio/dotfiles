@@ -1,5 +1,5 @@
 set autoread
-set cursorline
+"set cursorline
 set fenc=utf-8
 set hidden
 set laststatus=2
@@ -60,7 +60,8 @@ noremap x "_x
 
 syntax enable
 set background=dark
-colorscheme solarized
+" colorscheme solarized
+autocmd VimEnter,ColorScheme * highlight Normal ctermbg=none
 
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
