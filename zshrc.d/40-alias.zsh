@@ -1,6 +1,6 @@
 alias mkdir='mkdir -p '
 alias d='popd '
-alias login='/usr/bin/wget -O - www.cr.kisarazu.ac.jp/login.gsp --post-data="login=1&user=j16435&pass=NITpasokon96" '
+alias login='curl -Ss --cipher DES-CBC3-SHA --data "buttonClicked=4&username=j16435&password=NITpasokon96&Submit=Submit" https://kwlc.kisarazu.ac.jp/login.html'
 alias bat="upower -i /org/freedesktop/UPower/devices/battery_BAT0|grep 'percentage'|sed -e 's/ //g'|sed -e 's/percentage://'|sed -e 's/%//' "
 alias gcc-win="/usr/bin/i686-w64-mingw32-gcc "
 alias nano="vim "
@@ -14,6 +14,8 @@ alias apt='apt-fast '
 alias apt-get='apt-fast '
 alias crontab='echo "dont use crontab !!"'
 alias chromef='ps ax|/bin/grep [c]hrome|cut -c-6|xargs sudo renice -19'
+alias pingg="ping 8.8.8.8"
+alias curlg="curl https://google.com"
 function targz(){tar xvf $@ --use-compress-prog=pigz }
 function tarxz(){tar xvf $@ --use-compress-prog=pixz }
 function tarbzip2(){tar xvf $@ --use-compress-prog=pbzip2 }
