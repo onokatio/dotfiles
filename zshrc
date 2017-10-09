@@ -3,12 +3,12 @@
 	#zprof | less
 #fi
 
-export PATH         = $HOME/usr/bin:$PATH
-export ZSH_PLUGINS  = $HOME/.zshrc.d/.zsh_plugins
-export ZPLUG_REPOS  = $ZSH_PLUGINS
-export ZPLUG_HOME   = $ZSH_PLUGINS/zplug
-export ZPLUG_BIN    = $ZSH_PLUGINS/bin
-export NO_AT_BRIDGE = 1
+export PATH=$HOME/usr/bin:$PATH
+export ZSH_PLUGINS=$HOME/.zshrc.d/.zsh_plugins
+export ZPLUG_REPOS=$ZSH_PLUGINS
+export ZPLUG_HOME=$ZSH_PLUGINS/zplug
+export ZPLUG_BIN=$ZSH_PLUGINS/bin
+export NO_AT_BRIDGE=1
 export DOCKER_CONTENT_TRUST=1
 
 if [ -d $HOME/.anyenv ] ; then
