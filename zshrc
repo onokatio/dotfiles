@@ -2,9 +2,13 @@
 #if type zprof > /dev/null 2>&1; then
 	#zprof | less
 #fi
+if [[ -z "$OTG" ]] ; then
+	echo "echo 'export CTG=$HOME/.conf-to-git && source $CTG/zshrc'"
+	exit
+fi
 
 export PATH=$HOME/usr/bin:$PATH
-export ZSH_PLUGINS=$HOME/.zshrc.d/.zsh_plugins
+export ZSH_PLUGINS=$CTG/.zshrc.d/.zsh_plugins
 export ZPLUG_REPOS=$ZSH_PLUGINS
 export ZPLUG_HOME=$ZSH_PLUGINS/zplug
 export ZPLUG_BIN=$ZSH_PLUGINS/bin
@@ -34,7 +38,7 @@ if [ -d $ZPLUG_HOME ] ; then
 else
 	alias zplug=':'
 	echo "zplug not found"
-	echo "clone to ~/.zshrc.d/.zsh_plugins/zplug"
+	echo "clone to $CTG/.zshrc.d/.zsh_plugins/zplug"
 fi
 
 HISTFILE=~/.zsh_history
@@ -47,8 +51,8 @@ bindkey "^[[1;5D" backward-word
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 
-if [[ -d $HOME/.zshrc.d/*.zsh ]] ; then
-	for i ($HOME/.zshrc.d/*.zsh) source $i
+if [[ -d $CTG/.zshrc.d/*.zsh ]] ; then
+	for i ($CTG/.zshrc.d/*.zsh) source $i
 fi
 
 
