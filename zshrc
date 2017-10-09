@@ -16,6 +16,7 @@ if [ -d $HOME/.anyenv ] ; then
 	eval "$(anyenv init -)"
 else
 	echo "anyenv not found"
+	echo "clone to ~/.anyenv"
 fi
 
 if [ -d $ZPLUG_HOME ] ; then
@@ -33,6 +34,7 @@ if [ -d $ZPLUG_HOME ] ; then
 else
 	alias zplug=':'
 	echo "zplug not found"
+	echo "clone to ~/.zshrc.d/.zsh_plugins/zplug"
 fi
 
 HISTFILE=~/.zsh_history
