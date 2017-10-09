@@ -15,7 +15,7 @@ export ZPLUG_BIN=$ZSH_PLUGINS/bin
 export NO_AT_BRIDGE=1
 export DOCKER_CONTENT_TRUST=1
 
-if [ -d $HOME/.anyenv ] ; then
+if [ -d $ZSH_PLUGINS/riywo/anyenv ] ; then
 	export PATH="$HOME/.anyenv/bin:$PATH"
 	eval "$(anyenv init -)"
 else
@@ -33,7 +33,10 @@ if [ -d $ZPLUG_HOME ] ; then
 	zplug "TBSliver/zsh-plugin-tmux-simple"
 	zplug "arzzen/calc.plugin.zsh"
 	zplug "felixr/docker-zsh-completion"
-	zplug check --verbose || which git && echo && zplug install
+	zplug "riywo/anyenv"
+	if ! zplug check --verbose && which git ; then
+		zplug install
+	fi
 	zplug load
 else
 	alias zplug=':'
@@ -51,8 +54,8 @@ bindkey "^[[1;5D" backward-word
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 
-if [[ -d $CTG/.zshrc.d/*.zsh ]] ; then
-	for i ($CTG/.zshrc.d/*.zsh) source $i
+if [[ -d $CTG/zshrc.d/ ]] ; then
+	for i ($CTG/zshrc.d/*.zsh) source $i
 fi
 
 
