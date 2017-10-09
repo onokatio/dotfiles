@@ -1,4 +1,7 @@
 #zmodload zsh/zprof && zprof
+#if type zprof > /dev/null 2>&1; then
+	#zprof | less
+#fi
 
 export PATH         = $HOME/usr/bin:$PATH
 export ZSH_PLUGINS  = $HOME/.zshrc.d/.zsh_plugins
@@ -16,7 +19,21 @@ else
 fi
 
 if [ -d $ZPLUG_HOME ] ; then
-
+	source $ZPLUG_HOME/init.zsh
+	zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+	zplug "zsh-users/zsh-autosuggestions"
+	zplug "zsh-users/zsh-syntax-highlighting"
+	zplug "zsh-users/zsh-completions"
+	zplug "b4b4r07/emoji-cli"
+	zplug "TBSliver/zsh-plugin-tmux-simple"
+	zplug "arzzen/calc.plugin.zsh"
+	zplug "felixr/docker-zsh-completion"
+	zplug check --verbose || which git && echo && zplug install
+	zplug load
+else
+	alias zplug=':'
+	echo "zplug not found"
+fi
 
 HISTFILE=~/.zsh_history
 HISTSIZE=50000
@@ -28,12 +45,11 @@ bindkey "^[[1;5D" backward-word
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 
-for i ($HOME/.zshrc.d/*.zsh) source $i
+if [[ -d $HOME/.zshrc.d/*.zsh ]] ; then
+	for i ($HOME/.zshrc.d/*.zsh) source $i
+fi
+
 
 if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
   zcompile ~/.zshrc
 fi
-
-#if type zprof > /dev/null 2>&1; then
-	#zprof | less
-#fi
