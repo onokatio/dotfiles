@@ -8,7 +8,7 @@ if [[ -z "$CTG" ]] ; then
 fi
 
 export PATH=$HOME/usr/bin:$PATH
-export ZSH_PLUGINS=$CTG/.zshrc.d/.zsh_plugins
+export ZSH_PLUGINS=$CTG/zshrc.d/plugins
 export ZPLUG_REPOS=$ZSH_PLUGINS
 export ZPLUG_HOME=$ZSH_PLUGINS/zplug
 export ZPLUG_BIN=$ZSH_PLUGINS/bin
