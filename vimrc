@@ -109,3 +109,5 @@ if has("autocmd")
 	\		exe "normal! g'\"" |
 	\ endif
 endif
+
+set noexpandtab

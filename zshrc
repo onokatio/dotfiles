@@ -1,18 +1,26 @@
 #zmodload zsh/zprof && zprof
 
-export PATH=$HOME/.rbenv/bin:$PATH
-export PATH=$HOME/usr/bin:$PATH
-export PATH=$PATH:$HOME/usr/local/tools
-export ZPLUG_HOME=$HOME/.zsh_plugins/zplug
-export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+export PATH         = $HOME/usr/bin:$PATH
+export ZSH_PLUGINS  = $HOME/.zshrc.d/.zsh_plugins
+export ZPLUG_REPOS  = $ZSH_PLUGINS
+export ZPLUG_HOME   = $ZSH_PLUGINS/zplug
+export ZPLUG_BIN    = $ZSH_PLUGINS/bin
+export NO_AT_BRIDGE = 1
+export DOCKER_CONTENT_TRUST=1
 
-export NO_AT_BRIDGE=1
+if [ -d $HOME/.anyenv ] ; then
+	export PATH="$HOME/.anyenv/bin:$PATH"
+	eval "$(anyenv init -)"
+else
+	echo "anyenv not found"
+fi
 
-for i ($HOME/.zshrc.d/*.zsh) source $i
+if [ -d $ZPLUG_HOME ] ; then
+
 
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=50000
+SAVEHIST=50000
 REPORTTIME=3
 
 bindkey "^[[1;5C" forward-word
@@ -20,20 +28,11 @@ bindkey "^[[1;5D" backward-word
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 
-#eval "$(rbenv init -)"
+for i ($HOME/.zshrc.d/*.zsh) source $i
 
 if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
   zcompile ~/.zshrc
 fi
-
-cat << _EOF_
-"「私は確かにアニメが好きだし、エロゲーも超好き・・・
-ううん、愛してると言ってもいい！
-学校の友達といるのも楽しいよ。
-でもこっちも同じくらい好き！
-どっちかを選ぶなんて出来ない！
-両方好きで好きで堪らないのが私なの！」
-_EOF_
 
 #if type zprof > /dev/null 2>&1; then
 	#zprof | less
