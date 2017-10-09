@@ -2,9 +2,9 @@
 #if type zprof > /dev/null 2>&1; then
 	#zprof | less
 #fi
-if [[ -z "$OTG" ]] ; then
+if [[ -z "$CTG" ]] ; then
+	echo "CTG not found"
 	echo "echo 'export CTG=$HOME/.conf-to-git && source $CTG/zshrc'"
-	exit
 fi
 
 export PATH=$HOME/usr/bin:$PATH
