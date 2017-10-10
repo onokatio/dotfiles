@@ -1,6 +1,5 @@
 alias mkdir='mkdir -p '
 alias d='popd '
-alias login='curl -Ss --cipher DES-CBC3-SHA --data "buttonClicked=4&username=j16435&password=NITpasokon96&Submit=Submit" https://kwlc.kisarazu.ac.jp/login.html'
 alias bat="upower -i /org/freedesktop/UPower/devices/battery_BAT0|grep 'percentage'|sed -e 's/ //g'|sed -e 's/percentage://'|sed -e 's/%//' "
 alias gcc-win="/usr/bin/i686-w64-mingw32-gcc "
 alias nano="vim "
