@@ -15,6 +15,7 @@ alias crontab='echo "dont use crontab !!"'
 alias chromef='ps ax|/bin/grep [c]hrome|cut -c-6|xargs sudo renice -19'
 alias pingg="ping 8.8.8.8"
 alias curlg="curl https://google.com"
+alias alpine="docker run --name test -it --rm alpine:edge /bin/sh"
 function targz(){tar xvf $@ --use-compress-prog=pigz }
 function tarxz(){tar xvf $@ --use-compress-prog=pixz }
 function tarbzip2(){tar xvf $@ --use-compress-prog=pbzip2 }
