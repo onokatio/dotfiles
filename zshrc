@@ -1,7 +1,4 @@
 #zmodload zsh/zprof && zprof
-#if type zprof > /dev/null 2>&1; then
-	#zprof | less
-#fi
 if [[ -z "$CTG" ]] ; then
 	echo "var CTG not found"
 fi
@@ -60,3 +57,5 @@ fi
 if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
   zcompile ~/.zshrc
 fi
+
+#zprof | less
