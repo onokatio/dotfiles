@@ -10,7 +10,7 @@ export ZPLUG_HOME=$ZSH_PLUGINS/zplug
 export ZPLUG_BIN=$ZSH_PLUGINS/bin
 export ANYENV_ROOT=$ZSH_PLUGINS/riywo/anyenv
 export NO_AT_BRIDGE=1
-export DOCKER_CONTENT_TRUST=1
+#export DOCKER_CONTENT_TRUST=1
 
 if [[ -d $ANYENV_ROOT ]] ; then
 	export PATH="$ANYENV_ROOT/bin:$PATH"
