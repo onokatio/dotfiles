@@ -10,33 +10,39 @@ export ZPLUG_HOME=$ZSH_PLUGINS/zplug
 export ZPLUG_BIN=$ZSH_PLUGINS/bin
 export ANYENV_ROOT=$ZSH_PLUGINS/riywo/anyenv
 export NO_AT_BRIDGE=1
+export EMOJI_CLI_KEYBIND=^f
 #export DOCKER_CONTENT_TRUST=1
 
 if [[ -d $ANYENV_ROOT ]] ; then
 	export PATH="$ANYENV_ROOT/bin:$PATH"
 	eval "$(anyenv init -)"
-else
-	echo "anyenv not found"
 fi
 
 if [[ -d $ZPLUG_HOME ]] ; then
 	source $ZPLUG_HOME/init.zsh
 	zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+	zplug "junegunn/fzf-bin", \
+		from:gh-r, \
+		as:command, \
+		rename-to:fzf, \
+		use:"*linux*amd64*"
+	zplug "riywo/anyenv"
+	zplug "stedolan/jq", from:gh-r, as:command
 	zplug "zsh-users/zsh-autosuggestions"
 	zplug "zsh-users/zsh-syntax-highlighting"
 	zplug "zsh-users/zsh-completions"
-	zplug "b4b4r07/emoji-cli"
+	zplug "b4b4r07/emoji-cli", on:"stedolan/jq"
 	zplug "TBSliver/zsh-plugin-tmux-simple"
 	zplug "arzzen/calc.plugin.zsh"
 	zplug "felixr/docker-zsh-completion"
-	zplug "riywo/anyenv"
-	if ! zplug check --verbose && which git ; then
+	if ! zplug check --verbose && which git > /dev/null 2>&1 ; then
 		zplug install
 	fi
 	zplug load
 else
 	alias zplug=':'
 	echo "zplug not found"
+	echo "git clone https://github.com/zplug/zplug ~/.conf-to-git/zshrc.d/plugins/zplug"
 fi
 
 HISTFILE=~/.zsh_history
