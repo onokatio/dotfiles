@@ -20,12 +20,16 @@ alias df='dfc '
 alias top='htop '
 alias diff='colordiff '
 alias info='pinfo '
-alias cat='vimcat '
+#alias cat='vimcat '
 alias trace-mtr='mtr '
 alias grep='ag '
-#alias chrome="google-chrome-beta"
+alias rm='rm -vrI --one-file-system -- '
+alias s='w3m https://google.com/search?q='
+alias poweroff=': '
+
+function git(){hub "$@"}
 function chrome(){
-	chrome_b=$(ps ax|env grep '/opt/google/chrome'|tail -n1|awk '{print $5}'|cut -d '/' -f 4)
+	chrome_b=$(ps ax|env grep '/opt/google/chrome'|head -n1|awk '{print $5}'|cut -d '/' -f 4)
 	eval "google-$chrome_b $@"
 }
 function targz(){tar xvf $@ --use-compress-prog=pigz }
