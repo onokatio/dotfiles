@@ -18,6 +18,10 @@ if [[ -d $ANYENV_ROOT ]] ; then
 	eval "$(anyenv init -)"
 fi
 
+if [[ -d $CTG/zshrc.d/ ]] ; then
+	for i ($CTG/zshrc.d/*.zsh) source $i
+fi
+
 if [[ -d $ZPLUG_HOME ]] ; then
 	source $ZPLUG_HOME/init.zsh
 	zplug 'zplug/zplug', hook-build:'zplug --self-manage'
@@ -35,6 +39,12 @@ if [[ -d $ZPLUG_HOME ]] ; then
 	zplug "TBSliver/zsh-plugin-tmux-simple"
 	zplug "arzzen/calc.plugin.zsh"
 	zplug "felixr/docker-zsh-completion"
+	zplug "mrowa44/emojify", as:command
+	zplug "b4b4r07/zsh-gomi", \
+	  as:command, \
+	  use:bin/gomi, \
+	  on:junegunn/fzf-bin
+	zplug "b4b4r07/enhancd", use:enhancd.sh, on:junegunn/fzf-bin
 	if ! zplug check --verbose && which git > /dev/null 2>&1 ; then
 		zplug install
 	fi
@@ -54,11 +64,6 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
-
-if [[ -d $CTG/zshrc.d/ ]] ; then
-	for i ($CTG/zshrc.d/*.zsh) source $i
-fi
-
 
 if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
   zcompile ~/.zshrc
