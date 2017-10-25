@@ -43,6 +43,7 @@ if [[ -d $ZPLUG_HOME ]] ; then
 	  on:junegunn/fzf-bin
 	zplug "b4b4r07/enhancd", use:enhancd.sh, on:junegunn/fzf-bin
 	zplug "Linuxbrew/brew", as:command #, use:"bin/brew"
+	zplug "junegunn/vim-plug"
 	if ! zplug check --verbose && which git > /dev/null 2>&1 ; then
 		zplug install
 	fi

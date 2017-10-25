@@ -1,5 +1,5 @@
 set autoread
-"set cursorline
+set cursorline
 set fenc=utf-8
 set hidden
 set laststatus=2
@@ -27,5 +27,5 @@ set backspace=indent,eol,start
 noremap PP "0p
 noremap x "_x
 
-"call plug#begin('~/.local/share/nvim/plugged')
-"call plug#end()
+call plug#begin('~/.conf-to-git/zshrc.d/plugins/junegunn/vim-plug/plug.vim')
+call plug#end()
