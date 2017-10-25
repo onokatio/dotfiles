@@ -54,8 +54,7 @@ else
 fi
  
 export PATH="$ZSH_PLUGINS/Linuxbrew/brew/bin:$PATH"
-export LD_LIBRARY_PATH="$ZSH_PLUGINS/Linuxbrew/brew/lib:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="$ZSH_PLUGINS/Linuxbrew/brew/lib64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="$ZSH_PLUGINS/Linuxbrew/brew/lib:$ZSH_PLUGINS/Linuxbrew/brew/lib64"
 export PKG_CONFIG_PATH="$ZSH_PLUGINS/Linuxbrew/brew/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PKG_CONFIG_PATH="$ZSH_PLUGINS/Linuxbrew/brew/lib64/pkgconfig:$PKG_CONFIG_PATH"
 export XDG_DATA_DIRS="$ZSH_PLUGINS/Linuxbrew/brew/share:XDG_DATA_DIRS"

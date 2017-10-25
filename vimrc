@@ -24,3 +24,6 @@ set relativenumber
 set noexpandtab
 noremap PP "0p
 noremap x "_x
+
+call plug#begin('~/.local/share/nvim/plugged')
+call plug#end()
