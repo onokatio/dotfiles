@@ -22,8 +22,10 @@ set hlsearch
 set clipboard=unnamed
 set relativenumber
 set noexpandtab
+set nocompatible
+set backspace=indent,eol,start
 noremap PP "0p
 noremap x "_x
 
-call plug#begin('~/.local/share/nvim/plugged')
-call plug#end()
+"call plug#begin('~/.local/share/nvim/plugged')
+"call plug#end()
