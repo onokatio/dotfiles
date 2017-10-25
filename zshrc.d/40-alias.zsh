@@ -27,8 +27,8 @@ alias rm="gomi --"
 #alias rm='rm -vrI --one-file-system -- '
 alias s='w3m https://google.com/search?q='
 alias poweroff=': '
-alias vi='nvim'
-alias vim='nvim'
+alias vi='nvim -u ~/.vimrc '
+alias vim='nvim -u ~/.vimrc '
 
 function git(){hub "$@"}
 function chrome(){

@@ -27,5 +27,8 @@ set backspace=indent,eol,start
 noremap PP "0p
 noremap x "_x
 
-call plug#begin('~/.conf-to-git/zshrc.d/plugins/junegunn/vim-plug/plug.vim')
+call plug#begin('~/.conf-to-git/zshrc.d/plugins/vim')
+
+Plug 'Shougo/deoplete.nvim'
+
 call plug#end()
