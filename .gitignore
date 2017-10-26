@@ -1,3 +1,2 @@
-zshrc.d/plugins/*
-!zshrc.d/plugins/zplug/*
+plugins/
 zshrc.d/90-private.zsh
