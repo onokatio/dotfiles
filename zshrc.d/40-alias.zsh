@@ -22,7 +22,7 @@ alias diff='colordiff '
 alias info='pinfo '
 #alias cat='vimcat '
 alias trace-mtr='mtr '
-alias grep='ag '
+#alias grep='ag '
 alias rm="gomi --"
 #alias rm='rm -vrI --one-file-system -- '
 alias s='w3m https://google.com/search?q='
