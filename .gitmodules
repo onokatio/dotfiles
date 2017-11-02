@@ -1,0 +1,6 @@
+[submodule "zsh/zplug"]
+	path = zsh/zplug
+	url = https://github.com/zplug/zplug
+[submodule "brew"]
+	path = brew
+	url = https://github.com/Linuxbrew/brew
