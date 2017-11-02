@@ -23,12 +23,14 @@ alias info='pinfo '
 #alias cat='vimcat '
 alias trace-mtr='mtr '
 #alias grep='ag '
-alias rm="gomi --"
+alias rm="gomi "
 #alias rm='rm -vrI --one-file-system -- '
 alias s='w3m https://google.com/search?q='
 alias poweroff=': '
+alias v='nvim -u ~/.vimrc '
 alias vi='nvim -u ~/.vimrc '
 alias vim='nvim -u ~/.vimrc '
+alias c='cd '
 
 function git(){hub "$@"}
 function chrome(){
