@@ -24,11 +24,21 @@ set relativenumber
 set noexpandtab
 set nocompatible
 set backspace=indent,eol,start
-noremap PP "0p
-noremap x "_x
+"noremap PP "0p
+"noremap x "_x
 
-call plug#begin('~/.conf-to-git/zshrc.d/plugins/vim')
+set runtimepath+=$CTG/vim/dein.vim
+if dein#load_state("$CTG/local/vim-plugins")
+	call dein#begin(expand("$CTG/local/vim-plugins"))
+	call dein#load_toml(expand("$CTG/vim/dein.toml"),{'lazy': 0})
+	call dein#load_toml(expand("$CTG/vim/dein_lazy.toml"),{'lazy': 1})
+	call dein#end()
+	call dein#save_state()
+endif
 
-Plug 'Shougo/deoplete.nvim'
+syntax enable
+filetype plugin indent on
 
-call plug#end()
+if dein#check_install()
+  call dein#install()
+endif

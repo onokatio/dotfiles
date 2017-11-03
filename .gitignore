@@ -1,2 +1,2 @@
-plugins/
-zshrc.d/90-private.zsh
+zsh/zshrc.d/90-private.zsh
+local/*

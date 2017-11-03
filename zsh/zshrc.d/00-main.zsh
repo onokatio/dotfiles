@@ -5,10 +5,10 @@ fi
 
 #export PATH=$HOME/usr/bin:$PATH
 export ZPLUG_HOME=$CTG/zsh/zplug
-export ZSH_PLUGINS=$CTG/plugins
+export ZSH_PLUGINS=$CTG/local/zsh-plugins
 export ZPLUG_REPOS=$ZSH_PLUGINS
-export ZPLUG_BIN=$ZSH_PLUGINS/bin
-export ANYENV_ROOT=$ZSH_PLUGINS/riywo/anyenv
+export ZPLUG_BIN=$CTG/local/bin
+export ANYENV_ROOT=$ZSH_PLUGINS/onokatio/anyenv
 export NO_AT_BRIDGE=1
 export EMOJI_CLI_KEYBIND=^f
 export HOMEBREW_MAKE_JOBS=4
@@ -26,14 +26,15 @@ export PATH=$ZPLUG_BIN:$PATH
 		from:gh-r, \
 		as:command, \
 		rename-to:fzf, \
-		use:"*linux*amd64*"
-	zplug "onokatio/anyenv", as:command, use:"bin/anyenv"
-	zplug "stedolan/jq", from:gh-r, as:command
+		use:"*linux*amd64*" \
+		lazy:true
+	zplug "onokatio/anyenv" #, as:command, use:"bin/anyenv"
+	zplug "stedolan/jq", from:gh-r, as:command, lazy:true
 	#zplug "zsh-users/zsh-autosuggestions", hook-build:"w=$ZPLUG_REPOS/zsh-users/zsh-autosuggestions;test -d $w&&zcompile $(find $w -name "*.zsh")"
 	zplug "zsh-users/zsh-autosuggestions"
 	#zplug "zsh-users/zsh-syntax-highlighting", hook-build:"w=$ZPLUG_REPOS/zsh-syntax-highlighting;test -d $w&&zcompile $(find $w -name "*.zsh")"
 	zplug "zsh-users/zsh-syntax-highlighting"
-	zplug "zsh-users/zsh-completions"\
+	zplug "zsh-users/zsh-completions"
 	#zplug "b4b4r07/emoji-cli", on:"stedolan/jq"
 	#zplug "TBSliver/zsh-plugin-tmux-simple"
 	#zplug "arzzen/calc.plugin.zsh"
@@ -43,9 +44,10 @@ export PATH=$ZPLUG_BIN:$PATH
 	zplug "b4b4r07/zsh-gomi", \
 	  as:command, \
 	  use:bin/gomi, \
-	  on:junegunn/fzf-bin
+	  on:junegunn/fzf-bin \
+		lazy:true
 	#zplug "b4b4r07/enhancd", use:enhancd.sh, on:junegunn/fzf-bin
-	zplug "Linuxbrew/brew", hook-load:"make"
+	zplug "Linuxbrew/brew", lazy:true
 	#, as:command, use:"bin/brew"
 	#zplug "junegunn/vim-plug"
 	#if ! zplug check --verbose && which git > /dev/null 2>&1 ; then
@@ -62,12 +64,22 @@ export PATH=$ZPLUG_BIN:$PATH
 #export INFOPATH="$ZSH_PLUGINS/Linuxbrew/brew/share/info:$INFOPATH"
 
 if [[ -d $ANYENV_ROOT ]] ; then
-	eval "$(anyenv init - --no-rehasu)"
+	#eval "$(anyenv init - --no-rehash)"
+	export PATH=$ANYENV_ROOT/bin:$PATH
+	#eval "$(anyenv init -)"
+	anyenv() {
+	  typeset command
+	  command="$1"
+	  if [ "$#" -gt 0 ]; then
+	    shift
+	  fi
+	  command anyenv "$command" "$@"
+	}
 fi
 
-if [[ -d $CTG/zshrc.d/ ]] ; then
-	for i ($CTG/zshrc.d/*.zsh) source $i
-fi
+#if [[ -d $CTG/zshrc.d/ ]] ; then
+#	for i ($CTG/zshrc.d/*.zsh) source $i
+#fi
 
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
@@ -83,4 +95,3 @@ if [ $CTG/zshrc -nt ~/.zshrc.zwc ]; then
   zcompile ~/.zshrc
 fi
 
-#zprof | less
