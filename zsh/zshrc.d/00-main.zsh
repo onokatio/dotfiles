@@ -26,10 +26,10 @@ export PATH=$ZPLUG_BIN:$PATH
 		from:gh-r, \
 		as:command, \
 		rename-to:fzf, \
-		use:"*linux*amd64*" \
-		lazy:true
-	zplug "onokatio/anyenv" #, as:command, use:"bin/anyenv"
-	zplug "stedolan/jq", from:gh-r, as:command, lazy:true
+		use:"*linux*amd64*"
+	#	lazy:true
+	#zplug "onokatio/anyenv" #, as:command, use:"bin/anyenv"
+	#zplug "stedolan/jq", from:gh-r, as:command, lazy:true
 	#zplug "zsh-users/zsh-autosuggestions", hook-build:"w=$ZPLUG_REPOS/zsh-users/zsh-autosuggestions;test -d $w&&zcompile $(find $w -name "*.zsh")"
 	zplug "zsh-users/zsh-autosuggestions"
 	#zplug "zsh-users/zsh-syntax-highlighting", hook-build:"w=$ZPLUG_REPOS/zsh-syntax-highlighting;test -d $w&&zcompile $(find $w -name "*.zsh")"
@@ -44,11 +44,14 @@ export PATH=$ZPLUG_BIN:$PATH
 	zplug "b4b4r07/zsh-gomi", \
 	  as:command, \
 	  use:bin/gomi, \
-	  on:junegunn/fzf-bin \
-		lazy:true
+	  on:junegunn/fzf-bin
+	#	lazy:true
 	#zplug "b4b4r07/enhancd", use:enhancd.sh, on:junegunn/fzf-bin
-	zplug "Linuxbrew/brew", lazy:true
+	#zplug "Linuxbrew/brew", lazy:true
+	zplug "b4b4r07/history", from:gh-r, as:command, use:"*linux*amd64*", hook-load:'history(){command history $@}'
+	#zplug "b4b4r07/history", use:"misc/zsh/init.zsh"
 	#, as:command, use:"bin/brew"
+	zplug 'meetfranz/franz-app-legacy', from:gh-r, as:command, use:'*linux*x64*', rename-to:franz
 	#zplug "junegunn/vim-plug"
 	#if ! zplug check --verbose && which git > /dev/null 2>&1 ; then
 	#	zplug install
