@@ -14,8 +14,15 @@ export EMOJI_CLI_KEYBIND=^f
 export HOMEBREW_MAKE_JOBS=4
 export HOMEBREW_EDITOR=vi
 export PATH=$ZPLUG_BIN:$PATH
-#export MANPATH="$(brew --prefix)/share/man:$MANPATH"
-#export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
+
+export PATH=$CTG/Linuxbrew/bin:$PATH
+export LD_LIBRARY_PATH="$(brew --prefix)/lib"
+export LD_LIBRARY_PATH="$(brew --prefix)/lib64"
+export PKG_CONFIG_PATH="$(brew --prefix)/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="$(brew --prefix)/lib64/pkgconfig:$PKG_CONFIG_PATH"
+export MANPATH="$(brew --prefix)/share/man:$MANPATH"
+export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
+export XDG_DATA_DIRS="$(brew --prefix)/share:XDG_DATA_DIRS"
 
 #export DOCKER_CONTENT_TRUST=1
 
@@ -58,13 +65,6 @@ export PATH=$ZPLUG_BIN:$PATH
 	#fi
 	zplug load
  
-#export PATH="$ZSH_PLUGINS/Linuxbrew/brew/bin:$PATH"
-#export LD_LIBRARY_PATH="$ZSH_PLUGINS/Linuxbrew/brew/lib:$ZSH_PLUGINS/Linuxbrew/brew/lib64"
-#export PKG_CONFIG_PATH="$ZSH_PLUGINS/Linuxbrew/brew/lib/pkgconfig:$PKG_CONFIG_PATH"
-#export PKG_CONFIG_PATH="$ZSH_PLUGINS/Linuxbrew/brew/lib64/pkgconfig:$PKG_CONFIG_PATH"
-#export XDG_DATA_DIRS="$ZSH_PLUGINS/Linuxbrew/brew/share:XDG_DATA_DIRS"
-#export MANPATH="$ZSH_PLUGINS/Linuxbrew/brew/share/man:$MANPATH"
-#export INFOPATH="$ZSH_PLUGINS/Linuxbrew/brew/share/info:$INFOPATH"
 
 if [[ -d $ANYENV_ROOT ]] ; then
 	#eval "$(anyenv init - --no-rehash)"
