@@ -22,7 +22,7 @@ export PKG_CONFIG_PATH="$(brew --prefix)/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PKG_CONFIG_PATH="$(brew --prefix)/lib64/pkgconfig:$PKG_CONFIG_PATH"
 export MANPATH="$(brew --prefix)/share/man:$MANPATH"
 export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
-export XDG_DATA_DIRS="$(brew --prefix)/share:XDG_DATA_DIRS"
+export XDG_DATA_DIRS="$(brew --prefix)/share:$XDG_DATA_DIRS"
 
 #export DOCKER_CONTENT_TRUST=1
 
