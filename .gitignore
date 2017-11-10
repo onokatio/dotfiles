@@ -1,2 +1,4 @@
 zsh/zshrc.d/90-private.zsh
-local/*
+zsh/zshrc
+zsh/zshrc.zwc
+local
