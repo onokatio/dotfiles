@@ -41,7 +41,6 @@ for i in {1..$#cmd};do
 done
 
 
-function git(){hub "$@"}
 function chrome(){
 	chrome_b=$(ps ax|env grep '/opt/google/chrome'|head -n1|awk '{print $5}'|cut -d '/' -f 4)
 	eval "google-$chrome_b $@"

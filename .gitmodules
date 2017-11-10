@@ -1,9 +1,6 @@
 [submodule "zsh/zplug"]
 	path = zsh/zplug
 	url = https://github.com/zplug/zplug
-[submodule "Linuxbrew"]
-	path = Linuxbrew
-	url = https://github.com/Linuxbrew/brew
 [submodule "vim/dein.vim"]
 	path = vim/dein.vim
 	url = https://github.com/Shougo/dein.vim
