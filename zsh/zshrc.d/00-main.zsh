@@ -49,9 +49,12 @@ export NO_AT_BRIDGE=1
 export EMOJI_CLI_KEYBIND=^f
 export HOMEBREW_MAKE_JOBS=4
 export HOMEBREW_EDITOR=vi
+export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
 #export ANYENV_ROOT=$ZSH_PLUGINS/onokatio/anyenv
 #export DOCKER_CONTENT_TRUST=1
+
+#export PATH=/home/local/opt/anaconda2/bin:$PATH
 
 
 	source $ZPLUG_HOME/init.zsh
