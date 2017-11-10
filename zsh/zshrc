@@ -4,27 +4,54 @@ if [[ -z "$CTG" ]] ; then
 	echo "var CTG not found"
 fi
 
-#export PATH=$HOME/usr/bin:$PATH
-export ZPLUG_HOME=$CTG/zsh/zplug
-export ZSH_PLUGINS=$CTG/local/zsh-plugins
-export ZPLUG_REPOS=$ZSH_PLUGINS
-export ZPLUG_BIN=$CTG/local/bin
-export ANYENV_ROOT=$ZSH_PLUGINS/onokatio/anyenv
-export NO_AT_BRIDGE=1
-export EMOJI_CLI_KEYBIND=^f
-export HOMEBREW_MAKE_JOBS=4
-export HOMEBREW_EDITOR=vi
-export PATH=$ZPLUG_BIN:$PATH
+export MYLOCAL=$CTG/local
 
-export PATH=$CTG/Linuxbrew/bin:$PATH
-export LD_LIBRARY_PATH="$(brew --prefix)/lib"
-export LD_LIBRARY_PATH="$(brew --prefix)/lib64"
+export LD_LIBRARY_PATH="/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/lib64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/usr/lib64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/usr/local/lib64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/home/local/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/home/local/lib64:$LD_LIBRARY_PATH"
+
+export PKG_CONFIG_PATH="/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/lib64/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/usr/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/usr/lib64/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/usr/local/lib64/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/home/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/home/local/lib64/pkgconfig:$PKG_CONFIG_PATH"
+
+export PATH=$MYLOCAL/bin:$PATH
+export LD_LIBRARY_PATH="$MYLOCAL/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="$MYLOCAL/lib64:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="$MYLOCAL/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="$MYLOCAL/lib64/pkgconfig:$PKG_CONFIG_PATH"
+export MANPATH="$MYLOCAL/share/man:$MANPATH"
+export INFOPATH="$MYLOCAL/share/info:$INFOPATH"
+export XDG_DATA_DIRS="$MYLOCAL/share:XDG_DATA_DIRS"
+
+export PATH=$MYLOCAL/Linuxbrew/bin:$PATH
+export LD_LIBRARY_PATH="$(brew --prefix)/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="$(brew --prefix)/lib64:$LD_LIBRARY_PATH"
 export PKG_CONFIG_PATH="$(brew --prefix)/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PKG_CONFIG_PATH="$(brew --prefix)/lib64/pkgconfig:$PKG_CONFIG_PATH"
 export MANPATH="$(brew --prefix)/share/man:$MANPATH"
 export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
 export XDG_DATA_DIRS="$(brew --prefix)/share:XDG_DATA_DIRS"
 
+export ZPLUG_HOME=$CTG/zsh/zplug
+export ZSH_PLUGINS=$MYLOCAL/zsh-plugins
+export ZPLUG_REPOS=$MYLOCAL/zsh-plugins
+export ZPLUG_BIN=$MYLOCAL/bin
+export NO_AT_BRIDGE=1
+export EMOJI_CLI_KEYBIND=^f
+export HOMEBREW_MAKE_JOBS=4
+export HOMEBREW_EDITOR=vi
+
+#export ANYENV_ROOT=$ZSH_PLUGINS/onokatio/anyenv
 #export DOCKER_CONTENT_TRUST=1
 
 
@@ -195,8 +222,8 @@ alias poweroff=': '
 #alias vim='nvim -u ~/.vimrc '
 #alias rm="gomi --"
 
-cmd=(df  top  diff      info  apt      apt-get  wget               vi                 vim                rm)
-rpc=(dfc htop colordiff pinfo apt-fast apt-fast 'axel -n 10 -v -a' 'nvim -u ~/.vimrc' 'nvim -u ~/.vimrc' gomi)
+cmd=(git df  top  diff      info  apt      apt-get  wget               vi                 vim                rm)
+rpc=(hub htop colordiff pinfo apt-fast apt-fast 'axel -n 10 -v -a' 'nvim -u ~/.vimrc' 'nvim -u ~/.vimrc' gomi)
 
 for i in {1..$#cmd};do
 	if which $(echo $rpc[$i]|awk '{print $1}') >/dev/null; then
@@ -205,7 +232,6 @@ for i in {1..$#cmd};do
 done
 
 
-function git(){hub "$@"}
 function chrome(){
 	chrome_b=$(ps ax|env grep '/opt/google/chrome'|head -n1|awk '{print $5}'|cut -d '/' -f 4)
 	eval "google-$chrome_b $@"
@@ -235,4 +261,7 @@ else
 	PROMPT="%K{green}%(?,${UUU},${SAN})%k%F{cyan}%~ %f$ ❯ "
 	RPROMPT="%K{green}%(?,${NYA},${PIN})%k${vcs_info_msg_0_}"
 fi
+export GOOGLE_API_KEY=AIzaSyACylQYBJWtwyw6FY3kGnms5dU463rMNAE
+export GOOGLE_DEFAULT_CLIENT_ID=1004985161456-p7pi5p30f5cro2i6eh9jibrhpesi6v7f.apps.googleusercontent.com
+export GOOGLE_DEFAULT_CLIENT_SECRET=of5Sm69rqbBsQ5szvFRcVO4R
 #zprof | less

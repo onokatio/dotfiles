@@ -4,27 +4,53 @@ if [[ -z "$CTG" ]] ; then
 fi
 
 export MYLOCAL=$CTG/local
-export PATH=$MYLOCAL/bin:$PATH
-export ZPLUG_HOME=$CTG/zsh/zplug
-export ZSH_PLUGINS=$MYLOCAL/zsh-plugins
-export ZPLUG_REPOS=$MYLOCAL/zsh-plugins
-export ZPLUG_BIN=$MYLOCAL/bin
-#export ANYENV_ROOT=$ZSH_PLUGINS/onokatio/anyenv
 
-export NO_AT_BRIDGE=1
-export EMOJI_CLI_KEYBIND=^f
-export HOMEBREW_MAKE_JOBS=4
-export HOMEBREW_EDITOR=vi
+export LD_LIBRARY_PATH="/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/lib64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/usr/lib64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/usr/local/lib64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/home/local/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/home/local/lib64:$LD_LIBRARY_PATH"
+
+export PKG_CONFIG_PATH="/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/lib64/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/usr/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/usr/lib64/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/usr/local/lib64/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/home/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/home/local/lib64/pkgconfig:$PKG_CONFIG_PATH"
+
+export PATH=$MYLOCAL/bin:$PATH
+export LD_LIBRARY_PATH="$MYLOCAL/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="$MYLOCAL/lib64:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="$MYLOCAL/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="$MYLOCAL/lib64/pkgconfig:$PKG_CONFIG_PATH"
+export MANPATH="$MYLOCAL/share/man:$MANPATH"
+export INFOPATH="$MYLOCAL/share/info:$INFOPATH"
+export XDG_DATA_DIRS="$MYLOCAL/share:XDG_DATA_DIRS"
 
 export PATH=$MYLOCAL/Linuxbrew/bin:$PATH
-export LD_LIBRARY_PATH="$(brew --prefix)/lib"
-export LD_LIBRARY_PATH="$(brew --prefix)/lib64"
+export LD_LIBRARY_PATH="$(brew --prefix)/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="$(brew --prefix)/lib64:$LD_LIBRARY_PATH"
 export PKG_CONFIG_PATH="$(brew --prefix)/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PKG_CONFIG_PATH="$(brew --prefix)/lib64/pkgconfig:$PKG_CONFIG_PATH"
 export MANPATH="$(brew --prefix)/share/man:$MANPATH"
 export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
 export XDG_DATA_DIRS="$(brew --prefix)/share:XDG_DATA_DIRS"
 
+export ZPLUG_HOME=$CTG/zsh/zplug
+export ZSH_PLUGINS=$MYLOCAL/zsh-plugins
+export ZPLUG_REPOS=$MYLOCAL/zsh-plugins
+export ZPLUG_BIN=$MYLOCAL/bin
+export NO_AT_BRIDGE=1
+export EMOJI_CLI_KEYBIND=^f
+export HOMEBREW_MAKE_JOBS=4
+export HOMEBREW_EDITOR=vi
+
+#export ANYENV_ROOT=$ZSH_PLUGINS/onokatio/anyenv
 #export DOCKER_CONTENT_TRUST=1
 
 

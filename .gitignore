@@ -1,5 +1,5 @@
-zsh/zshrc.d/90-private.zsh
 zsh/zshrc
 zsh/zshrc.zwc
+zsh/zshrc.d/90-private.zsh
 local
 Linuxbrew
