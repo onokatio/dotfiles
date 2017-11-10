@@ -32,17 +32,19 @@ export MANPATH="$MYLOCAL/share/man:$MANPATH"
 export INFOPATH="$MYLOCAL/share/info:$INFOPATH"
 export XDG_DATA_DIRS="$MYLOCAL/share:XDG_DATA_DIRS"
 
-export PATH=$MYLOCAL/Linuxbrew/bin:$PATH
-export LD_LIBRARY_PATH="$(brew --prefix)/lib:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="$(brew --prefix)/lib64:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="$(brew --prefix)/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PKG_CONFIG_PATH="$(brew --prefix)/lib64/pkgconfig:$PKG_CONFIG_PATH"
-export MANPATH="$(brew --prefix)/share/man:$MANPATH"
-export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
-export XDG_DATA_DIRS="$(brew --prefix)/share:$XDG_DATA_DIRS"
+if which brew >/dev/null 2>&1;then
+	export PATH=$MYLOCAL/Linuxbrew/bin:$PATH
+	export LD_LIBRARY_PATH="$(brew --prefix)/lib:$LD_LIBRARY_PATH"
+	export LD_LIBRARY_PATH="$(brew --prefix)/lib64:$LD_LIBRARY_PATH"
+	export PKG_CONFIG_PATH="$(brew --prefix)/lib/pkgconfig:$PKG_CONFIG_PATH"
+	export PKG_CONFIG_PATH="$(brew --prefix)/lib64/pkgconfig:$PKG_CONFIG_PATH"
+	export MANPATH="$(brew --prefix)/share/man:$MANPATH"
+	export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
+	export XDG_DATA_DIRS="$(brew --prefix)/share:$XDG_DATA_DIRS"
+fi
 
 export ZPLUG_HOME=$CTG/zsh/zplug
-export ZSH_PLUGINS=$MYLOCAL/zsh-plugins
+#export ZSH_PLUGINS=$MYLOCAL/zsh-plugins
 export ZPLUG_REPOS=$MYLOCAL/zsh-plugins
 export ZPLUG_BIN=$MYLOCAL/bin
 export NO_AT_BRIDGE=1
@@ -50,7 +52,11 @@ export EMOJI_CLI_KEYBIND=^f
 export HOMEBREW_MAKE_JOBS=4
 export HOMEBREW_EDITOR=vi
 export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+#export ZPLUG_CLONE_DEPTH=1
+export EDITOR=vim
+export LANG=en_US.UTF-8
 
+umask 022
 #export ANYENV_ROOT=$ZSH_PLUGINS/onokatio/anyenv
 #export DOCKER_CONTENT_TRUST=1
 
@@ -70,8 +76,8 @@ export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 	#zplug "zsh-users/zsh-autosuggestions", hook-build:"w=$ZPLUG_REPOS/zsh-users/zsh-autosuggestions;test -d $w&&zcompile $(find $w -name "*.zsh")"
 	zplug "zsh-users/zsh-autosuggestions"
 	#zplug "zsh-users/zsh-syntax-highlighting", hook-build:"w=$ZPLUG_REPOS/zsh-syntax-highlighting;test -d $w&&zcompile $(find $w -name "*.zsh")"
-	zplug "zsh-users/zsh-syntax-highlighting"
-	zplug "zsh-users/zsh-completions"
+	#zplug "zsh-users/zsh-syntax-highlighting", defer:2
+	zplug "zsh-users/zsh-completions", lazy:true
 	#zplug "b4b4r07/emoji-cli", on:"stedolan/jq"
 	#zplug "TBSliver/zsh-plugin-tmux-simple"
 	#zplug "arzzen/calc.plugin.zsh"
@@ -85,7 +91,7 @@ export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 	#	lazy:true
 	#zplug "b4b4r07/enhancd", use:enhancd.sh, on:junegunn/fzf-bin
 	#zplug "Linuxbrew/brew", lazy:true
-	zplug "b4b4r07/history", from:gh-r, as:command, use:"*linux*amd64*", hook-load:'history(){command history $@}'
+	zplug "b4b4r07/history", from:gh-r, as:command, use:"*linux*amd64*", hook-load:'history(){command history \$@}'
 	#zplug "b4b4r07/history", use:"misc/zsh/init.zsh"
 	#, as:command, use:"bin/brew"
 	zplug 'meetfranz/franz-app-legacy', from:gh-r, as:command, use:'*linux*x64*', rename-to:franz
