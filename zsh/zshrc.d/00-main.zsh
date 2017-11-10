@@ -3,19 +3,20 @@ if [[ -z "$CTG" ]] ; then
 	echo "var CTG not found"
 fi
 
-#export PATH=$HOME/usr/bin:$PATH
+export MYLOCAL=$CTG/local
+export PATH=$MYLOCAL/bin:$PATH
 export ZPLUG_HOME=$CTG/zsh/zplug
-export ZSH_PLUGINS=$CTG/local/zsh-plugins
-export ZPLUG_REPOS=$ZSH_PLUGINS
-export ZPLUG_BIN=$CTG/local/bin
-export ANYENV_ROOT=$ZSH_PLUGINS/onokatio/anyenv
+export ZSH_PLUGINS=$MYLOCAL/zsh-plugins
+export ZPLUG_REPOS=$MYLOCAL/zsh-plugins
+export ZPLUG_BIN=$MYLOCAL/bin
+#export ANYENV_ROOT=$ZSH_PLUGINS/onokatio/anyenv
+
 export NO_AT_BRIDGE=1
 export EMOJI_CLI_KEYBIND=^f
 export HOMEBREW_MAKE_JOBS=4
 export HOMEBREW_EDITOR=vi
-export PATH=$ZPLUG_BIN:$PATH
 
-export PATH=$CTG/Linuxbrew/bin:$PATH
+export PATH=$MYLOCAL/Linuxbrew/bin:$PATH
 export LD_LIBRARY_PATH="$(brew --prefix)/lib"
 export LD_LIBRARY_PATH="$(brew --prefix)/lib64"
 export PKG_CONFIG_PATH="$(brew --prefix)/lib/pkgconfig:$PKG_CONFIG_PATH"
