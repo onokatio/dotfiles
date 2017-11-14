@@ -5,46 +5,23 @@ fi
 
 export MYLOCAL=$CTG/local
 
-export LD_LIBRARY_PATH="/lib:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="/lib64:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="/usr/lib64:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="/usr/local/lib64:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="/home/local/lib:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="/home/local/lib64:$LD_LIBRARY_PATH"
+add-local-path(){
+	export PATH=$1/bin:$PATH
+	export LD_LIBRARY_PATH="$1/lib:$LD_LIBRARY_PATH"
+	export LD_LIBRARY_PATH="$1/lib64:$LD_LIBRARY_PATH"
+	export PKG_CONFIG_PATH="$1/lib/pkgconfig:$PKG_CONFIG_PATH"
+	export PKG_CONFIG_PATH="$1/lib64/pkgconfig:$PKG_CONFIG_PATH"
+	export MANPATH="$1/share/man:$MANPATH"
+	export INFOPATH="$1/share/info:$INFOPATH"
+	export XDG_DATA_DIRS="$1/share:$XDG_DATA_DIRS"
+}
 
-export PKG_CONFIG_PATH="/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PKG_CONFIG_PATH="/lib64/pkgconfig:$PKG_CONFIG_PATH"
-export PKG_CONFIG_PATH="/usr/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PKG_CONFIG_PATH="/usr/lib64/pkgconfig:$PKG_CONFIG_PATH"
-export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PKG_CONFIG_PATH="/usr/local/lib64/pkgconfig:$PKG_CONFIG_PATH"
-export PKG_CONFIG_PATH="/home/local/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PKG_CONFIG_PATH="/home/local/lib64/pkgconfig:$PKG_CONFIG_PATH"
-
-export PATH=$MYLOCAL/bin:$PATH
-export LD_LIBRARY_PATH="$MYLOCAL/lib:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="$MYLOCAL/lib64:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="$MYLOCAL/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PKG_CONFIG_PATH="$MYLOCAL/lib64/pkgconfig:$PKG_CONFIG_PATH"
-export MANPATH="$MYLOCAL/share/man:$MANPATH"
-export INFOPATH="$MYLOCAL/share/info:$INFOPATH"
-export XDG_DATA_DIRS="$MYLOCAL/share:XDG_DATA_DIRS"
-
-if which brew >/dev/null 2>&1;then
-	export PATH=$MYLOCAL/Linuxbrew/bin:$PATH
-	export LD_LIBRARY_PATH="$(brew --prefix)/lib:$LD_LIBRARY_PATH"
-	export LD_LIBRARY_PATH="$(brew --prefix)/lib64:$LD_LIBRARY_PATH"
-	export PKG_CONFIG_PATH="$(brew --prefix)/lib/pkgconfig:$PKG_CONFIG_PATH"
-	export PKG_CONFIG_PATH="$(brew --prefix)/lib64/pkgconfig:$PKG_CONFIG_PATH"
-	export MANPATH="$(brew --prefix)/share/man:$MANPATH"
-	export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
-	export XDG_DATA_DIRS="$(brew --prefix)/share:$XDG_DATA_DIRS"
-fi
+add-local-path $MYLOCAL
+add-local-path /home/local
+test -d "$MYLOCAL/Linuxbrew" >/dev/null 2>&1 && \
+	add-local-path $MYLOCAL/Linuxbrew
 
 export ZPLUG_HOME=$CTG/zsh/zplug
-#export ZSH_PLUGINS=$MYLOCAL/zsh-plugins
 export ZPLUG_REPOS=$MYLOCAL/zsh-plugins
 export ZPLUG_BIN=$MYLOCAL/bin
 export NO_AT_BRIDGE=1
@@ -52,15 +29,14 @@ export EMOJI_CLI_KEYBIND=^f
 export HOMEBREW_MAKE_JOBS=4
 export HOMEBREW_EDITOR=vi
 export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
-#export ZPLUG_CLONE_DEPTH=1
 export EDITOR=vim
-export LANG=en_US.UTF-8
-
-umask 022
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
+ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
+#export ZSH_PLUGINS=$MYLOCAL/zsh-plugins
 #export ANYENV_ROOT=$ZSH_PLUGINS/onokatio/anyenv
-#export DOCKER_CONTENT_TRUST=1
 
-#export PATH=/home/local/opt/anaconda2/bin:$PATH
+umask 077
+
 
 
 	source $ZPLUG_HOME/init.zsh
@@ -73,32 +49,27 @@ umask 022
 	#	lazy:true
 	#zplug "onokatio/anyenv" #, as:command, use:"bin/anyenv"
 	#zplug "stedolan/jq", from:gh-r, as:command, lazy:true
-	#zplug "zsh-users/zsh-autosuggestions", hook-build:"w=$ZPLUG_REPOS/zsh-users/zsh-autosuggestions;test -d $w&&zcompile $(find $w -name "*.zsh")"
 	zplug "zsh-users/zsh-autosuggestions"
-	#zplug "zsh-users/zsh-syntax-highlighting", hook-build:"w=$ZPLUG_REPOS/zsh-syntax-highlighting;test -d $w&&zcompile $(find $w -name "*.zsh")"
-	#zplug "zsh-users/zsh-syntax-highlighting", defer:2
+	zplug "zsh-users/zsh-syntax-highlighting", defer:2
 	zplug "zsh-users/zsh-completions", lazy:true
 	#zplug "b4b4r07/emoji-cli", on:"stedolan/jq"
 	#zplug "TBSliver/zsh-plugin-tmux-simple"
 	#zplug "arzzen/calc.plugin.zsh"
 	#zplug "felixr/docker-zsh-completion"
 	#zplug "mrowa44/emojify", as:command
-	zplug "b4b4r07/enhancd", on:"junegunn/fzf-bin"
+	#zplug "b4b4r07/enhancd", on:"junegunn/fzf-bin"
 	zplug "b4b4r07/zsh-gomi", \
 	  as:command, \
 	  use:bin/gomi, \
-	  on:junegunn/fzf-bin
-	#	lazy:true
+	  on:junegunn/fzf-bin, \
+		lazy:true
 	#zplug "b4b4r07/enhancd", use:enhancd.sh, on:junegunn/fzf-bin
-	#zplug "Linuxbrew/brew", lazy:true
-	zplug "b4b4r07/history", from:gh-r, as:command, use:"*linux*amd64*", hook-load:'history(){command history \$@}'
-	#zplug "b4b4r07/history", use:"misc/zsh/init.zsh"
-	#, as:command, use:"bin/brew"
-	zplug 'meetfranz/franz-app-legacy', from:gh-r, as:command, use:'*linux*x64*', rename-to:franz
-	#zplug "junegunn/vim-plug"
-	#if ! zplug check --verbose && which git > /dev/null 2>&1 ; then
-	#	zplug install
-	#fi
+	#zplug "b4b4r07/history", from:gh-r, as:command, use:"*linux*amd64*", hook-load:'history(){command history \$@}'
+	#zplug "onokatio/history", use:"misc/zsh/init.zsh"
+	#zplug 'meetfranz/franz-app-legacy', from:gh-r, as:command, use:'*linux*x64*', rename-to:franz
+	#zplug "agnoster/agnoster-zsh-theme", as:theme
+	zplug "bhilburn/powerlevel9k", as:theme
+
 	zplug load
  
 
@@ -121,16 +92,16 @@ fi
 #fi
 
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
-REPORTTIME=3
+#HISTSIZE=1000
+#SAVEHIST=1000
+#REPORTTIME=3
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 
-if [ $CTG/zshrc -nt ~/.zshrc.zwc ]; then
-  zcompile ~/.zshrc
-fi
+#if [ $CTG/zshrc -nt ~/.zshrc.zwc ]; then
+#  zcompile ~/.zshrc
+#fi
 
