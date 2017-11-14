@@ -11,12 +11,12 @@ function command_not_found_handler(){
 }
 
 if [ ${UID} -eq 0 ]; then
-	PROMPT="%K{green}%B%F{black}ROOT%b%k %F{cyan}%~ %f$ "
+	#PROMPT="%K{green}%B%F{black}ROOT%b%k %F{cyan}%~ %f$ "
 else
 	UUU="%B%F{white}（」・ω・）」うー▶%b"
 	NYA="%B%F{white}\（・ω・\）にゃー！%b"
 	SAN="%B%F{red}＼（・ω・＼）SAN値！%b"
 	PIN="%B%F{red}（／・ω・）／ピンチ！%b"
-	PROMPT="$PROMPT%K{green}%(?,${UUU},${SAN})%k%F{cyan}%~ %f$ ❯ "
-	RPROMPT="$RPROMPT%K{green}%(?,${NYA},${PIN})%k${vcs_info_msg_0_}"
+	#PROMPT="$PROMPT%K{green}%(?,${UUU},${SAN})%k%F{cyan}%~ %f$ ❯ "
+	#RPROMPT="$RPROMPT%K{green}%(?,${NYA},${PIN})%k${vcs_info_msg_0_}"
 fi
