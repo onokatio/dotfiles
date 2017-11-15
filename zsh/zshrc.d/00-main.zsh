@@ -32,7 +32,9 @@ export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 export EDITOR=vim
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
-
+export USE_CCACHE=1
+export CCACHE_DIR=$HOME/.ccache
+which ccache >/dev/null 2>&1 && export CC="ccache gcc"
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=()
 #export ZSH_PLUGINS=$MYLOCAL/zsh-plugins
 #export ANYENV_ROOT=$ZSH_PLUGINS/onokatio/anyenv
