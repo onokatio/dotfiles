@@ -14,7 +14,4 @@ repo = 'nathanaelkane/vim-indent-guides'
 repo = 'vim-scripts/AnsiEsc.vim'
 
 [[plugins]]
-repo = 'yonchu/accelerated-smooth-scroll'
-
-[[plugins]]
 repo = 'sjl/badwolf'

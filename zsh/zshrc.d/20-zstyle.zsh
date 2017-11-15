@@ -3,7 +3,7 @@ zstyle ':zle:*' word-style unspecified
 zstyle ':completion:*' format '%B%F{blue}%d%f%b'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:default' menu select=2
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+#zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} r:|[._-]=*'
 zstyle ':completion:*' keep-prefix
 zstyle ':completion:*' recent-dirs-insert both
