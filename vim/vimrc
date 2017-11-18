@@ -44,5 +44,7 @@ if dein#check_install()
 endif
 
 "colorscheme badwolf
-colorscheme elflord
-highlight Normal ctermbg=none
+"colorscheme elflord
+set background=dark
+colorscheme solarized
+"highlight Normal ctermbg=none
