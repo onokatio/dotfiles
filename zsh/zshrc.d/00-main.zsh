@@ -35,7 +35,12 @@ ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
 export USE_CCACHE=1
 export CCACHE_DIR=$HOME/.ccache
 which ccache >/dev/null 2>&1 && export CC="ccache gcc"
-#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=()
+
+#export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_uuu dir root_indicator ssh)
+export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs custom_nya)
+export POWERLEVEL9K_CUSTOM_UUU="echo （」・ω・）」うー"
+export POWERLEVEL9K_CUSTOM_NYA="echo ＼（・ω・＼）にゃー！"
 #export ZSH_PLUGINS=$MYLOCAL/zsh-plugins
 #export ANYENV_ROOT=$ZSH_PLUGINS/onokatio/anyenv
 
