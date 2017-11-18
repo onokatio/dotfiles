@@ -43,5 +43,6 @@ if dein#check_install()
   call dein#install()
 endif
 
-colorscheme badwolf
+"colorscheme badwolf
+colorscheme elflord
 highlight Normal ctermbg=none
