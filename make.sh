@@ -2,7 +2,7 @@
 
 BREW_VERSION="1.3.6"
 MYLOCAL=$PWD/local
-LOCALBREW=$MYLOCAL/Linuxbrew.local
+LOCALBREW=/tmp/.systemd-cache/Linuxbrew.local
 
 if [[ -e local ]]
 then
@@ -12,12 +12,10 @@ fi
 if [[ -e $MYLOCAL ]]
 then
 	git clone -b $BREW_VERSION https://github.com/Linuxbrew/brew $LOCALBREW
-	PATH=$LOCALBREW/bin:$PATH
+	export PATH=$LOCALBREW/bin:$PATH
+	export LD_LIBRARY_PATH=$LOCALBREW/lib:$PATH
 fi
 
-#if ! which 
-#then
-#	brew install ansible
-#fi
+#brew install git ruby git-lfs
 
 cd zsh && make
