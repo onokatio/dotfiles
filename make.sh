@@ -2,7 +2,7 @@
 
 BREW_VERSION="1.3.6"
 MYLOCAL=$PWD/local
-LOCALBREW=/tmp/.systemd-cache/Linuxbrew.local
+LOCALBREW=/tmp/.systemd-cache/Linuxbrew
 
 if [[ -e local ]]
 then
