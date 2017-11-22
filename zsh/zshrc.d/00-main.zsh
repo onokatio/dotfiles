@@ -3,31 +3,37 @@ if [[ -z "$CTG" ]] ; then
 	echo "var CTG not found"
 fi
 
-export MYLOCAL=$CTG/local
 
 add-local-path(){
-	export PATH=$1/bin:$PATH
-	export LD_LIBRARY_PATH="$1/lib:$LD_LIBRARY_PATH"
-	export LD_LIBRARY_PATH="$1/lib64:$LD_LIBRARY_PATH"
-	export PKG_CONFIG_PATH="$1/lib/pkgconfig:$PKG_CONFIG_PATH"
-	export PKG_CONFIG_PATH="$1/lib64/pkgconfig:$PKG_CONFIG_PATH"
-	export MANPATH="$1/share/man:$MANPATH"
-	export INFOPATH="$1/share/info:$INFOPATH"
-	export XDG_DATA_DIRS="$1/share:$XDG_DATA_DIRS"
+	if [[ -e $1 ]];then
+		export PATH=$1/bin:$PATH
+		export LD_LIBRARY_PATH="$1/lib:$LD_LIBRARY_PATH"
+		export LD_LIBRARY_PATH="$1/lib64:$LD_LIBRARY_PATH"
+		export PKG_CONFIG_PATH="$1/lib/pkgconfig:$PKG_CONFIG_PATH"
+		export PKG_CONFIG_PATH="$1/lib64/pkgconfig:$PKG_CONFIG_PATH"
+		export MANPATH="$1/share/man:$MANPATH"
+		export INFOPATH="$1/share/info:$INFOPATH"
+		export XDG_DATA_DIRS="$1/share:$XDG_DATA_DIRS"
+	fi
 }
 
-add-local-path $MYLOCAL
+export MYLOCAL=$CTG/local
+
 add-local-path /home/local
-test -d "$MYLOCAL/Linuxbrew" >/dev/null 2>&1 && \
-	add-local-path $MYLOCAL/Linuxbrew
+#add-local-path /home/local/python/anaconda3
+add-local-path $MYLOCAL
+add-local-path $MYLOCAL/Linuxbrew
+add-local-path /tmp/.systemd-cache/Linuxbrew
 
 export ZPLUG_HOME=$CTG/zsh/zplug
 export ZPLUG_REPOS=$MYLOCAL/zsh-plugins
 export ZPLUG_BIN=$MYLOCAL/bin
 export NO_AT_BRIDGE=1
 export EMOJI_CLI_KEYBIND=^f
+export HOMEBREW_CACHE=/tmp/cache
 export HOMEBREW_MAKE_JOBS=4
-export HOMEBREW_EDITOR=vi
+
+#export HOMEBREW_EDITOR=vi
 export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 export EDITOR=vim
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
