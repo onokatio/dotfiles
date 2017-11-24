@@ -31,8 +31,8 @@ alias trace-mtr='mtr '
 #alias vim='nvim -u ~/.vimrc '
 #alias rm="gomi --"
 
-cmd=(hs      git df   top  diff      info  apt      apt-get  wget               vi                 vim                rm)
-rpc=(history hub dfc  htop colordiff pinfo apt-fast apt-fast 'axel -n 10 -v -a' 'nvim -u ~/.vimrc' 'nvim -u ~/.vimrc' gomi)
+cmd=(vi  hs      git df   top  diff      info  apt      apt-get  wget               vi                 vim                rm)
+rpc=(vim history hub dfc  htop colordiff pinfo apt-fast apt-fast 'axel -n 10 -v -a' 'nvim -u ~/.vimrc' 'nvim -u ~/.vimrc' gomi)
 
 for i in {1..$#cmd};do
 	if which $(echo $rpc[$i]|awk '{print $1}') >/dev/null; then
