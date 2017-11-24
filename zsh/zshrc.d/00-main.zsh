@@ -58,6 +58,9 @@ export POWERLEVEL9K_CUSTOM_NYA="echo ＼（・ω・＼）にゃー！"
 export ANYENV_ROOT=$CTG/anyenv
 eval "$(anyenv init -)"
 
+export GOPATH=$CTG/local/gopath
+export PATH=$GOPATH/bin:$PATH
+
 umask 077
 
 
