@@ -17,6 +17,6 @@ else
 	NYA="%B%F{white}\（・ω・\）にゃー！%b"
 	SAN="%B%F{red}＼（・ω・＼）SAN値！%b"
 	PIN="%B%F{red}（／・ω・）／ピンチ！%b"
-	#PROMPT="$PROMPT%K{green}%(?,${UUU},${SAN})%k%F{cyan}%~ %f$ ❯ "
-	#RPROMPT="$RPROMPT%K{green}%(?,${NYA},${PIN})%k${vcs_info_msg_0_}"
+	PROMPT="$PROMPT%K{green}%(?,${UUU},${SAN})%k%F{cyan}%~ %f$ ❯ "
+	RPROMPT="$RPROMPT%K{green}%(?,${NYA},${PIN})%k${vcs_info_msg_0_}"
 fi
