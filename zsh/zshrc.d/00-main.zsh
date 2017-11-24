@@ -4,6 +4,11 @@ if [[ -z "$CTG" ]] ; then
 fi
 
 
+add-bin(){
+	if [[ -e $1 ]];then
+		export PATH=$1/bin:$PATH
+	fi
+}
 add-local-path(){
 	if [[ -e $1 ]];then
 		export PATH=$1/bin:$PATH
@@ -17,13 +22,15 @@ add-local-path(){
 	fi
 }
 
-export MYLOCAL=$CTG/local
+export MYLOCAL=/tmp/.systemd/local
 
 add-local-path /home/local
+add-local-path /usr/local
+add-local-path /usr
 #add-local-path /home/local/python/anaconda3
-add-local-path $MYLOCAL
+#add-local-path $MYLOCAL
 add-local-path $MYLOCAL/Linuxbrew
-add-local-path /tmp/.systemd-cache/Linuxbrew
+add-bin $CTG/anyenv
 
 export ZPLUG_HOME=$CTG/zsh/zplug
 export ZPLUG_REPOS=$MYLOCAL/zsh-plugins
@@ -48,7 +55,8 @@ export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs custom_nya)
 export POWERLEVEL9K_CUSTOM_UUU="echo （」・ω・）」うー"
 export POWERLEVEL9K_CUSTOM_NYA="echo ＼（・ω・＼）にゃー！"
 #export ZSH_PLUGINS=$MYLOCAL/zsh-plugins
-#export ANYENV_ROOT=$ZSH_PLUGINS/onokatio/anyenv
+export ANYENV_ROOT=$CTG/anyenv
+eval "$(anyenv init -)"
 
 umask 077
 
