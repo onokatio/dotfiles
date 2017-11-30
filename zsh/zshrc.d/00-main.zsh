@@ -30,7 +30,7 @@ add-local-path /usr
 #add-local-path /home/local/python/anaconda3
 #add-local-path $MYLOCAL
 add-local-path $MYLOCAL/Linuxbrew
-add-bin $CTG/anyenv
+#add-bin $CTG/anyenv
 
 export ZPLUG_HOME=$CTG/zsh/zplug
 export ZPLUG_REPOS=$MYLOCAL/zsh-plugins
@@ -55,8 +55,8 @@ export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs custom_nya)
 export POWERLEVEL9K_CUSTOM_UUU="echo （」・ω・）」うー"
 export POWERLEVEL9K_CUSTOM_NYA="echo ＼（・ω・＼）にゃー！"
 #export ZSH_PLUGINS=$MYLOCAL/zsh-plugins
-export ANYENV_ROOT=$CTG/anyenv
-eval "$(anyenv init -)"
+#export ANYENV_ROOT=$CTG/anyenv
+#eval "$(anyenv init - zsh)"
 
 export GOPATH=$CTG/local/gopath
 export PATH=$GOPATH/bin:$PATH

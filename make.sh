@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -e
+#!/bin/bash
 CTG=$HOME/.conf-to-git
 
 BREW_VERSION="1.3.6"
@@ -39,13 +39,16 @@ fi
 #brew uses --installed curl
 #ln -s /home/local/python/anaconda3/bin/curl $MYLOCAL/Linuxbrew/bin/curl
 #export HOMEBREW_CURL=$MYLOCAL/Linuxbrew/bin/curl
-brew update
+#brew update
 #brew install ansible
 
-cd zsh >/dev/null && make && cd ../ >/dev/null
+cd zsh >/dev/null && ./make && cd ../ >/dev/null
 
 ln -sf $CTG/vim/vimrc ~/.vimrc
 ln -sf $CTG/config/tmux.conf ~/.tmux.conf
+#ln -sf $CTG/zsh/zshrc ~/.zshrc
+echo "export CTG=$HOME/.conf-to-git && source $CTG/zsh/zshrc" > ~/.zshrc
 
 
-exec zsh -l
+#exec zsh -l
+echo Run zsh.

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+touch zshrc
+echo -n > zshrc
+cd zshrc.d && ls | xargs cat >> ../zshrc
+#zsh -n zshrc
+#zsh -c 'zcompile ./zshrc'
