@@ -6,7 +6,7 @@ fi
 
 add-bin(){
 	if [[ -e $1 ]];then
-		export PATH=$1/bin:$PATH
+		export PATH=$1:$PATH
 	fi
 }
 add-local-path(){
@@ -22,7 +22,8 @@ add-local-path(){
 	fi
 }
 
-export MYLOCAL=/tmp/.systemd/local
+#export MYLOCAL=/tmp/.systemd/local
+export MYLOCAL=$CTG/local
 
 add-local-path /home/local
 add-local-path /usr/local
@@ -30,7 +31,8 @@ add-local-path /usr
 #add-local-path /home/local/python/anaconda3
 #add-local-path $MYLOCAL
 add-local-path $MYLOCAL/Linuxbrew
-#add-bin $CTG/anyenv
+#add-bin /usr/lib/ccache/bin
+add-bin $CTG/anyenv/bin
 
 export ZPLUG_HOME=$CTG/zsh/zplug
 export ZPLUG_REPOS=$MYLOCAL/zsh-plugins
@@ -48,6 +50,7 @@ ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
 export USE_CCACHE=1
 export CCACHE_DIR=$HOME/.ccache
 which ccache >/dev/null 2>&1 && export CC="ccache gcc"
+export TERM="xterm-256color"
 
 #export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_uuu dir root_indicator ssh)
@@ -55,14 +58,13 @@ export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs custom_nya)
 export POWERLEVEL9K_CUSTOM_UUU="echo （」・ω・）」うー"
 export POWERLEVEL9K_CUSTOM_NYA="echo ＼（・ω・＼）にゃー！"
 #export ZSH_PLUGINS=$MYLOCAL/zsh-plugins
-#export ANYENV_ROOT=$CTG/anyenv
-#eval "$(anyenv init - zsh)"
+export ANYENV_ROOT=$CTG/anyenv
+eval "$(anyenv init - zsh)"
 
 export GOPATH=$CTG/local/gopath
 export PATH=$GOPATH/bin:$PATH
 
 umask 077
-
 
 
 	source $ZPLUG_HOME/init.zsh
