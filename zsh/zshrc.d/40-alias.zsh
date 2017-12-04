@@ -18,7 +18,7 @@ alias trace-mtr='mtr '
 #alias grep='ag '
 #alias rm='rm -vrI --one-file-system -- '
 #alias s='w3m https://google.com/search?q='
-#alias poweroff=': '
+alias poweroff=': '
 
 #alias df='dfc '
 #alias top='htop '
