@@ -47,4 +47,4 @@ endif
 "colorscheme elflord
 set background=dark
 colorscheme solarized
-"highlight Normal ctermbg=none
+highlight Normal ctermbg=none
