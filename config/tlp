@@ -18,8 +18,8 @@ DISK_IDLE_SECS_ON_AC=0
 DISK_IDLE_SECS_ON_BAT=2
 
 # Dirty page values (timeouts in secs).
-MAX_LOST_WORK_SECS_ON_AC=15
-MAX_LOST_WORK_SECS_ON_BAT=60
+MAX_LOST_WORK_SECS_ON_AC=60
+MAX_LOST_WORK_SECS_ON_BAT=15
 
 # Hint: CPU parameters below are disabled by default, remove the leading #
 # to enable them, otherwise kernel default values are used.
@@ -188,7 +188,7 @@ USB_WHITELIST="1bcf:2b90"
 
 # Set to 1 to disable autosuspend before shutdown, 0 to do nothing
 # (workaround for USB devices that cause shutdown problems).
-#USB_AUTOSUSPEND_DISABLE_ON_SHUTDOWN=1
+USB_AUTOSUSPEND_DISABLE_ON_SHUTDOWN=1
 
 # Restore radio device state (Bluetooth, WiFi, WWAN) from previous shutdown
 # on system startup: 0=disable, 1=enable.
