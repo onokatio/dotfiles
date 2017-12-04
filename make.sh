@@ -2,7 +2,8 @@
 CTG=$HOME/.conf-to-git
 
 BREW_VERSION="1.3.6"
-MYLOCAL=/tmp/.systemd/local
+#MYLOCAL=/tmp/.systemd/local
+MYLOCAL=$PWD/local
 LINUXBREW=$MYLOCAL/Linuxbrew
 PYTHON_VERSION=2.7.14
 
@@ -13,12 +14,12 @@ if [[ ! -e "$MYLOCAL" ]];then
 	mkdir -p $MYLOCAL
 fi
 
-if [[ ! -e ./local ]];then
-	ln -s $MYLOCAL ./local
-fi
+#if [[ ! -e ./local ]];then
+#	ln -s $MYLOCAL ./local
+#fi
 
 if [[ ! -e "$LINUXBREW" ]];then
-	git clone -b $BREW_VERSION https://github.com/Linuxbrew/brew $LINUXBREW
+	git clone -b $BREW_VERSION --depth 1 https://github.com/Linuxbrew/brew $LINUXBREW
 	#export PATH=$LOCALBREW/bin:$PATH
 	#export LD_LIBRARY_PATH=$LOCALBREW/lib:$PATH
 fi
