@@ -3,6 +3,10 @@ if [[ -z "$CTG" ]] ; then
 	echo "var CTG not found"
 fi
 
+if [[ -z "$TMUX" ]];then
+	tmux
+fi
+
 
 add-bin(){
 	if [[ -e "$1" ]];then

@@ -18,3 +18,6 @@ repo = 'altercation/vim-colors-solarized'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'tomlion/vim-solidity'
