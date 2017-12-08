@@ -21,3 +21,6 @@ repo = 'itchyny/lightline.vim'
 
 [[plugins]]
 repo = 'tomlion/vim-solidity'
+
+[[plugins]]
+repo = 'FredKSchott/CoVim'

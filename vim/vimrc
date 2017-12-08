@@ -28,8 +28,8 @@ set backspace=indent,eol,start
 "noremap x "_x
 
 set runtimepath+=$CTG/vim/dein.vim
-if dein#load_state("$CTG/local/vim-plugins")
-	call dein#begin(expand("$CTG/local/vim-plugins"))
+if dein#load_state("$MYLOCAL/vim-plugins")
+	call dein#begin(expand("$MYLOCAL/vim-plugins"))
 	call dein#load_toml(expand("$CTG/vim/dein.toml"),{'lazy': 0})
 	call dein#load_toml(expand("$CTG/vim/dein_lazy.toml"),{'lazy': 1})
 	call dein#end()
