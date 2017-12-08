@@ -88,10 +88,7 @@ eval "$(anyenv init - zsh)"
 #export PYTHONPATH=$ANYENV_ROOT/anyenv/envs/pyenv/versions/2.7.14/lib/python2.7:$PYTHONPATH
 #export PYTHONPATH=$ANYENV_ROOT/anyenv/envs/pyenv/versions/2.7.14/lib/python2.7/site-packages:$PYTHONPATH
 
-export GOPATH=$CTG/local/gopath
-=======
 export GOPATH=$MYLOCAL/gopath
->>>>>>> 736244a7e89da1a99d27f58cd5bcb13d8fdc45b5
 export PATH=$GOPATH/bin:$PATH
 
 umask 077
