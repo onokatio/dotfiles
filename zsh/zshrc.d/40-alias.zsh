@@ -15,6 +15,7 @@ alias curlg="curl https://google.com "
 alias alpine="docker run -it --rm alpine:edge /bin/sh "
 #alias cat='vimcat '
 alias trace-mtr='mtr '
+alias brew='brew -v '
 #alias grep='ag '
 #alias rm='rm -vrI --one-file-system -- '
 #alias s='w3m https://google.com/search?q='
