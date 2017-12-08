@@ -2,27 +2,26 @@
 CTG=$HOME/.conf-to-git
 
 BREW_VERSION="1.3.6"
-#MYLOCAL=/tmp/.systemd/local
-MYLOCAL=$PWD/local
-LINUXBREW=$MYLOCAL/Linuxbrew
+#MYLOCAL=$PWD/local
+#LINUXBREW=$MYLOCAL/Linuxbrew
 PYTHON_VERSION=2.7.14
 
 git submodule init
 git submodule update
 
-if [[ ! -e "$MYLOCAL" ]];then
-	mkdir -p $MYLOCAL
-fi
+#if [[ ! -e "$MYLOCAL" ]];then
+#	mkdir -p $MYLOCAL
+#fi
 
 #if [[ ! -e ./local ]];then
 #	ln -s $MYLOCAL ./local
 #fi
 
-if [[ ! -e "$LINUXBREW" ]];then
-	git clone -b $BREW_VERSION --depth 1 https://github.com/Linuxbrew/brew $LINUXBREW
-	#export PATH=$LOCALBREW/bin:$PATH
-	#export LD_LIBRARY_PATH=$LOCALBREW/lib:$PATH
-fi
+#if [[ ! -e "$LINUXBREW" ]];then
+#	git clone -b $BREW_VERSION --depth 1 https://github.com/Linuxbrew/brew $LINUXBREW
+#	#export PATH=$LOCALBREW/bin:$PATH
+#	#export LD_LIBRARY_PATH=$LOCALBREW/lib:$PATH
+#fi
 
 #PATH=$PWD/anyenv/bin:$PATH
 #ANYENV_ROOT=$PWD/anyenv
@@ -48,7 +47,9 @@ cd zsh >/dev/null && ./make && cd ../ >/dev/null
 ln -sf $CTG/vim/vimrc ~/.vimrc
 ln -sf $CTG/config/tmux.conf ~/.tmux.conf
 #ln -sf $CTG/zsh/zshrc ~/.zshrc
-echo "export CTG=$HOME/.conf-to-git && source $CTG/zsh/zshrc" > ~/.zshrc
+echo "export CTG=$HOME/.conf-to-git" > ~/.zshrc
+echo "export MYLOCAL=$CTG/local" >> ~/.zshrc
+echo "source $CTG/zsh/zshrc" >> ~/.zshrc
 
 
 #exec zsh -l
