@@ -27,15 +27,20 @@ add-local-path(){
 		PY3VERSION="3.6.3"
 		PY2MODULE="$ANYENV_ROOT/envs/pyenv/versions/$PY2VERSION/lib/python2.7/site-packages/custom.pth"
 		PY3MODULE="$ANYENV_ROOT/envs/pyenv/versions/$PY3VERSION/lib/python3.6/site-packages/custom.pth"
-		if [[ ! -e "$PY2MODULE" ]] || ! grep "$1/lib/python2.7/site-packages" "$PY2MODULE" >/dev/null 2>&1;then
-			echo "$1/lib/python2.7/" >> $PY2MODULE
-			echo "$1/lib/python2.7/site-packages" >> $PY2MODULE
-			echo "$1/lib/python2.7/site-packages/gtk-2.0" >> $PY2MODULE
+		if [[ -f "$ANYENV_ROOT/envs/pyenv/versions/$PY2VERSION" ]];then
+			if [[ ! -e "$PY2MODULE" ]] || ! grep "$1/lib/python2.7/site-packages" "$PY2MODULE" >/dev/null 2>&1;then
+				echo "$1/lib/python2.7/" >> $PY2MODULE
+				echo "$1/lib/python2.7/site-packages" >> $PY2MODULE
+				echo "$1/lib/python2.7/site-packages/gtk-2.0" >> $PY2MODULE
+			fi
 		fi
-		if [[ ! -e "$PY3MODULE" ]] || ! grep "$1/lib/python3.6/site-packages" "$PY3MODULE" >/dev/null 2>&1;then
-			echo "$1/lib/python3.6/" >> $PY3MODULE
-			echo "$1/lib/python3.6/site-packages" >> $PY3MODULE
-			echo "$1/lib/python3.6/site-packages/gtk-2.0" >> $PY3MODULE
+		if [[ -f "$ANYENV_ROOT/envs/pyenv/versions/$PY3VERSION" ]];then
+			if [[ ! -e "$PY3MODULE" ]] || ! grep "$1/lib/python3.6/site-packages" "$PY3MODULE" >/dev/null 2>&1;then
+				echo "$1/lib/python3.6/" >> $PY3MODULE
+				echo "$1/lib/python3.6/site-packages" >> $PY3MODULE
+				echo "$1/lib/python3.6/site-packages/gtk-2.0" >> $PY3MODULE
+			
+			fi
 		fi
 	fi
 }
@@ -84,14 +89,10 @@ export POWERLEVEL9K_CUSTOM_NYA="echo ＼（・ω・＼）にゃー！"
 export ANYENV_ROOT=$CTG/anyenv
 eval "$(anyenv init - zsh)"
 
-<<<<<<< HEAD
 #export PYTHONPATH=$ANYENV_ROOT/anyenv/envs/pyenv/versions/2.7.14/lib/python2.7:$PYTHONPATH
 #export PYTHONPATH=$ANYENV_ROOT/anyenv/envs/pyenv/versions/2.7.14/lib/python2.7/site-packages:$PYTHONPATH
 
-export GOPATH=$CTG/local/gopath
-=======
 export GOPATH=$MYLOCAL/gopath
->>>>>>> 736244a7e89da1a99d27f58cd5bcb13d8fdc45b5
 export PATH=$GOPATH/bin:$PATH
 
 umask 077
