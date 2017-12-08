@@ -23,13 +23,13 @@ add-local-path(){
 }
 
 #export MYLOCAL=/tmp/.systemd/local
-export MYLOCAL=$CTG/local
+#export MYLOCAL=$CTG/local
 
 add-local-path /home/local
 add-local-path /usr/local
 add-local-path /usr
 #add-local-path /home/local/python/anaconda3
-#add-local-path $MYLOCAL
+add-local-path $MYLOCAL
 add-local-path $MYLOCAL/Linuxbrew
 #add-bin /usr/lib/ccache/bin
 add-bin $CTG/anyenv/bin
@@ -61,7 +61,7 @@ export POWERLEVEL9K_CUSTOM_NYA="echo ＼（・ω・＼）にゃー！"
 export ANYENV_ROOT=$CTG/anyenv
 eval "$(anyenv init - zsh)"
 
-export GOPATH=$CTG/local/gopath
+export GOPATH=$MYLOCAL/gopath
 export PATH=$GOPATH/bin:$PATH
 
 umask 077
