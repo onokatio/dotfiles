@@ -127,7 +127,8 @@ umask 077
 	#zplug "onokatio/history", use:"misc/zsh/init.zsh"
 	#zplug 'meetfranz/franz-app-legacy', from:gh-r, as:command, use:'*linux*x64*', rename-to:franz
 	#zplug "agnoster/agnoster-zsh-theme", as:theme
-	zplug "bhilburn/powerlevel9k", as:theme
+	#zplug "bhilburn/powerlevel9k", as:theme
+	zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
 	zplug load
  
