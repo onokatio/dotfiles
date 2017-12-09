@@ -10,7 +10,7 @@ Host github.com
 	Hostname github.com
 	User git
 	Port 22
-	IdentityFile ~/.ssh/id_ecdsa
+	IdentityFile ~/.ssh/github-ed25519
 	TCPKeepAlive yes
 	IdentitiesOnly yes
 
@@ -21,44 +21,12 @@ Host rpi3
 	Port 22222
 	IdentityFile ~/.ssh/id_ecdsa
 
-Host phi1
-	HostName phi1.hpc.j.kisarazu.ac.jp
-	User j16435
-	Port 22
-	IdentityFile ~/.ssh/id_rsa_kosen
-	TCPKeepAlive yes
-
 Host fukuoka
 	HostName fukuoka.j.kisarazu.ac.jp
 	User j16435
 	Port 22
 	IdentityFile ~/.ssh/id_ecdsa
 	TCPKeepAlive yes
-
-Host conoha
-	HostName 133.130.91.172
-	User root
-	Port 22
-	IdentityFile ~/.ssh/id_ecdsa
-	TCPKeepAlive yes
-
-Host bravo
-	HostName 10.1.4.1
-	User manage
-	Port 22
-	IdentityFile ~/.ssh/cmc
-	TCPKeepAlive yes
-Host victor
-	HostName 10.1.4.2
-	User manage
-	Port 22
-	IdentityFile ~/.ssh/cmc
-	TCPKeepAlive yes
-
-Host seccon
-	HostName 59.106.211.159
-	User ubuntu
-	IdentityFile ~/.ssh/id_ecdsa
 
 Host homerpi
 	HostName 218.180.74.60
@@ -67,5 +35,3 @@ Host homerpi
 	IdentityFile ~/.ssh/id_ecdsa
 	Compression yes
 	#CompressionLevel 6
-
-#22nP9KMY7Xe8
