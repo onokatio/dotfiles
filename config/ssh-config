@@ -10,7 +10,7 @@ Host github.com
 	Hostname github.com
 	User git
 	Port 22
-	IdentityFile ~/.ssh/github-ed25519
+	IdentityFile ~/.ssh/github
 	TCPKeepAlive yes
 	IdentitiesOnly yes
 
@@ -25,7 +25,7 @@ Host fukuoka
 	HostName fukuoka.j.kisarazu.ac.jp
 	User j16435
 	Port 22
-	IdentityFile ~/.ssh/id_ecdsa
+	IdentityFile ~/.ssh/nitkc
 	TCPKeepAlive yes
 
 Host homerpi
