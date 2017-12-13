@@ -1,6 +1,7 @@
 #zmodload zsh/zprof && zprof
 if [[ -z "$CTG" ]] || [[ -z "$MYLOCAL" ]] ; then
-	echo "var CTG or MYLOCAL are not found"
+	#echo "var CTG or MYLOCAL are not found"
+	source ~/.zprofile
 fi
 
 if [[ "$TTY" == "/dev/tty1" ]];then
@@ -9,7 +10,7 @@ elif echo "$TTY" | grep "/dev/tty" ;then
 	fbterm
 fi
 
-if [[ -z "$TMUX" ]];then
+if which tmux >/dev/null && [[ -z "$TMUX" ]];then
 	tmux
 fi
 

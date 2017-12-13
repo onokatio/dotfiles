@@ -1,27 +1,30 @@
 #!/bin/bash
 CTG=$HOME/.conf-to-git
+MYLOCAL=$CTG/local
+
+source $HOME/.zprofile.local
 
 BREW_VERSION="1.3.6"
 #MYLOCAL=$PWD/local
-#LINUXBREW=$MYLOCAL/Linuxbrew
+LINUXBREW=$MYLOCAL/Linuxbrew
 PYTHON_VERSION=2.7.14
 
 git submodule init
 git submodule update
 
-#if [[ ! -e "$MYLOCAL" ]];then
-#	mkdir -p $MYLOCAL
-#fi
+if [[ ! -e "$MYLOCAL" ]];then
+	mkdir -p $MYLOCAL
+fi
 
 #if [[ ! -e ./local ]];then
 #	ln -s $MYLOCAL ./local
 #fi
 
-#if [[ ! -e "$LINUXBREW" ]];then
-#	git clone -b $BREW_VERSION --depth 1 https://github.com/Linuxbrew/brew $LINUXBREW
+if [[ ! -e "$LINUXBREW" ]];then
+	git clone -b $BREW_VERSION --depth 1 https://github.com/Linuxbrew/brew $LINUXBREW
 #	#export PATH=$LOCALBREW/bin:$PATH
 #	#export LD_LIBRARY_PATH=$LOCALBREW/lib:$PATH
-#fi
+fi
 
 #PATH=$PWD/anyenv/bin:$PATH
 #ANYENV_ROOT=$PWD/anyenv
@@ -48,10 +51,13 @@ ln -sf $CTG/vim/vimrc ~/.vimrc
 ln -sf $CTG/config/tmux.conf ~/.tmux.conf
 ln -sf $CTG/zsh/zshrc ~/.zshrc
 #ln -sf $CTG/zsh/zshrc ~/.zshrc
-echo "export CTG=$HOME/.conf-to-git" > ~/.zprofile
-echo "export MYLOCAL=$CTG/local" >> ~/.zprofile
-echo "source $CTG/zsh/zprofile" >> ~/.zprofile
+echo 'export CTG=$HOME/.conf-to-git' > ~/.zprofile
+echo 'export MYLOCAL=$MYLOCAL' >> ~/.zprofile
+echo 'source $HOME/.zprofile.local' >> ~/.zprofile
+echo 'source $CTG/zsh/zprofile' >> ~/.zprofile
 
+touch ~/.zshrc.local
+touch ~/.zprofile.local
 
 #exec zsh -l
 echo Run zsh.
