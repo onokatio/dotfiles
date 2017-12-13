@@ -46,7 +46,8 @@ add-bin /home/local/python/anaconda3/bin
 add-local-path $MYLOCAL
 add-local-path $MYLOCAL/Linuxbrew
 #add-bin /usr/lib/ccache/bin
-add-bin $CTG/anyenv/bin
+#add-bin $CTG/anyenv/bin
+add-bin $MYLOCAL/anyenv/bin
 
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
@@ -76,7 +77,7 @@ export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs custom_nya)
 export POWERLEVEL9K_CUSTOM_UUU="echo （」・ω・）」うー"
 export POWERLEVEL9K_CUSTOM_NYA="echo ＼（・ω・＼）にゃー！"
 #export ZSH_PLUGINS=$MYLOCAL/zsh-plugins
-export ANYENV_ROOT=$CTG/anyenv
+export ANYENV_ROOT=$MYLOCAL/anyenv
 eval "$(anyenv init - zsh)"
 
 #export PYTHONPATH=$ANYENV_ROOT/anyenv/envs/pyenv/versions/2.7.14/lib/python2.7:$PYTHONPATH
