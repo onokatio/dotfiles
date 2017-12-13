@@ -46,10 +46,11 @@ cd zsh >/dev/null && ./make && cd ../ >/dev/null
 
 ln -sf $CTG/vim/vimrc ~/.vimrc
 ln -sf $CTG/config/tmux.conf ~/.tmux.conf
+ln -sf $CTG/zsh/zshrc ~/.zshrc
 #ln -sf $CTG/zsh/zshrc ~/.zshrc
-echo "export CTG=$HOME/.conf-to-git" > ~/.zshrc
-echo "export MYLOCAL=$CTG/local" >> ~/.zshrc
-echo "source $CTG/zsh/zshrc" >> ~/.zshrc
+echo "export CTG=$HOME/.conf-to-git" > ~/.zprofile
+echo "export MYLOCAL=$CTG/local" >> ~/.zprofile
+echo "source $CTG/zsh/zprofile" >> ~/.zprofile
 
 
 #exec zsh -l
