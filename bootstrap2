@@ -1,0 +1,25 @@
+PYTHON_VERSION2=2.7.14
+PYTHON_VERSION3=3.6.3
+
+#PATH=$PWD/anyenv/bin:$PATH
+#ANYENV_ROOT=$PWD/anyenv
+#eval "$(anyenv init -)"
+anyenv install -s rbenv
+anyenv install -s pyenv
+pyenv install -sv $PYTHON_VERSION2
+pyenv install -sv $PYTHON_VERSION3
+pyenv global $PYTHON_VERSION2 $PYTHON_VERSION3 $PYTHON_VERSION2
+
+#CONFIGURE_OPTS="--disable-install-rdoc" MAKE_OPTS="-j 4" rbenv install -sv 2.4.2
+
+#brew install git ruby git-lfs
+#export PATH=/home/local/python/anaconda3/bin:$PATH
+#export HOMEBREW_CURL=/home/local/python/anaconda3/bin/curl
+
+#brew uses --installed curl
+#ln -s /home/local/python/anaconda3/bin/curl $MYLOCAL/Linuxbrew/bin/curl
+#export HOMEBREW_CURL=$MYLOCAL/Linuxbrew/bin/curl
+#brew update
+#brew install ansible
+
+echo Run zsh.
