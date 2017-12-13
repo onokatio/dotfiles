@@ -37,7 +37,8 @@ rpc=(vim history hub dfc  htop colordiff pinfo apt-fast apt-fast 'axel -n 10 -v 
 
 for i in {1..$#cmd};do
 	if which $(echo $rpc[$i]|awk '{print $1}') >/dev/null; then
-		alias "$cmd[$i]"="$rpc[$i] ";
+		#alias "$cmd[$i]"="$rpc[$i] ";
+		eval "function $cmd[$i](){ $rpc[$i] \$@ }"
 	fi
 done
 

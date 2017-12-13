@@ -2,6 +2,11 @@
 
 touch zshrc
 echo -n > zshrc
-cd zshrc.d && ls | xargs cat >> ../zshrc
+#cd zshrc.d && ls | xargs cat >> ../zshrc
+find ./zshrc.d -name *.zsh | sort | xargs cat >> ./zshrc
 #zsh -n zshrc
 #zsh -c 'zcompile ./zshrc'
+
+touch zprofile
+echo -n > zprofile
+find ./zprofile.d -name *.zsh | sort | xargs cat >> ./zprofile
