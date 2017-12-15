@@ -42,7 +42,8 @@ add-local-path(){
 add-local-path /home/local
 add-local-path /usr/local
 add-local-path /usr
-add-bin /home/local/python/anaconda3/bin
+#add-bin /home/local/python/anaconda3/bin
+add-local-path /home/local/python/anaconda3
 add-local-path $MYLOCAL
 add-local-path $MYLOCAL/Linuxbrew
 #add-bin /usr/lib/ccache/bin
