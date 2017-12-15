@@ -1,5 +1,6 @@
 PYTHON_VERSION2=2.7.14
 PYTHON_VERSION3=3.6.3
+RUBY_VERSION=2.4.2
 
 #PATH=$PWD/anyenv/bin:$PATH
 #ANYENV_ROOT=$PWD/anyenv
@@ -9,11 +10,12 @@ anyenv install -s pyenv
 
 eval "$(anyenv init -)"
 
-pyenv install -sv $PYTHON_VERSION2
+#pyenv install -sv $PYTHON_VERSION2
+
 #pyenv install -sv $PYTHON_VERSION3
 #pyenv global $PYTHON_VERSION2 $PYTHON_VERSION3 $PYTHON_VERSION2
 
-#CONFIGURE_OPTS="--disable-install-rdoc" MAKE_OPTS="-j 4" rbenv install -sv 2.4.2
+CONFIGURE_OPTS="--disable-install-rdoc" rbenv install -sv $RUBY_VERSION
 
 #brew install git ruby git-lfs
 #export PATH=/home/local/python/anaconda3/bin:$PATH
