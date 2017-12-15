@@ -72,6 +72,7 @@ export USE_CCACHE=1
 export CCACHE_DIR=$HOME/.ccache
 which ccache >/dev/null 2>&1 && export CC="ccache gcc"
 export TERM="xterm-256color"
+export MAKE_OPTS="-j 4"
 
 #export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_uuu dir root_indicator ssh)
