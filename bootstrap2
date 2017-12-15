@@ -6,9 +6,12 @@ PYTHON_VERSION3=3.6.3
 #eval "$(anyenv init -)"
 anyenv install -s rbenv
 anyenv install -s pyenv
+
+eval "$(anyenv init -)"
+
 pyenv install -sv $PYTHON_VERSION2
-pyenv install -sv $PYTHON_VERSION3
-pyenv global $PYTHON_VERSION2 $PYTHON_VERSION3 $PYTHON_VERSION2
+#pyenv install -sv $PYTHON_VERSION3
+#pyenv global $PYTHON_VERSION2 $PYTHON_VERSION3 $PYTHON_VERSION2
 
 #CONFIGURE_OPTS="--disable-install-rdoc" MAKE_OPTS="-j 4" rbenv install -sv 2.4.2
 
