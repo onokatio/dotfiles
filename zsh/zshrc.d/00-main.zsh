@@ -25,7 +25,7 @@ fi
 	#zplug "onokatio/anyenv" #, as:command, use:"bin/anyenv"
 	#zplug "stedolan/jq", from:gh-r, as:command, lazy:true
 	zplug "zsh-users/zsh-autosuggestions"
-	zplug "zsh-users/zsh-syntax-highlighting", defer:2
+#	zplug "zsh-users/zsh-syntax-highlighting", defer:2
 	zplug "zsh-users/zsh-completions", lazy:true
 	#zplug "b4b4r07/emoji-cli", on:"stedolan/jq"
 	#zplug "TBSliver/zsh-plugin-tmux-simple"

@@ -49,6 +49,7 @@ add-local-path $MYLOCAL/Linuxbrew
 #add-bin /usr/lib/ccache/bin
 #add-bin $CTG/anyenv/bin
 add-bin $MYLOCAL/anyenv/bin
+add-bin $CTG/bin
 
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
@@ -64,9 +65,10 @@ export HOMEBREW_MAKE_JOBS=4
 
 #export HOMEBREW_EDITOR=vi
 export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
-export EDITOR=nvim
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
-ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
+export EDITOR=vim
+#ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main pattern cursor root line)
+#ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
 export USE_CCACHE=1
 export CCACHE_DIR=$HOME/.ccache
 which ccache >/dev/null 2>&1 && export CC="ccache gcc"
