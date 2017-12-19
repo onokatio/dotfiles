@@ -40,7 +40,7 @@ fi
 #brew update
 #brew install ansible
 
-cd zsh >/dev/null && ./make && cd ../ >/dev/null
+cd $CTG/zsh >/dev/null && ./make >/dev/null
 
 ln -sf $CTG/vim/vimrc ~/.vimrc
 ln -sf $CTG/config/tmux.conf ~/.tmux.conf
