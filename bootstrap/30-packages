@@ -1,0 +1,17 @@
+#brew install git ruby git-lfs
+#export PATH=/home/local/python/anaconda3/bin:$PATH
+#export HOMEBREW_CURL=/home/local/python/anaconda3/bin/curl
+
+#brew uses --installed curl
+#ln -s /home/local/python/anaconda3/bin/curl $MYLOCAL/Linuxbrew/bin/curl
+#export HOMEBREW_CURL=$MYLOCAL/Linuxbrew/bin/curl
+#brew update
+#brew install ansible
+
+brew tap homebrew/science
+brew tap linuxbrew/homebrew-xorg
+brew tap linuxbrew/extra
+brew tap linuxbrew/developer
+brew tap linuxbrew/bioinformatics
+
+echo Run zsh.
