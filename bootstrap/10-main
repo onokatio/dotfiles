@@ -47,7 +47,7 @@ ln -sf $CTG/config/tmux.conf ~/.tmux.conf
 ln -sf $CTG/zsh/zshrc ~/.zshrc
 #ln -sf $CTG/zsh/zshrc ~/.zshrc
 echo 'export CTG=$HOME/.conf-to-git' > ~/.zprofile
-echo 'export MYLOCAL=$MYLOCAL' >> ~/.zprofile
+echo "export MYLOCAL=$MYLOCAL" >> ~/.zprofile
 echo 'source $HOME/.zprofile.local' >> ~/.zprofile
 echo 'source $CTG/zsh/zprofile' >> ~/.zprofile
 
