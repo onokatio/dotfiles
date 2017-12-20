@@ -17,19 +17,18 @@ add-local-path(){
 		PY3VERSION="3.6.3"
 		PY2MODULE="$ANYENV_ROOT/envs/pyenv/versions/$PY2VERSION/lib/python2.7/site-packages/custom.pth"
 		PY3MODULE="$ANYENV_ROOT/envs/pyenv/versions/$PY3VERSION/lib/python3.6/site-packages/custom.pth"
-		if [[ -f "$ANYENV_ROOT/envs/pyenv/versions/$PY2VERSION" ]];then
+		if [[ -e "$ANYENV_ROOT/envs/pyenv/versions/$PY2VERSION" ]];then
 			if [[ ! -e "$PY2MODULE" ]] || ! grep "$1/lib/python2.7/site-packages" "$PY2MODULE" >/dev/null 2>&1;then
 				echo "$1/lib/python2.7/" >> $PY2MODULE
 				echo "$1/lib/python2.7/site-packages" >> $PY2MODULE
 				echo "$1/lib/python2.7/site-packages/gtk-2.0" >> $PY2MODULE
 			fi
 		fi
-		if [[ -f "$ANYENV_ROOT/envs/pyenv/versions/$PY3VERSION" ]];then
+		if [[ -e "$ANYENV_ROOT/envs/pyenv/versions/$PY3VERSION" ]];then
 			if [[ ! -e "$PY3MODULE" ]] || ! grep "$1/lib/python3.6/site-packages" "$PY3MODULE" >/dev/null 2>&1;then
 				echo "$1/lib/python3.6/" >> $PY3MODULE
 				echo "$1/lib/python3.6/site-packages" >> $PY3MODULE
 				echo "$1/lib/python3.6/site-packages/gtk-2.0" >> $PY3MODULE
-			
 			fi
 		fi
 	fi
