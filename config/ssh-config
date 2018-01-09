@@ -1,3 +1,4 @@
+ForwardAgent yes
 GSSAPIAuthentication no
 
 ServerAliveInterval 60
@@ -16,10 +17,9 @@ Host github.com
 
 Host rpi3
 	HostName 192.168.1.128
-	#HostName 218.180.74.60
 	User pi
 	Port 22222
-	IdentityFile ~/.ssh/id_ecdsa
+	IdentityFile ~/.ssh/rpi
 
 Host fukuoka
 	HostName fukuoka.j.kisarazu.ac.jp
