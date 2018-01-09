@@ -44,11 +44,12 @@ add-local-path /usr
 #add-bin /home/local/python/anaconda3/bin
 add-local-path /home/local/python/anaconda3
 add-local-path $MYLOCAL
-add-local-path $MYLOCAL/Linuxbrew
+#add-local-path $MYLOCAL/Linuxbrew
 #add-bin /usr/lib/ccache/bin
 #add-bin $CTG/anyenv/bin
 add-bin $MYLOCAL/anyenv/bin
 add-bin $CTG/bin
+add-bin ./node_modules/.bin
 
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
@@ -64,14 +65,15 @@ export HOMEBREW_MAKE_JOBS=4
 
 #export HOMEBREW_EDITOR=vi
 export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
-export EDITOR=vim
+#export EDITOR=vim
+export EDITOR=vi
 #ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main pattern cursor root line)
 #ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
 export USE_CCACHE=1
 export CCACHE_DIR=$HOME/.ccache
-which ccache >/dev/null 2>&1 && export CC="ccache gcc"
-export TERM="xterm-256color"
+#which ccache >/dev/null 2>&1 && export CC="ccache gcc"
+#export TERM="xterm-256color"
 export MAKE_OPTS="-j 4"
 
 #export POWERLEVEL9K_PROMPT_ON_NEWLINE=true

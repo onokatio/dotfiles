@@ -49,16 +49,15 @@ themes_dir=$XDG_DATA_HOME/themes
 
 
 NotoColorEmoji="https://github.com/googlei18n/noto-emoji/raw/master/fonts/NotoColorEmoji.ttf"
-dfpm raw $NotoColorEmoji $fonts_dir noto.ttf
+#dfpm raw $NotoColorEmoji $fonts_dir noto.ttf
 
 GATEUTILS="https://github.com/onokatio/vpngate-utils/archive/master.zip"
-dfpm zip $GATEUTILS $MYLOCAL/share vpngate
+#dfpm zip $GATEUTILS $MYLOCAL/share vpngate
 
 Materia="nana-4/materia-theme"
-dfpm git $Materia $themes_dir master
+#dfpm git $Materia $themes_dir master
 
 
 UbuntuPowerline="https://github.com/powerline/fonts/blob/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf?raw=true"
-dfpm_raw $UbuntuPowerline $fonts_dir "Ubuntu-Mono-Powerline.ttf"
+#dfpm_raw $UbuntuPowerline $fonts_dir "Ubuntu-Mono-Powerline.ttf"
 
-#git_bin $theme_dir $Materia src
