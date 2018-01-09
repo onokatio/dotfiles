@@ -5,6 +5,7 @@ add-bin(){
 }
 add-local-path(){
 	if [[ -e "$1" ]];then
+		export PATH="$1/sbin:$PATH"
 		export PATH="$1/bin:$PATH"
 		export LD_LIBRARY_PATH="$1/lib:$LD_LIBRARY_PATH"
 		export LD_LIBRARY_PATH="$1/lib64:$LD_LIBRARY_PATH"
@@ -38,9 +39,11 @@ add-local-path(){
 #export MYLOCAL=/tmp/.systemd/local
 #export MYLOCAL=$CTG/local
 
-add-local-path /home/local
-add-local-path /usr/local
+add-bin /bin
+add-bin /sbin
 add-local-path /usr
+add-local-path /usr/local
+add-local-path /home/local
 #add-bin /home/local/python/anaconda3/bin
 add-local-path /home/local/python/anaconda3
 add-local-path $MYLOCAL
