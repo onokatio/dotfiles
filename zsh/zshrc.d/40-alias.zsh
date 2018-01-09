@@ -32,8 +32,8 @@ alias poweroff=': '
 #alias vim='nvim -u ~/.vimrc '
 #alias rm="gomi --"
 
-cmd=(vi  hs      git df   top  diff      info  apt      apt-get  wget               vi                 vim)
-rpc=(vim history hub dfc  htop colordiff pinfo apt-fast apt-fast 'axel -n 10 -v -a' 'nvim -u ~/.vimrc' 'nvim -u ~/.vimrc')
+cmd=(vi  hs      git df   top  diff      info  apt      apt-get  wget               vi                 vim                ks)
+rpc=(vim history hub dfc  htop colordiff pinfo apt-fast apt-fast 'axel -n 10 -v -a' 'nvim -u ~/.vimrc' 'nvim -u ~/.vimrc' ls)
 
 for i in {1..$#cmd};do
 	if which $(echo $rpc[$i]|awk '{print $1}') >/dev/null; then
