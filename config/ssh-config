@@ -32,6 +32,6 @@ Host homerpi
 	HostName 218.180.74.60
 	User pi
 	Port 22222
-	IdentityFile ~/.ssh/id_ecdsa
-	Compression yes
+	IdentityFile ~/.ssh/rpi
+	#Compression yes
 	#CompressionLevel 6
