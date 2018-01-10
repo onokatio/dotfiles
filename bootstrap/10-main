@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -e
+
 CTG=$HOME/.conf-to-git
 MYLOCAL=$CTG/local
 
@@ -42,8 +45,13 @@ fi
 
 cd $CTG/zsh >/dev/null && ./make >/dev/null
 
-ln -sf $CTG/vim/vimrc ~/.vimrc
 ln -sf $CTG/config/tmux.conf ~/.tmux.conf
+ln -sf $CTG/config/ssh-config ~/.ssh/config
+ln -sf $CTG/config/gitconfig ~/.gitconfig
+ln -sf $CTG/config/yaourtrc ~/.yaourtrc
+ln -sf $CTG/config/locale.conf ~/.config/locale.conf
+ln -sf $CTG/config/w3mconfig ~/.config/.w3mconfig
+ln -sf $CTG/vim/vimrc ~/.vimrc
 ln -sf $CTG/zsh/zshrc ~/.zshrc
 #ln -sf $CTG/zsh/zshrc ~/.zshrc
 echo 'export CTG=$HOME/.conf-to-git' > ~/.zprofile

@@ -47,7 +47,7 @@ add-local-path /home/local
 #add-bin /home/local/python/anaconda3/bin
 add-local-path /home/local/python/anaconda3
 add-local-path $MYLOCAL
-#add-local-path $MYLOCAL/Linuxbrew
+add-local-path $MYLOCAL/Linuxbrew
 #add-bin /usr/lib/ccache/bin
 #add-bin $CTG/anyenv/bin
 add-bin $MYLOCAL/anyenv/bin
@@ -65,6 +65,7 @@ export NO_AT_BRIDGE=1
 export EMOJI_CLI_KEYBIND=^f
 export HOMEBREW_CACHE=/tmp/cache
 export HOMEBREW_MAKE_JOBS=4
+export HOMEBREW_NO_ENV_FILTERING=1
 
 #export HOMEBREW_EDITOR=vi
 export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
@@ -85,6 +86,7 @@ export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs custom_nya)
 export POWERLEVEL9K_CUSTOM_UUU="echo （」・ω・）」うー"
 export POWERLEVEL9K_CUSTOM_NYA="echo ＼（・ω・＼）にゃー！"
 #export ZSH_PLUGINS=$MYLOCAL/zsh-plugins
+#export LC_ALL=ja_JP.utf-8
 export ANYENV_ROOT=$MYLOCAL/anyenv
 eval "$(anyenv init - zsh)"
 
