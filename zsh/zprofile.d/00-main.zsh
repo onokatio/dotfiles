@@ -69,7 +69,7 @@ export NO_AT_BRIDGE=1
 export EMOJI_CLI_KEYBIND=^f
 export HOMEBREW_CACHE=/tmp/cache
 export HOMEBREW_MAKE_JOBS=4
-export HOMEBREW_NO_ENV_FILTERING=1
+#export HOMEBREW_NO_ENV_FILTERING=1
 
 #export HOMEBREW_EDITOR=vi
 export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
