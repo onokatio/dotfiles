@@ -58,6 +58,10 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CACHE_HOME=$HOME/.cache
 
+if [[ -f $MYLOCAL/usr/lib/locale ]];then
+	export LOCPATH=$MYLOCAL/usr/lib/locale
+fi
+
 export ZPLUG_HOME=$CTG/zsh/zplug
 export ZPLUG_REPOS=$MYLOCAL/zsh-plugins
 export ZPLUG_BIN=$MYLOCAL/bin
