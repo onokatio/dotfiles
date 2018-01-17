@@ -29,7 +29,7 @@ Host fukuoka
 	TCPKeepAlive yes
 
 Host homerpi
-	HostName 218.180.74.60
+	HostName 159.28.150.236
 	User pi
 	Port 22222
 	IdentityFile ~/.ssh/rpi
