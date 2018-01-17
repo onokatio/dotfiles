@@ -1,3 +1,33 @@
+#!/bin/bash
+
+set -eu
+
+CTG=$HOME/.conf-to-git
+MYLOCAL=$CTG/local
+
+touch $HOME/.zprofile.local
+source $HOME/.zprofile.local
+
+
+BREW_VERSION="1.4.3"
+LINUXBREW=$MYLOCAL/Linuxbrew
+
+if [[ ! -e "$LINUXBREW" ]];then
+	git clone -b $BREW_VERSION --depth 1 https://github.com/Linuxbrew/brew $LINUXBREW
+fi
+
+pushd $PWD
+cd $LINUXBREW \
+	&& patch -p1 < $CTG/bootstrap/patch/brew-locpath
+popd
+
+brew tap linuxbrew/homebrew-xorg
+brew tap linuxbrew/extra
+brew tap linuxbrew/developer
+brew tap linuxbrew/bioinformatics
+
+echo Run zsh.
+
 #brew install git ruby git-lfs
 #export PATH=/home/local/python/anaconda3/bin:$PATH
 #export HOMEBREW_CURL=/home/local/python/anaconda3/bin/curl
@@ -7,11 +37,3 @@
 #export HOMEBREW_CURL=$MYLOCAL/Linuxbrew/bin/curl
 #brew update
 #brew install ansible
-
-#brew tap homebrew/science
-brew tap linuxbrew/homebrew-xorg
-brew tap linuxbrew/extra
-brew tap linuxbrew/developer
-brew tap linuxbrew/bioinformatics
-
-echo Run zsh.
