@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -eu
 
 CTG=$HOME/.conf-to-git
 MYLOCAL=$CTG/local
@@ -61,6 +61,14 @@ echo 'source $CTG/zsh/zprofile' >> ~/.zprofile
 
 touch ~/.zshrc.local
 #touch ~/.zprofile.local
+
+mkdir -p $MYLOCAL/tmp
+mkdir -p $MYLOCAL/opt
+mkdir -p $MYLOCAL/lib
+mkdir -p $MYLOCAL/etc
+mkdir -p $MYLOCAL/bin
+mkdir -p $MYLOCAL/share
+mkdir -p $MYLOCAL/local
 
 #exec zsh -l
 echo Run zsh.
