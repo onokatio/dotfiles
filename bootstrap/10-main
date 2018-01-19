@@ -62,6 +62,7 @@ echo 'source $CTG/zsh/zprofile' >> ~/.zprofile
 touch ~/.zshrc.local
 #touch ~/.zprofile.local
 
+mkdir -p $MYLOCAL/usr/share/icons
 mkdir -p $MYLOCAL/tmp
 mkdir -p $MYLOCAL/opt
 mkdir -p $MYLOCAL/lib

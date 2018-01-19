@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -eu
+source lib.sh
+
+dfpm "nana-4/materia-theme" $MYLOCAL/tmp
+
+pushd "$PWD"
+	cd $MYLOCAL/tmp/materia-theme
+	./install.sh -d "$XDG_DATA_HOME/themes"
+popd

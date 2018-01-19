@@ -12,5 +12,5 @@ if [[ "$(uname -m)" == "x86_64" ]];then
 	tar xvf $ZIPNAME $OPT
 	rm -rf $MYLOCAL/opt/$DIRNAME
 	mv firefox $MYLOCAL/opt/$DIRNAME
-	ln -s $MYLOCAL/opt/$DIRNAME/firefox $MYLOCAL/bin/firefox
+	ln -s $MYLOCAL/opt/$DIRNAME/firefox $MYLOCAL/bin/firefox-nightly
 fi
