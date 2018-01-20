@@ -21,7 +21,7 @@ alias brew='brew -v '
 #alias s='w3m https://google.com/search?q='
 alias poweroff=': '
 sdo() sudo zsh -c "$functions[$1]" "$@"
-alias sudo="sdo"
+#alias sudo="sdo"
 
 #alias df='dfc '
 #alias top='htop '
@@ -30,12 +30,12 @@ alias sudo="sdo"
 #alias apt='apt-fast '
 #alias apt-get='apt-fast '
 #alias wget='axel -n 10 -v -a '
-#alias vi='nvim -u ~/.vimrc '
-#alias vim='nvim -u ~/.vimrc '
+alias vi='nvim -u ~/.vimrc '
+alias vim='nvim -u ~/.vimrc '
 #alias rm="gomi --"
 
-cmd=(vi  hs      git df   top  diff      info  apt      apt-get  wget               vi                 vim                ks)
-rpc=(vim history hub dfc  htop colordiff pinfo apt-fast apt-fast 'axel -n 10 -v -a' 'nvim -u ~/.vimrc' 'nvim -u ~/.vimrc' ls)
+cmd=(hs      git df   top  diff      info  apt      apt-get  wget               ks)
+rpc=(history hub dfc  htop colordiff pinfo apt-fast apt-fast 'axel -n 10 -v -a' ls)
 
 for i in {1..$#cmd};do
 	if which $(echo $rpc[$i]|awk '{print $1}') >/dev/null; then
