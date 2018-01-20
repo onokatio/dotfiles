@@ -20,6 +20,8 @@ alias brew='brew -v '
 #alias rm='rm -vrI --one-file-system -- '
 #alias s='w3m https://google.com/search?q='
 alias poweroff=': '
+sdo() sudo zsh -c "$functions[$1]" "$@"
+alias sudo="sdo"
 
 #alias df='dfc '
 #alias top='htop '
