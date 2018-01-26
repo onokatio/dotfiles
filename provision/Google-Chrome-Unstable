@@ -5,8 +5,21 @@ set -eu
 URL="https://dl.google.com/linux/direct/google-chrome-unstable_current_amd64.deb"
 
 if [[ "$(uname -m)" == "x86_64" ]];then
-	cd /tmp
 	wget $URL -O $MYLOCAL/tmp/google-chrome-unstable_current_amd64.deb
+	mkdir -p $MYLOCAL/tmp/google-chrome
+
+	pushd $PWD
+		cd $MYLOCAL/tmp/google-chrome
+		ar vx $MYLOCAL/tmp/google-chrome-unstable_current_amd64.deb
+		tar xvf data.tar.xz
+		mkdir -p $MYLOCAL/opt/google
+		mv opt/google/chrome-unstable $MYLOCAL/opt/google/chrome-unstable
+
+		cd $MYLOCAL/bin
+		ln -s ../opt/google/chrome-unstable/google-chrome-unstable
+	
+	popd
+
 	#mv firefox $MYLOCAL/opt/$DIRNAME
 	#ln -s $MYLOCAL/opt/$DIRNAME/firefox $MYLOCAL/bin/firefox-nightly
 fi

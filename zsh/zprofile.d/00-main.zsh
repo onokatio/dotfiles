@@ -49,12 +49,13 @@ add-local-path /home/local
 add-local-path /home/local/python/anaconda3
 add-local-path $MYLOCAL
 add-local-path $MYLOCAL/Linuxbrew
-add-bin /usr/lib/ccache/bin
+#add-bin /usr/lib/ccache/bin
 #add-bin $CTG/anyenv/bin
 add-bin $MYLOCAL/anyenv/bin
 add-bin $CTG/bin
 add-bin ./node_modules/.bin
 
+export set CC='ccache gcc'
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CACHE_HOME=$HOME/.cache
