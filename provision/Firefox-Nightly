@@ -4,6 +4,7 @@ set -eu
 
 ZIPNAME=firefox-nightly.tar.bz2
 DIRNAME=firefox-nightly
+OPT=
 
 if [[ "$(uname -m)" == "x86_64" ]];then
 	cd /tmp

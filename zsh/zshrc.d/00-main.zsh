@@ -14,7 +14,13 @@ if which tmux >/dev/null && [[ -z "$TMUX" ]];then
 	tmux
 fi
 
+if which git > /dev/null 2>&1 ;then
 	source $ZPLUG_HOME/init.zsh
+else
+	echo "git not found."
+	alias zplug=":"
+fi
+
 	#zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 	zplug "junegunn/fzf-bin", \
 		from:gh-r, \
