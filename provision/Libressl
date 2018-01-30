@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -eu
+
+pushd $PWD
+	cd /tmp
+	if which wget >/dev/null 2>&1 ;then
+		wget https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.6.4.tar.gz -O libressl.tar.gz
+	else
+		echo "wget not found."
+	fi
+	tar xvf libressl.tar.gz
+	cd libressl-2.6.4
+	#./config zlib shared --prefix=$MYLOCAL/opt/libressl
+	./config zlib shared --prefix=$MYLOCAL
+	make -j4
+	make install
+	cd ..
+	rm libressl.tar.gz
+	rm -rf libressl-2.6.4
+popd

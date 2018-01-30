@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -eu
+
+pushd $PWD
+	cd /tmp
+	if which wget >/dev/null 2>&1 ;then
+		wget https://curl.haxx.se/download/curl-7.58.0.tar.xz -O curl.tar.xz
+	else
+		echo "wget not found."
+	fi
+	tar xvf curl.tar.xz
+	cd curl-7.58.0
+	./configure --with-ssl --prefix=$MYLOCAL --enable-libcurl-option
+	make -j4
+	make install
+	cd ..
+	rm curl.tar.xz
+	rm -rf curl-7.58.0
+popd
