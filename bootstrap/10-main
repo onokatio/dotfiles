@@ -13,7 +13,12 @@ BREW_VERSION="1.3.6"
 LINUXBREW=$MYLOCAL/Linuxbrew
 ANYENV=$MYLOCAL/anyenv
 
+if ! which pkg-config >/dev/null 2>&1;then
+	$CTG/provision/Pkgconfig
+fi
+
 if ! which curl >/dev/null 2>&1;then
+	$CTG/provision/Libressl
 	$CTG/provision/Curl
 fi
 
@@ -21,63 +26,31 @@ if ! which git >/dev/null 2>&1;then
 	$CTG/provision/Git
 fi
 
-#if which git >/dev/null 2>&1 ;then
-	git submodule init
-	git submodule update
-#else
-#	echo "git not found. Please run 10-main again after install git."
-#fi
-
+git submodule init
+git submodule update
 if [[ ! -e "$MYLOCAL" ]];then
 	mkdir -p $MYLOCAL
 fi
 
-#if [[ ! -e ./local ]];then
-#	ln -s $MYLOCAL ./local
-#fi
-
 if [[ ! -e "$LINUXBREW" ]];then
-	#git clone -b $BREW_VERSION --depth 1 https://github.com/Linuxbrew/brew $LINUXBREW
-
-	if which git >/dev/null 2>&1 ;then
-		git clone --depth 1 https://github.com/Linuxbrew/brew $LINUXBREW
-	elif which curl >/dev/null 2>&1 ;then
-		pushd $PWD
-		cd /tmp
-			curl -L https://github.com/Linuxbrew/brew/archive/master.zip -o /tmp/brew.zip
-			unzip /tmp/brew.zip
-			mv /tmp/brew-master $LINUXBREW
-		popd
-		rm /tmp/brew.zip
-	elif which wget >/dev/null 2>&1 ;then
-		pushd $PWD
-		cd /tmp
-			wget https://github.com/Linuxbrew/brew/archive/master.zip -O /tmp/brew.zip
-			unzip /tmp/brew.zip
-			mv /tmp/brew-master $LINUXBREW
-		popd
-		rm /tmp/brew.zip
-	else
-    echo "curl or wget not found."	
-	fi
+	git clone -b $BREW_VERSION --depth 1 https://github.com/Linuxbrew/brew $LINUXBREW
+	#git clone --depth 1 https://github.com/Linuxbrew/brew $LINUXBREW
 fi
 
-#if [[ ! -e "$ANYENV" ]];then
-#	git clone --depth 1 https://github.com/riywo/anyenv $ANYENV
-#fi
+if [[ ! -e "$ANYENV" ]];then
+	git clone --depth 1 https://github.com/riywo/anyenv $ANYENV
+fi
 
-#brew install git ruby git-lfs
-#export PATH=/home/local/python/anaconda3/bin:$PATH
-#export HOMEBREW_CURL=/home/local/python/anaconda3/bin/curl
-
-#brew uses --installed curl
-#ln -s /home/local/python/anaconda3/bin/curl $MYLOCAL/Linuxbrew/bin/curl
-#export HOMEBREW_CURL=$MYLOCAL/Linuxbrew/bin/curl
-#brew update
-#brew install ansible
+check_locale="$MYLOCAL/usr/lib/locale"
+if ! (ls $check_locale|grep ja_JP) || ! (ls $check_locale|grep en_US) ;then
+	echo "There are not ja_JP and en_US."
+	cp /etc/locale.gen $MYLOCAL/etc/locale.gen
+	echo "ja_JP.UTF-8 UTF-8" >> $MYLOCAL/etc/locale.gen
+	echo "en_US.UTF-8 UTF-8" >> $MYLOCAL/etc/locale.gen
+	locale-gen.local
+fi
 
 cd $CTG/zsh >/dev/null && ./make >/dev/null
-
 ln -sf $CTG/config/tmux.conf ~/.tmux.conf
 ln -sf $CTG/config/ssh-config ~/.ssh/config
 ln -sf $CTG/config/gitconfig ~/.gitconfig
