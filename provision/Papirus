@@ -1,6 +1,5 @@
 #!/bin/bash
 
-set -eu
 source lib.sh
 
 dfpm "PapirusDevelopmentTeam/papirus-icon-theme" $MYLOCAL/tmp
@@ -10,7 +9,7 @@ pushd "$PWD"
 	for i in $ICONS ;do
 		echo $i
 		cp -r $MYLOCAL/tmp/papirus-icon-theme/$i $MYLOCAL/usr/share/icons
-		ln -s $MYLOCAL/usr/share/icons/$i $XDG_DATA_HOME/icons
+		ln -fs $MYLOCAL/usr/share/icons/$i $XDG_DATA_HOME/icons
 		gtk-update-icon-cache -q $XDG_DATA_HOME/icons/$i
 	done
 popd

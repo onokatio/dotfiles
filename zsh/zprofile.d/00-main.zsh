@@ -10,6 +10,8 @@ add-local-path(){
 		export PATH="$1/bin:$PATH"
 		export LD_LIBRARY_PATH="$1/lib:$LD_LIBRARY_PATH"
 		export LD_LIBRARY_PATH="$1/lib64:$LD_LIBRARY_PATH"
+		export LD_RUN_PATH="$1/lib:$LD_RUN_PATH"
+		export LD_RUN_PATH="$1/lib64:$LD_RUN_PATH"
 		export PKG_CONFIG_PATH="$1/lib/pkgconfig:$PKG_CONFIG_PATH"
 		export PKG_CONFIG_PATH="$1/lib64/pkgconfig:$PKG_CONFIG_PATH"
 		export MANPATH="$1/share/man:$MANPATH"
@@ -40,13 +42,13 @@ export LANG=ja_JP.UTF-8
 #export MYLOCAL=/tmp/.systemd/local
 #export MYLOCAL=$CTG/local
 
-add-bin /bin
-add-bin /sbin
+#add-bin /bin
+#add-bin /sbin
 add-local-path /usr
 add-local-path /usr/local
 add-local-path /home/local
 #add-bin /home/local/python/anaconda3/bin
-add-local-path /home/local/python/anaconda3
+#add-local-path /home/local/python/anaconda3
 add-local-path $MYLOCAL
 add-local-path $MYLOCAL/Linuxbrew
 #add-bin /usr/lib/ccache/bin
@@ -60,7 +62,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CACHE_HOME=$HOME/.cache
 
-if [[ -e $MYLOCAL/usr/lib/locale ]];then
+if [[ -e $MYLOCAL/usr/lib/locale ]] && [[ -e $MYLOCAL/etc/locale.gen ]] ;then
 	export LOCPATH=$MYLOCAL/usr/lib/locale
 fi
 
@@ -95,7 +97,10 @@ export POWERLEVEL9K_CUSTOM_NYA="echo ＼（・ω・＼）にゃー！"
 #export ZSH_PLUGINS=$MYLOCAL/zsh-plugins
 #export LC_ALL=ja_JP.utf-8
 export ANYENV_ROOT=$MYLOCAL/anyenv
-eval "$(anyenv init - zsh)"
+
+if which anyenv >/dev/null 2>&1 ;then
+	eval "$(anyenv init - zsh)"
+fi
 
 #export PYTHONPATH=$ANYENV_ROOT/anyenv/envs/pyenv/versions/2.7.14/lib/python2.7:$PYTHONPATH
 #export PYTHONPATH=$ANYENV_ROOT/anyenv/envs/pyenv/versions/2.7.14/lib/python2.7/site-packages:$PYTHONPATH
