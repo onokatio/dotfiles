@@ -21,14 +21,4 @@ pyenv global $PYTHON_VERSION2 $PYTHON_VERSION3 $PYTHON_VERSION2
 
 CONFIGURE_OPTS="--disable-install-rdoc" rbenv install -sv $RUBY_VERSION
 
-#brew install git ruby git-lfs
-#export PATH=/home/local/python/anaconda3/bin:$PATH
-#export HOMEBREW_CURL=/home/local/python/anaconda3/bin/curl
-
-#brew uses --installed curl
-#ln -s /home/local/python/anaconda3/bin/curl $MYLOCAL/Linuxbrew/bin/curl
-#export HOMEBREW_CURL=$MYLOCAL/Linuxbrew/bin/curl
-#brew update
-#brew install ansible
-
 echo Run zsh.

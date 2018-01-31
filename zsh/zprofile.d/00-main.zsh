@@ -73,11 +73,12 @@ export NO_AT_BRIDGE=1
 export EMOJI_CLI_KEYBIND=^f
 export HOMEBREW_CACHE=/tmp/cache
 export HOMEBREW_MAKE_JOBS=4
+export HOMEBREW_FORCE_BREWED_CURL=1
+export HOMEBREW_EDITOR=vi
+
 #export HOMEBREW_NO_ENV_FILTERING=1
 
-#export HOMEBREW_EDITOR=vi
 export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
-#export EDITOR=vim
 export EDITOR=vi
 #ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main pattern cursor root line)
@@ -101,6 +102,8 @@ export ANYENV_ROOT=$MYLOCAL/anyenv
 if which anyenv >/dev/null 2>&1 ;then
 	eval "$(anyenv init - zsh)"
 fi
+
+export HOMEBREW_CURL=$(which curl)
 
 #export PYTHONPATH=$ANYENV_ROOT/anyenv/envs/pyenv/versions/2.7.14/lib/python2.7:$PYTHONPATH
 #export PYTHONPATH=$ANYENV_ROOT/anyenv/envs/pyenv/versions/2.7.14/lib/python2.7/site-packages:$PYTHONPATH
