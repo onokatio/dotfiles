@@ -24,50 +24,35 @@ alias poweroff=': '
 sdo() sudo zsh -c "$functions[$1]" "$@"
 #alias sudo="sdo"
 
-#alias df='dfc '
-#alias top='htop '
-#alias diff='colordiff '
-#alias info='pinfo '
-#alias apt='apt-fast '
-#alias apt-get='apt-fast '
-#alias wget='axel -n 10 -v -a '
-#alias vi='nvim -u ~/.vimrc '
-#alias vim='nvim -u ~/.vimrc '
-#alias rm="gomi --"
-
-cmd=(hs      git df   top  diff      info  apt      apt-get  wget               ks)
-rpc=(history hub dfc  htop colordiff pinfo apt-fast apt-fast 'axel -n 10 -v -a' ls)
-
-for i in {1..$#cmd};do
-	if which $(echo $rpc[$i]|awk '{print $1}') >/dev/null; then
-		#alias "$cmd[$i]"="$rpc[$i] ";
-		eval "function $cmd[$i](){ $rpc[$i] \$@ }"
-	fi
-done
-
-
 function alias-check(){
-	if which $2 ;then
+	if which ${${=2}[1]} > /dev/null 2>$1;then
 		alias "$1"="$2"
+	fi
+}
+function func-check(){
+	if which ${${=2}[1]} > /dev/null 2>$1;then
+		eval "function $1(){ $2 \$@ }"
 	fi
 }
 
 alias-check vi "nvim -u ~/.vimrc "
 alias-check vim "nvim -u ~/.vimrc "
 
+func-check hs			history
+func-check git		hub
+func-check df			dfc
+func-check top		htop
+func-check diff		colordiff
+func-check info		pinfo
+func-check wget		"axel -n 10 -v -a"
+func-check ks			ls
+func-check apt			apt-fast
+func-check apt-get	apt-fast
+
 function chrome(){
 	chrome_b=$(ps ax|env grep '/opt/google/chrome'|head -n1|awk '{print $5}'|cut -d '/' -f 4)
 	eval "google-$chrome_b $@"
 }
-#function brew(){
-#	if [[ "$1" == "install" ]];then
-#		shift
-#		echo '$BREW' "$@"
-#		brew install $@
-#	else
-#		brew $@
-#	fi
-#}
 function targz(){tar xvf $@ --use-compress-prog=pigz }
 function tarxz(){tar xvf $@ --use-compress-prog=pixz }
 function tarbzip2(){tar xvf $@ --use-compress-prog=pbzip2 }
