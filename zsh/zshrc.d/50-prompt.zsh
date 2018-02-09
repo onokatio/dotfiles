@@ -1,5 +1,4 @@
 chpwd() { ls -hqp --color=auto }
-#precmd () { vcs_info }
 function command_not_found_handler(){
 	if [ -e /usr/bin/jp2a ];then
 		if [ -e ~/kirino.jpg ];then

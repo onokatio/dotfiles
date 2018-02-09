@@ -6,6 +6,7 @@ fi
 
 if [[ "$TTY" == "/dev/tty1" ]];then
 	startx
+	fbterm
 elif echo "$TTY" | grep "/dev/tty" ;then
 	fbterm
 fi
@@ -22,11 +23,11 @@ else
 fi
 
 	#zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-	zplug "junegunn/fzf-bin", \
-		from:gh-r, \
-		as:command, \
-		rename-to:fzf, \
-		use:"*linux*amd64*"
+	#zplug "junegunn/fzf-bin", \
+	#	from:gh-r, \
+	#	as:command, \
+	#	rename-to:fzf, \
+	#	use:"*linux*amd64*"
 	#	lazy:true
 	#zplug "onokatio/anyenv" #, as:command, use:"bin/anyenv"
 	#zplug "stedolan/jq", from:gh-r, as:command, lazy:true
@@ -39,11 +40,11 @@ fi
 	#zplug "felixr/docker-zsh-completion"
 	#zplug "mrowa44/emojify", as:command
 	#zplug "b4b4r07/enhancd", on:"junegunn/fzf-bin"
-	zplug "b4b4r07/zsh-gomi", \
-	  as:command, \
-	  use:bin/gomi, \
-	  on:junegunn/fzf-bin, \
-		lazy:true
+	#zplug "b4b4r07/zsh-gomi", \
+	#  as:command, \
+	#  use:bin/gomi, \
+	#  on:junegunn/fzf-bin, \
+	#	lazy:true
 	#zplug "b4b4r07/enhancd", use:enhancd.sh, on:junegunn/fzf-bin
 	#zplug "b4b4r07/history", from:gh-r, as:command, use:"*linux*amd64*", hook-load:'history(){command history \$@}'
 	#zplug "onokatio/history", use:"misc/zsh/init.zsh"

@@ -44,13 +44,14 @@ export LANG=ja_JP.UTF-8
 
 #add-bin /bin
 #add-bin /sbin
+add-local-path $MYLOCAL
+add-local-path $MYLOCAL/Linuxbrew
 add-local-path /usr
 add-local-path /usr/local
 add-local-path /home/local
 #add-bin /home/local/python/anaconda3/bin
 #add-local-path /home/local/python/anaconda3
-add-local-path $MYLOCAL
-add-local-path $MYLOCAL/Linuxbrew
+#add-local-path $MYLOCAL/Linuxbrew-back
 #add-bin /usr/lib/ccache/bin
 #add-bin $CTG/anyenv/bin
 add-bin $MYLOCAL/anyenv/bin
@@ -75,6 +76,8 @@ export HOMEBREW_CACHE=/tmp/cache
 export HOMEBREW_MAKE_JOBS=4
 export HOMEBREW_FORCE_BREWED_CURL=1
 export HOMEBREW_EDITOR=vi
+export HOMEBREW_CC="ccache gcc"
+export HOMEBREW_CXX="ccache g++"
 
 #export HOMEBREW_NO_ENV_FILTERING=1
 
