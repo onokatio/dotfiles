@@ -2,3 +2,5 @@
 	email = onokatio@gmail.com
 	name = onokatio
 	useConfigOnly = true
+[merge]
+	conflictstyle = diff3
