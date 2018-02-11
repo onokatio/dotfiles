@@ -16,6 +16,7 @@ function fch(){
 alias sudo='sudo '
 ach vi "nvim -u $HOME/.vimrc "
 ach vim "nvim -u $HOME/.vimrc "
+ach d 'popd '
 
 fch hs history
 fch git hub
@@ -28,7 +29,6 @@ fch ks ls
 fch apt apt-fast
 fch apt-get apt-fast
 fch mkdir 'mkdir -p '
-fch d 'popd '
 fch bat "upower -i /org/freedesktop/UPower/devices/battery_BAT0|grep 'percentage'|sed -e 's/ //g'|sed -e 's/percentage://'|sed -e 's/%//' "
 fch grep "grep --color -n -I "
 fch ls 'ls -hqp --color=auto '
