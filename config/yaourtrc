@@ -1,2 +1,2 @@
 BUILD_NOCONFIRM=1
-PACMAN='pacman-nc'
+#PACMAN='pacman-nc'
