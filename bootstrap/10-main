@@ -14,15 +14,18 @@ LINUXBREW=$MYLOCAL/Linuxbrew
 ANYENV=$MYLOCAL/anyenv
 
 if ! which pkg-config >/dev/null 2>&1;then
+	echo "Installing pkg-config ..."
 	$CTG/provision/Pkgconfig
 fi
 
 if ! which curl >/dev/null 2>&1;then
+	echo "Installing curl and libressl ..."
 	$CTG/provision/Libressl
 	$CTG/provision/Curl
 fi
 
 if ! which git >/dev/null 2>&1;then
+	echo "Installing git ..."
 	$CTG/provision/Git
 fi
 
