@@ -46,9 +46,9 @@ export LANG=ja_JP.UTF-8
 #add-bin /sbin
 add-local-path $MYLOCAL
 add-local-path $MYLOCAL/Linuxbrew
-add-local-path /usr
-add-local-path /usr/local
-add-local-path /home/local
+#add-local-path /usr
+#add-local-path /usr/local
+#add-local-path /home/local
 #add-bin /home/local/python/anaconda3/bin
 #add-local-path /home/local/python/anaconda3
 #add-local-path $MYLOCAL/Linuxbrew-back
@@ -94,10 +94,10 @@ export MAKE_OPTS="-j 4"
 export PROOT_NO_SECCOMP=1
 
 #export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_uuu dir root_indicator ssh)
-export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs custom_nya)
-export POWERLEVEL9K_CUSTOM_UUU="echo （」・ω・）」うー"
-export POWERLEVEL9K_CUSTOM_NYA="echo ＼（・ω・＼）にゃー！"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_uuu dir root_indicator ssh)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs custom_nya)
+POWERLEVEL9K_CUSTOM_UUU="echo （」・ω・）」うー"
+POWERLEVEL9K_CUSTOM_NYA="echo ＼（・ω・＼）にゃー！"
 #export ZSH_PLUGINS=$MYLOCAL/zsh-plugins
 #export LC_ALL=ja_JP.utf-8
 export ANYENV_ROOT=$MYLOCAL/anyenv
