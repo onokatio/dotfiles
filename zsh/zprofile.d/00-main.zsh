@@ -76,8 +76,8 @@ export HOMEBREW_CACHE=/tmp/cache
 export HOMEBREW_MAKE_JOBS=4
 export HOMEBREW_FORCE_BREWED_CURL=1
 export HOMEBREW_EDITOR=vi
-export HOMEBREW_CC="ccache gcc"
-export HOMEBREW_CXX="ccache g++"
+#export HOMEBREW_CC="ccache gcc"
+#export HOMEBREW_CXX="ccache g++"
 
 #export HOMEBREW_NO_ENV_FILTERING=1
 
