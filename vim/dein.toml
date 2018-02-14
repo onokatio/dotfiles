@@ -24,3 +24,21 @@ repo = 'tomlion/vim-solidity'
 
 [[plugins]]
 repo = 'FredKSchott/CoVim'
+
+[[plugins]]
+repo = 'w0rp/ale'
+
+[[plugins]]
+repo = 'dhruvasagar/vim-table-mode'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'suan/vim-instant-markdown'
