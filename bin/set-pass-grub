@@ -1,0 +1,4 @@
+sed -ie "s/'Arch Linux' --class/'Arch Linux' --unrestricted --class/g" /boot/grub/grub.cfg
+sed -ie "s/Linux linux-pf' --class/Linux linux-pf' --unrestricted --class/g" /boot/grub/grub.cfg
+sed -ie "s/Linux linux-zen' --class/Linux linux-zen' --unrestricted --class/g" /boot/grub/grub.cfg
+sed -ie "s/'Advanced options for Arch Linux'/'Advanced options for Arch Linux' --unrestricted/g" /boot/grub/grub.cfg
