@@ -40,7 +40,7 @@ fch chromekill 'ps ax|/bin/grep [c]hrome|cut -c-6|xargs sudo renice -19 '
 fch pingg "ping 8.8.8.8 "
 fch curlg "curl https://google.com "
 fch alpine "docker run -it --rm alpine:edge /bin/sh "
-fch cat 'vimcat '
+#fch cat 'vimcat '
 fch trace-mtr 'mtr '
 fch brew 'brew -v '
 fch open 'xdg-open '
@@ -50,7 +50,7 @@ fch poweroff 'echo dontuse '
 fch reboot 'echo dontuse '
 
 function chrome(){
-	chrome_b=$(ps ax|env grep '/opt/google/chrome'|head -n1|awk '{print $5}'|cut -d '/' -f 4)
+	chrome_b=$(ps ax|env grep '/opt/google/chrom[e]'|head -n1|awk '{print $5}'|cut -d '/' -f 4)
 	eval "google-$chrome_b $@"
 }
 function targz(){tar xvf $@ --use-compress-prog=pigz }

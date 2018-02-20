@@ -17,6 +17,7 @@ fi
 
 if which git > /dev/null 2>&1 ;then
 	source $ZPLUG_HOME/init.zsh
+	#alias zplug=":"
 else
 	echo "git not found."
 	alias zplug=":"

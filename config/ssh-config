@@ -8,6 +8,14 @@ Host github.com
 	TCPKeepAlive yes
 	IdentitiesOnly yes
 
+Host gitlab.com
+	Hostname gitlab.com
+	User git
+	Port 22
+	IdentityFile ~/.ssh/gitlab
+	TCPKeepAlive yes
+	IdentitiesOnly yes
+
 Host rpi3
 	HostName 192.168.1.128
 	User pi
@@ -48,7 +56,7 @@ Host homerpi
 
 Host *
 	LogLevel VERBOSE
-	Compression yes
+	Compression no
 	# check connection per 15m
 	ServerAliveInterval 15
 	# close connection after 3 times failed
