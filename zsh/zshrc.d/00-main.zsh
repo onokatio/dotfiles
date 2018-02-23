@@ -55,18 +55,3 @@ fi
 	zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
 	zplug load
- 
-
-if [[ -d $ANYENV_ROOT ]] ; then
-	#eval "$(anyenv init - --no-rehash)"
-	export PATH=$ANYENV_ROOT/bin:$PATH
-	#eval "$(anyenv init -)"
-	anyenv() {
-	  typeset command
-	  command="$1"
-	  if [ "$#" -gt 0 ]; then
-	    shift
-	  fi
-	  command anyenv "$command" "$@"
-	}
-fi
