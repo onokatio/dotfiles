@@ -16,8 +16,9 @@ precmd(){
 	_r=$?
 	case "${_pre}"  in
 		cd*|git*)
-			psvar=()
-			LANG=en_US.UTF-8 vcs_info
+			#psvar=()
+			#LANG=en_US.UTF-8 vcs_info
+			vcs_info
 			#[[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 		;;
 	esac
