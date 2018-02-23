@@ -15,7 +15,7 @@ preexec() {
 precmd(){
 	_r=$?
 	case "${_pre}"  in
-		cd*|git*)
+		cd*|git*|:)
 			#psvar=()
 			#LANG=en_US.UTF-8 vcs_info
 			vcs_info
@@ -37,7 +37,8 @@ else
 	zstyle ':vcs_info:git:*' unstagedstr "%K{red}"
 	zstyle ':vcs_info:*' formats "%K{green}%F{white}%c%u[%b]%f"
 	zstyle ':vcs_info:*' actionformats '[%b|%a]'
-	LANG=en_US.UTF-8 vcs_info
+	#LANG=en_US.UTF-8 vcs_info
+	vcs_info
 	
 	UUU="（」・ω・）」うー"
 	NYA="\（・ω・\）にゃー！"
