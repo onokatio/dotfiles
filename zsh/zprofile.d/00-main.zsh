@@ -86,6 +86,9 @@ export EDITOR=vi
 #ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main pattern cursor root line)
 #ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
+ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 export USE_CCACHE=1
 export CCACHE_DIR=$HOME/.ccache
 #which ccache >/dev/null 2>&1 && export CC="ccache gcc"
