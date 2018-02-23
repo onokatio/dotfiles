@@ -2,8 +2,8 @@
 
 touch zshrc
 echo -n > zshrc
-#cd zshrc.d && ls | xargs cat >> ../zshrc
-find ./zshrc.d -name *.zsh | sort | xargs cat >> ./zshrc
+command ls ./zshrc.d/*.zsh | sort | tee /dev/stderr | xargs cat >> ./zshrc
+find ./zshrc.d/hooks -name *.zsh | sort | tee /dev/stderr | xargs zsh >> ./zshrc
 zsh -n zshrc
 zsh -c 'zcompile ~/.zshrc'
 
