@@ -26,6 +26,7 @@ fch diff colordiff
 fch info pinfo
 fch wget "axel -n 10 -v -a"
 fch ks ls
+fch xs cd
 fch apt apt-fast
 fch apt-get apt-fast
 fch mkdir 'mkdir -p '
