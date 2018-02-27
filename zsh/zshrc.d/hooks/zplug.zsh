@@ -1,9 +1,10 @@
 if which git > /dev/null 2>&1 ;then
-	source $ZPLUG_HOME/init.zsh
+	echo source $ZPLUG_HOME/init.zsh
 	#alias zplug=":"
 else
 	echo "git not found."
 	alias zplug=":"
+	return
 fi
 
 	#zplug 'zplug/zplug', hook-build:'zplug --self-manage'
@@ -15,9 +16,9 @@ fi
 	#	lazy:true
 	#zplug "onokatio/anyenv" #, as:command, use:"bin/anyenv"
 	#zplug "stedolan/jq", from:gh-r, as:command, lazy:true
-	zplug "zsh-users/zsh-autosuggestions"
+	echo zplug "zsh-users/zsh-autosuggestions"
 #	zplug "zsh-users/zsh-syntax-highlighting", defer:2
-	zplug "zsh-users/zsh-completions", lazy:true
+	echo zplug "zsh-users/zsh-completions", lazy:true
 	#zplug "b4b4r07/emoji-cli", on:"stedolan/jq"
 	#zplug "TBSliver/zsh-plugin-tmux-simple"
 	#zplug "arzzen/calc.plugin.zsh"
@@ -37,4 +38,4 @@ fi
 	#zplug "bhilburn/powerlevel9k", as:theme
 	#zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
-	zplug load
+	echo zplug load
