@@ -15,8 +15,8 @@ if [[ -d $ANYENV_ROOT ]] ; then
 	for xenv in ${xenvlist[@]};do 
 		cat <<- EOS
 			export ${xenv}_ROOT='$ANYENV_ROOT/envs/${xenv}'
-			export PATH="$ANYENV_ROOT/${xenv}/bin:\$PATH"
-			export PATH="$ANYENV_ROOT/${xenv}/bin/shims:\$PATH"
+			export PATH="$ANYENV_ROOT/envs/${xenv}/bin:\$PATH"
+			export PATH="$ANYENV_ROOT/envs/${xenv}/shims:\$PATH"
 			hash -r 2>/dev/null || true
 			${xenv}() {
 				local command
@@ -34,4 +34,6 @@ if [[ -d $ANYENV_ROOT ]] ; then
 			}
 		EOS
 	done
+else
+	echo 'ANYENV_ROOT is not set.'
 fi
