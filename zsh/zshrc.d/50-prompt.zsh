@@ -40,12 +40,16 @@ else
 	#LANG=en_US.UTF-8 vcs_info
 	vcs_info
 	
-	UUU="（」・ω・）」うー"
+	local PNAME
+	if [[ -n "${REMOTEHOST}${SSH_CONNECTION}" ]];then
+		PNAME="%K{yellow}%F{black}SSH "
+	fi
+	UUU="%K{white}%F{black}（」・ω・）」うー"
 	NYA="\（・ω・\）にゃー！"
 	#SAN="＼（・ω・＼）SAN値！"
 	#PIN="（／・ω・）／ピンチ！"
 	#"%K{white}%F{black}%(?,${UUU},${SAN}) %K{blue}%F{white} %F{black}%~ %k%F{blue}%f "
-	PROMPT="%K{white}%F{black}${UUU} %K{blue}%F{white} %F{black}%~ %k%F{blue}%f "
+	PROMPT="${PNAME}${UUU} %K{blue}%F{white} %F{black}%~ %k%F{blue}%f "
 	#RPROMPT="%K{green}%(?,${NYA},${PIN})%k${vcs_info_msg_0_}"
 	RPROMPT='%f%b%k${vcs_info_msg_0_}%f%K{white}%F{black} ＼（・ω・＼）にゃー！ %f'
 fi
