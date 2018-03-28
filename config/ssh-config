@@ -1,4 +1,4 @@
-#Include config.private
+Include config.private
 
 Host github.com
 	Hostname github.com
@@ -68,7 +68,7 @@ Host *
 	VisualHostKey yes
 	ServerAliveInterval 60
 	ControlMaster auto
-	ControlPath ~/.ssh/master_%r@%h:%p
+	#ControlPath /tmp/master_%r@%h:%p
 	ControlPersist yes
 	AddressFamily inet
 	#Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
