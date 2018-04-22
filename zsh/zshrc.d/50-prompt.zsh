@@ -15,7 +15,7 @@ preexec() {
 precmd(){
 	_r=$?
 	case "${_pre}"  in
-		cd*|git*|:)
+		cd*|git*|vi*|:)
 			#psvar=()
 			#LANG=en_US.UTF-8 vcs_info
 			vcs_info
@@ -33,9 +33,9 @@ else
 	setopt prompt_subst
 	zstyle ':vcs_info:*' enable git
 	zstyle ':vcs_info:git:*' check-for-changes true
-	zstyle ':vcs_info:git:*' stagedstr "%K{yellow}"
-	zstyle ':vcs_info:git:*' unstagedstr "%K{red}"
-	zstyle ':vcs_info:*' formats "%K{green}%F{white}%c%u[%b]%f"
+	zstyle ':vcs_info:git:*' stagedstr "%K{white}%F{yellow}" # %c
+	zstyle ':vcs_info:git:*' unstagedstr "%K{white}%F{red}"  # %u
+	zstyle ':vcs_info:*' formats "%K{black}%F{white}%F{green}%K{white}%c%u[%b]%f"
 	zstyle ':vcs_info:*' actionformats '[%b|%a]'
 	#LANG=en_US.UTF-8 vcs_info
 	vcs_info
@@ -45,11 +45,11 @@ else
 		PNAME="%K{yellow}%F{black}SSH "
 	fi
 	UUU="%K{white}%F{black}（」・ω・）」うー"
-	NYA="\（・ω・\）にゃー！"
+	NYA="＼（・ω・＼）にゃー！"
 	#SAN="＼（・ω・＼）SAN値！"
 	#PIN="（／・ω・）／ピンチ！"
 	#"%K{white}%F{black}%(?,${UUU},${SAN}) %K{blue}%F{white} %F{black}%~ %k%F{blue}%f "
 	PROMPT="${PNAME}${UUU} %K{blue}%F{white} %F{black}%~ %k%F{blue}%f "
 	#RPROMPT="%K{green}%(?,${NYA},${PIN})%k${vcs_info_msg_0_}"
-	RPROMPT='%f%b%k${vcs_info_msg_0_}%f%K{white}%F{black} ＼（・ω・＼）にゃー！ %f'
+	RPROMPT='%f%b%k${vcs_info_msg_0_}%F{black}%K{white}%F{white}%K{black} ${NYA} %f'
 fi

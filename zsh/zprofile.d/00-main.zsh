@@ -55,6 +55,7 @@ add-local-path $MYLOCAL/Linuxbrew
 #add-bin /usr/lib/ccache/bin
 #add-bin $CTG/anyenv/bin
 add-bin $MYLOCAL/anyenv/bin
+add-bin $HOME/.yarn/bin
 add-bin $CTG/bin
 add-bin ./node_modules/.bin
 
@@ -95,6 +96,7 @@ export CCACHE_DIR=$HOME/.ccache
 #export TERM="xterm-256color"
 export MAKE_OPTS="-j 4"
 export PROOT_NO_SECCOMP=1
+export XZ_DEFAULTS="--threads 4"
 
 #export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_uuu dir root_indicator ssh)
