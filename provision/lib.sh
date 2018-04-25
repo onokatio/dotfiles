@@ -1,4 +1,4 @@
-CACHE=$MYLOCAL/cache/packages
+CACHE=$MYLOCAL/tmp/cache/packages
 mkdir -p $CACHE
 
 set +u
