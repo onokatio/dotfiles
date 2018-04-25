@@ -32,12 +32,13 @@ set guicursor=
 
 
 " http://blog.remora.cx/2012/09/use-tabpage.html
-nnoremap <S-Tab> gt
-nnoremap <Tab><Tab> gT
-for i in range(1, 9)
-    execute 'nnoremap <Tab>' . i . ' ' . i . 'gt'
-endfor
+"nnoremap <S-Tab> gt
+"nnoremap <Tab><Tab> gT
+"for i in range(1, 9)
+"    execute 'nnoremap <Tab>' . i . ' ' . i . 'gt'
+"endfor
 """
+
 
 
 set runtimepath+=$CTG/vim/dein.vim
