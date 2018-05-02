@@ -31,7 +31,11 @@ mes_info '[zshrc]' 'Bundle zshrc.d'
 mes_done
 
 mes_info '[zshrc]' 'Bundle hooks'
-	find ./zshrc.d/hooks -name *.zsh | sort | xargs zsh >> ./zshrc
+	if which zsh >/dev/null;then
+		find ./zshrc.d/hooks -name *.zsh | sort | xargs zsh >> ./zshrc
+	else
+		echo "zsh not found"
+	fi
 mes_done
 
 mes_info '[zshrc]' 'Test & Compile'
@@ -50,7 +54,11 @@ mes_info '[zprofile]' 'Bundle zprofile.d'
 mes_done
 
 mes_info '[zprofile]' 'Bundle hooks'
-	find ./zprofile.d/hooks -name *.zsh | sort | xargs zsh >> ./zprofile
+	if which zsh >/dev/null;then
+		find ./zprofile.d/hooks -name *.zsh | sort | xargs zsh >> ./zprofile
+	else
+		echo "zsh not found"
+	fi
 mes_done
 
 mes_info '[zprofile]' 'Test & Compile'
