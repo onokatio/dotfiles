@@ -1,5 +1,5 @@
 if which git > /dev/null 2>&1 ;then
-	echo source $ZPLUG_HOME/init.zsh
+	echo source ../../zplug/init.zsh
 	#alias zplug=":"
 else
 	echo "git not found."
