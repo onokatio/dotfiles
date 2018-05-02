@@ -16,7 +16,7 @@ function mes_done(){
 mes_info '[zshrc]' 'init'
 	touch zshrc
 	echo -n > zshrc
-	rm -f ~/.zcompdump
+	rm -f ~/.zcompdump  # Clear zcomp cache
 mes_done
 
 mes_info '[zshrc]' 'Bundle zshrc.d'
@@ -29,7 +29,7 @@ mes_done
 
 mes_info '[zshrc]' 'Test & Compile'
 	zsh -n zshrc
-	zsh -c 'zcompile ~/.zshrc'
+	[[ -e ~/.zshrc ]] && zsh -c 'zcompile ~/.zshrc'
 mes_done
 
 

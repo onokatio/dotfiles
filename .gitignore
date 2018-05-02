@@ -5,3 +5,4 @@ zsh/zshrc.d/90-private.zsh
 local
 Linuxbrew
 *.zwc
+dists
