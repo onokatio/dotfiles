@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+set -e  # stop when fail
+set -u  # fail when var is not defined
+
+DIST="../dists"
+
+cd `dirname $0`
+
 function mes_info(){
 	tput setaf 11
 	echo -n $1
@@ -14,8 +21,8 @@ function mes_done(){
 }
 
 mes_info '[zshrc]' 'init'
-	touch zshrc
-	echo -n > zshrc
+	touch $DIST/zshrc
+	echo > $DIST/zshrc
 	rm -f ~/.zcompdump  # Clear zcomp cache
 mes_done
 
@@ -40,6 +47,10 @@ mes_done
 
 mes_info '[zprofile]' 'Bundle zprofile.d'
 	find ./zprofile.d -name *.zsh | sort | xargs cat >> ./zprofile
+mes_done
+
+mes_info '[zprofile]' 'Bundle hooks'
+	find ./zprofile.d/hooks -name *.zsh | sort | xargs zsh >> ./zprofile
 mes_done
 
 mes_info '[zprofile]' 'Test & Compile'
