@@ -1,5 +1,0 @@
-#!/bin/bash
-
-touch ../10-main
-echo -n > ../10-main
-\ls *.sh | sort | xargs cat >> ../10-main
