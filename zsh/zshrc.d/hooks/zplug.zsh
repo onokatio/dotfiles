@@ -1,5 +1,9 @@
-
 cd `dirname $0`
+
+if [[ ! -d ./zplug ]] ;then
+	echo zplug not found >&2
+	exit
+fi
 
 export ZPLUG_HOME="$PWD/zplug"
 export ZPLUG_REPOS=$MYLOCAL_DIST/.zsh-plugins
