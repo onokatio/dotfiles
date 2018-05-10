@@ -16,9 +16,4 @@ if which tmux >/dev/null 2>&1 && [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CO
 	tmux
 fi
 
-source /home/katio/.conf-to-git/zsh/zplug/init.zsh
-zplug zsh-users/zsh-autosuggestions
-zplug zsh-users/zsh-completions, lazy:true
-zplug load
-
 umask 0077
