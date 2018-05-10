@@ -10,3 +10,6 @@
 [submodule "zsh/zprofile.d/hooks/zplug"]
 	path = zsh/zprofile.d/hooks/zplug
 	url = https://github.com/zplug/zplug
+[submodule "zsh/zshrc.d/hooks/zplug"]
+	path = zsh/zshrc.d/hooks/zplug
+	url = https://github.com/zplug/zplug
