@@ -11,9 +11,6 @@ if [[ -e $MYLOCAL/usr/lib/locale ]] && [[ -e $MYLOCAL/etc/locale.gen ]] ;then
 	export LOCPATH=$MYLOCAL/usr/lib/locale
 fi
 
-export ZPLUG_HOME=$CTG/zsh/zplug
-export ZPLUG_REPOS=$MYLOCAL/zsh-plugins
-export ZPLUG_BIN=$MYLOCAL/bin
 export NO_AT_BRIDGE=1
 export EMOJI_CLI_KEYBIND=^f
 export HOMEBREW_CACHE=/tmp/cache

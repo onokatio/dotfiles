@@ -15,7 +15,7 @@ zplug clear
 zplug check --verbose >&2 || zplug install >&2
 zplug status >&2
 
-zplug load --verbose >&2
+zplug load >&2
 
 list=(`zplug list`)
 
@@ -23,7 +23,7 @@ echo "##### zplug #####"
 
 for i in $list ; do
 	eval $(zplug info $i | sed -e 's/-//' | sed -e 's/: /=/'|grep "dir" | sed 's/\x1b\[[0-9;]*m//g')
-	echo source $(ls $dir/*.zsh | sed -e 's/\.plugin\.zsh/\.zsh/' | sort | uniq)
+	echo source $(ls $dir/*.zsh | head -n1)
 done
 
 echo "##### /zplug #####"
