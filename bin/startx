@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+TTY=${TTY:-$(tty)}
+TTY=${TTY#/dev/}
+TTY=${TTY#tty}
+
+xinit .xinitrc -- :${TTY} -nolisten tcp vt${TTY}
