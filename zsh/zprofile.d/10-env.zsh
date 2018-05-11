@@ -43,14 +43,9 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_uuu dir root_indicator ssh)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs custom_nya)
 POWERLEVEL9K_CUSTOM_UUU="echo （」・ω・）」うー"
 POWERLEVEL9K_CUSTOM_NYA="echo ＼（・ω・＼）にゃー！"
-#export ZSH_PLUGINS=$MYLOCAL/zsh-plugins
-#export LC_ALL=ja_JP.utf-8
 export ANYENV_ROOT=$MYLOCAL/anyenv
 
 export HOMEBREW_CURL=$(which curl)
-
-#export PYTHONPATH=$ANYENV_ROOT/anyenv/envs/pyenv/versions/2.7.14/lib/python2.7:$PYTHONPATH
-#export PYTHONPATH=$ANYENV_ROOT/anyenv/envs/pyenv/versions/2.7.14/lib/python2.7/site-packages:$PYTHONPATH
 
 export GOPATH=$MYLOCAL/gopath
 export PATH=$GOPATH/bin:$PATH
