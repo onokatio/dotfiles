@@ -17,7 +17,6 @@ alias sudo='sudo '
 ach vi "nvim -u $HOME/.vimrc "
 ach vim "nvim -u $HOME/.vimrc "
 ach d 'popd '
-ach ctg 'cd $CTG'
 ach zsh 'exec zsh -l'
 
 fch hs history

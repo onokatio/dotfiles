@@ -1,15 +1,9 @@
 export LANG=ja_JP.UTF-8
-#export MYLOCAL=/tmp/.systemd/local
-#export MYLOCAL=$CTG/local
 
 #export set CC='ccache gcc'
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CACHE_HOME=$HOME/.cache
-
-if [[ -e $MYLOCAL/usr/lib/locale ]] && [[ -e $MYLOCAL/etc/locale.gen ]] ;then
-	export LOCPATH=$MYLOCAL/usr/lib/locale
-fi
 
 export NO_AT_BRIDGE=1
 export EMOJI_CLI_KEYBIND=^f
@@ -43,9 +37,8 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_uuu dir root_indicator ssh)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs custom_nya)
 POWERLEVEL9K_CUSTOM_UUU="echo （」・ω・）」うー"
 POWERLEVEL9K_CUSTOM_NYA="echo ＼（・ω・＼）にゃー！"
-export ANYENV_ROOT=$MYLOCAL/anyenv
 
 export HOMEBREW_CURL=$(which curl)
 
-export GOPATH=$MYLOCAL/gopath
+export GOPATH=$HOME/gopath
 export PATH=$GOPATH/bin:$PATH
