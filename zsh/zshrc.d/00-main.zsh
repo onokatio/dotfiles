@@ -6,10 +6,10 @@ fi
 MYLOCAL=${MYLOCAL:-$CTG/local}
 
 if [[ "$TTY" == "/dev/tty1" ]];then
-	startx
-	fbterm
+#	startx
+#	fbterm
 elif echo "$TTY" | grep "/dev/tty" ;then
-	fbterm
+#	fbterm
 fi
 
 if which tmux >/dev/null 2>&1 && [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CONNECTION} ]];then
