@@ -14,12 +14,12 @@ source $ZPLUG_HOME/init.zsh
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions", lazy:true
 
-zplug clear
 
 zplug check --verbose >&2 || zplug install >&2
-zplug status >&2
+zplug update >&2
 
-zplug load >&2
+zplug load --verbose >&2
+zplug clear >&2
 
 list=(`zplug list`)
 

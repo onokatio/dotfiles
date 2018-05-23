@@ -13,7 +13,7 @@ function fch(){
 	fi
 }
 
-alias sudo='sudo '
+#alias sudo='sudo '
 ach vi "nvim -u $HOME/.vimrc "
 ach vim "nvim -u $HOME/.vimrc "
 ach d 'popd '
@@ -36,7 +36,7 @@ fch grep "grep --color -n -I "
 fch ls 'ls -hqp --color=auto '
 fch l 'ls -hqp --color=auto '
 fch make 'make -j4 '
-fch sudo 'sudo -E '
+#fch sudo 'sudo -E '
 fch crontab 'echo "dont use crontab !!" '
 fch chromekill 'ps ax|/bin/grep [c]hrome|cut -c-6|xargs sudo renice -19 '
 fch pingg "ping 8.8.8.8 "
