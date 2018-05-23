@@ -8,7 +8,7 @@ elif echo "$TTY" | grep "/dev/tty" ;then
 fi
 
 if which tmux >/dev/null 2>&1 && [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CONNECTION} ]];then
-	tmux
+#	tmux
 fi
 
-umask 0077
+umask 0022
