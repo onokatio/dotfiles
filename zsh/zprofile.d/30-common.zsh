@@ -1,9 +1,5 @@
-
-#if which anyenv >/dev/null 2>&1 ;then
-#	eval "$(anyenv init - zsh)"
-#fi
-
 HISTFILE=~/.zsh_history
-#HISTSIZE=1000
-#SAVEHIST=1000
+HISTSIZE=1000000
+SAVEHIST=1000000
 #REPORTTIME=3
+HISTTIMEFORMAT="[%Y/%M/%D %H:%M:%S] "
