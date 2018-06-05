@@ -20,6 +20,7 @@ setopt no_beep
 setopt ignore_eof
 setopt auto_pushd
 setopt hist_ignore_dups
+setopt hist_ignore_space
 setopt append_history
 setopt inc_append_history
 setopt hist_no_store
@@ -34,3 +35,7 @@ setopt rec_exact
 setopt no_flow_control
 setopt interactive_comments
 setopt globdots
+setopt auto_name_dirs
+setopt auto_resume
+setopt hist_reduce_blanks
+unsetopt auto_remove_slash

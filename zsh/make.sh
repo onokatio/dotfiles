@@ -42,6 +42,7 @@ mes_info '[zshrc]' 'Test & Compile'
 
 mes_info '[zshrc]' 'Running zcomp...'
   zsh -c "autoload -Uz compinit && compinit"
+	zsh -c "zcompile ~/.zcompdump"
 
 
 mes_info '[zprofile]' 'init'
