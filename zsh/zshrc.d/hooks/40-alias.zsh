@@ -1,15 +1,17 @@
+cd `dirname $0`
+
 ## sdo() sudo zsh -c "$functions[$1]" "$@"
 #fch sudo="sdo"
 
 function ach(){
 	if which ${${=2}[1]} > /dev/null 2>&1;then
-		alias "$1"="$2 "
+		echo alias "$1"="'$2' "
 	fi
 }
 function fch(){
 	local cmd=$(echo $2|cut -d ' ' -f 1)
 	if which $cmd > /dev/null 2>&1;then
-		eval "function $1(){ command $2 \$@ }"
+		echo "function $1(){ command $2 \$@ }"
 	fi
 }
 
@@ -51,10 +53,3 @@ fch rm 'rm -v --one-file-system '
 fch poweroff 'echo dontuse '
 fch reboot 'echo dontuse '
 
-function chrome(){
-	chrome_b=$(ps ax|env grep '/opt/google/chrom[e]'|head -n1|awk '{print $5}'|cut -d '/' -f 4)
-	eval "google-$chrome_b $@"
-}
-function targz(){tar xvf $@ --use-compress-prog=pigz }
-function tarxz(){tar xvf $@ --use-compress-prog=pixz }
-function tarbzip2(){tar xvf $@ --use-compress-prog=pbzip2 }
