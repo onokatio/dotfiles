@@ -38,11 +38,10 @@ add-local-path(){
 	fi
 }
 
-#add-bin /bin
-#add-bin /sbin
-#add-local-path /usr
-#add-local-path /usr/local
-#add-local-path /home/local
+add-local-path /
+add-local-path /usr
+add-local-path /usr/local
+add-local-path /home/local
 #add-bin /home/local/python/anaconda3/bin
 #add-local-path /home/local/python/anaconda3
 #add-bin /usr/lib/ccache/bin

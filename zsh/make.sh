@@ -31,7 +31,7 @@ mes_info '[zshrc]' 'Bundle zshrc.d'
 
 mes_info '[zshrc]' 'Bundle hooks'
 	if which zsh >/dev/null;then
-		find ./zshrc.d/hooks -maxdepth 1 -name *.zsh | sort | xargs zsh >> $MYLOCAL_DIST/zshrc
+		find ./zshrc.d/hooks -maxdepth 1 -name *.zsh | sort | xargs -L1 zsh >> $MYLOCAL_DIST/zshrc
 	else
 		echo "zsh not found"
 	fi
