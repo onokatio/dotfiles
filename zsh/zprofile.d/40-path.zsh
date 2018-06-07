@@ -1,11 +1,11 @@
 add-bin(){
-	if [[ -e "$1" ]];then
+	if [[ -d "$1" ]];then
 		export PATH=$1:$PATH
 	fi
 }
 
 add-local-path(){
-	if [[ -e "$1" ]];then
+	if [[ -d "$1" ]];then
 		export PATH="$1/sbin:$PATH"
 		export PATH="$1/bin:$PATH"
 		export LD_LIBRARY_PATH="$1/lib:$LD_LIBRARY_PATH"
@@ -38,7 +38,7 @@ add-local-path(){
 	fi
 }
 
-add-local-path /
+#add-local-path /
 add-local-path /usr
 add-local-path /usr/local
 add-local-path /home/local
@@ -47,3 +47,5 @@ add-local-path /home/local
 #add-bin /usr/lib/ccache/bin
 add-bin $HOME/.yarn/bin
 add-bin ./node_modules/.bin
+
+add-local-path $HOME/usr
