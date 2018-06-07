@@ -1,3 +1,4 @@
+
 add-bin(){
 	echo "export PATH=$1:\$PATH"
 }
@@ -27,5 +28,8 @@ add-local-path "/home/local"
 
 add-bin "$HOME/.yarn/bin"
 add-bin "./node_modules/.bin"
+
+cd `dirname $0`/../../../ #CTG
+add-bin "$PWD/bin"
 
 add-local-path "$HOME/usr"
