@@ -54,7 +54,7 @@ mes_info '[zprofile]' 'Bundle zprofile.d'
 
 mes_info '[zprofile]' 'Bundle hooks'
 	if which zsh >/dev/null;then
-		find ./zprofile.d/hooks -maxdepth 1 -name *.zsh | sort | xargs zsh >> $MYLOCAL_DIST/zprofile
+		find ./zprofile.d/hooks -maxdepth 1 -name *.zsh | sort | xargs -L1 zsh >> $MYLOCAL_DIST/zprofile
 	else
 		echo "zsh not found"
 	fi
