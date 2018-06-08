@@ -28,6 +28,7 @@ add-local-path "/home/local"
 
 add-bin "$HOME/.yarn/bin"
 add-bin "./node_modules/.bin"
+add-bin "./vendor/bin"
 
 cd `dirname $0`/../../../ #CTG
 add-bin "$PWD/bin"
