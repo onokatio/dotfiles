@@ -1,6 +1,7 @@
 .SILENT:
 
 all:
-	cd "$(PWD)/static" && make -s
-	cd "$(PWD)/vim"    && make -s
-	cd "$(PWD)/zsh"    && make -s
+	cd "$(PWD)/static"  && $(MAKE) -s
+	cd "$(PWD)/vim"     && $(MAKE) -s
+	cd "$(PWD)/zsh"     && $(MAKE) -s
+	cd "$(PWD)/tmux"    && $(MAKE) -s
