@@ -15,10 +15,10 @@ function fch(){
 	fi
 }
 
-#alias sudo='sudo '
+#alias sudo='sudo'
 ach vi "nvim -u $HOME/.vimrc "
 ach vim "nvim -u $HOME/.vimrc "
-ach d 'popd '
+ach d 'popd'
 ach zsh 'exec zsh -l'
 
 fch hs history
@@ -32,24 +32,26 @@ fch ks ls
 fch xs cd
 fch apt apt-fast
 fch apt-get apt-fast
-fch mkdir 'mkdir -p '
+fch mkdir 'mkdir -p'
 fch bat "upower -i /org/freedesktop/UPower/devices/battery_BAT0|grep 'percentage'|sed -e 's/ //g'|sed -e 's/percentage://'|sed -e 's/%//' "
 fch grep "grep --color -n -I "
-fch ls 'ls -hqp --color=auto '
-fch l 'ls -hqp --color=auto '
-fch make 'make -j4 '
-#fch sudo 'sudo -E '
-fch crontab 'echo "dont use crontab !!" '
-fch chromekill 'ps ax|/bin/grep [c]hrome|cut -c-6|xargs sudo renice -19 '
+fch ls 'ls -hqp --color=auto'
+fch l 'ls -hqp --color=auto'
+fch make 'make -j4'
+#fch sudo 'sudo -E'
+fch crontab 'echo "dont use crontab !!"'
+fch chromekill 'ps ax|/bin/grep [c]hrome|cut -c-6|xargs sudo renice -19'
 fch pingg "ping 8.8.8.8 "
 fch curlg "curl https://google.com "
 fch alpine "docker run -it --rm alpine:edge /bin/sh "
-#fch cat 'vimcat '
-fch trace-mtr 'mtr '
-fch brew 'brew -v '
-fch open 'xdg-open '
-#fch rm 'rm --one-file-system '
-fch rm 'rm -v --one-file-system '
-fch poweroff 'echo dontuse '
-fch reboot 'echo dontuse '
-
+#fch cat 'vimcat'
+fch trace-mtr 'mtr'
+fch brew 'brew -v'
+fch open 'xdg-open'
+#fch rm 'rm --one-file-system'
+fch rm 'rm -v --one-file-system'
+fch poweroff 'echo dontuse'
+fch reboot 'echo dontuse'
+fch pull 'git pull'
+fch push 'git push'
+fch status 'git status'
