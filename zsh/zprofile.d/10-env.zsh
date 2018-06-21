@@ -7,14 +7,14 @@ export XDG_CACHE_HOME=$HOME/.cache
 
 export NO_AT_BRIDGE=1
 export EMOJI_CLI_KEYBIND=^f
-export HOMEBREW_CACHE=/tmp/cache
+export HOMEBREW_CACHE=/dev/shm
 export HOMEBREW_MAKE_JOBS=4
 export HOMEBREW_FORCE_BREWED_CURL=1
 export HOMEBREW_EDITOR=vi
 #export HOMEBREW_CC="ccache gcc"
 #export HOMEBREW_CXX="ccache g++"
 
-#export HOMEBREW_NO_ENV_FILTERING=1
+export HOMEBREW_NO_ENV_FILTERING=1
 
 export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 export EDITOR=vi

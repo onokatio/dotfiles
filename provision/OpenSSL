@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -eu
+
+pushd $PWD
+	cd /tmp
+	if which wget >/dev/null 2>&1 ;then
+		wget https://www.openssl.org/source/openssl-1.1.1-pre8.tar.gz -O openssl.tar.gz
+	else
+		echo "wget not found."
+	fi
+	tar xvf openssl.tar.gz
+	cd openssl-1.1.1-pre8
+	./config zlib shared --prefix=$MYLOCAL
+	make -j4
+	make install
+	cd ..
+	rm openssl.tar.gz
+	rm -rf openssl-1.1.1-pre8
+popd
