@@ -2,15 +2,22 @@
 
 set -e
 
-if [[ -z "$MYLOCAL" ]];then
-	echo '$MYLOCAL is not set.'
+if [[ -z "$1" ]];then
+	echo '$1 (locale.gen file) is not set.'
+	echo 'default is /etc/locale.gen'
 	exit
 fi
 
-LOCALEGEN=$MYLOCAL/etc/locale.gen
+if [[ -z "$2" ]];then
+	echo '$2 (locpath directory) is not set.'
+	echo 'default is /usr/lib/locale'
+	exit
+fi
+
+LOCALEGEN=$1
 LOCALES=/usr/share/i18n/locales
 USER_LOCALES=/usr/local/share/i18n/locales
-LOCALE_ARCHIVE=$MYLOCAL/usr/lib/locale
+LOCALE_ARCHIVE=$2
 
 if [ -n "$POSIXLY_CORRECT" ]; then
   unset POSIXLY_CORRECT
@@ -65,6 +72,7 @@ while read locale charset; do \
 	fi
 	localedef -i $input -c -f $charset -A /usr/share/locale/locale.alias $LOCALE_ARCHIVE/$locale || :; \
 	echo ' done'; \
-	#localedef -i $input -c -f $charset -A /usr/share/locale/locale.alias --add-to-archive --prefix=$MYLOCAL|| :; \
 done < $LOCALEGEN
+
 echo "Generation complete."
+echo "export LOCPATH='$2':\$LOCPATH"
