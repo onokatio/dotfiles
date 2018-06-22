@@ -13,8 +13,6 @@ add-local-path(){
 		echo "export LD_RUN_PATH=$1/lib64:\$LD_RUN_PATH"
 		echo "export PKG_CONFIG_PATH=$1/lib/pkgconfig:\$PKG_CONFIG_PATH"
 		echo "export PKG_CONFIG_PATH=$1/lib64/pkgconfig:\$PKG_CONFIG_PATH"
-		echo "export LOCPATH=$1/lib/locale:\$LOCPATH"
-		echo "export LOCPATH=$1/lib64/locale:\$LOCPATH"
 		echo "export MANPATH=$1/share/man:\$MANPATH"
 		echo "export INFOPATH=$1/share/info:\$INFOPATH"
 		echo "export XDG_DATA_DIRS=$1/share:\$XDG_DATA_DIRS"
