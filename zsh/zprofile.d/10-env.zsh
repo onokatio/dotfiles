@@ -42,3 +42,5 @@ export HOMEBREW_CURL=$(which curl)
 
 export GOPATH=$HOME/gopath
 export PATH=$GOPATH/bin:$PATH
+
+ xset -b
