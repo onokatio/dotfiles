@@ -1,8 +1,5 @@
 cd `dirname $0`
 
-## sdo() sudo zsh -c "$functions[$1]" "$@"
-#fch sudo="sdo"
-
 function ach(){
 	if which ${${=2}[1]} > /dev/null 2>&1;then
 		echo alias "$1"="'$2' "
