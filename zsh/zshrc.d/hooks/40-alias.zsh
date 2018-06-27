@@ -18,8 +18,8 @@ function fch(){
 #alias sudo='sudo'
 ach vi "nvim -u $HOME/.vimrc "
 ach vim "nvim -u $HOME/.vimrc "
-ach d 'popd'
 ach zsh 'exec zsh -l'
+alias d 'popd'
 
 fch hs history
 fch git hub
