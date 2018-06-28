@@ -43,7 +43,6 @@ fch curlg "curl https://google.com "
 fch alpine "docker run -it --rm alpine:edge /bin/sh "
 #fch cat 'vimcat'
 fch trace-mtr 'mtr'
-fch brew 'brew -v'
 fch open 'xdg-open'
 #fch rm 'rm --one-file-system'
 fch rm 'rm -v --one-file-system'
