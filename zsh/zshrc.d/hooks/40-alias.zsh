@@ -1,8 +1,5 @@
 cd `dirname $0`
 
-## sdo() sudo zsh -c "$functions[$1]" "$@"
-#fch sudo="sdo"
-
 function ach(){
 	if which ${${=2}[1]} > /dev/null 2>&1;then
 		echo alias "$1"="'$2' "
@@ -46,7 +43,6 @@ fch curlg "curl https://google.com "
 fch alpine "docker run -it --rm alpine:edge /bin/sh "
 #fch cat 'vimcat'
 fch trace-mtr 'mtr'
-fch brew 'brew -v'
 fch open 'xdg-open'
 #fch rm 'rm --one-file-system'
 fch rm 'rm -v --one-file-system'

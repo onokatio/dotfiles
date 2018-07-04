@@ -1,1 +1,3 @@
-[[ -r /etc/profile.d/cnf.sh ]] && echo "source /etc/profile.d/cnf.sh"
+if [[ -r /etc/profile.d/cnf.sh ]] ;then
+	echo "source /etc/profile.d/cnf.sh"
+fi
