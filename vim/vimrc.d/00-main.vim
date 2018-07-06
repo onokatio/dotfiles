@@ -24,11 +24,12 @@ set relativenumber
 set noexpandtab
 set nocompatible
 set backspace=indent,eol,start
+set inccommand=split
 "noremap PP "0p
 "noremap x "_x
 "
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0
-set guicursor=
+"let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0
+"set guicursor=
 
 
 " http://blog.remora.cx/2012/09/use-tabpage.html
@@ -38,6 +39,3 @@ set guicursor=
 "    execute 'nnoremap <Tab>' . i . ' ' . i . 'gt'
 "endfor
 """
-
-
-
