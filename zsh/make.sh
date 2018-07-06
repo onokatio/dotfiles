@@ -22,12 +22,13 @@ function mes_done(){
 }
 
 mes_info '[zshrc]' 'init'
-	touch $MYLOCAL_DIST/zshrc
 	echo > $MYLOCAL_DIST/zshrc
+	echo > $MYLOCAL_DIST/zshrc.static
 	rm -f ~/.zcompdump  # Clear zcomp cache
 
 mes_info '[zshrc]' 'Bundle zshrc.d'
 	command ls ./zshrc.d/*.zsh       | sort | xargs cat >> $MYLOCAL_DIST/zshrc
+	command ls ./zshrc.d/*.zsh       | sort | xargs cat >> $MYLOCAL_DIST/zshrc.static
 
 mes_info '[zshrc]' 'Bundle hooks'
 	if which zsh >/dev/null;then
@@ -46,11 +47,12 @@ mes_info '[zshrc]' 'Running zcomp...'
 
 
 mes_info '[zprofile]' 'init'
-	touch $MYLOCAL_DIST/zprofile
 	echo -n > $MYLOCAL_DIST/zprofile
+	echo -n > $MYLOCAL_DIST/zprofile.static
 
 mes_info '[zprofile]' 'Bundle zprofile.d'
 	find ./zprofile.d -maxdepth 1 -name '*.zsh' | sort | xargs cat >> $MYLOCAL_DIST/zprofile
+	find ./zprofile.d -maxdepth 1 -name '*.zsh' | sort | xargs cat >> $MYLOCAL_DIST/zprofile.static
 
 mes_info '[zprofile]' 'Bundle hooks'
 	if which zsh >/dev/null;then
