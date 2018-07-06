@@ -42,3 +42,6 @@ repo = 'ryanoasis/vim-devicons'
 
 #[[plugins]]
 #repo = 'suan/vim-instant-markdown'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'

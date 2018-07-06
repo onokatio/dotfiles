@@ -16,6 +16,6 @@ endif
 
 "colorscheme badwolf
 "colorscheme elflord
-set background=dark
+"set background=dark
 colorscheme solarized
 highlight Normal ctermbg=none
