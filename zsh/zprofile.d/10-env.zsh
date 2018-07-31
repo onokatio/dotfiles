@@ -38,9 +38,9 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs custom_nya)
 POWERLEVEL9K_CUSTOM_UUU="echo （」・ω・）」うー"
 POWERLEVEL9K_CUSTOM_NYA="echo ＼（・ω・＼）にゃー！"
 
-export HOMEBREW_CURL=$(which curl)
+#export HOMEBREW_CURL=$(which curl)
 
 export GOPATH=$HOME/gopath
 export PATH=$GOPATH/bin:$PATH
 
- xset -b
+#xset -b
