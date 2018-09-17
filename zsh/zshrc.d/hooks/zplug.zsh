@@ -12,13 +12,15 @@ export ZPLUG_BIN=$ZPLUG_REPOS/bin
 source $ZPLUG_HOME/init.zsh
 
 zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-completions", lazy:true
+zplug "chrissicool/zsh-bash"
+zplug "zsh-users/zsh-completions"
+zplug "zdharma/fast-syntax-highlighting"
 
-#zplug check --verbose >&2 || zplug install >&2
+zplug check --verbose >&2 || zplug install >&2
 zplug update >&2
 
-#zplug load --verbose >&2
 zplug clear >&2
+zplug load --verbose >&2
 
 list=(`zplug list`)
 
@@ -30,4 +32,17 @@ for i in $list ; do
 	echo source $(ls $dir/*.zsh | head -n1)
 done
 
+compinit
+
+echo 'autoload -Uz +X compinit && compinit'
+echo 'autoload -Uz +X bashcompinit && bashcompinit'
+if [[ -r /usr/share/bash-completion/bash_completion ]];then
+# echo 'source /usr/share/bash-completion/bash_completion'
+fi
 echo "##### /zplug #####"
+
+# -U dont override alias
+# -z ZSH mode
+# -u use non-secure file
+# -i skip non-secure file
+# -C dont run security check

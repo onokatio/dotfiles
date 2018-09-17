@@ -43,4 +43,6 @@ POWERLEVEL9K_CUSTOM_NYA="echo ＼（・ω・＼）にゃー！"
 export GOPATH=$HOME/gopath
 export PATH=$GOPATH/bin:$PATH
 
+#export npm_config_prefix=~/.node_modules
+
 #xset -b
