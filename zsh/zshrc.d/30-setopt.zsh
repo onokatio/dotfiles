@@ -5,7 +5,6 @@ setopt auto_menu
 setopt share_history
 setopt histignorealldups
 setopt auto_cd
-setopt extended_glob
 setopt hist_ignore_all_dups
 setopt list_packed
 setopt list_types
@@ -34,8 +33,11 @@ setopt hist_expand
 setopt rec_exact
 setopt no_flow_control
 setopt interactive_comments
+setopt glob
 setopt globdots
+setopt extended_glob
 setopt auto_name_dirs
 setopt auto_resume
 setopt hist_reduce_blanks
 unsetopt auto_remove_slash
+setopt MULTIOS

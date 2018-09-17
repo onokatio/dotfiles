@@ -25,6 +25,11 @@ set noexpandtab
 set nocompatible
 set backspace=indent,eol,start
 set inccommand=split
+set tabstop=4
+set shiftwidth=4
+
+nnoremap <ESC><ESC> :noh<CR>
+
 "noremap PP "0p
 "noremap x "_x
 "
