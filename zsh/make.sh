@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-set -e  # stop when fail
-set -u  # fail when var is not defined
+#set -e  # stop when fail
+#set -u  # fail when var is not defined
 
 
 cd `dirname $0`
@@ -38,7 +38,7 @@ mes_info '[zshrc]' 'Bundle hooks'
 	fi
 
 mes_info '[zshrc]' 'Test & Compile'
-	zsh -n $MYLOCAL_DIST/zshrc
+	#zsh -n $MYLOCAL_DIST/zshrc
 	zsh -c "zcompile $MYLOCAL_DIST/zshrc"
 
 mes_info '[zshrc]' 'Running zcomp...'
@@ -62,5 +62,5 @@ mes_info '[zprofile]' 'Bundle hooks'
 	fi
 
 mes_info '[zprofile]' 'Test & Compile'
-	zsh -n $MYLOCAL_DIST/zprofile
+	#zsh -n $MYLOCAL_DIST/zprofile
 	zsh -c "zcompile $MYLOCAL_DIST/zprofile"

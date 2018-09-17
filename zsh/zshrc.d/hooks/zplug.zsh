@@ -11,16 +11,16 @@ export ZPLUG_BIN=$ZPLUG_REPOS/bin
 
 source $ZPLUG_HOME/init.zsh
 
+zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "chrissicool/zsh-bash"
 zplug "zsh-users/zsh-completions"
-zplug "zdharma/fast-syntax-highlighting"
 
 zplug check --verbose >&2 || zplug install >&2
 zplug update >&2
 
 zplug clear >&2
-zplug load --verbose >&2
+zplug load >&2
 
 list=(`zplug list`)
 
