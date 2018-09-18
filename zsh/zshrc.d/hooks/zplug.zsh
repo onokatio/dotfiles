@@ -1,5 +1,8 @@
 cd `dirname $0`
 
+echo 'port for zplugin' >&2
+alias zplug=':'
+
 if [[ ! -d ./zplug ]] ;then
 	echo zplug not found >&2
 	exit
@@ -29,7 +32,7 @@ echo "##### zplug #####"
 for i in $list ; do
 	eval $(zplug info $i | sed -e 's/-//' | sed -e 's/: /=/'|grep "dir" | sed 's/\x1b\[[0-9;]*m//g')
 	echo find zsh file:  $(ls $dir/*.zsh | head -n1) >&2
-	echo source $(ls $dir/*.zsh | head -n1)
+	#echo source $(ls $dir/*.zsh | head -n1)
 done
 
 compinit
