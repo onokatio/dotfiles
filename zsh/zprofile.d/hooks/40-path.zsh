@@ -26,15 +26,25 @@ add-local-path "/home/local"
 #add-local-path /home/local/python/anaconda3
 #add-bin /usr/lib/ccache/bin
 
+add-bin /usr/local/opt/coreutils/libexec/gnubin
+if which brew >/dev/null 2>&1;then
+	add-bin $(brew --prefix coreutils)/libexec/gnubin
+fi
+
+add-local-path "\$HOME/usr"       # MYLOCAL
+add-local-path "\$HOME/usr/local" # linuxbrew
+
+if which opam >/dev/null 2>&1;then
+	echo $(opam config env)
+fi
+
+cd `dirname $0`/../../../ #CTG
+add-bin "$PWD/bin"
+echo "export CTG=$PWD"
+
 add-bin "\$HOME/.yarn/bin"
 add-bin "\$HOME/.config/composer/vendor/bin"
 add-bin "./node_modules/.bin"
 add-bin "\$HOME/node_modules/.bin"
 add-bin "./vendor/bin"
 
-cd `dirname $0`/../../../ #CTG
-add-bin "$PWD/bin"
-echo "export CTG=$PWD"
-
-add-local-path "\$HOME/usr"       # MYLOCAL
-add-local-path "\$HOME/usr/local" # linuxbrew
