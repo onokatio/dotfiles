@@ -63,3 +63,6 @@ repo = 'vim-syntastic/syntastic'
 
 [[plugins]]
 repo = 'ekalinin/Dockerfile.vim'
+
+[[plugins]]
+repo = 'edisonljh/vim-scilla'
