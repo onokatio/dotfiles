@@ -19,3 +19,6 @@
 [submodule "modules/nvm"]
 	path = modules/nvm
 	url = https://github.com/creationix/nvm
+[submodule "modules/zplugin"]
+	path = modules/zplugin
+	url = https://github.com/zdharma/zplugin
