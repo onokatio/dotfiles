@@ -11,4 +11,4 @@ if which tmux >/dev/null 2>&1 && [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CO
 	tmux
 fi
 
-umask 0022
+#umask 0022
