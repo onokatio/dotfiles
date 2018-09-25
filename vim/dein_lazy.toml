@@ -1,0 +1,7 @@
+[[plugins]]
+repo = 'othree/yajs.vim'
+on_ft = ['javascript']
+
+[[plugins]]
+repo = 'othree/es.next.syntax.vim'
+on_ft = ['javascript']
