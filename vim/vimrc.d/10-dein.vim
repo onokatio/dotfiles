@@ -14,6 +14,15 @@ if dein#check_install()
   call dein#install()
 endif
 
+
+let g:deoplete#enable_at_startup = 1
+let g:deplete#auto_complete_delay = 0
+"let g:deoplete#auto_complete_delay = 0
+
+let g:LanguageClient_serverCommands = {
+    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ }
+
 "colorscheme badwolf
 colorscheme elflord
 "set background=dark

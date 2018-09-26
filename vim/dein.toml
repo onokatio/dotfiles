@@ -2,7 +2,7 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'Shougo/neocomplete.vim'
+repo = 'Shougo/deoplete.nvim'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
@@ -66,3 +66,8 @@ repo = 'ekalinin/Dockerfile.vim'
 
 [[plugins]]
 repo = 'edisonljh/vim-scilla'
+
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+build = 'bash install.sh'
