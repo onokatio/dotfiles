@@ -32,7 +32,7 @@ if which brew >/dev/null 2>&1;then
 fi
 
 add-local-path "\$HOME/usr"       # MYLOCAL
-add-local-path "\$HOME/usr/local" # linuxbrew
+add-local-path "\$HOME/usr/brew" # linuxbrew
 
 if which opam >/dev/null 2>&1;then
 	echo $(opam config env)
