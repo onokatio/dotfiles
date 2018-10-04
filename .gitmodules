@@ -19,6 +19,3 @@
 [submodule "modules/zplugin"]
 	path = modules/zplugin
 	url = https://github.com/zdharma/zplugin
-[submodule "run/tpm"]
-	path = run/tpm
-	url = https://github.com/tmux-plugins/tpm
