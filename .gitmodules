@@ -13,9 +13,6 @@
 [submodule "zsh/zshrc.d/hooks/zplug"]
 	path = zsh/zshrc.d/hooks/zplug
 	url = https://github.com/zplug/zplug
-[submodule "tmux/tpm"]
-	path = tmux/tpm
-	url = https://github.com/tmux-plugins/tpm
 [submodule "modules/nvm"]
 	path = modules/nvm
 	url = https://github.com/creationix/nvm
