@@ -24,7 +24,6 @@ set relativenumber
 set noexpandtab
 set nocompatible
 set backspace=indent,eol,start
-set inccommand=split
 set tabstop=4
 set shiftwidth=4
 
@@ -44,3 +43,7 @@ nnoremap <ESC><ESC> :noh<CR>
 "    execute 'nnoremap <Tab>' . i . ' ' . i . 'gt'
 "endfor
 """
+
+if has('nvim')
+	set inccommand=split
+endif
