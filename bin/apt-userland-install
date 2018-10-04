@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+for package in $@; do
+	dpkg -x $package ~/usr/local
+done
