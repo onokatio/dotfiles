@@ -22,10 +22,3 @@ mes_info '[tmux]' 'init'
 
 mes_info '[tmux]' 'Copy tmux'
 	cat ./tmux.conf >> $MYLOCAL_DIST/tmux.conf
-
-mes_info  '[tmux]' 'Set tpm lunch'
-	if [[ -d ~/.tmux/plugins/tpm ]];then
-		echo "run '~/.tmux/plugins/tpm/tpm'" >> $MYLOCAL_DIST/tmux.conf
-	else
-		echo "run '$PWD/tpm/tpm'" >> $MYLOCAL_DIST/tmux.conf
-	fi
