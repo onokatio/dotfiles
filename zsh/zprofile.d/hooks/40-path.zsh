@@ -4,7 +4,7 @@ add-bin(){
 }
 
 add-local-path(){
-	if [[ -d "$1" ]];then
+	#if [[ -d "$1" ]];then
 		echo "export PATH=\"$1/sbin:\$PATH\""
 		echo "export PATH=\"$1/bin:\$PATH\""
 		echo "export LD_LIBRARY_PATH=\"$1/lib:\$LD_LIBRARY_PATH\""
@@ -16,7 +16,7 @@ add-local-path(){
 		echo "export MANPATH=\"$1/share/man:\$MANPATH\""
 		echo "export INFOPATH=\"$1/share/info:\$INFOPATH\""
 		echo "export XDG_DATA_DIRS=\"$1/share:\$XDG_DATA_DIRS\""
-	fi
+	#fi
 }
 
 add-local-path "/usr"
@@ -32,7 +32,7 @@ if which brew >/dev/null 2>&1;then
 fi
 
 add-local-path "\$HOME/usr"       # MYLOCAL
-add-local-path "\$HOME/usr/brew" # linuxbrew
+add-local-path "\$HOME/usr/brew"  # linuxbrew
 
 if which opam >/dev/null 2>&1;then
 	echo $(opam config env)
