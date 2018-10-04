@@ -1,8 +1,15 @@
 #!/bin/bash
 
-set -eu
+set -e
 
 URL="https://dl.google.com/linux/direct/google-chrome-unstable_current_amd64.deb"
+
+if [[ ! -d "$1" ]];then
+	echo '$1 ($MYLOCAL) is not set.'
+	exit
+fi
+
+MYLOCAL=$1
 
 if [[ "$(uname -m)" == "x86_64" ]];then
 	wget $URL -O $MYLOCAL/tmp/google-chrome-unstable_current_amd64.deb
