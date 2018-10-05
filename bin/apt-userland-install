@@ -3,5 +3,5 @@
 set -e
 
 for package in $@; do
-	dpkg -x $package ~/usr/local
+	dpkg -x $package ~/usr
 done
