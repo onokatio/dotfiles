@@ -47,3 +47,5 @@ nnoremap <ESC><ESC> :noh<CR>
 if has('nvim')
 	set inccommand=split
 endif
+
+autocmd FileType vue syntax sync fromstart
