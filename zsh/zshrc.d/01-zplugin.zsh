@@ -9,3 +9,5 @@ zplugin light zsh-users/zsh-completions
 
 autoload -Uz compinit
 compinit
+
+zplugin cdreplay -q # -q is for quiet

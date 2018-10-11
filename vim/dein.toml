@@ -71,3 +71,6 @@ repo = 'edisonljh/vim-scilla'
 repo = 'autozimu/LanguageClient-neovim'
 rev = 'next'
 build = 'bash install.sh'
+
+[[plugins]]
+repo = 'posva/vim-vue'
