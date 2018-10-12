@@ -46,3 +46,5 @@ export PATH=$GOPATH/bin:$PATH
 #export npm_config_prefix=~/.node_modules
 
 #xset -b
+
+export ZSH_PLUGINS_ALIAS_TIPS_TEXT='alias-tips: '
