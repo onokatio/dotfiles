@@ -2,8 +2,18 @@ local -A ZPLGM
 ZPLGM[HOME_DIR]=$CTG/run/zplugin
 
 source $CTG/modules/zplugin/zplugin.zsh
+export ZPFX=$CTG/run/zplugin-polaris
 
 autoload -Uz _zplugin
+
+zplugin ice as"program" make"PREFIX=$ZPFX" pick"$ZPFX/bin/git-*"
+zplugin light tj/git-extras
+
+zplugin ice as"program" make"PREFIX=$ZPFX" pick"$ZPFX/bin/git-issue"
+zplugin light dspinellis/git-issue
+
+zplugin ice as"program" pick"diff-so-fancy"
+zplugin snippet https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy
 
 zplugin snippet 'OMZ::lib/clipboard.zsh'
 zplugin snippet 'OMZ::lib/completion.zsh'
