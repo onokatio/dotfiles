@@ -42,7 +42,7 @@ cd `dirname $0`/../../../ #CTG
 add-bin "$PWD/bin"
 echo "export CTG=$PWD"
 
-add-bin "\$HOME/.yarn/bin"
+add-bin '$CTG/run/yarn/node_modules/.bin'
 add-bin "\$HOME/.config/composer/vendor/bin"
 add-bin "./node_modules/.bin"
 add-bin "\$HOME/node_modules/.bin"
