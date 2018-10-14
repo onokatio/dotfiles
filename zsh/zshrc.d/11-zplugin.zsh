@@ -1,10 +1,8 @@
-local -A ZPLGM
-ZPLGM[HOME_DIR]=$CTG/run/zplugin
+export ZPFX=$CTG/run/zplugin-polaris
+export ZPLGM[HOME_DIR]=$CTG/run/zplugin
+export ZSH_PLUGINS_ALIAS_TIPS_TEXT='alias-tips: '
 
 source $CTG/modules/zplugin/zplugin.zsh
-export ZPFX=$CTG/run/zplugin-polaris
-
-autoload -Uz _zplugin
 
 zplugin ice as"program" make"PREFIX=$ZPFX" pick"$ZPFX/bin/git-*"
 zplugin light tj/git-extras
@@ -32,3 +30,6 @@ zplugin light zdharma/fast-syntax-highlighting
 
 zplugin ice wait'0' atload'_zsh_autosuggest_start'
 zplugin light zsh-users/zsh-autosuggestions
+
+zplugin ice wait'0'
+zplugin snippet "$NVM_DIR/nvm.sh"
