@@ -1,6 +1,8 @@
 export ZPFX=$CTG/run/zplugin-polaris
-export ZPLGM[HOME_DIR]=$CTG/run/zplugin
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT='alias-tips: '
+
+local -A ZPLGM
+ZPLGM[HOME_DIR]=$CTG/run/zplugin
 
 source $CTG/modules/zplugin/zplugin.zsh
 
@@ -31,5 +33,8 @@ zplugin light zdharma/fast-syntax-highlighting
 zplugin ice wait'0' atload'_zsh_autosuggest_start'
 zplugin light zsh-users/zsh-autosuggestions
 
-zplugin ice wait'0'
-zplugin snippet "$NVM_DIR/nvm.sh"
+zplugin ice wait'0' as'program' pick'bin/anyenv' atload'export ANYENV_ROOT=$PWD ; eval "$(anyenv init -)"'
+zplugin light riywo/anyenv
+
+zplugin ice as'program' pick'anyenv-update'
+zplugin snippet 'https://github.com/znz/anyenv-update/blob/master/bin/anyenv-update'
