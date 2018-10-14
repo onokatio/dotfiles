@@ -8,7 +8,6 @@
 #コマンドもろくに覚えられないなんて、アンタどうしようもないクズね。"
 #}
 chpwd(){ ls -qp --color=auto }
-# precmd () { vcs_info }
 preexec() {
   _pre="$1"
 }
