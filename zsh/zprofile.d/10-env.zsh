@@ -47,5 +47,4 @@ export PATH=$GOPATH/bin:$PATH
 
 #xset -b
 
-
 export NVM_DIR="$CTG/modules/nvm"

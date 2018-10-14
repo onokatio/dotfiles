@@ -25,8 +25,16 @@ zplugin snippet 'OMZ::plugins/git/git.plugin.zsh'
 zplugin ice blockf
 zplugin light 'zsh-users/zsh-completions'
 
-compinit
+zplugin ice as'program' mv'yarn-1.10.1.js -> yarn' pick'yarn'
+zplugin snippet https://github.com/yarnpkg/yarn/releases/download/v1.10.1/yarn-1.10.1.js
 
+compinit
+bashcompinit
+
+#zplugin ice atload'tmp="/usr/share/bash-completion/bash_completion" ; test -r "$tmp" && source $tmp'
+#zplugin light chrissicool/zsh-bash
+
+#### async ###
 zplugin ice wait'0' atload'_zsh_highlight'
 zplugin light zdharma/fast-syntax-highlighting
 
@@ -35,6 +43,5 @@ zplugin light zsh-users/zsh-autosuggestions
 
 zplugin ice wait'0' as'program' pick'bin/anyenv' atload'export ANYENV_ROOT=$PWD ; eval "$(anyenv init -)"'
 zplugin light riywo/anyenv
-
 zplugin ice as'program' pick'anyenv-update'
 zplugin snippet 'https://github.com/znz/anyenv-update/blob/master/bin/anyenv-update'
