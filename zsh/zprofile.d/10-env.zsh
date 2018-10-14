@@ -47,4 +47,5 @@ export PATH=$GOPATH/bin:$PATH
 
 #xset -b
 
-export ZSH_PLUGINS_ALIAS_TIPS_TEXT='alias-tips: '
+
+export NVM_DIR="$CTG/modules/nvm"
