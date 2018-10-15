@@ -1,5 +1,5 @@
-#zstyle ':zle:*' word-chars "*?_.~-=&!#$%^(){}<>./;@ "
-zstyle ':zle:*' word-chars ' /=;@:{}[]()<>,|.'
+zstyle ':zle:*' word-chars "*?_.~-=&!#$%^(){}[]<>./;:@,| "
+#zstyle ':zle:*' word-chars ' /=;@:{}[]()<>,|.'
 zstyle ':zle:*' word-style unspecified
 zstyle ':completion:*' format '%B%F{blue}%d%f%b'
 zstyle ':completion:*' group-name ''
