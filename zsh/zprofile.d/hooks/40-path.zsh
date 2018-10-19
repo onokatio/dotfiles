@@ -33,6 +33,7 @@ fi
 
 add-local-path "\$HOME/usr"       # MYLOCAL
 add-local-path "\$HOME/usr/brew"  # linuxbrew
+add-local-path "\$HOME/.linuxbrew"  # linuxbrew
 
 if which opam >/dev/null 2>&1;then
 	echo $(opam config env)
@@ -47,4 +48,3 @@ add-bin "\$HOME/.config/composer/vendor/bin"
 add-bin "./node_modules/.bin"
 add-bin "\$HOME/node_modules/.bin"
 add-bin "./vendor/bin"
-
