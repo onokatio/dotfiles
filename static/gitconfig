@@ -25,3 +25,5 @@
 [diff-so-fancy]
 	markEmptyLines = false
 	changeHunkIndicators = true
+[credential]
+	helper = cache --timeout=3600
