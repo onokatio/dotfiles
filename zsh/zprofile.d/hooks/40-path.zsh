@@ -32,6 +32,7 @@ if which brew >/dev/null 2>&1;then
 fi
 
 add-local-path "\$HOME/usr"       # MYLOCAL
+add-local-path "\$HOME/local"       # MYLOCAL
 add-local-path "\$HOME/usr/brew"  # linuxbrew
 add-local-path "\$HOME/.linuxbrew"  # linuxbrew
 
