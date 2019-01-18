@@ -6,3 +6,5 @@ function chrome(){
 function targz(){tar xvf $@ --use-compress-prog=pigz }
 function tarxz(){tar xvf $@ --use-compress-prog=pixz }
 function tarbzip2(){tar xvf $@ --use-compress-prog=pbzip2 }
+
+alias sudo='sudo '
