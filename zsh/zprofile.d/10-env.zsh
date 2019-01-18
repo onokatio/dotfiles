@@ -48,3 +48,10 @@ export PATH=$GOPATH/bin:$PATH
 #xset -b
 
 export NVM_DIR="$CTG/modules/nvm"
+
+export MOZ_USE_XINPUT2=1
+
+export VGL_READBACK=pbo
+
+export ZIPINFOOPT="-OCP932"
+export UNZIPOPT="-OCP932"
