@@ -34,7 +34,7 @@ else
 	zstyle ':vcs_info:git:*' check-for-changes true
 	zstyle ':vcs_info:git:*' stagedstr "%K{white}%F{yellow}" # %c
 	zstyle ':vcs_info:git:*' unstagedstr "%K{white}%F{red}"  # %u
-	zstyle ':vcs_info:*' formats "%K{black}%F{white}%F{green}%K{white}%c%u[%b]%f"
+	zstyle ':vcs_info:*' formats "%F{green}%K{white}%c%u[%b]%f"
 	zstyle ':vcs_info:*' actionformats '[%b|%a]'
 	#LANG=en_US.UTF-8 vcs_info
 	vcs_info
@@ -47,10 +47,7 @@ else
 	NYA="＼（・ω・＼）にゃー！"
 	#SAN="＼（・ω・＼）SAN値！"
 	#PIN="（／・ω・）／ピンチ！"
-	#"%K{white}%F{black}%(?,${UUU},${SAN}) %K{blue}%F{white} %F{black}%~ %k%F{blue}%f "
-	PROMPT="${PNAME}${UUU} %K{blue}%F{white} %F{black}%~ %k%F{blue}%f "
-	#RPROMPT="%K{green}%(?,${NYA},${PIN})%k${vcs_info_msg_0_}"
-	RPROMPT='%f%b%k${vcs_info_msg_0_}%F{black}%K{white}%F{white}%K{black} ${NYA} %f'
+	PROMPT='${PNAME}%K{blue}%F{black} %~ %F{blue}%K{white}%k%F{blue}${vcs_info_msg_0_}%k%F{white}%f%k '
 fi
 
 do_enter() {
