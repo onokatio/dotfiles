@@ -1,9 +1,9 @@
-export LANG=ja_JP.UTF-8
+#export LANG=ja_JP.UTF-8
 
 #export set CC='ccache gcc'
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_CACHE_HOME=$HOME/.cache
+#export XDG_CONFIG_HOME=$HOME/.config
+#export XDG_DATA_HOME=$HOME/.local/share
+#export XDG_CACHE_HOME=$HOME/.cache
 
 export NO_AT_BRIDGE=1
 export EMOJI_CLI_KEYBIND=^f
@@ -48,3 +48,10 @@ export PATH=$GOPATH/bin:$PATH
 #xset -b
 
 export NVM_DIR="$CTG/modules/nvm"
+
+export MOZ_USE_XINPUT2=1
+
+export VGL_READBACK=pbo
+
+export ZIPINFOOPT="-OCP932"
+export UNZIPOPT="-OCP932"
