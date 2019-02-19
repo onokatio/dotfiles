@@ -36,7 +36,7 @@ eval $(brew shellenv)
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 #################
 
-export PATH=/usr/lib/ccache/bin
+export PATH=/usr/lib/ccache/bin:$PATH
 export PATH=$HOME/node_modules/.bin:$PATH
 export PATH=./node_modules/.bin:$PATH
 export PATH=./vendor/bin:$PATH
