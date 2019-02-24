@@ -9,10 +9,10 @@ alias vim="nvim -u $HOME/.vimrc"
 alias d='popd'
 
 alias hs=history
-alias git=hub
-alias df=dfc
-alias top=htop
-alias diff=colordiff
+#alias git=hub
+#alias df=dfc
+#alias top=htop
+#alias diff=colordiff
 alias info=pinfo
 #alias wget="axel -n 10 -v -a"
 alias ks=ls
@@ -24,7 +24,7 @@ alias bat="upower -i /org/freedesktop/UPower/devices/battery_BAT0|grep 'percenta
 alias grep="grep --color -n -I"
 alias ls='ls -hqp --color=auto'
 alias l='ls -hqp --color=auto'
-alias make='make -j4'
+#alias make='make -j4'
 alias crontab='echo "dont use crontab !!"'
 alias chromekill='ps ax|/bin/grep [c]hrome|cut -c-6|xargs sudo renice -19'
 alias pingg="ping 8.8.8.8"
@@ -36,4 +36,4 @@ alias open='xdg-open'
 alias rm='rm -v --one-file-system'
 alias poweroff='echo dontuse'
 alias reboot='echo dontuse'
-alias sed='gsed'
+#alias sed='gsed'
