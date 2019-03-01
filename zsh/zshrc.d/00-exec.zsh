@@ -11,7 +11,7 @@ elif echo "$TTY" | grep "/dev/tty" ;then
 #	fbterm
 fi
 
-if which tmux >/dev/null 2>&1 && [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CONNECTION} ]];then
+if [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CONNECTION} ]];then
 	tmux
 fi
 

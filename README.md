@@ -2,6 +2,15 @@
 
 ```
 $ git clone .conf-to-git
-$ $CTG/bootstrap   # zsh deploy
-$ $CTG/bootstrap2  # anyenv deploy
+$ cd .conf-to-git
+$ make
 ```
+
+## Option
+
+tpm : `$ git clone tpm`
+
+## Requirement
+
+- zsh
+- tmux
