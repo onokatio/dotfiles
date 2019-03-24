@@ -5,9 +5,9 @@
 [merge]
 	conflictstyle = diff3
 [diff]
-	compactionHeuristic = true
+	#compactionHeuristic = true
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	#pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
 	ui = true
 [color "diff-highlight"]
