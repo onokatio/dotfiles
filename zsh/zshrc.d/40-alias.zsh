@@ -24,6 +24,7 @@ alias bat="upower -i /org/freedesktop/UPower/devices/battery_BAT0|grep 'percenta
 alias grep="grep --color -n -I"
 alias ls='ls -hqp --color=auto'
 alias l='ls -hqp --color=auto'
+alias ll='ls -lZ -hqp --color=auto'
 #alias make='make -j4'
 alias crontab='echo "dont use crontab !!"'
 alias chromekill='ps ax|/bin/grep [c]hrome|cut -c-6|xargs sudo renice -19'
