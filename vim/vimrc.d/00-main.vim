@@ -26,6 +26,14 @@ set nocompatible
 set backspace=indent,eol,start
 set tabstop=4
 set shiftwidth=4
+set ambiwidth=double
+set fileformat=unix
+set ttyfast
+
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
 " sで置換するときにプレビュー表示
 set inccommand=split
