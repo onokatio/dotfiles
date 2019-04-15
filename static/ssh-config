@@ -1,4 +1,3 @@
-Include config.private
 
 Host github.com
 	Hostname github.com
