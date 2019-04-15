@@ -9,10 +9,10 @@ alias vim="nvim -u $HOME/.vimrc"
 alias d='popd'
 
 alias hs=history
-alias git=hub
-alias df=dfc
-alias top=htop
-alias diff=colordiff
+#alias git=hub
+#alias df=dfc
+#alias top=htop
+#alias diff=colordiff
 alias info=pinfo
 #alias wget="axel -n 10 -v -a"
 alias ks=ls
@@ -24,16 +24,21 @@ alias bat="upower -i /org/freedesktop/UPower/devices/battery_BAT0|grep 'percenta
 alias grep="grep --color -n -I"
 alias ls='ls -hqp --color=auto'
 alias l='ls -hqp --color=auto'
-alias make='make -j4'
+alias ll='ls -lZ -hqp --color=auto'
+#alias make='make -j4'
 alias crontab='echo "dont use crontab !!"'
 alias chromekill='ps ax|/bin/grep [c]hrome|cut -c-6|xargs sudo renice -19'
 alias pingg="ping 8.8.8.8"
 alias curlg="curl https://google.com"
-alias alpine="docker run -it --rm alpine:edge /bin/sh"
 #alias cat='vimcat'
 alias trace-mtr='mtr'
 alias open='xdg-open'
 alias rm='rm -v --one-file-system'
 alias poweroff='echo dontuse'
 alias reboot='echo dontuse'
-alias sed='gsed'
+#alias sed='gsed'
+
+alias alpine="docker run -it --rm alpine:edge /bin/sh"
+alias ubuntu="docker run -it --rm ubuntu /bin/bash"
+
+alias aria2c="aria2c --bt-max-peers=0 --bt-request-peer-speed-limit=100M --max-connection-per-server=10 --split=10"

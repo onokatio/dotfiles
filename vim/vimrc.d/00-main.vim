@@ -26,26 +26,21 @@ set nocompatible
 set backspace=indent,eol,start
 set tabstop=4
 set shiftwidth=4
+set ambiwidth=double
+set fileformat=unix
+set ttyfast
 
-nnoremap <ESC><ESC> :noh<CR>
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
-"noremap PP "0p
-"noremap x "_x
-"
-"let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0
-"set guicursor=
+" sで置換するときにプレビュー表示
+set inccommand=split
 
-
-" http://blog.remora.cx/2012/09/use-tabpage.html
-"nnoremap <S-Tab> gt
-"nnoremap <Tab><Tab> gT
-"for i in range(1, 9)
-"    execute 'nnoremap <Tab>' . i . ' ' . i . 'gt'
-"endfor
-"""
-
-if has('nvim')
-	set inccommand=split
-endif
-
+" ファイルがvueだったときに、ハイライトをファイルの先頭からかけるようにする
 autocmd FileType vue syntax sync fromstart
+
+" :terminalからノーマルモードに戻るときESCを使えるようにする
+tnoremap <ESC> <C-\><C-n>
+

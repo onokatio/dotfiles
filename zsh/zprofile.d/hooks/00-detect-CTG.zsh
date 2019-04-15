@@ -1,3 +1,3 @@
 cd `dirname $0`/../../../ #CTG
-echo "$PWD/bin"
+echo "export PATH=$PWD/bin:\$PATH"
 echo "export CTG=$PWD"
