@@ -1,10 +1,12 @@
 #!/bin/bash
 
+cd `dirname $0`
+
 
 TTY=${TTY:-$(tty)}
 TTY=${TTY#/dev/}
 TTY=${TTY#tty}
 
-rm -f /tmp/xorg.conf
+cp -f ./etc/xorg.conf /tmp/xorg.conf
 
 xinit .xinitrc -- :${TTY} -nolisten tcp vt${TTY}
