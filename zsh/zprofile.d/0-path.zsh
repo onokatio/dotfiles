@@ -33,7 +33,7 @@ export PATH=$HOME/usr/brew:$PATH
 export PATH=$HOME/.linuxbrew:$PATH
 eval $(brew shellenv)
 
-export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+#export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 #################
 
 export PATH=/usr/lib/ccache/bin:$PATH
