@@ -40,3 +40,5 @@ alias reboot='echo dontuse'
 
 alias alpine="docker run -it --rm alpine:edge /bin/sh"
 alias ubuntu="docker run -it --rm ubuntu /bin/bash"
+
+alias aria2c="aria2c --bt-max-peers=0 --bt-request-peer-speed-limit=100M --max-connection-per-server=10 --split=10"
