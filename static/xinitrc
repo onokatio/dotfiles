@@ -70,4 +70,5 @@ eval $(ssh-agent)
 
 #compton --config ~/.compton.conf &
 #xss-lock -- i3lock -n -i $HOME/.conf-to-git/mojave_dynamic_8.resize.png &
-exec startxfce4
+#exec startxfce4
+exec i3
