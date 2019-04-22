@@ -11,12 +11,12 @@ add-local-path(){
 		#
 		export PATH=$1/sbin:$PATH
 		export PATH=$1/bin:$PATH
-		export LD_LIBRARY_PATH=$1/lib:$LD_LIBRARY_PATH
-		export LD_LIBRARY_PATH=$1/lib64:$LD_LIBRARY_PATH
-		export LD_RUN_PATH=$1/lib:$LD_RUN_PATH
-		export LD_RUN_PATH=$1/lib64:$LD_RUN_PATH
-		export PKG_CONFIG_PATH=$1/lib/pkgconfig:$PKG_CONFIG_PATH
-		export PKG_CONFIG_PATH=$1/lib64/pkgconfig:$PKG_CONFIG_PATH
+		export LD_LIBRARY_PATH=$1/usr/lib:$LD_LIBRARY_PATH
+		export LD_LIBRARY_PATH=$1/usr/lib64:$LD_LIBRARY_PATH
+		export LD_RUN_PATH=$1/usr/lib:$LD_RUN_PATH
+		export LD_RUN_PATH=$1/usr/lib64:$LD_RUN_PATH
+		export PKG_CONFIG_PATH=$1/usr/lib/pkgconfig:$PKG_CONFIG_PATH
+		export PKG_CONFIG_PATH=$1/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
 		export MANPATH=$1/share/man:$MANPATH
 		export INFOPATH=$1/share/info:$INFOPATH
 		export XDG_DATA_DIRS=$1/share:$XDG_DATA_DIRS
@@ -25,13 +25,13 @@ add-local-path(){
 #add-local-path "/usr"
 #add-local-path "/usr/local"
 #add-local-path "/home/local"
-#add-local-path "$HOME/usr"
+add-local-path "$HOME/local"
 
 ### Linuxbrew ###
-export PATH=/home/linuxbrew/.linuxbrew:$PATH
-export PATH=$HOME/usr/brew:$PATH
-export PATH=$HOME/.linuxbrew:$PATH
-eval $(brew shellenv)
+#export PATH=/home/linuxbrew/.linuxbrew:$PATH
+#export PATH=$HOME/usr/brew:$PATH
+#export PATH=$HOME/.linuxbrew:$PATH
+#eval $(brew shellenv)
 
 #export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 #################
