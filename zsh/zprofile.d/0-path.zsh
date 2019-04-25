@@ -13,8 +13,12 @@ add-local-path(){
 		export PATH=$1/bin:$PATH
 		export LD_LIBRARY_PATH=$1/usr/lib:$LD_LIBRARY_PATH
 		export LD_LIBRARY_PATH=$1/usr/lib64:$LD_LIBRARY_PATH
+		export LD_LIBRARY_PATH=$1/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
+		export LD_LIBRARY_PATH=$1/usr/lib64/x86_64-linux-gnu:$LD_LIBRARY_PATH
 		export LD_RUN_PATH=$1/usr/lib:$LD_RUN_PATH
 		export LD_RUN_PATH=$1/usr/lib64:$LD_RUN_PATH
+		export LD_RUN_PATH=$1/usr/lib/x86_64-linux-gnu:$LD_RUN_PATH
+		export LD_RUN_PATH=$1/usr/lib64/x86_64-linux-gnu:$LD_RUN_PATH
 		export PKG_CONFIG_PATH=$1/usr/lib/pkgconfig:$PKG_CONFIG_PATH
 		export PKG_CONFIG_PATH=$1/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
 		export MANPATH=$1/share/man:$MANPATH
