@@ -9,4 +9,5 @@ TTY=${TTY#tty}
 
 cp -f ./etc/xorg.conf /tmp/xorg.conf
 
-xinit .xinitrc -- :${TTY} -nolisten tcp vt${TTY}
+#xinit .xinitrc -- :${TTY} -nolisten tcp vt${TTY}
+/usr/bin/startx
