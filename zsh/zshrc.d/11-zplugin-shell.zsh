@@ -29,6 +29,8 @@ zplugin light zdharma/fast-syntax-highlighting
 zplugin ice wait'0' atload'_zsh_autosuggest_start'
 zplugin light zsh-users/zsh-autosuggestions
 
+zplugin light b4b4r07/zsh-vimode-visual
+
 zplugin ice wait'0' as'program' pick'bin/anyenv' atload'export ANYENV_ROOT=$PWD ; eval "$(anyenv init -)"'
 zplugin light riywo/anyenv
 zplugin ice as'program' pick'anyenv-update'
