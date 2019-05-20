@@ -1,8 +1,8 @@
 
 Host github.com
-	Hostname github.com
+	Hostname ssh.github.com
 	User git
-	Port 22
+	Port 443
 	IdentityFile ~/.ssh/github
 	TCPKeepAlive yes
 	IdentitiesOnly yes
