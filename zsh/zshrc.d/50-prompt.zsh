@@ -7,10 +7,13 @@
 #	echo "ハァ…？$1とか何言ってんの？
 #コマンドもろくに覚えられないなんて、アンタどうしようもないクズね。"
 #}
+
 chpwd(){ ls -qp --color=auto }
+
 preexec() {
   _pre="$1"
 }
+
 precmd(){
 	_r=$?
 	case "${_pre}"  in
@@ -69,5 +72,6 @@ do_enter() {
     zle reset-prompt
 }
 zle -N do_enter
+
 bindkey '^m' do_enter
 bindkey "\C-m" do_enter
