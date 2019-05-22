@@ -32,5 +32,5 @@ else
 	NYA="＼（・ω・＼）にゃー！"
 	#SAN="＼（・ω・＼）SAN値！"
 	#PIN="（／・ω・）／ピンチ！"
-	PROMPT='${PNAME}%K{blue}%F{black} %~ %F{blue}%K{white}%k%F{blue}${vcs_info_msg_0_}%k%F{white}%f%k '
+	PROMPT='${BINDKEY_MODE}${PNAME}%K{blue}%F{black} %~ %F{blue}%K{white}%k%F{blue}${vcs_info_msg_0_}%k%F{white}%f%k '
 fi

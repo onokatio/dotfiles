@@ -18,3 +18,9 @@ zplugin light nana-4/materia-theme
 
 zplugin ice as'program' atclone"mkdir -p ~/.icons && cat ./install.sh | DESTDIR=\"$HOME/.icons\" THEMES=Papirus sh"
 zplugin snippet 'https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/install.sh'
+
+zplugin ice wait'0' as'program' pick'bin/anyenv' atload'export ANYENV_ROOT=$PWD ; eval "$(anyenv init -)"'
+zplugin light riywo/anyenv
+
+zplugin ice as'program' pick'anyenv-update'
+zplugin snippet 'https://github.com/znz/anyenv-update/blob/master/bin/anyenv-update'
