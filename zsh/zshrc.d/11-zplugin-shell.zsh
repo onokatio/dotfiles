@@ -31,7 +31,8 @@ zplugin light zsh-users/zsh-autosuggestions
 
 zplugin light b4b4r07/zsh-vimode-visual
 
-zplugin ice wait'0' as'program' pick'bin/anyenv' atload'export ANYENV_ROOT=$PWD ; eval "$(anyenv init -)"'
-zplugin light riywo/anyenv
-zplugin ice as'program' pick'anyenv-update'
-zplugin snippet 'https://github.com/znz/anyenv-update/blob/master/bin/anyenv-update'
+zplugin ice wait'0'
+zplugin light b4b4r07/emoji-cli
+
+zplugin ice wait'0'
+zplugin light b4b4r07/enhancd
