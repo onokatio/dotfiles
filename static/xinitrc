@@ -47,12 +47,12 @@ fi
 #/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets
 
 #setxkbmap -layout jp
-export GTK_IM_MODULE='ibus'
-export QT_IM_MODULE='ibus'
-export XMODIFIERS='@im=ibus'
+export GTK_IM_MODULE='fcitx'
+export QT_IM_MODULE='fcitx'
+export XMODIFIERS='@im=fcitx'
 #uim-xim &
 ibus-daemon -drx &
-export LANG=ja_JP.UTF-8
+#export LANG=ja_JP.UTF-8
 
 /usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 eval $(ssh-agent)
