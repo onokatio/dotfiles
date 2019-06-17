@@ -25,6 +25,7 @@ ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
 ZSH_AUTOSUGGEST_USE_ASYNC=1
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 export USE_CCACHE=1
+export CCACHE_COMPRESS=1
 export CCACHE_DIR=$HOME/.ccache
 #which ccache >/dev/null 2>&1 && export CC="ccache gcc"
 #export TERM="xterm-256color"
