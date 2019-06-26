@@ -12,8 +12,6 @@ set smartindent
 set virtualedit=onemore
 set visualbell
 set wildmode=list:longest
-set tabstop=2
-set shiftwidth=2
 set ignorecase
 set smartcase
 set incsearch
@@ -21,14 +19,16 @@ set wrapscan
 set hlsearch
 set clipboard=unnamed
 set relativenumber
-set noexpandtab
 set nocompatible
 set backspace=indent,eol,start
-set tabstop=4
-set shiftwidth=4
 set ambiwidth=double
 set fileformat=unix
 set ttyfast
+
+set tabstop=8
+set softtabstop=8
+set shiftwidth=8
+set noexpandtab
 
 nnoremap j gj
 nnoremap k gk
