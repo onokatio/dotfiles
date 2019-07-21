@@ -5,7 +5,7 @@ if [[ -z "$CTG" ]];then
 fi
 
 if [[ "$TTY" == "/dev/tty1" ]];then
-	startx > /dev/null 2>&1
+	startx 2>&1
 #	fbterm
 elif echo "$TTY" | grep "/dev/tty" ;then
 #	fbterm
