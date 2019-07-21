@@ -10,4 +10,5 @@ TTY=${TTY#tty}
 cp -f ./etc/xorg.conf /tmp/xorg.conf
 
 #xinit .xinitrc -- :${TTY} -nolisten tcp vt${TTY}
-/usr/bin/startx
+
+/usr/bin/startx 2>&1 | tee ~/log/startx-nvidia.log

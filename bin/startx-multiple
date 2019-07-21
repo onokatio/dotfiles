@@ -7,4 +7,4 @@ TTY=${TTY#tty}
 
 rm -f /tmp/xorg.conf
 
-xinit .xinitrc -- :${TTY} -nolisten tcp vt${TTY}
+xinit .xinitrc -- :${TTY} -nolisten tcp vt${TTY} 2>&1 | tee ~/log/startx.log
