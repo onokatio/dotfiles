@@ -2,9 +2,6 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-
-[[plugins]]
 repo = 'Shougo/denite.nvim'
 
 [[plugins]]
@@ -21,12 +18,6 @@ repo = 'itchyny/lightline.vim'
 
 [[plugins]]
 repo = 'tomlion/vim-solidity'
-
-[[plugins]]
-repo = 'FredKSchott/CoVim'
-
-[[plugins]]
-repo = 'w0rp/ale'
 
 [[plugins]]
 repo = 'dhruvasagar/vim-table-mode'
@@ -68,9 +59,8 @@ repo = 'ekalinin/Dockerfile.vim'
 repo = 'edisonljh/vim-scilla'
 
 [[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-rev = 'next'
-build = 'bash install.sh'
+repo = 'neoclide/coc.nvim'
+rev = 'release'
 
 [[plugins]]
 repo = 'posva/vim-vue'
