@@ -1,9 +1,8 @@
-zsh/zshrc.d/90-private.zsh
-zsh/zprofile.d/90-private.zsh
-!cache/placeholder
-cache/*
-local
-Linuxbrew
+/zsh/zshrc.d/90-private.zsh
+/zsh/zprofile.d/90-private.zsh
+/cache/*
+!/cache/placeholder
+/local
 *.zwc
 dists
 .nfs*
