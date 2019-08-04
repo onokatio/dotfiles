@@ -1,6 +1,3 @@
-zsh/zshrc
-zsh/zshrc.zwc
-zsh/zprofile
 zsh/zshrc.d/90-private.zsh
 zsh/zprofile.d/90-private.zsh
 local
