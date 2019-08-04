@@ -29,7 +29,7 @@ add-local-path(){
 #add-local-path "/usr"
 #add-local-path "/usr/local"
 #add-local-path "/home/local"
-add-local-path "$HOME/local"
+#add-local-path "$HOME/local"
 
 ### Linuxbrew ###
 #export PATH=/home/linuxbrew/.linuxbrew:$PATH
