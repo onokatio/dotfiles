@@ -1,6 +1,6 @@
 if has('nvim')
 
-	set runtimepath+=$CTG/vim/dein.vim
+	set runtimepath+=$CTG/cache/dein.vim
 	if dein#load_state("$CTG/cache/vim-plugins")
 		call dein#begin(expand("$CTG/cache/vim-plugins"))
 		call dein#load_toml(expand("$CTG/vim/dein.toml"),{'lazy': 0})
