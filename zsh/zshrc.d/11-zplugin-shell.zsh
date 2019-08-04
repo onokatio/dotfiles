@@ -1,10 +1,14 @@
-export ZPFX=$CTG/run/zplugin-polaris
+export ZPFX=$CTG/cache/zplugin-polaris
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT='alias-tips: '
 
 local -A ZPLGM
-ZPLGM[HOME_DIR]=$CTG/run/zplugin
+ZPLGM[HOME_DIR]=$CTG/cache/zplugin-plugin
 
-source $CTG/modules/zplugin/zplugin.zsh
+if [[ ! -d $CTG/cache/zplugin ]];then
+	git clone https://github.com/zdharma/zplugin.git $CTG/cache/zplugin
+fi
+
+source $CTG/cache/zplugin/zplugin.zsh
 
 zplugin snippet 'OMZ::lib/clipboard.zsh'
 zplugin snippet 'OMZ::lib/completion.zsh'
