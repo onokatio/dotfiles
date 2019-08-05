@@ -1,8 +1,7 @@
-export ZPFX=$CTG/cache/zplugin-polaris
-export ZSH_PLUGINS_ALIAS_TIPS_TEXT='alias-tips: '
-
 local -A ZPLGM
 ZPLGM[HOME_DIR]=$CTG/cache/zplugin-plugin
+export ZPFX=$CTG/cache/zplugin-plugin-make
+export ZSH_PLUGINS_ALIAS_TIPS_TEXT='alias-tips: '
 
 if [[ ! -d $CTG/cache/zplugin ]];then
 	git clone https://github.com/zdharma/zplugin.git $CTG/cache/zplugin
