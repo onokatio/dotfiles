@@ -1,0 +1,2 @@
+source $CTG/vim/vimrc.d/00-main.vim
+source $CTG/vim/vimrc.d/10-dein.vim
