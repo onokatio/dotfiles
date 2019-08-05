@@ -7,6 +7,6 @@ fi
 
 for i in $(command ls $CTG/zsh/zshrc.d/*.zsh | grep -v 00-source.zsh | sort)
 do
-	echo source $i
+	echo source $(basename $i)
 	source $i
 done
