@@ -24,3 +24,6 @@ zplugin snippet 'https://raw.githubusercontent.com/simonwhitaker/gibo/master/gib
 
 zplugin ice as'program'
 zplugin snippet 'https://raw.githubusercontent.com/paulirish/git-open/master/git-open'
+
+zplugin ice from'gh-r' as'program' mv'*gomi* -> gomi' bpick"*linux_amd64*"
+zplugin load 'b4b4r07/gomi'
