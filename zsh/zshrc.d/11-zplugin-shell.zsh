@@ -32,7 +32,7 @@ zplugin light zdharma/fast-syntax-highlighting
 zplugin ice wait'0' atload'_zsh_autosuggest_start'
 zplugin light zsh-users/zsh-autosuggestions
 
-zplugin light b4b4r07/zsh-vimode-visual
+#zplugin light b4b4r07/zsh-vimode-visual
 
 zplugin ice wait'0'
 zplugin light b4b4r07/emoji-cli
