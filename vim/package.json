@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "coc-rls": ">=1.1.2",
+    "coc-python": ">=1.2.5",
+    "coc-solargraph": ">=1.1.2",
+    "coc-tabnine": ">=1.1.11"
+  }
+}
