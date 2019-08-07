@@ -3,6 +3,18 @@
     "coc-rls": ">=1.1.2",
     "coc-python": ">=1.2.5",
     "coc-solargraph": ">=1.1.2",
-    "coc-tabnine": ">=1.1.11"
+    "coc-tabnine": ">=1.1.11",
+    "coc-dictionary": ">=1.2.2",
+    "coc-tag": ">=1.2.4",
+    "coc-word": ">=1.2.2",
+    "coc-emoji": ">=1.2.3",
+    "coc-omni": ">=1.2.4",
+    "coc-syntax": ">=1.2.4",
+    "coc-gocode": ">=1.2.4",
+    "coc-ultisnips": ">=1.2.3",
+    "coc-neosnippet": ">=1.2.2",
+    "coc-vimtex": ">=1.0.2",
+    "coc-snippets": ">=2.1.10",
+    "jest-snippets": "https://github.com/andys8/vscode-jest-snippets"
   }
 }
