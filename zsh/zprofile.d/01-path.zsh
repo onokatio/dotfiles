@@ -44,3 +44,4 @@ export PATH=/usr/lib/ccache/bin:$PATH
 export PATH=$HOME/node_modules/.bin:$PATH
 export PATH=./node_modules/.bin:$PATH
 export PATH=./vendor/bin:$PATH
+export PATH=$CTG/bin:$PATH
