@@ -28,5 +28,5 @@ zplugin snippet 'https://raw.githubusercontent.com/paulirish/git-open/master/git
 zplugin ice from'gh-r' as'program' mv'*gomi* -> gomi' bpick"*linux_amd64*"
 zplugin load 'b4b4r07/gomi'
 
-zplugin ice as"program" atclone'tar xvf fzf-*.tgz' pick'fzf'
-zplugin snippet 'https://github.com/junegunn/fzf-bin/releases/download/0.18.0/fzf-0.18.0-linux_amd64.tgz'
+zplugin ice from'gh-r' as"program" bpick"*linux_amd64*" pick'fzf'
+zplugin load 'junegunn/fzf-bin'
