@@ -76,3 +76,6 @@ repo = 'Shougo/neoinclude.vim'
 
 [[plugins]]
 repo = 'jsfaint/coc-neoinclude'
+
+[[plugins]]
+repo = 'liuchengxu/vista.vim'
