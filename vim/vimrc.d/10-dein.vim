@@ -50,4 +50,5 @@ if has('nvim')
 	xmap <silent> <TAB> <Plug>(coc-range-select)
 	xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
 
+	nnoremap <silent> <space><space> :<C-u>Vista!!<CR>
 endif
