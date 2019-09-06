@@ -35,8 +35,8 @@ alias trace-mtr='mtr'
 alias open='xdg-open'
 #alias rm='rm -v --one-file-system'
 alias rm='echo Use gomi command instead of '
-alias poweroff='echo dontuse'
-alias reboot='echo dontuse'
+alias poweroff='echo do not use'
+alias reboot='echo do not use'
 #alias sed='gsed'
 
 alias alpine="docker run -it --rm alpine:edge /bin/sh"
