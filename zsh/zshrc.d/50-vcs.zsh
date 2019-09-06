@@ -15,7 +15,7 @@ preexec() {
 precmd(){
 	_r=$?
 	case "${_pre}"  in
-		cd*|git*|vi*|:)
+		cd*|git*|vi*|..|:)
 			#psvar=()
 			#LANG=en_US.UTF-8 vcs_info
 			vcs_info
