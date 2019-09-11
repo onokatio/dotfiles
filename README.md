@@ -51,7 +51,11 @@ $ echo "source path/to/.conf-to-git/vim/vimrc" >> ~/.vimrc
 
 # Use another dotfile
 
-link file yourself from `static` directory.
+run this:
+
+```
+$ stow -v home-stow
+```
 
 # Use/Install command
 
