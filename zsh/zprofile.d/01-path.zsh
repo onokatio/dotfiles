@@ -37,7 +37,8 @@ add-local-path(){
 #export PATH=$HOME/.linuxbrew:$PATH
 #eval $(brew shellenv)
 
-export PATH=/usr/local/opt/coreutils:$PATH
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
 #################
 
 export PATH=/usr/lib/ccache/bin:$PATH
