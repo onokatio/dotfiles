@@ -10,14 +10,14 @@ export EMOJI_CLI_KEYBIND=^f
 export HOMEBREW_CACHE=/tmp
 export HOMEBREW_MAKE_JOBS=4
 export HOMEBREW_FORCE_BREWED_CURL=1
-export HOMEBREW_EDITOR=vi
+export HOMEBREW_EDITOR=nvim
 #export HOMEBREW_CC="ccache gcc"
 #export HOMEBREW_CXX="ccache g++"
 
 export HOMEBREW_NO_ENV_FILTERING=1
 
 #export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
-export EDITOR=vi
+export EDITOR=nvim
 #ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main pattern cursor root line)
 #ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
