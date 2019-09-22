@@ -14,7 +14,7 @@ export HOMEBREW_EDITOR=nvim
 #export HOMEBREW_CC="ccache gcc"
 #export HOMEBREW_CXX="ccache g++"
 
-export HOMEBREW_NO_ENV_FILTERING=1
+#export HOMEBREW_NO_ENV_FILTERING=1
 
 #export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 export EDITOR=nvim
