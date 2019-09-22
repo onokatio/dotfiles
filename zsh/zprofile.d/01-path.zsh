@@ -38,6 +38,8 @@ add-local-path(){
 #eval $(brew shellenv)
 
 export PATH=/usr/local/opt/coreutils:$PATH
+export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+export XDG_DATA_DIRS="/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS"
 #################
 
 export PATH=/usr/lib/ccache/bin:$PATH

@@ -30,3 +30,6 @@ zplugin load 'b4b4r07/gomi'
 
 zplugin ice from'gh-r' as"program" bpick"*$(uname -s | tr '[:upper:]' '[:lower:]')_amd64*" pick'fzf'
 zplugin load 'junegunn/fzf-bin'
+
+zplugin ice as'program'
+zplugin snippet 'https://gitlab.com/wavexx/screenkey/raw/master/screenkey'
