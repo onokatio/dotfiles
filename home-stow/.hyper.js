@@ -172,7 +172,7 @@ module.exports = {
 	  "hyper-solarized-dark",
 	  "hyper-overlay",
 	  "hyperminimal",
-	  "hyperborder",
+	  //"hyperborder",
   ],
 
   // in development, you can create a directory under
