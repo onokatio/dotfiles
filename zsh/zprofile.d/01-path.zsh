@@ -32,7 +32,7 @@ add-local-path(){
 #add-local-path "$HOME/local"
 
 ### Linuxbrew ###
-#export PATH=/home/linuxbrew/.linuxbrew:$PATH
+export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 #export PATH=$HOME/usr/brew:$PATH
 #export PATH=$HOME/.linuxbrew:$PATH
 #eval $(brew shellenv)
