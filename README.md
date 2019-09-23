@@ -61,3 +61,11 @@ $ stow -v home-stow
 
 First, install zshrc of this repository.
 Seconds, run `source bin.zsh`
+
+
+## maintenance
+
+```
+$ pacman -Qent >> ./packagelist.pacman
+$ pacman -Qm >> ./packagelist.yay
+```
