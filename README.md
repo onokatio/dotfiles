@@ -66,6 +66,5 @@ Seconds, run `source bin.zsh`
 ## maintenance
 
 ```
-$ pacman -Qent >> ./packagelist.pacman
-$ pacman -Qm >> ./packagelist.yay
+$ cat <(pacman -Qent) <(pacman -Qm) | sort | uniq > ./packagelist.pacman
 ```
