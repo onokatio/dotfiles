@@ -49,3 +49,4 @@ export PATH=$HOME/node_modules/.bin:$PATH
 export PATH=./node_modules/.bin:$PATH
 export PATH=./vendor/bin:$PATH
 export PATH=$CTG/bin:$PATH
+export PATH="$HOME/.cargo/bin:$PATH"
