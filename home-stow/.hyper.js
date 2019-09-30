@@ -152,7 +152,7 @@ module.exports = {
 		  height: 1.0,
 	  },
 	  unique: true,
-	    tray: false,
+	    tray: true,
   
     },
     hyperBorder: {
