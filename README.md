@@ -6,7 +6,8 @@
 - tmux
 - git
 
-# Setup
+# Deploy
+
 
 ```zsh
 $ cd
@@ -23,48 +24,25 @@ $ export CTG=$HOME/dotfile # or write this export command to zprofile directory.
 
 The default $CTG is `$HOME/.conf-to-git`
 
+```
+# for linux
+$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+
+# for macOS
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+$ brew bundle
+```
+
 # Use zshrc/zprofile
-
-```
-$ ln -s path/to/.conf-to-git/zsh/zshrc ~/.zshrc
-$ ln -s path/to/.conf-to-git/zsh/zprofile ~/.zprofile
-```
-
-or
-
-```
-$ echo "source path/to/.conf-to-git/zsh/zshrc" >> ~/.zshrc
-$ echo "source path/to/.conf-to-git/zsh/zprofile" >> ~/.zprofile
-```
-
-# Use vimrc
-
-```
-$ ln -s path/to/.conf-to-git/vim/vimrc ~/.vimrc
-```
-
-or 
-
-```
-$ echo "source path/to/.conf-to-git/vim/vimrc" >> ~/.vimrc
-```
-
-# Use another dotfile
-
-run this:
 
 ```
 $ stow -v home-stow
 ```
-
-# Use/Install command
-
-First, install zshrc of this repository.
-Seconds, run `source bin.zsh`
-
 
 ## maintenance
 
 ```
 $ cat <(pacman -Qent) <(pacman -Qm) | sort | uniq > ./packagelist.pacman
 ```
+
