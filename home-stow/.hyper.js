@@ -149,7 +149,7 @@ module.exports = {
           animate: true,
 	  size: {
 		  width: 1.0,
-		  height: 1.0,
+		  height: 0.9,
 	  },
 	  unique: true,
 	    tray: true,
