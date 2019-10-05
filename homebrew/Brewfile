@@ -26,6 +26,7 @@ brew "gnu-sed"
 brew "gnu-tar"
 brew "git"
 brew "git-lfs"
+brew "ghq"
 
 brew "automake"
 brew "autoconf"
