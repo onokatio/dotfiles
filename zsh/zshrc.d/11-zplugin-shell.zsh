@@ -12,6 +12,7 @@ source $CTG/cache/zplugin/zplugin.zsh
 zplugin snippet 'OMZ::lib/clipboard.zsh'
 zplugin snippet 'OMZ::lib/completion.zsh'
 zplugin snippet 'OMZ::lib/compfix.zsh'
+zplugin snippet 'OMZ::plugins/gnu-utils/gnu-utils.plugin.zsh'
 
 zplugin snippet 'OMZ::plugins/dotenv/dotenv.plugin.zsh'
 zplugin snippet 'OMZ::plugins/git/git.plugin.zsh'
