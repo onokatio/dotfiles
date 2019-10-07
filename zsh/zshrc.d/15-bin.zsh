@@ -7,8 +7,10 @@ zplugin light dspinellis/git-issue
 zplugin ice as"program" pick"diff-so-fancy"
 zplugin snippet "https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy"
 
-zplugin ice wait'0' as'program' pick'bin/anyenv' atload'export ANYENV_ROOT=$PWD ; eval "$(anyenv init -)"'
-zplugin light riywo/anyenv
+#zplugin ice wait'0' as'program' pick'bin/anyenv' atload'export ANYENV_ROOT=$PWD ; eval "$(anyenv init -)"'
+#zplugin light riywo/anyenv
+ANYENV_ROOT=$(which anyenv | sed -e 's;bin/anyenv;;')
+eval "$(anyenv init -)"
 
 zplugin ice as'program'
 zplugin snippet 'https://raw.githubusercontent.com/znz/anyenv-update/master/bin/anyenv-update'
