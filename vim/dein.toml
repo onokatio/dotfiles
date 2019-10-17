@@ -50,9 +50,6 @@ repo = 'bfrg/vim-cpp-modern'
 repo = 'leafgarland/typescript-vim'
 
 [[plugins]]
-repo = 'vim-syntastic/syntastic'
-
-[[plugins]]
 repo = 'ekalinin/Dockerfile.vim'
 
 [[plugins]]
