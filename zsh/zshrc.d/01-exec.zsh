@@ -5,7 +5,7 @@ if [[ "$TTY" == "/dev/tty1" ]];then
 fi
 
 if [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CONNECTION} ]];then
-	tmux
+	tmux new-session -A -s main
 fi
 
 #umask 0022
