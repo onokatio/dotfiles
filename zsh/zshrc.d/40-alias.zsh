@@ -47,3 +47,4 @@ alias aria2c="aria2c --bt-max-peers=0 --bt-request-peer-speed-limit=1000M --max-
 alias CAPS='echo setxkbmap -option ctrl:swapcaps , setxkbmap -option'
 
 alias wine='LANG="ja_JP.UTF-8" ; wine'
+alias oculus='scrcpy -p 5555 -c 1441:1200:0:200'
