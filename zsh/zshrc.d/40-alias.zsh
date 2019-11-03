@@ -48,3 +48,8 @@ alias CAPS='echo setxkbmap -option ctrl:swapcaps , setxkbmap -option'
 
 alias wine='LANG="ja_JP.UTF-8" ; wine'
 alias oculus='scrcpy -p 5555 -c 1441:1200:0:200'
+
+function rot(){
+for i in {a..z} ;do j=$(echo $i | tr '[a-z]' '[A-Z]'); echo "$@" | tr "[a-z]" "[$i-za-$i]" | tr "[A-Z]" "[$j-ZA-$j]";done
+}
+alias sqli="echo \' OR 1 == 1 \; -- \' "
