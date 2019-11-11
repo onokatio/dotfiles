@@ -22,8 +22,8 @@ alias apt-get=apt-fast
 alias mkdir='mkdir -p'
 alias bat="upower -i /org/freedesktop/UPower/devices/battery_BAT0|grep 'percentage'|sed -e 's/ //g'|sed -e 's/percentage://'|sed -e 's/%//'"
 alias grep="grep --color -I"
-alias ls='ls -Ahqp --color=auto'
-alias l='ls -Ahqp --color=auto'
+alias ls='ls -qp --human-readable --almost-all --color=auto'
+alias l='ls -qp --human-readable --almost-all --color=auto'
 alias ll='ls -lZ -Ahqp --color=auto --full-time --inode'
 #alias make='make -j4'
 alias crontab='echo "dont use crontab !!"'
