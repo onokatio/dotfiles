@@ -26,6 +26,27 @@ add-local-path(){
 		export XDG_DATA_DIRS=$1/share:$XDG_DATA_DIRS
 }
 
+
+# usage: add-python-path <dst> <src>
+add-python-path(){
+
+	custom_pth="$1/custom.pth"
+
+	if [[ -d "$1" ]];then
+
+		[[ ! -e "${custom_pth}" ]] && touch $custom_pth
+
+		if ! grep "$2" "$custom_pth" >/dev/null 2>&1 ; then
+			echo "$2/"               >> ${custom_pth}
+			echo "$2/site-packages/" >> ${custom_pth}
+		fi
+	fi
+}
+
+# set system PYTHONPATH to linuxbrew's PYTHONPATH
+add-python-path "/home/linuxbrew/.linuxbrew/lib/python2.7/site-packages" "/usr/lib/python2.7"
+add-python-path "/home/linuxbrew/.linuxbrew/lib/python3.7/site-packages" "/usr/lib/python3.7"
+
 #add-local-path "/usr"
 #add-local-path "/usr/local"
 #add-local-path "/home/local"
