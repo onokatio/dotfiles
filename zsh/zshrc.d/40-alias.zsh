@@ -22,9 +22,9 @@ alias apt-get=apt-fast
 alias mkdir='mkdir -p'
 alias bat="upower -i /org/freedesktop/UPower/devices/battery_BAT0|grep 'percentage'|sed -e 's/ //g'|sed -e 's/percentage://'|sed -e 's/%//'"
 alias grep="grep --color -I"
-alias ls='ls -qp --human-readable --almost-all --color=auto'
-alias l='ls -qp --human-readable --almost-all --color=auto'
-alias ll='ls -lZ -Ahqp --color=auto --full-time --inode'
+alias ls='ls -qpFv --group-directories-first --human-readable --almost-all --color=auto'
+alias l='ls -qpFv --group-directories-first --human-readable --almost-all --color=auto'
+alias ll='ls -lZ -AhqpFv --group-directories-first --human-readable --almost-all --color=auto --full-time --inode'
 #alias make='make -j4'
 alias crontab='echo "dont use crontab !!"'
 alias chromekill='ps ax|/bin/grep [c]hrome|cut -c-6|xargs sudo renice -19'
@@ -50,6 +50,6 @@ alias wine='LANG="ja_JP.UTF-8" ; wine'
 alias oculus='scrcpy -p 5555 -c 1441:1200:0:200'
 
 function rot(){
-for i in {a..z} ;do j=$(echo $i | tr '[a-z]' '[A-Z]'); echo "$@" | tr "[a-z]" "[$i-za-$i]" | tr "[A-Z]" "[$j-ZA-$j]";done
+	for i in {a..z} ;do j=$(echo $i | tr '[a-z]' '[A-Z]'); echo "$@" | tr "[a-z]" "[$i-za-$i]" | tr "[A-Z]" "[$j-ZA-$j]";done
 }
 alias sqli="echo \' OR 1 == 1 \; -- \' "
