@@ -46,3 +46,27 @@
 	root = /home/katio/script
 [alias]
 	log2 = log --oneline --graph --all --remotes
+[filesystem "Oracle Corporation|1.8.0_231|/dev/mapper/kirino-root"]
+	timestampResolution = 1001 milliseconds
+	minRacyThreshold = 0 nanoseconds
+[filesystem "Oracle Corporation|1.8.0_231|/home/katio/.Private"]
+	timestampResolution = 1001 milliseconds
+	minRacyThreshold = 0 nanoseconds
+[filesystem "Oracle Corporation|1.8.0_231|tmpfs"]
+	timestampResolution = 1001 milliseconds
+	minRacyThreshold = 0 nanoseconds
+[filesystem "Oracle Corporation|11.0.5|/dev/mapper/kirino-root"]
+	timestampResolution = 8000 nanoseconds
+	minRacyThreshold = 5532 microseconds
+[filesystem "Oracle Corporation|11.0.5|/home/katio/.Private"]
+	timestampResolution = 2000 nanoseconds
+	minRacyThreshold = 5526 microseconds
+[filesystem "Oracle Corporation|11.0.5|tmpfs"]
+	timestampResolution = 22000 nanoseconds
+	minRacyThreshold = 5581 microseconds
+[remote "origin"]
+	proxy = socks5h://127.0.0.1:9050
+[http]
+	proxy = socks5h://127.0.0.1:9050
+[remote "orionwl"]
+	proxy = socks5h://127.0.0.1:9050
