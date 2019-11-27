@@ -42,7 +42,7 @@ alias reboot='echo do not use'
 alias alpine="docker run -it --rm alpine:edge /bin/sh"
 alias ubuntu="docker run -it --rm ubuntu /bin/bash"
 
-alias aria2c="aria2c --bt-max-peers=0 --bt-request-peer-speed-limit=1000M --max-connection-per-server=16 --split=20 --bt-max-open-files=1000"
+alias aria2c="aria2c --bt-max-peers=0 --bt-request-peer-speed-limit=1000M --max-concurrent-downloads=100 --max-connection-per-server=16 --split=20 --bt-max-open-files=1000"
 
 alias CAPS='echo setxkbmap -option ctrl:swapcaps , setxkbmap -option'
 
@@ -53,3 +53,5 @@ function rot(){
 	for i in {a..z} ;do j=$(echo $i | tr '[a-z]' '[A-Z]'); echo "$@" | tr "[a-z]" "[$i-za-$i]" | tr "[A-Z]" "[$j-ZA-$j]";done
 }
 alias sqli="echo \' OR 1 == 1 \; -- \' "
+
+alias get='ghq get'
