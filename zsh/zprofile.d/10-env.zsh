@@ -56,3 +56,5 @@ export VGL_READBACK=pbo
 
 #export ZIPINFOOPT="-OCP932"
 #export UNZIPOPT="-OCP932"
+
+export WINEDEBUG=+wgl

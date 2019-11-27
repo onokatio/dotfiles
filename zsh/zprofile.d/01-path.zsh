@@ -46,6 +46,7 @@ add-python-path(){
 # set system PYTHONPATH to linuxbrew's PYTHONPATH
 add-python-path "/home/linuxbrew/.linuxbrew/lib/python2.7/site-packages" "/usr/lib/python2.7"
 add-python-path "/home/linuxbrew/.linuxbrew/lib/python3.7/site-packages" "/usr/lib/python3.7"
+add-python-path "/home/linuxbrew/.linuxbrew/lib/python3.7/site-packages" "/usr/lib/python3.8"
 
 #add-local-path "/usr"
 #add-local-path "/usr/local"
