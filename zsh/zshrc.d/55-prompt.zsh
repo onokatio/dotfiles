@@ -8,7 +8,7 @@
 #コマンドもろくに覚えられないなんて、アンタどうしようもないクズね。"
 #}
 
-chpwd(){ ls -qp --color=auto }
+chpwd(){ ls -qpFv --group-directories-first --human-readable --almost-all --color=auto }
 
 
 if [ ${UID} -eq 0 ]; then
