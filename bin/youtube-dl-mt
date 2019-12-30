@@ -1,0 +1,26 @@
+#!/bin/bash
+
+pids=()
+
+function stop_all_thread(){
+	kill -9 ${pids[@]}
+	echo 'stopped all thread.'
+}
+
+
+youtube-dl -j --flat-playlist $1 | jq -r .url > url.txt
+
+shift
+
+while read line
+do
+	echo Creating new thread.
+	youtube-dl --newline --no-progress -f best $@ "https://www.youtube.com/watch?v=${line}" &
+	pids[$!]=$!
+done < url.txt
+
+rm url.txt
+
+trap "stop_all_thread" 2
+
+wait
