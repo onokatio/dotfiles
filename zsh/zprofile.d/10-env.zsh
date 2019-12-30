@@ -58,3 +58,7 @@ export VGL_READBACK=pbo
 #export UNZIPOPT="-OCP932"
 
 export WINEDEBUG=+wgl
+
+export MOZ_ACCELERATED=1
+
+export GO111MODULE=on

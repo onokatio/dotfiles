@@ -15,6 +15,7 @@ alias hs=history
 #alias diff=colordiff
 alias info=pinfo
 #alias wget="axel -n 10 -v -a"
+alias mirror='wget -r -l inf -k -nc -H'
 alias ks=ls
 alias xs=cd
 alias apt=apt-fast
