@@ -64,6 +64,8 @@ export PATH=$HOME/.linuxbrew:$PATH
 #eval $(brew shellenv)
 
 export XDG_DATA_DIRS="/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS"
+export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$XDG_DATA_DIRS"
+export XDG_DATA_DIRS="/home/katio/.local/share/flatpak/exports/share:$XDG_DATA_DIRS"
 
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
