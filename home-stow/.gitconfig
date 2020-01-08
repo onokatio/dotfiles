@@ -44,6 +44,7 @@
 	clean = git-lfs clean -- %f
 [ghq]
 	root = /home/katio/script
+	user = onokatio
 [alias]
 	log2 = log --oneline --graph --all --remotes
 [filesystem "Oracle Corporation|1.8.0_231|/dev/mapper/kirino-root"]
