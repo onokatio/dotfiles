@@ -1,7 +1,7 @@
 #zmodload zsh/zprof && zprof
 
 if [[ "$TTY" == "/dev/tty1" ]];then
-	startx 2>&1
+	startx 2>&1 | tee ~/log/startx.log
 fi
 
 if [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CONNECTION} ]];then
