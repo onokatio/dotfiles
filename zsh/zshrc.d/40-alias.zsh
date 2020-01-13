@@ -56,3 +56,5 @@ function rot(){
 alias sqli="echo \' OR 1 == 1 \; -- \' "
 
 alias get='ghq get'
+
+alias myip='curl http://inet-ip.info'
