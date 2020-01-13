@@ -67,3 +67,5 @@ export GO111MODULE=on
 export PIPENV_VENV_IN_PROJECT=true
 
 eval $(dircolors $CTG/static/dircolors.256dark)
+
+export SUDO_PROMPT="[sudo] さっさとパスワード入れなさいよ、このバカ！ > "
