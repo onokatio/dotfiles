@@ -65,3 +65,5 @@ export MOZ_WEBRENDER=1
 export GO111MODULE=on
 
 export PIPENV_VENV_IN_PROJECT=true
+
+eval $(dircolors $CTG/static/dircolors.256dark)
