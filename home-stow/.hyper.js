@@ -12,7 +12,7 @@ module.exports = {
     fontSize: 12,
 
     // font family with optional fallbacks
-    fontFamily: '"Source Han Code JP R", "UbuntuMono Nerd Font Mono", monospace',
+    fontFamily: '"Source Han Mono", "Source Han Code JP R", "UbuntuMono Nerd Font Mono", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -146,7 +146,7 @@ module.exports = {
 		  open: ['F12'],
 		  close: ['F10'],
 	  },
-          animate: true,
+          animate: false,
 	  size: {
 		  width: 1.0,
 		  height: 0.9,
