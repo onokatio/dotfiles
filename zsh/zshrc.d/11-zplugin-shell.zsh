@@ -41,8 +41,8 @@ zplugin light b4b4r07/emoji-cli
 zplugin ice wait'0'
 zplugin light b4b4r07/enhancd
 
-zplugin ice wait'0' as'program' make"all" pick"bin/history" atload"source misc/zsh/init.zsh"
-zplugin light b4b4r07/history
+#zplugin ice as'program' make"all" pick"bin/history" atload"source misc/zsh/init.zsh"
+#zplugin light b4b4r07/history
 
 alias history='command history'
 ZSH_HISTORY_KEYBIND_GET="^r"
