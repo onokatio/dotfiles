@@ -10,6 +10,8 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/main]
+enable-ipc = true
+
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
@@ -33,14 +35,14 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "Source Han Mono"
+font-0 = "Source Han Mono:size=9"
 font-1 = "RobotoMono Nerd Font"
 font-2 = "Noto Sans Symbols2;3"
 font-3 = siji:pixelsize=10;1
 
 modules-left = i3
-modules-center = mpd
-modules-right = filesystem pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+;modules-center = mpd
+modules-right = filesystem pulseaudio memory cpu wlan battery cpu-temp date
 
 tray-position = right
 tray-padding = 2
@@ -162,6 +164,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
+format = <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
@@ -169,12 +172,12 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = net1
+interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected = %essid%@%ifname%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -209,8 +212,8 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date =
-date-alt = " %Y-%m-%d"
+date = "%Y/%m/%d"
+date-alt = "%Y/%m/%d"
 
 time = %H:%M
 time-alt = %H:%M:%S
@@ -224,8 +227,8 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+format-volume = <label-volume>
+label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted = 🔇
@@ -280,12 +283,12 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/battery
 battery = BAT0
 adapter = ADP1
-full-at = 98
+full-at = 99
 
-format-charging = <animation-charging> <label-charging>
+format-charging = <label-charging>
 format-charging-underline = #ffb52a
 
-format-discharging = <animation-discharging> <label-discharging>
+format-discharging = <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
@@ -309,9 +312,10 @@ animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
-[module/temperature]
+[module/cpu-temp]
 type = internal/temperature
 thermal-zone = 0
+hwmon-path = /sys/class/hwmon/hwmon4/temp1_input
 warn-temperature = 60
 
 format = <ramp> <label>
@@ -327,35 +331,6 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
-
-[module/powermenu]
-type = custom/menu
-
-expand-right = true
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
 
 [settings]
 screenchange-reload = true
