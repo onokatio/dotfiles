@@ -40,9 +40,9 @@ font-1 = "RobotoMono Nerd Font"
 font-2 = "Noto Sans Symbols2;3"
 font-3 = siji:pixelsize=10;1
 
-modules-left = i3 xwindow
+;modules-left = i3 xwindow
 ;modules-center = mpd
-modules-right = filesystem backlight pulseaudio memory cpu wlan battery cpu-temp date
+modules-right = backlight pulseaudio memory cpu wlan battery cpu-temp date
 
 tray-position = right
 tray-padding = 2
@@ -65,7 +65,7 @@ cursor-scroll = ns-resize
 [module/xwindow]
 type = internal/xwindow
 label = %title%
-label-maxlen = 50
+label-maxlen = 40
 
 label-empty = Empty
 
