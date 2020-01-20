@@ -70,9 +70,10 @@ export XMODIFIERS='@im=fcitx'
 
 #nvidia-settings --load-config-only &
 
-compton --config ~/.compton.conf & >> ~/log/compton.log 2>&1
+#compton --config ~/.compton.conf & >> ~/log/compton.log 2>&1
 #xss-lock -- i3lock -n -i $HOME/.conf-to-git/mojave_dynamic_8.resize.png &
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
-exec startxfce4
-#exec i3
+#exec startxfce4
+exec i3 2>&1 #| tee ~/i3.log
+#exec sway --my-next-gpu-wont-be-nvidia | tee swat.log
