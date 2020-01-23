@@ -40,7 +40,7 @@ font-1 = "RobotoMono Nerd Font"
 font-2 = "Noto Sans Symbols2;3"
 font-3 = siji:pixelsize=10;1
 
-;modules-left = i3 xwindow
+modules-left = i3 xwindow
 ;modules-center = mpd
 modules-right = backlight pulseaudio memory cpu wlan battery cpu-temp date
 
@@ -223,7 +223,7 @@ format-charging-underline = #ffb52a
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = ""
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
