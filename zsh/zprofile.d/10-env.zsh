@@ -72,3 +72,5 @@ export SUDO_PROMPT="[sudo] さっさとパスワード入れなさいよ、こ�
 
 export N0CLI_API_ENDPOINT=172.16.14.10:20180
 export N0CLI_API_URL=grpc://172.16.14.10:20180
+
+export QT_QPA_PLATFORMTHEME=qt5ct
