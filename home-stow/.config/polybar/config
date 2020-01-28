@@ -202,7 +202,8 @@ format-volume = <ramp-volume> <label-volume>
 format-volume-underline = #0a6cf5
 label-volume = "%percentage%%"
 label-volume-foreground = ${root.foreground}
-label-muted = ""
+label-muted = " 0%"
+label-muted-underline = #0a6cf5
 label-muted-foreground = #666
 
 ramp-volume-0 = "奄"
