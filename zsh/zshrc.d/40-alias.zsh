@@ -61,3 +61,7 @@ alias sqli="echo \' OR 1 == 1 \; -- \' "
 alias get='ghq get'
 
 alias myip='curl http://inet-ip.info'
+
+alias venv='python3 -m venv venv'
+
+alias man='LANG=ja_JP.UTF-8 man'
