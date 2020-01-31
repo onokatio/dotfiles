@@ -196,6 +196,7 @@ exec --no-startup-id picom
 #exec --no-startup-id polybar example
 #exec --no-startup-id hyper
 exec --no-startup-id dex -va
-exec --no-startup-id hyper
+#exec --no-startup-id hyper
 exec --no-startup-id polybar main
 exec --no-startup-id feh -d --bg-fill ~/.conf-to-git/mojave_dynamic_8.png
+exec --no-startup-id dunst
