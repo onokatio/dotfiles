@@ -184,6 +184,7 @@ bindsym $mod+r mode "resize"
 bindsym XF86MonBrightnessUp exec light -A 0.5
 bindsym XF86MonBrightnessDown exec light -U 0.5
 
+for_window [class="Yubico Authenticator"] floating enable
 
 #exec --no-startup-id albert
 exec --no-startup-id picom
