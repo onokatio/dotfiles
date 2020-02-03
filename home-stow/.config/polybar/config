@@ -40,7 +40,7 @@ font-1 = "RobotoMono Nerd Font"
 
 modules-left = i3 xwindow
 ;modules-center = mpd
-modules-right = backlight pulseaudio memory cpu wlan battery cpu-temp date
+modules-right = backlight pulseaudio memory cpu mhz wlan battery cpu-temp date
 
 tray-position = right
 tray-padding = 2
@@ -273,6 +273,16 @@ ramp-2 = ""
 ramp-3 = ""
 ramp-4 = ""
 ramp-foreground = ${colors.foreground-alt}
+
+[module/mhz]
+type = custom/script
+exec = lscpu -J | jq -r '.lscpu[] | select (.field == "CPU MHz:") | .data'
+exec-if = which jq
+format = <label>Mhz
+format-underline = #4df50a
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+
 
 [settings]
 screenchange-reload = true
