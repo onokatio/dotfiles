@@ -40,7 +40,7 @@ font-1 = "RobotoMono Nerd Font"
 
 modules-left = i3 xwindow
 ;modules-center = mpd
-modules-right = backlight pulseaudio memory cpu mhz wlan battery cpu-temp date
+modules-right = backlight pulseaudio pasink pasource memory cpu mhz wlan battery cpu-temp date
 
 tray-position = right
 tray-padding = 2
@@ -283,6 +283,20 @@ format-underline = #4df50a
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 
+[module/pasink]
+type = custom/script
+exec = pactl list | grep "Name: $(pactl info | grep 'Default Sink' | sed -e 's/Default Sink: //g')$" -A 1| tail -n1 | sed -e 's/^.*Description: //' | sed -e 's/Built-in Audio Analog Stereo/Builtin/'
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+
+[module/pasource]
+type = custom/script
+exec = pactl list | grep "Name: $(pactl info | grep 'Default Source' | sed -e 's/Default Source: //g')$" -A 1| tail -n1 | sed -e 's/^.*Description: //' | sed -e 's/Built-in Audio Analog Stereo/Builtin/'
+
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
 
 [settings]
 screenchange-reload = true
