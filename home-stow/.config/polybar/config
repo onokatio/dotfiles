@@ -40,7 +40,7 @@ font-1 = "RobotoMono Nerd Font"
 
 modules-left = i3 xwindow
 ;modules-center = mpd
-modules-right = backlight pulseaudio pasink pasource memory cpu mhz wlan battery cpu-temp date
+modules-right = backlight pulseaudio pasink pasource memory cpu mhz wlan system-bluetooth-bluetoothctl battery cpu-temp date
 
 tray-position = right
 tray-padding = 2
@@ -297,6 +297,15 @@ exec = pactl list | grep "Name: $(pactl info | grep 'Default Source' | sed -e 's
 format = <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
+
+[module/system-bluetooth-bluetoothctl]
+type = custom/script
+exec = bash ~/script/github.com/polybar/polybar-scripts/polybar-scripts/system-bluetooth-bluetoothctl/system-bluetooth-bluetoothctl.sh
+tail = true
+format = "<label>"
+format-prefix = " "
+format-underline = #6666ff
+#click-left = ~/polybar-scripts/system-bluetooth-bluetoothctl.sh --toggle &
 
 [settings]
 screenchange-reload = true
