@@ -40,7 +40,7 @@ font-1 = "RobotoMono Nerd Font"
 
 modules-left = i3 xwindow
 ;modules-center = mpd
-modules-right = backlight pulseaudio pasink pasource memory cpu mhz wlan system-bluetooth-bluetoothctl battery cpu-temp date
+modules-right = backlight pulseaudio pasink pasource memory cpu mhz system-cpu-temp system-nvidia-smi wlan system-bluetooth-bluetoothctl battery date
 
 tray-position = right
 tray-padding = 2
@@ -300,12 +300,34 @@ format-prefix-foreground = ${colors.foreground-alt}
 
 [module/system-bluetooth-bluetoothctl]
 type = custom/script
+interval = 1
 exec = bash ~/script/github.com/polybar/polybar-scripts/polybar-scripts/system-bluetooth-bluetoothctl/system-bluetooth-bluetoothctl.sh
 tail = true
 format = "<label>"
 format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #6666ff
 #click-left = ~/polybar-scripts/system-bluetooth-bluetoothctl.sh --toggle &
+
+[module/system-nvidia-smi]
+type = custom/script
+interval = 1
+exec = bash ~/script/github.com/polybar/polybar-scripts/polybar-scripts/system-nvidia-smi/system-nvidia-smi.sh
+tail = true
+format = "<label>%"
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #ff6666
+#click-left = ~/polybar-scripts/system-bluetooth-bluetoothctl.sh --toggle &
+
+[module/system-cpu-temp]
+type = custom/script
+interval = 1
+exec = sensors | grep Package | awk '{print substr($4, 2, length($4)-5)}'
+format = "<label>°C"
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #ff6666
 
 [settings]
 screenchange-reload = true
