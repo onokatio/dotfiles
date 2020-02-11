@@ -184,6 +184,9 @@ bindsym $mod+r mode "resize"
 bindsym XF86MonBrightnessUp exec light -A 0.5
 bindsym XF86MonBrightnessDown exec light -U 0.5
 
+bindsym Mod4+l exec i3lock -nfo
+# Mod4 = Super
+
 for_window [class="Yubico Authenticator"] floating enable
 
 #exec --no-startup-id albert
