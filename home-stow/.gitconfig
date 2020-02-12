@@ -26,7 +26,7 @@
 	markEmptyLines = false
 	changeHunkIndicators = true
 [credential]
-	helper = cache --timeout=3600
+	helper = /usr/lib/git-core/git-credential-gnome-keyring
 [init]
 	templatedir = ~/.git-templates/git-secrets
 [secrets]
