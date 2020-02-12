@@ -74,3 +74,6 @@ export N0CLI_API_ENDPOINT=172.16.14.10:20180
 export N0CLI_API_URL=grpc://172.16.14.10:20180
 
 export QT_QPA_PLATFORMTHEME=qt5ct
+
+#export GTK2_RC_FILES=/usr/share/themes/Materia-light/gtk-2.0/gtkrc
+#export GTK_THEME=Materia-light
