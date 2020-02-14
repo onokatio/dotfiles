@@ -82,3 +82,6 @@ repo = 'glacambre/firenvim'
 hook_post_update = '''
   call firenvim#install(0)
 '''
+
+[[plugins]]
+repo = 'mbbill/undotree'
