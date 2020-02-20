@@ -40,7 +40,7 @@ font-1 = "RobotoMono Nerd Font"
 
 ;modules-left = i3 xwindow
 ;modules-center = mpd
-modules-right = backlight pulseaudio pasink pasource memory cpu mhz system-cpu-temp system-nvidia-smi wlan info-pingrtt-v6 system-bluetooth-bluetoothctl battery info-tlp date
+modules-right = backlight pulseaudio pasink pasource memory cpu mhz system-cpu-temp system-nvidia-smi wlan info-pingrtt system-bluetooth-bluetoothctl battery info-tlp date
 
 tray-position = right
 tray-padding = 2
@@ -333,7 +333,9 @@ format-underline = #ff6666
 type = custom/script
 interval = 1
 format = "<label>"
-exec = bash ~/script/github.com/polybar/polybar-scripts/polybar-scripts/info-pingrtt/info-pingrtt-v6.sh ||  ~/script/github.com/polybar/polybar-scripts/polybar-scripts/info-pingrtt/info-pingrtt.sh
+#exec = bash ~/script/github.com/polybar/polybar-scripts/polybar-scripts/info-pingrtt/info-pingrtt-v6.sh
+exec = bash ~/script/github.com/polybar/polybar-scripts/polybar-scripts/info-pingrtt/info-pingrtt.sh
+;format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #ff6666
 
