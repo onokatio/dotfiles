@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x5-30+20"
+    geometry = "400x20-0+27"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -51,7 +51,7 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 2
+    separator_height = 1
 
     # Padding between text and separator.
     padding = 8
@@ -61,10 +61,10 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 3
+    frame_width = 0
 
     # Defines color of the frame around the notification window.
-    frame_color = "#ffffff"
+    frame_color = "#eeeeee"
 
     # Define a color for the separator.
     # possible values are:
@@ -72,7 +72,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = foreground
+    separator_color = frame
 
     # Sort messages by urgency.
     sort = yes
@@ -86,7 +86,7 @@
 
     ### Text ###
 
-    font = Monospace 8
+    font = Roboto 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -155,7 +155,7 @@
     hide_duplicate_count = false
 
     # Display indicators for URLs (U) and actions (A).
-    show_indicators = yes
+    show_indicators = no
 
     ### Icons ###
 
@@ -166,7 +166,7 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_path = /usr/share/icons/Papirus/16x16/status/:/usr/share/icons/Papirus/16x16/devices/:/usr/share/icons/Papirus/16x16/mimetypes:/usr/share/icons/Papirus/16x16/apps:/usr/share/icons/hicolor/16x16/apps
 
     ### History ###
 
@@ -197,7 +197,7 @@
     # Print a notification on startup.
     # This is mainly for error detection, since dbus (re-)starts dunst
     # automatically after a crash.
-    startup_notification = false
+    startup_notification = true
 
     # Manage dunst's desire for talking
     # Can be one of the following values:
@@ -236,9 +236,9 @@
     #              invoke it. If there are multiple and no default, open the context menu.
     # * close_current: Close current notification.
     # * close_all: Close all notifications.
-    mouse_left_click = close_current
-    mouse_middle_click = do_action
-    mouse_right_click = close_all
+    mouse_left_click = do_action
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.
@@ -248,7 +248,7 @@
     # dunst will attempt to calculate an appropriate dpi value for each monitor
     # using the resolution and physical size. This might be useful in setups
     # where there are multiple screens with very different dpi values.
-    per_monitor_dpi = false
+    per_monitor_dpi = true
 
 [shortcuts]
 
