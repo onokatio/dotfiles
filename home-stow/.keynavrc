@@ -1,0 +1,147 @@
+# This is a keynavrc file. Yours should live in 
+# $HOME/.keynavrc
+#
+# Lines beginning with '#' are comments.
+# Format is:
+#   keysequence cmd1,cmd2,cmd3...
+#
+# Other special values are:
+#   'clear' on a line by itself (no quotes) will erase all keybindings
+#   (including the defaults)
+#   'daemonize' on a line by itself (no quotes) will make keynav background
+#   after parsing the configfile and having no critical errors.
+# 
+# The 'start' command alone is handled specially, in that any key sequence
+# mapped to 'start' will be grabbed when keynav starts up so you can invoke it
+# to activate keynav. The remaining keys are only recognized while keynav is
+# active
+#
+# Project page; http://www.semicomplete.com/projects/keynav
+
+# Use 'clear' to blow away any previous keybindings
+
+clear
+
+# Use 'daemonize' to background ourselves.
+
+daemonize
+
+# Restart (Reload config)
+
+t restart
+
+# Start
+
+#ctrl+semicolon start
+ctrl+semicolon start,windowzoom,warp,cursorzoom 20 20
+
+# End
+
+Escape warp,end
+q warp,end
+ctrl+g warp,end
+ctrl+d warp,end
+ctrl+c warp,end
+
+# Click
+
+1 warp,click 1,end
+2 warp,click 2,end
+3 warp,click 3,end
+4 warp,click 1
+F1 warp,drag 1
+F2 warp,drag 2
+F3 warp,drag 3
+
+space warp,click 1,end
+Henkan_Mode warp,click 1,end
+Hiragana_Katakana warp,click 3,end
+
+# Shell Launcher
+
+5 sh "lilyterm",end
+6 sh "leafpad",end
+7 sh "sylpheed",end
+8 sh "midori",end
+9 sh "gvim",end
+0 sh "emacs",end
+
+# History
+
+#a history-back
+
+# Record keynav actions
+
+#q record
+
+# Jump keys
+
+w windowzoom,cursorzoom 20 20,move-up 200,move-left 370
+s windowzoom,cursorzoom 20 20,move-down 0,move-left 370
+x windowzoom,cursorzoom 20 20,move-down 200,move-left 370
+e windowzoom,cursorzoom 20 20,move-up 200,move-right 0
+d windowzoom,cursorzoom 20 20,move-down 0,move-right 0
+c windowzoom,cursorzoom 20 20,move-down 200,move-right 0
+r windowzoom,cursorzoom 20 20,move-up 200,move-right 370
+f windowzoom,cursorzoom 20 20,move-down 0,move-right 370
+v windowzoom,cursorzoom 20 20,move-down 200,move-right 370
+
+# Cursor key
+
+Left move-left 10
+Down move-down 10
+Up move-up 10
+Right move-right 10
+
+shift+Left move-left 50
+shift+Down move-down 50
+shift+Up move-up 50
+shift+Right move-right 50
+
+ctrl+Left move-left 100
+ctrl+Down move-down 100
+ctrl+Up move-up 100
+ctrl+Right move-right 100
+
+# Diamond key
+
+j move-left 10
+m move-down 10
+comma move-down 10,move-right 10
+n move-down 10,move-left 10
+o move-right 10,move-up 10
+i move-up 10
+u move-left 10,move-up 10
+k move-right 10
+
+shift+j move-left 50
+shift+m move-down 50
+shift+comma move-down 50,move-right 50
+
+# conflict
+shift+n move-down 50,move-left 50
+
+shift+o move-right 50,move-up 50
+shift+i move-up 50
+shift+u move-left 50,move-up 50
+shift+k move-right 50
+
+# Emacs-like keybindings
+
+ctrl+n move-down 10
+ctrl+f move-right 10
+ctrl+p move-up 10
+ctrl+b move-left 10
+
+ctrl+space warp,drag 1
+
+# conflict
+shift+n move-down 50
+
+shift+f move-right 50
+shift+p move-up 50
+shift+b move-left 50
+
+ctrl+a move-left 1000
+ctrl+e move-right 1000
+ctrl+l windowzoom,warp,cursorzoom 20 20
