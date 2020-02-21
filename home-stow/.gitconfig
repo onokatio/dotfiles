@@ -71,3 +71,5 @@
 #	proxy = socks5h://127.0.0.1:9050
 #[remote "orionwl"]
 #	proxy = socks5h://127.0.0.1:9050
+[commit]
+	template = ~/.gitmessage
