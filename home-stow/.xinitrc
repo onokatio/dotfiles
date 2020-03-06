@@ -58,9 +58,9 @@ export XMODIFIERS='@im=fcitx'
 #ibus-daemon -drx &
 #export LANG=ja_JP.UTF-8
 
-dbus-update-activation-environment --systemd DISPLAY
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
+#dbus-update-activation-environment --systemd DISPLAY
+#eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+#export SSH_AUTH_SOCK
 
 #cinnamon-screensaver &
 #plank &
