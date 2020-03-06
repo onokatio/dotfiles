@@ -26,6 +26,7 @@ alias grep="grep --color -I"
 alias ls='ls -qpFv --group-directories-first --human-readable --almost-all --color=auto'
 alias l='ls -qpFv --group-directories-first --human-readable --almost-all --color=auto'
 alias ll='ls -lZ -AhqpFv --group-directories-first --human-readable --almost-all --color=auto --full-time --inode'
+alias la='ls -lZ -AhqpFv --group-directories-first --human-readable --almost-all --color=auto --full-time --inode'
 #alias make='make -j4'
 alias crontab='echo "dont use crontab !!"'
 alias chromekill='ps ax|/bin/grep [c]hrome|cut -c-6|xargs sudo renice -19'
