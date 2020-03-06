@@ -1,7 +1,8 @@
 #zmodload zsh/zprof && zprof
 
 if [[ "$TTY" == "/dev/tty1" ]];then
-	startx 2>&1 | tee ~/log/startx.log
+	#startx -- -logverbose 9 -verbose 9 2>&1 | tee ~/log/startx.log
+	sway -V --my-next-gpu-wont-be-nvidia 2>&1 | tee ~/log/sway.log
 fi
 
 if [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CONNECTION} ]];then
