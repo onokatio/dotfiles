@@ -68,7 +68,7 @@ export PIPENV_VENV_IN_PROJECT=true
 
 eval $(dircolors $CTG/static/dircolors.256dark)
 
-export SUDO_PROMPT="[sudo] さっさとパスワード入れなさいよ、このバカ！ > "
+#export SUDO_PROMPT="[sudo] password : "
 
 export N0CLI_API_ENDPOINT=172.16.1.11:20180
 export N0CLI_API_URL=grpc://172.16.1.11:20180
@@ -77,3 +77,6 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 
 #export GTK2_RC_FILES=/usr/share/themes/Materia-light/gtk-2.0/gtkrc
 #export GTK_THEME=Materia-light
+
+export MOZ_ENABLE_WAYLAND=1
+#export XDG_SESSION_TYPE=wayland
