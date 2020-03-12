@@ -211,7 +211,8 @@ bar {
 bindsym XF86MonBrightnessUp exec light -A 0.5
 bindsym XF86MonBrightnessDown exec light -U 0.5
 
-bindsym Mod4+l exec i3lock -nfo
+#bindsym Mod4+l exec i3lock -nfo
+bindsym Mod4+l exec swaylock -i ~/.conf-to-git/mojave_dynamic_8.png
 # Mod4 = Super
 
 for_window [class="Yubico Authenticator"] floating enable
@@ -241,4 +242,8 @@ exec --no-startup-id dunst
 input type:touchpad {
 	natural_scroll enabled
 	tap enabled
+}
+
+input type:keyboard {
+	xkb_options caps:ctrl_modifier
 }
