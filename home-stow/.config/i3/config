@@ -233,11 +233,11 @@ bindsym Mod4+space exec albert toggle
 #exec --no-startup-id xss-lock -n
 #exec --no-startup-id polybar example
 #exec --no-startup-id hyper
-exec --no-startup-id dex -va
+exec --no-startup-id dex -va | systemd-cat -i 'katio.dex'
 #exec --no-startup-id hyper
-exec --no-startup-id polybar main
-exec --no-startup-id feh -d --bg-fill ~/.conf-to-git/mojave_dynamic_8.png
-exec --no-startup-id dunst
+exec --no-startup-id polybar main | systemd-cat -i 'katio.polybar'
+exec --no-startup-id feh -d --bg-fill ~/.conf-to-git/mojave_dynamic_8.png | systemd-cat -i 'katio.feh'
+exec --no-startup-id dunst | systemd-cat -i 'katio.dunst'
 
 input type:touchpad {
 	natural_scroll enabled
