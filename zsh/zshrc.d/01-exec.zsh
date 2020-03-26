@@ -2,7 +2,8 @@
 
 if [[ "$TTY" == "/dev/tty1" ]];then
 	#startx -- -logverbose 9 -verbose 9 2>&1 | tee ~/log/startx.log
-	sway -V --my-next-gpu-wont-be-nvidia 2>&1 | tee ~/log/sway.log
+	#WLR_DRM_DEVICES=/dev/dri/by-path/pci-0000:00:02.0-card
+	sway -d -V --my-next-gpu-wont-be-nvidia 2>&1 | tee ~/log/sway.log
 fi
 
 if [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CONNECTION} ]];then
