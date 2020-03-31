@@ -2,8 +2,12 @@
 
 if [[ "$TTY" == "/dev/tty1" ]];then
 	#startx -- -logverbose 9 -verbose 9 2>&1 | tee ~/log/startx.log
+	export XDG_SESSION_TYPE=wayland
 	#WLR_DRM_DEVICES=/dev/dri/by-path/pci-0000:00:02.0-card
-	sway -d -V --my-next-gpu-wont-be-nvidia 2>&1 | tee ~/log/sway.log
+	#WLR_DRM_DEVICES=/dev/dri/by-path/pci-0000:01:00.0-card
+	#WLR_DRM_DEVICES=/dev/dri/card0:/dev/dri/card1
+	sway -d -V --my-next-gpu-wont-be-nvidia 2>&1 | tee ~/log/sway.log | systemd-cat -t 'katio.sway'
+	export XDG_SESSION_TYPE=
 fi
 
 if [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CONNECTION} ]];then
