@@ -50,3 +50,5 @@ let g:python_host_prog = expand('~/script/github.com/onokatio/venvs/neovim-py2/.
 let g:python3_host_prog = expand('~/script/github.com/onokatio/venvs/neovim/.venv/bin/python')
 let g:ruby_host_prog = 'BUNDLE_GEMFILE=~/script/github.com/onokatio/venvs/neovim/Gemfile bundle exec neovim-ruby-host'
 let g:node_host_prog = expand('~/script/github.com/onokatio/venvs/neovim/node_modules/.bin/neovim-node-host')
+
+map <Nul> <Nop>

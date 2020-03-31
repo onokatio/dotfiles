@@ -49,7 +49,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty --live-config-reload
+bindsym $mod+Return exec WINIT_UNIX_BACKEND=x11 alacritty --live-config-reload
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -223,7 +223,7 @@ for_window [class="Polybar"] resize set height 27 px
 
 bindsym Mod4+space exec albert toggle
 
-#exec albert
+exec albert
 #exec --no-startup-id picom
 #exec --no-startup-id nm-applet
 #exec --no-startup-id blueman-applet
