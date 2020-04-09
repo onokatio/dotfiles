@@ -44,12 +44,16 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86MonBrightnessUp exec light -A 0.5
+bindsym XF86MonBrightnessDown exec light -U 0.5
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec WINIT_UNIX_BACKEND=x11 alacritty --live-config-reload
+#bindsym $mod+Return exec WINIT_UNIX_BACKEND=x11 alacritty --live-config-reload
+bindsym $mod+Return exec alacritty --live-config-reload
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -207,9 +211,16 @@ bar {
 		statusline #00000000
 	}
 }
-
-bindsym XF86MonBrightnessUp exec light -A 0.5
-bindsym XF86MonBrightnessDown exec light -U 0.5
+bar {
+	workspace_buttons no
+	output HDMI-A-1
+	position top
+	height 27
+	colors {
+		background #00000000
+		statusline #00000000
+	}
+}
 
 #bindsym Mod4+l exec i3lock -nfo
 bindsym Mod4+l exec swaylock -i ~/.conf-to-git/mojave_dynamic_8.png
@@ -223,7 +234,7 @@ for_window [class="Polybar"] resize set height 27 px
 
 bindsym Mod4+space exec albert toggle
 
-exec albert
+#exec albert
 #exec --no-startup-id picom
 #exec --no-startup-id nm-applet
 #exec --no-startup-id blueman-applet
