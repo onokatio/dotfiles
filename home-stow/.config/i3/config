@@ -34,18 +34,14 @@ hide_edge_borders vertical
 # screen before suspend. Use loginctl lock-session to lock your screen.
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
-
 # Use pactl to adjust volume in PulseAudio.
 #set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym XF86MonBrightnessUp exec light -A 0.5
-bindsym XF86MonBrightnessDown exec light -U 0.5
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && pamixer --get-volume > $SWAYSOCK.wob
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && pamixer --get-volume > $SWAYSOCK.wob
+bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pamixer --get-volume > $SWAYSOCK.wob
+bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && pamixer --get-volume > $SWAYSOCK.wob
+bindsym XF86MonBrightnessUp   exec light -A 0.5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+bindsym XF86MonBrightnessDown exec light -U 0.5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -234,6 +230,8 @@ for_window [class="Polybar"] resize set height 27 px
 
 bindsym Mod4+space exec albert toggle
 
+exec --no-startup-id nm-applet
+exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 #exec albert
 #exec --no-startup-id picom
 #exec --no-startup-id nm-applet
