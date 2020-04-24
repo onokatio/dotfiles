@@ -32,14 +32,14 @@ hide_edge_borders vertical
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+#exec xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Use pactl to adjust volume in PulseAudio.
 #set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && pamixer --get-volume > $SWAYSOCK.wob
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && pamixer --get-volume > $SWAYSOCK.wob
-bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pamixer --get-volume > $SWAYSOCK.wob
-bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && pamixer --get-volume > $SWAYSOCK.wob
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1% && pamixer --get-volume > $SWAYSOCK.wob
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1% && pamixer --get-volume > $SWAYSOCK.wob
+bindsym XF86AudioMute        exec pactl set-sink-mute @DEFAULT_SINK@ toggle && pamixer --get-volume > $SWAYSOCK.wob
+bindsym XF86AudioMicMute     exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && pamixer --get-volume > $SWAYSOCK.wob
 bindsym XF86MonBrightnessUp   exec light -A 0.5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 bindsym XF86MonBrightnessDown exec light -U 0.5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 
@@ -59,7 +59,7 @@ bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+d exec i3-dmenu-desktop
 
 # change focus
 bindsym $mod+h focus left
@@ -230,23 +230,23 @@ for_window [class="Polybar"] resize set height 27 px
 
 bindsym Mod4+space exec albert toggle
 
-exec --no-startup-id nm-applet
+exec nm-applet
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
-#exec albert
-#exec --no-startup-id picom
-#exec --no-startup-id nm-applet
-#exec --no-startup-id blueman-applet
-#exec --no-startup-id start-pulseaudit-x12
-#exec --no-startup-id guake
-#exec --no-startup-id libinput-gestures
-#exec --no-startup-id xss-lock -n
-#exec --no-startup-id polybar example
-#exec --no-startup-id hyper
-exec --no-startup-id dex -va | systemd-cat -i 'katio.dex'
-#exec --no-startup-id hyper
-exec --no-startup-id polybar main | systemd-cat -i 'katio.polybar'
-exec --no-startup-id feh -d --bg-fill ~/.conf-to-git/mojave_dynamic_8.png | systemd-cat -i 'katio.feh'
-exec --no-startup-id dunst | systemd-cat -i 'katio.dunst'
+exec albert
+#exec picom
+#exec nm-applet
+#exec blueman-applet
+#exec start-pulseaudit-x12
+#exec guake
+#exec libinput-gestures
+#exec xss-lock -n
+#exec polybar example
+#exec hyper
+exec dex -va | systemd-cat -i 'katio.dex'
+#exec hyper
+exec polybar main | systemd-cat -i 'katio.polybar'
+exec feh -d --bg-fill ~/.conf-to-git/mojave_dynamic_8.png | systemd-cat -i 'katio.feh'
+exec dunst | systemd-cat -i 'katio.dunst'
 
 input type:touchpad {
 	natural_scroll enabled
@@ -256,3 +256,7 @@ input type:touchpad {
 input type:keyboard {
 	xkb_options caps:ctrl_modifier
 }
+
+output HDMI-A-1 bg ~/.conf-to-git/openstack.png fill
+output DP-1 bg ~/.conf-to-git/openstack.png fill
+output eDP-1 bg ~/.conf-to-git/openstack.png fill
