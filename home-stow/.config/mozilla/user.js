@@ -23,4 +23,5 @@ user_pref("gfx.webrender.compositor", true);
 user_pref("toolkit.legacyUserProfileCustomizations", true);
 user_pref("browser.sessionstore.warnOnQuit", true);
 user_pref("browser.warnOnQuit", true);
+user_pref("widget.wayland-dmabuf-vaapi.enabled", true);
 user_pref("a", true);
