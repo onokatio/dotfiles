@@ -40,7 +40,7 @@ font-1 = "RobotoMono Nerd Font"
 
 ;modules-left = i3 xwindow
 ;modules-center = mpd
-modules-right = backlight pulseaudio pasink pasource memory cpu mhz system-cpu-temp system-nvidia-smi wlan info-pingrtt system-bluetooth-bluetoothctl battery info-tlp date
+modules-right = backlight pulseaudio pasink pasource memory cpu mhz system-cpu-temp system-nvidia-smi wlan info-pingrtt system-bluetooth-bluetoothctl battery battery-remain info-tlp network-traffic date
 
 tray-position = right
 tray-padding = 2
@@ -346,6 +346,18 @@ format = "<label>"
 exec = [[ "$(cat /run/tlp/last_pwr)" = "1" ]] && echo "bat" || echo "ac"
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #ff6666
+
+[module/battery-remain]
+type = custom/script
+interval = 10
+format = "<label>"
+exec = acpi -b | tail -n1 | cut -d ":" -f 2- | sed -e 's/.*\(..:..:..\).*/\1/'
+
+[module/network-traffic]
+type = custom/script
+exec = bash ~/script/github.com/polybar/polybar-scripts/polybar-scripts/network-traffic/network-traffic.sh
+tail = true
+
 
 [settings]
 screenchange-reload = true
