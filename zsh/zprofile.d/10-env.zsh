@@ -78,12 +78,17 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 #export GTK2_RC_FILES=/usr/share/themes/Materia-light/gtk-2.0/gtkrc
 #export GTK_THEME=Materia-light
 
-# disable wayland power while we can't manage it.
+# Disable wayland power while we can't manage it.
 # with wayland,
 # - fcitx & mozc doesn't work,
 # - forefox freezes a lot times.
+#
 #export MOZ_ENABLE_WAYLAND=1
 #export XDG_SESSION_TYPE=wayland
 
 # print firefox vaapi debug message.
-export MOZ_LOG="PlatformDecoderModule:5"
+#export MOZ_LOG="PlatformDecoderModule:5"
+
+export GTK_IM_MODULE='fcitx'
+export QT_IM_MODULE='fcitx'
+export XMODIFIERS='@im=fcitx'
