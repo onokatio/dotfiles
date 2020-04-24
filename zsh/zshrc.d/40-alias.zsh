@@ -33,6 +33,7 @@ alias chromekill='ps ax|/bin/grep [c]hrome|cut -c-6|xargs sudo renice -19'
 alias pingg="ping 8.8.8.8"
 alias curlg="curl https://google.com"
 #alias cat='vimcat'
+alias cat='cat -v'
 alias trace-mtr='mtr'
 alias open='xdg-open'
 alias rm='rm -v --one-file-system'
