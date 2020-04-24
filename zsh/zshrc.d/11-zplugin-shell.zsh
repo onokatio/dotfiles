@@ -4,7 +4,7 @@ export ZPFX=$CTG/cache/zplugin-plugin-make
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT='alias-tips: '
 
 if [[ ! -d $CTG/cache/zplugin ]];then
-	git clone https://github.com/zdharma/zplugin.git $CTG/cache/zplugin
+	git clone https://github.com/zdharma/zinit.git $CTG/cache/zplugin
 fi
 
 source $CTG/cache/zplugin/zplugin.zsh
