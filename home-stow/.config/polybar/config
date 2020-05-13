@@ -32,13 +32,13 @@ border-color = #00000000
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 1
-module-margin-right = 2
+module-margin-left = 0
+module-margin-right = 1
 
 font-0 = "Source Han Mono:size=9"
 font-1 = "RobotoMono Nerd Font"
 
-;modules-left = i3 xwindow
+modules-left = i3 xwindow pomodoro
 ;modules-center = mpd
 modules-right = backlight pulseaudio pasink pasource memory cpu mhz system-cpu-temp system-nvidia-smi wlan info-pingrtt system-bluetooth-bluetoothctl battery battery-remain info-tlp network-traffic date
 
@@ -358,6 +358,11 @@ type = custom/script
 exec = bash ~/script/github.com/polybar/polybar-scripts/polybar-scripts/network-traffic/network-traffic.sh
 tail = true
 
+[module/pomodoro]
+type = custom/script
+interval = 1
+exec = i3-gnome-pomodoro status --icon-text=''
+click-left = i3-gnome-pomodoro toggle
 
 [settings]
 screenchange-reload = true
