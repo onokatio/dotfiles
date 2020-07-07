@@ -26,3 +26,9 @@ fi
 #if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
 #  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 #fi
+
+AGENT_TIMEOUT=3600
+
+#if [ -z "$SSH_AUTH_SOCK" ];then
+	eval $(ssh-agent -t $AGENT_TIMEOUT) > /dev/null
+#fi
