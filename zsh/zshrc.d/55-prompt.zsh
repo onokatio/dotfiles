@@ -8,8 +8,8 @@
 #コマンドもろくに覚えられないなんて、アンタどうしようもないクズね。"
 #}
 
-chpwd(){ ls -qpFv --group-directories-first --human-readable --almost-all --color=auto }
-
+# chpwd(){ ls -qpFv --group-directories-first --human-readable --almost-all --color=auto }
+chpwd(){ ls }
 
 if [ ${UID} -eq 0 ]; then
 	PROMPT="%K{green}%B%F{black}ROOT%b%k %F{cyan}%~ %f$ "
