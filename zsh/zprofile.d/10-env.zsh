@@ -81,14 +81,20 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # Disable wayland power while we can't manage it.
 # with wayland,
 # - fcitx & mozc doesn't work,
-# - forefox freezes a lot times.
+# - firefox 76 freezes a lot times.
 #
 #export MOZ_ENABLE_WAYLAND=1
 #export XDG_SESSION_TYPE=wayland
+ECORE_EVAS_ENGINE=wayland_egl
+ELM_ENGINE=wayland_egl
+SDL_VIDEODRIVER=wayland
+_JAVA_AWT_WM_NONREPARENTING=1
 
 # print firefox vaapi debug message.
-#export MOZ_LOG="PlatformDecoderModule:5"
+export MOZ_LOG="PlatformDecoderModule:5"
 
 export GTK_IM_MODULE='fcitx'
 export QT_IM_MODULE='fcitx'
 export XMODIFIERS='@im=fcitx'
+
+export LANGUAGE="ja_jp:ja:en_US:en"
