@@ -5,7 +5,7 @@ zplugin ice as"program" make"PREFIX=$ZPFX" pick"$ZPFX/bin/git-issue"
 zplugin light dspinellis/git-issue
 
 zplugin ice as"program" pick"diff-so-fancy"
-zplugin snippet "https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy"
+zplugin snippet "https://github.com/so-fancy/diff-so-fancy/raw/master/third_party/build_fatpack/diff-so-fancy"
 
 zplugin ice wait'0' as'program' pick'bin/anyenv' atload'export ANYENV_ROOT=$PWD ; eval "$(anyenv init -)"'
 zplugin light riywo/anyenv
