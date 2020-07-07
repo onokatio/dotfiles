@@ -6,8 +6,6 @@
 	conflictstyle = diff3
 [diff]
 	#compactionHeuristic = true
-[core]
-	#pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
 	ui = true
 [color "diff-highlight"]
@@ -16,7 +14,7 @@
 	newNormal = green bold
 	newHighlight = green bold 22
 [color "diff"]
-	meta = yellow
+	meta = 11
 	frag = magenta bold
 	commit = yellow bold
 	old = red bold
@@ -27,8 +25,8 @@
 	changeHunkIndicators = true
 [credential]
 	helper = /usr/lib/git-core/git-credential-gnome-keyring
-[init]
-	templatedir = ~/.git-templates/git-secrets
+#[init]
+#	templatedir = ~/.git-templates/git-secrets
 [secrets]
 	providers = git secrets --aws-provider
 	patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
@@ -55,3 +53,8 @@
 #	proxy = socks5h://127.0.0.1:9050
 [commit]
 	template = ~/.gitmessage
+[pager]
+	diff = diff-so-fancy | less --tabs=4 -RFX
+	show = diff-so-fancy | less --tabs=4 -RFX
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
