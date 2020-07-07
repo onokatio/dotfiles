@@ -14,7 +14,7 @@ enable-ipc = true
 
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
+height = 23
 ;offset-x = 1%
 ;offset-y = 1%
 ;radius = 6.0
@@ -30,17 +30,18 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
 module-margin-left = 0
 module-margin-right = 1
 
-font-0 = "Source Han Mono:size=9"
+font-0 = "Source Han Mono:size=8"
 font-1 = "RobotoMono Nerd Font"
 
-modules-left = i3 xwindow pomodoro
+modules-left = pomodoro
+;modules-left = i3 xwindow
 ;modules-center = mpd
-modules-right = backlight pulseaudio pasink pasource memory cpu mhz system-cpu-temp system-nvidia-smi wlan info-pingrtt system-bluetooth-bluetoothctl battery battery-remain info-tlp network-traffic date
+modules-right = backlight pulseaudio pasink pasource memory cpu mhz system-cpu-temp system-nvidia-smi gpu-temp gpu-clock wlan info-pingrtt system-bluetooth-bluetoothctl battery battery-remain info-tlp network-traffic date
 
 tray-position = right
 tray-padding = 2
@@ -361,8 +362,20 @@ tail = true
 [module/pomodoro]
 type = custom/script
 interval = 1
-exec = i3-gnome-pomodoro status --icon-text=''
+exec = i3-gnome-pomodoro status --icon-text=' '
 click-left = i3-gnome-pomodoro toggle
+click-middle = gnome-pomodoro
+
+[module/gpu-temp]
+type = custom/script
+interval = 1
+exec = nvidia-smi -i 0 -q | grep Temperature -A 1 | tail -n1 | tr -c -d "[0-9]"
+
+[module/gpu-clock]
+type = custom/script
+interval = 1
+exec = nvidia-smi -i 0 -q | grep "  Clocks$" -A 4 | tail -n4 | tr -d ' '| tr '\n' ' ' | tr -d "[:alpha:]"
+
 
 [settings]
 screenchange-reload = true
