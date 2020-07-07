@@ -23,8 +23,8 @@
 [diff-so-fancy]
 	markEmptyLines = false
 	changeHunkIndicators = true
-[credential]
-	helper = /usr/lib/git-core/git-credential-gnome-keyring
+#[credential]
+#	helper = /usr/lib/git-core/git-credential-gnome-keyring
 #[init]
 #	templatedir = ~/.git-templates/git-secrets
 [secrets]
