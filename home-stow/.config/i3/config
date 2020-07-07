@@ -189,19 +189,9 @@ bindsym $mod+r mode "resize"
 #}
 bar {
 	workspace_buttons no
-	output DP-1
-	position top
-	height 27
-	colors {
-		background #00000000
-		statusline #00000000
-	}
-}
-bar {
-	workspace_buttons no
 	output eDP-1
 	position top
-	height 27
+	height 23
 	colors {
 		background #00000000
 		statusline #00000000
@@ -209,9 +199,9 @@ bar {
 }
 bar {
 	workspace_buttons no
-	output HDMI-A-1
+	output DP-1
 	position top
-	height 27
+	height 23
 	colors {
 		background #00000000
 		statusline #00000000
@@ -226,7 +216,8 @@ for_window [class="Yubico Authenticator"] floating enable
 for_window [class="Polybar"] floating enable,move position pos_x 0px pos_y 0px
 for_window [class="Polybar"] border pixel 0
 for_window [class="Polybar"] sticky enable
-for_window [class="Polybar"] resize set height 27 px
+for_window [class="Polybar"] resize set height 23 px
+for_window [app_id="zenity"] floating enable
 
 bindsym Mod4+space exec albert toggle
 
@@ -244,7 +235,7 @@ exec albert
 #exec hyper
 exec dex -va | systemd-cat -i 'katio.dex'
 #exec hyper
-exec polybar main | systemd-cat -i 'katio.polybar'
+exec LANG=en_US.UTF-8 polybar main | systemd-cat -i 'katio.polybar'
 exec feh -d --bg-fill ~/.conf-to-git/mojave_dynamic_8.png | systemd-cat -i 'katio.feh'
 exec dunst | systemd-cat -i 'katio.dunst'
 
