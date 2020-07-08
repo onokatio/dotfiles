@@ -54,7 +54,7 @@ export VGL_READBACK=pbo
 #export ZIPINFOOPT="-OCP932"
 #export UNZIPOPT="-OCP932"
 
-export WINEDEBUG=+wgl
+export WINEDEBUG=-all,+wgl
 
 export MOZ_ACCELERATED=1
 export MOZ_WEBRENDER=1
