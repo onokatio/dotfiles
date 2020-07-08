@@ -88,7 +88,7 @@ alias hex='hexyl'
 alias tldr='tldr -L en'
 
 function license-gpl(){
-	echo "Copyright (C) 2020 onokatio(おのかちお)"
+	echo "Copyright (C) $(date +%Y) onokatio(おのかちお)"
 	echo ""
 	license-gpl-en
 	echo ""
