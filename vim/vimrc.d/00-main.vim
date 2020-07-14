@@ -24,6 +24,7 @@ set backspace=indent,eol,start
 set ambiwidth=double
 set fileformat=unix
 set ttyfast
+set listchars=tab:>-
 
 set tabstop=8
 set softtabstop=8
