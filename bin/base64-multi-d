@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo $1
+
+status=0
+output="$@"
+
+while [ "$status" == 0 ] ;
+do
+	output=$(echo "$output" | base64 -d)
+	status=$?
+	echo $output
+done
