@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo $1
+
+output="$1"
+
+for i in $(seq $2);
+do
+	output=$(echo "$output" | base64)
+	echo $output
+done
