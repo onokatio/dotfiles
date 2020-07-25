@@ -8,6 +8,13 @@
 	#compactionHeuristic = true
 [color]
 	ui = true
+	status = auto
+	branch = auto
+	interactive = auto
+	pager = true
+	grep = true
+	decorate = true
+	showbranch = true
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
@@ -58,3 +65,5 @@
 	show = diff-so-fancy | less --tabs=4 -RFX
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
+[help]
+	autocorrect = 20
