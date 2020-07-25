@@ -22,12 +22,14 @@ user_pref("gfx.direct2d.force-enabled", true);
 user_pref("gfx.text.subpixel-position.force-enabled", true);
 user_pref("gfx.webrender.compositor", true);
 //user_pref("toolkit.legacyUserProfileCustomizations", true);
-//user_pref("browser.sessionstore.warnOnQuit", true);
-//user_pref("browser.warnOnQuit", true);
+user_pref("browser.sessionstore.warnOnQuit", true);
+user_pref("browser.warnOnQuit", true);
 user_pref("widget.wayland-dmabuf-vaapi.enabled", true);
 user_pref("pdfjs.enabledCache.state", true);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("image.avif.enabled", true);
 user_pref("layout.css.grid-template-masonry-value.enabled", true);
 user_pref("fission.autostart", true);
+//user_pref("media.ffvpx.enabled", false);
+// now firefox beta use software even wayland/vaapi is enabled.
 user_pref("a", true);
