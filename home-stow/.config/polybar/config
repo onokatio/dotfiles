@@ -376,6 +376,11 @@ type = custom/script
 interval = 1
 exec = nvidia-smi -i 0 -q | grep "  Clocks$" -A 4 | tail -n4 | tr -d ' '| tr '\n' ' ' | tr -d "[:alpha:]"
 
+[module/rpki-check]
+type = custom/script
+interval = 1
+exec = curl https://invalid.rpki.cloudflare.com
+
 
 [settings]
 screenchange-reload = true
