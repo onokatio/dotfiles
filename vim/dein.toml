@@ -11,7 +11,7 @@ repo = 'nathanaelkane/vim-indent-guides'
 repo = 'vim-scripts/AnsiEsc.vim'
 
 [[plugins]]
-repo = 'altercation/vim-colors-solarized'
+repo = 'lifepillar/vim-solarized8'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
