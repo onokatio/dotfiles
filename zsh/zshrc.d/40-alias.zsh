@@ -21,7 +21,7 @@ alias apt=apt-fast
 alias apt-get=apt-fast
 alias mkdir='mkdir -p'
 #alias bat="upower -i /org/freedesktop/UPower/devices/battery_BAT0|grep 'percentage'|sed -e 's/ //g'|sed -e 's/percentage://'|sed -e 's/%//'"
-alias grep="grep --color -I"
+alias grep="grep --color=auto -I"
 alias ls='ls -Z -AhqpFvb --group-directories-first --human-readable --almost-all --color=auto'
 alias l='ls'
 alias la='ls -l'
@@ -61,6 +61,7 @@ alias oculus='scrcpy -p 5555 -c 1441:1200:0:200'
 function rot(){
 	for i in {a..z} ;do j=$(echo $i | tr '[a-z]' '[A-Z]'); echo "$@" | tr "[a-z]" "[$i-za-$i]" | tr "[A-Z]" "[$j-ZA-$j]";done
 }
+
 alias sqli="echo \' OR 1 == 1 \; -- \' "
 
 alias get='ghq get'
@@ -88,6 +89,8 @@ alias hex='hexyl'
 alias tldr='tldr -L en'
 
 alias gcc='gcc -Wall'
+
+alias diff='diff --color=auto'
 
 function license-gpl(){
 	echo "Copyright (C) $(date +%Y) onokatio(おのかちお)"
@@ -155,4 +158,19 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 EOL
+}
+
+export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
+#export LESSOPEN='|/usr/bin/lesspipe.sh %s'
+export LESS='-i -M -R'
+export LESS_TERMCAP_mb=$'\E[1;31m'     # begin blink
+export LESS_TERMCAP_md=$'\E[1;36m'     # begin bold
+export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
+export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
+export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
+export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
+export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
+
+function mode_simple(){
+	PROMPT='> '
 }
