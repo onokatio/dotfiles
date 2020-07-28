@@ -24,12 +24,6 @@ export HOMEBREW_EDITOR=nvim
 
 ##### Shell #####
 export EDITOR=nvim
-#ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main pattern cursor root line)
-#ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
-ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
-ZSH_AUTOSUGGEST_USE_ASYNC=1
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
 export USE_CCACHE=1
 export CCACHE_COMPRESS=1
@@ -84,7 +78,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # - fcitx & mozc doesn't work,
 # - firefox 76 freezes a lot times.
 #
-export MOZ_ENABLE_WAYLAND=1
+#export MOZ_ENABLE_WAYLAND=1
 export XDG_SESSION_TYPE=wayland
 export ECORE_EVAS_ENGINE=wayland_egl
 export ELM_ENGINE=wayland_egl
