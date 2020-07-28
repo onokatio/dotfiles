@@ -51,7 +51,7 @@ alias debian="docker run -it --rm debian /bin/bash"
 alias fedora="docker run -it --rm fedora /bin/bash"
 alias kali="docker run -it --rm kalilinux/kali-rolling /bin/bash"
 
-alias aria2c="aria2c --bt-max-peers=0 --bt-request-peer-speed-limit=1000M --max-concurrent-downloads=100 --max-connection-per-server=16 --split=20 --bt-max-open-files=1000"
+#alias aria2c="aria2c --bt-max-peers=0 --bt-request-peer-speed-limit=1000M --max-concurrent-downloads=100 --max-connection-per-server=16 --split=20 --bt-max-open-files=1000"
 
 alias CAPS='echo setxkbmap -option ctrl:swapcaps , setxkbmap -option'
 
