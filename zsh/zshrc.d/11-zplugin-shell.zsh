@@ -33,6 +33,14 @@ zplugin light zdharma/fast-syntax-highlighting
 zplugin ice wait'0' atload'_zsh_autosuggest_start'
 zplugin light zsh-users/zsh-autosuggestions
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#586e75,bold,underline"
+#ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main pattern cursor root line)
+#ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
+ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
 #zplugin light b4b4r07/zsh-vimode-visual
 
 zplugin ice wait'0'
