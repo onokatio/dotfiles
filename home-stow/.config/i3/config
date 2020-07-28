@@ -42,6 +42,8 @@ bindsym XF86AudioMute        exec pactl set-sink-mute @DEFAULT_SINK@ toggle && p
 bindsym XF86AudioMicMute     exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && pamixer --get-volume > $SWAYSOCK.wob
 bindsym XF86MonBrightnessUp   exec light -A 0.5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 bindsym XF86MonBrightnessDown exec light -U 0.5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+#bindsym XF86MonBrightnessUp echo $(( $( cat /tmp/i2c-4-brighness ) +10 )) > /tmp/i2c-4-brighness.tmp ; mv /tmp/i2c-4-brighness.tmp /tmp/i2c-4-brighness ; ddccontrol -r 0x10 -w $(cat /tmp/i2c-4-brighness) dev:/dev/i2c-4 -f
+#bindsym XF86MonBrightnessDown echo $(( $( cat /tmp/i2c-4-brighness ) - 10 )) > /tmp/i2c-4-brighness.tmp ; mv /tmp/i2c-4-brighness.tmp /tmp/i2c-4-brighness ; ddccontrol -r 0x10 -w $(cat /tmp/i2c-4-brighness) dev:/dev/i2c-4 -f
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
