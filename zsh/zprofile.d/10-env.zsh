@@ -4,6 +4,7 @@
 #export XDG_CONFIG_HOME=$HOME/.config
 #export XDG_DATA_HOME=$HOME/.local/share
 #export XDG_CACHE_HOME=$HOME/.cache
+export XDG_PICTURES_DIR=$HOME/Downloads/Picture
 
 export NO_AT_BRIDGE=1
 export EMOJI_CLI_KEYBIND=^f
@@ -83,12 +84,15 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # - fcitx & mozc doesn't work,
 # - firefox 76 freezes a lot times.
 #
-#export MOZ_ENABLE_WAYLAND=1
-#export XDG_SESSION_TYPE=wayland
-ECORE_EVAS_ENGINE=wayland_egl
-ELM_ENGINE=wayland_egl
-SDL_VIDEODRIVER=wayland
-_JAVA_AWT_WM_NONREPARENTING=1
+export MOZ_ENABLE_WAYLAND=1
+export XDG_SESSION_TYPE=wayland
+export ECORE_EVAS_ENGINE=wayland_egl
+export ELM_ENGINE=wayland_egl
+export SDL_VIDEODRIVER=wayland
+export _JAVA_AWT_WM_NONREPARENTING=1
+#export GDK_BACKEND=wayland
+export CLUTTER_BACKEND=wayland
+export SDL_VIDEODRIVER=wayland
 
 # print firefox vaapi debug message.
 export MOZ_LOG="PlatformDecoderModule:5"
