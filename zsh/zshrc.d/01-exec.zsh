@@ -7,12 +7,16 @@ if [[ "$TTY" == "/dev/tty1" ]];then
 	#WLR_DRM_DEVICES=/dev/dri/by-path/pci-0000:00:02.0-card
 	#WLR_DRM_DEVICES=/dev/dri/by-path/pci-0000:01:00.0-card
 	export LANG=ja_JP.UTF-8
+	export XDG_CURRENT_DESKTOP=sway
+	export XDG_SESSION_TYPE=wayland
 	#WLR_DRM_DEVICES=/dev/dri/card0:/dev/dri/card1 sway -d -V --my-next-gpu-wont-be-nvidia 2>&1 > ~/sway.log
 	#WLR_DRM_DEVICES=/dev/dri/card0 sway -d -V --my-next-gpu-wont-be-nvidia 2>&1 | tee ~/sway.log
 	rm -f ~/sway.log
 	sway -d -V --my-next-gpu-wont-be-nvidia 2>&1 | tee ~/sway.log
 	#| systemd-cat -t 'katio.sway'
 	export LANG=en_US.UTF-8
+	export XDG_CURRENT_DESKTOP=
+	export XDG_SESSION_TYPE=tty
 	#export XDG_SESSION_TYPE=
 fi
 
@@ -32,3 +36,6 @@ AGENT_TIMEOUT=3600
 #if [ -z "$SSH_AUTH_SOCK" ];then
 	eval $(ssh-agent -t $AGENT_TIMEOUT) > /dev/null
 #fi
+
+typeset -U path PATH
+export CCACHE_PATH="/usr/bin"
