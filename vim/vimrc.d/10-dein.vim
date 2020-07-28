@@ -18,10 +18,12 @@ if has('nvim')
 
 
 	"colorscheme badwolf
-	colorscheme elflord
-	"set background=dark
-	"colorscheme solarized
-	highlight Normal ctermbg=none
+	"colorscheme elflord
+	set background=dark
+	colorscheme solarized8
+	let g:solarized_term_italics = 1
+	let g:solarized_extra_hi_groups = 1
+	"highlight Normal ctermbg=none
 
 	nmap <silent> gd <Plug>(coc-definition)
 	nmap <silent> gy <Plug>(coc-type-definition)

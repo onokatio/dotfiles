@@ -25,13 +25,13 @@ set ambiwidth=double
 set fileformat=unix
 set ttyfast
 set listchars=tab:>-
-
 set tabstop=8
 set softtabstop=8
 set shiftwidth=8
 set noexpandtab
 set mouse=a
 set lazyredraw
+set termguicolors
 
 nnoremap j gj
 nnoremap k gk
