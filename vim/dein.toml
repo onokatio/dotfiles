@@ -85,3 +85,6 @@ hook_post_update = '''
 
 [[plugins]]
 repo = 'mbbill/undotree'
+
+[[plugins]]
+repo = 'yuttie/comfortable-motion.vim'

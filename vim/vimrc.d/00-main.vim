@@ -38,6 +38,20 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+map <ScrollWheelUp> <C-Y>
+"nnoremap <S-ScrollWheelUp> <C-Y>
+"nnoremap <C-ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
+"nnoremap <S-ScrollWheelDown> <C-E>
+"nnoremap <C-ScrollWheelDown> <C-E>
+
+let g:comfortable_motion_no_default_key_mappings = 1
+let g:comfortable_motion_impulse_multiplier = 1  " Feel free to increase/decrease this value.
+nnoremap <silent> <C-d> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 2)<CR>
+nnoremap <silent> <C-u> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -2)<CR>
+nnoremap <silent> <C-f> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 3)<CR>
+nnoremap <silent> <C-b> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -3)<CR>
+
 " sで置換するときにプレビュー表示
 set inccommand=split
 
