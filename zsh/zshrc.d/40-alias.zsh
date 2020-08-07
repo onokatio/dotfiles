@@ -174,3 +174,18 @@ export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 function mode_simple(){
 	PROMPT='> '
 }
+
+function systemd-template(){
+	cat <<EOL
+[Unit]
+Description=
+
+[Service]
+Type=simple
+ExecStart=
+
+[Install]
+WantedBy=multi-user.target
+
+EOL
+}
