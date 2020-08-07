@@ -52,7 +52,7 @@ export VGL_READBACK=pbo
 export WINEDEBUG=-all,+wgl
 
 export MOZ_ACCELERATED=1
-export MOZ_WEBRENDER=1
+#export MOZ_WEBRENDER=1
 export MOZ_USE_XINPUT2=1
 
 export GO111MODULE=on
@@ -78,7 +78,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # - fcitx & mozc doesn't work,
 # - firefox 76 freezes a lot times.
 #
-#export MOZ_ENABLE_WAYLAND=1
+export MOZ_ENABLE_WAYLAND=1
 export XDG_SESSION_TYPE=wayland
 export ECORE_EVAS_ENGINE=wayland_egl
 export ELM_ENGINE=wayland_egl
