@@ -24,7 +24,8 @@ set backspace=indent,eol,start
 set ambiwidth=double
 set fileformat=unix
 set ttyfast
-set listchars=tab:>-
+set list
+set listchars=tab:>-,trail:~
 set tabstop=8
 set softtabstop=8
 set shiftwidth=8
@@ -32,6 +33,8 @@ set noexpandtab
 set mouse=a
 set lazyredraw
 set termguicolors
+set scrolloff=4
+set formatoptions+=mMj
 
 nnoremap j gj
 nnoremap k gk
@@ -67,3 +70,17 @@ let g:ruby_host_prog = 'BUNDLE_GEMFILE=~/script/github.com/onokatio/venvs/neovim
 let g:node_host_prog = expand('~/script/github.com/onokatio/venvs/neovim/node_modules/.bin/neovim-node-host')
 
 map <Nul> <Nop>
+
+function! ZenkakuSpace()
+  highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
+endfunction
+
+if has('syntax')
+  augroup ZenkakuSpace
+    autocmd!
+    " 全角スペースのハイライト指定
+    autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
+    autocmd VimEnter,WinEnter * match ZenkakuSpace '\%u3000'
+  augroup END
+  call ZenkakuSpace()
+endif
