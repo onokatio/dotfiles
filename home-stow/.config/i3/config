@@ -211,11 +211,11 @@ bar {
 	}
 }
 
-# Make the currently focused window a scratchpad
-bindsym $mod+Shift+minus move scratchpad
-
 # Show the first scratchpad window
-bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+minus scratchpad show
+
+# Make the currently focused window a scratchpad
+bindsym $mod+minus move scratchpad
 
 #bindsym Mod4+l exec i3lock -nfo
 bindsym Mod4+l exec swaylock -i ~/.conf-to-git/mojave_dynamic_8.png
