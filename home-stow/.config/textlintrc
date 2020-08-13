@@ -1,0 +1,58 @@
+{
+  //"plugins": [
+  //  "html",
+  //  "latex2e",
+  //  "review",
+  //  "rst",
+  //  "jsx",
+  //],
+  "filters": {},
+  "rules": {
+    "no-todo": { // Warning markdown blank checkbox. like `- []`
+      "severity" : "warning"
+    },
+    "preset-ja-spacing": { // Rule for spacing
+       "ja-space-after-exclamation": false,
+       "ja-space-after-question": false,
+    },
+    "preset-ja-technical-writing": { // Rule for technical writing
+      "max-kanji-continuous-len": false, // Disable max kanji len
+      "no-exclamation-question-mark": false, // Allow exclamation mark as period
+      "ja-no-weak-phrase": false, // !!! Allow weak phrase
+      "ja-no-mixed-period": {
+        "allowPeriodMarks": [":", "：", "、", "`", "="], // Allow as period
+        "forceAppendPeriod": true, // Enable `--fix`
+      },
+      "max-ten": {
+        "max" : 5
+      },
+      "no-doubled-joshi": {
+        "allow": ["も","や"],
+      },
+      //"no-doubled-joshi": false,
+      //"sentence-length": false,
+      //"ja-no-successive-word": false,
+      //"ja-unnatural-alphabet": false,
+      //"no-doubled-conjunction": false,
+    },
+    "period-in-list-item": true,
+    //"spellcheck-tech-word": true,
+    "preset-jtf-style": true,
+    "footnote-order": true,
+    "incremental-headers": true,
+    //"max-appearence-count-of-words": true,
+    "@textlint-ja/textlint-rule-no-insert-dropping-sa": true,
+    "prefer-tari-tari": true,
+    "general-novel-style-ja": false,
+    "joyo-kanji": true,
+    //"jis-charset": true,
+    //"no-hoso-kinshi-yogo": true,
+    "preset-ja-engineering-paper": {
+      "unify-kuten-and-touten": false,
+      "textlint-rule-prh": false,
+    },
+    //"prh": {
+    //  "rulePaths" :["~/.config/prh.yml"],
+    //},
+  }
+}
