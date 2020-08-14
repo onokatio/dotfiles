@@ -189,3 +189,12 @@ WantedBy=multi-user.target
 
 EOL
 }
+
+function txt2img(){
+	silicon -b "#fff" --shadow-blur-radius 50 --theme "Solarized (dark)" -o ~/Downloads/$(basename $1).png $1
+}
+
+alias addt='transmission-remote -a'
+
+alias textlint='textlint --experimental --parallel --config ~/.config/textlintrc'
+alias secretlint='secretlint --secretlintrc ~/.config/secretlintrc.json "**/*"'
