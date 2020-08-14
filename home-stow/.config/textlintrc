@@ -11,6 +11,7 @@
     "no-todo": { // Warning markdown blank checkbox. like `- []`
       "severity" : "warning"
     },
+    "preset-japanese": true,
     "preset-ja-spacing": { // Rule for spacing
        "ja-space-after-exclamation": false,
        "ja-space-after-question": false,
@@ -36,11 +37,11 @@
       //"no-doubled-conjunction": false,
     },
     "period-in-list-item": true,
-    //"spellcheck-tech-word": true,
+    //"spellcheck-tech-word": true, // conflict ktf style
     "preset-jtf-style": true,
     "footnote-order": true,
     "incremental-headers": true,
-    //"max-appearence-count-of-words": true,
+    //"max-appearence-count-of-words": true, // has bugs
     "@textlint-ja/textlint-rule-no-insert-dropping-sa": true,
     "prefer-tari-tari": true,
     "general-novel-style-ja": false,
