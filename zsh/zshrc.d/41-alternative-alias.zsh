@@ -5,7 +5,7 @@ alias find='fd'
 alias grep='rg'
 alias diff='diff-so-fancy-standalone'
 alias git='hub'
-alias ssh='xxh'
+#alias ssh='xxh'
 alias ping='prettyping'
 
 
@@ -31,6 +31,7 @@ alias tcpdump='grc tcpdump'
 alias uptime='grc uptime'
 alias vmstat='grc vmstat'
 alias whois='grc whois'
+alias du='dutree'
 
 export PATH="/usr/lib/colorgcc/bin:$PATH"
 export PATH="/usr/share/perl5/vendor_perl/auto/share/dist/Cope:"$PATH
