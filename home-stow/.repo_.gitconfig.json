@@ -1,0 +1,95 @@
+{
+  "user.email": [
+    "onokatio@gmail.com"
+  ],
+  "user.name": [
+    "onokatio"
+  ],
+  "user.useconfigonly": [
+    "true"
+  ],
+  "merge.conflictstyle": [
+    "diff3"
+  ],
+  "color.ui": [
+    "true"
+  ],
+  "color.diff-highlight.oldnormal": [
+    "red bold"
+  ],
+  "color.diff-highlight.oldhighlight": [
+    "red bold 52"
+  ],
+  "color.diff-highlight.newnormal": [
+    "green bold"
+  ],
+  "color.diff-highlight.newhighlight": [
+    "green bold 22"
+  ],
+  "color.diff.meta": [
+    "yellow"
+  ],
+  "color.diff.frag": [
+    "magenta bold"
+  ],
+  "color.diff.commit": [
+    "yellow bold"
+  ],
+  "color.diff.old": [
+    "red bold"
+  ],
+  "color.diff.new": [
+    "green bold"
+  ],
+  "color.diff.whitespace": [
+    "red reverse"
+  ],
+  "diff-so-fancy.markemptylines": [
+    "false"
+  ],
+  "diff-so-fancy.changehunkindicators": [
+    "true"
+  ],
+  "credential.helper": [
+    "/usr/lib/git-core/git-credential-gnome-keyring"
+  ],
+  "init.templatedir": [
+    "~/.git-templates/git-secrets"
+  ],
+  "secrets.providers": [
+    "git secrets --aws-provider"
+  ],
+  "secrets.patterns": [
+    "(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}",
+    "(\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?",
+    "(\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?"
+  ],
+  "secrets.allowed": [
+    "AKIAIOSFODNN7EXAMPLE",
+    "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+  ],
+  "filter.lfs.smudge": [
+    "git-lfs smudge -- %f"
+  ],
+  "filter.lfs.process": [
+    "git-lfs filter-process"
+  ],
+  "filter.lfs.required": [
+    "true"
+  ],
+  "filter.lfs.clean": [
+    "git-lfs clean -- %f"
+  ],
+  "ghq.root": [
+    "/home/katio/script"
+  ],
+  "ghq.user": [
+    "onokatio"
+  ],
+  "alias.log2": [
+    "log --oneline --graph --all --remotes"
+  ],
+  "commit.template": [
+    "~/.gitmessage"
+  ]
+}
