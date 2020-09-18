@@ -67,6 +67,7 @@ alias sqli="echo \' OR 1 == 1 \; -- \' "
 alias get='ghq get'
 
 alias myip='curl http://inet-ip.info'
+alias myip6='curl -Ss https://ip6.bramp.net/ | head -n1 | cut -c5- '
 
 alias venv='python3 -m venv venv'
 
@@ -195,6 +196,16 @@ function txt2img(){
 }
 
 alias addt='transmission-remote -a'
+alias addm='\ls *.torrent | while read line;do addt "$line";done'
 
 alias textlint='textlint --experimental --parallel --config ~/.config/textlintrc'
 alias secretlint='secretlint --secretlintrc ~/.config/secretlintrc.json "**/*"'
+
+alias hdmi-light-0='ddccontrol -r 0x10 -w 0 dev:/dev/i2c-4 -f'
+alias hdmi-light-100='ddccontrol -r 0x10 -w 100 dev:/dev/i2c-4 -f'
+
+alias mytracker-generate='comm -13 <(sort /tmp/trackers_cache.txt | sed -e "s;/announce;;") <(for i in {1..98};do transmission-remote -t $i -it | grep "Tracker \d"| sed -e "s/  Tracker .*: \(.*:\/\/\)/\1/" ;done | sort tracker | uniq) | sort >> ~/Downloads/mytracker.txt'
+
+function rclone-tr(){
+	rclone move --delete-empty-src-dirs -P "$1" wasabi-crypt:mp4/tr/new/"$1"
+}
