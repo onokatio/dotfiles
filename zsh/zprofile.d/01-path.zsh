@@ -81,3 +81,5 @@ export PATH=./node_modules/.bin:$PATH
 export PATH=./vendor/bin:$PATH
 
 export PATH=$CTG/bin:$PATH
+
+export PATH=~/script/github.com/onokatio/emilia/global/node_modules/.bin:$PATH
