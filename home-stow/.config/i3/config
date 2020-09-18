@@ -222,17 +222,19 @@ bindsym Mod4+l exec swaylock -i ~/.conf-to-git/mojave_dynamic_8.png
 # Mod4 = Super
 
 for_window [class="Yubico Authenticator"] floating enable
+for_window [class="Yubico Authenticator"] resize set width 400 px
+for_window [class="Yubico Authenticator"] resize set height 800 px
 for_window [class="Polybar"] floating enable,move position pos_x 0px pos_y 0px
 for_window [class="Polybar"] border pixel 0
 for_window [class="Polybar"] sticky enable
-for_window [class="Polybar"] resize set height 23 px
+#for_window [class="Polybar"] resize set height 23 px
 for_window [app_id="zenity"] floating enable
 
 bindsym Mod4+space exec albert toggle
 
 exec nm-applet
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
-exec albert
+exec albert > /dev/null
 #exec picom
 #exec nm-applet
 #exec blueman-applet
@@ -242,7 +244,7 @@ exec albert
 #exec xss-lock -n
 #exec polybar example
 #exec hyper
-exec dex -va | systemd-cat -i 'katio.dex'
+exec dex -va | systemd-cat -i 'katio.dex' > /dev/null
 #exec hyper
 exec LANG=en_US.UTF-8 polybar main | systemd-cat -i 'katio.polybar'
 exec feh -d --bg-fill ~/.conf-to-git/mojave_dynamic_8.png | systemd-cat -i 'katio.feh'
