@@ -24,6 +24,7 @@ export HOMEBREW_EDITOR=nvim
 
 ##### Shell #####
 export EDITOR=nvim
+export BROWSER=firefox-developer-edition
 
 export USE_CCACHE=1
 export CCACHE_COMPRESS=1
@@ -52,8 +53,9 @@ export VGL_READBACK=pbo
 export WINEDEBUG=-all,+wgl
 
 export MOZ_ACCELERATED=1
-#export MOZ_WEBRENDER=1
+export MOZ_WEBRENDER=1
 export MOZ_USE_XINPUT2=1
+export MOZ_X11_EGL=1
 
 export GO111MODULE=on
 
