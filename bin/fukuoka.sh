@@ -11,8 +11,7 @@
 	if ps ax|grep "[s]sh -fND 30080" >/dev/null; then
 		ps ax|grep "[s]sh -fND 30080" |cut -c-6|xargs kill
 	fi
-		ssh -fND 30080 j16435@fukuoka.j.kisarazu.ac.jp -i /home/katio/.ssh/nitkc -o "StrictHostKeyChecking no"
-		#ssh -fND 30080 j16435@10.7.2.1 -i /home/katio/.ssh/nitkc-login -o "StrictHostKeyChecking no"
+		ssh -fND 30080 j16435@fukuoka.j.kisarazu.ac.jp -i ~/.ssh/nitkc -o "StrictHostKeyChecking no"
 #fi
 
 #cat
