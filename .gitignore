@@ -1,7 +1,6 @@
 /zsh/zshrc.d/90-private.zsh
 /zsh/zprofile.d/90-private.zsh
-/cache/*
-!/cache/placeholder
+/cache
 /local
 *.zwc
 dists

@@ -1,0 +1,25 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.4.0
+    hooks:
+    -   id: trailing-whitespace # This hook trims trailing whitespace.
+    -   id: end-of-file-fixer # Ensures that a file is either empty, or ends with one newline.
+    -   id: check-added-large-files # Prevent giant files from being committed.
+    -   id: check-symlinks # Checks for symlinks which do not point to anything.
+    -   id: mixed-line-ending # Replaces or checks mixed line ending.
+
+-   repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.1.9
+    hooks:
+    -   id: forbid-crlf # Forbid files containing CRLF end-lines to be committed
+
+# ignore until secretlint support loading gitignore
+#-   repo: local
+#    hooks:
+#    -   id: secretlint
+#        name: secretlint
+#        language: system
+#        entry: secretlint --secretlintrc /home/katio/.config/secretlintrc.json "**/*"
