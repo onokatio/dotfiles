@@ -3,6 +3,7 @@ function tarxz(){tar xvf $@ --use-compress-prog=pixz }
 function tarbzip2(){tar xvf $@ --use-compress-prog=pbzip2 }
 
 #alias sudo='doas'
+alias sudo='sudo '
 alias vi="nvim -u $HOME/.vimrc"
 alias vim="nvim -u $HOME/.vimrc"
 alias d='popd'
@@ -83,7 +84,7 @@ alias zipcat='unzip -p'            # zipcat <archive> <internal path>
 
 alias quest='scrcpy --always-on-top -b 16M --fullscreen --no-control --crop 1440:1600:0:0'
 
-alias ssh='sshrc'
+#alias ssh='sshrc'
 
 alias hex='hexyl'
 
@@ -125,10 +126,10 @@ cat << EOL
 望によってはそれ以降のバージョンのうちどれか)の定める条件の下で再頒布
 または改変することができます。
 
-このプログラムは有用であることを願って頒布されますが、*全くの無保証* 
+このプログラムは有用であることを願って頒布されますが、*全くの無保証*
 です。商業可能性の保証や特定の目的への適合性は、言外に示されたものも含
 め全く存在しません。詳しくはGNU 一般公衆利用許諾契約書をご覧ください。
- 
+
 あなたはこのプログラムと共に、GNU 一般公衆利用許諾契約書の複製物を一部
 受け取ったはずです。もし受け取っていなければ、<http://www.gnu.org/licenses/>
 を確認してください。
@@ -199,7 +200,7 @@ alias addt='transmission-remote -a'
 alias addm='\ls *.torrent | while read line;do addt "$line";done'
 
 alias textlint='textlint --experimental --parallel --config ~/.config/textlintrc'
-alias secretlint='secretlint --secretlintrc ~/.config/secretlintrc.json "**/*"'
+alias secretlint-globalconfig='secretlint --secretlintrc ~/.config/secretlintrc.json "**/*"'
 
 alias hdmi-light-0='ddccontrol -r 0x10 -w 0 dev:/dev/i2c-4 -f'
 alias hdmi-light-100='ddccontrol -r 0x10 -w 100 dev:/dev/i2c-4 -f'
@@ -209,3 +210,5 @@ alias mytracker-generate='comm -13 <(sort /tmp/trackers_cache.txt | sed -e "s;/a
 function rclone-tr(){
 	rclone move --delete-empty-src-dirs -P "$1" wasabi-crypt:mp4/tr/new/"$1"
 }
+
+alias pacman-autoremove='pacman -Rns $(pacman -Qtdq)'
