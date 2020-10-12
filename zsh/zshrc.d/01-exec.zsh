@@ -12,7 +12,8 @@ if [[ "$TTY" == "/dev/tty1" ]];then
 	#WLR_DRM_DEVICES=/dev/dri/card0:/dev/dri/card1 sway -d -V --my-next-gpu-wont-be-nvidia 2>&1 > ~/sway.log
 	#WLR_DRM_DEVICES=/dev/dri/card0 sway -d -V --my-next-gpu-wont-be-nvidia 2>&1 | tee ~/sway.log
 	rm -f ~/sway.log
-	sway -d -V --my-next-gpu-wont-be-nvidia 2>&1 | tee ~/sway.log
+	#sway -d -V --my-next-gpu-wont-be-nvidia 2>&1 | tee ~/sway.log
+	sway --my-next-gpu-wont-be-nvidia 2>&1 | systemd-cat -t 'katio.sway' > /dev/null
 	#| systemd-cat -t 'katio.sway'
 	export LANG=en_US.UTF-8
 	export XDG_CURRENT_DESKTOP=
