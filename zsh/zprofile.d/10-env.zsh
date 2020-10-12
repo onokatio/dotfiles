@@ -91,10 +91,12 @@ export CLUTTER_BACKEND=wayland
 export SDL_VIDEODRIVER=wayland
 
 # print firefox vaapi debug message.
-export MOZ_LOG="PlatformDecoderModule:5"
+#export MOZ_LOG="PlatformDecoderModule:5"
 
 export GTK_IM_MODULE='fcitx'
 export QT_IM_MODULE='fcitx'
 export XMODIFIERS='@im=fcitx'
 
 export LANGUAGE="ja_jp:ja:en_US:en"
+
+export KUBECONFIG=~/.kube/config
