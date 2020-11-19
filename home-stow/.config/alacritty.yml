@@ -18,7 +18,7 @@ window:
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
   dimensions:
-    columns: 240
+    columns: 276
     lines: 68
 
   # Window position (changes require restart)
@@ -153,7 +153,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 11.0
+  size: 8.5
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -212,11 +212,13 @@ colors:
 
   # Bright colors
   bright:
-    black:   '#002b36' # base03
+    #black:   '#002b36' # base03
+    black:   '#586375' # base01
     red:     '#cb4b16' # orange
     green:   '#586e75' # base01
     yellow:  '#657b83' # base00
-    blue:    '#839496' # base0
+    #blue:    '#839496' # base0
+    blue:    '#268bd2' # blue
     magenta: '#6c71c4' # violet
     cyan:    '#93a1a1' # base1
     white:   '#fdf6e3' # base3
@@ -266,7 +268,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.95
+#background_opacity: 0.95
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
