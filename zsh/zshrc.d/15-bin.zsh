@@ -33,3 +33,6 @@ zplugin load 'b4b4r07/gomi'
 
 zplugin ice as'program'
 zplugin snippet 'https://gitlab.com/wavexx/screenkey/raw/master/screenkey'
+
+#zplugin ice
+zplugin light 'asdf-vm/asdf'

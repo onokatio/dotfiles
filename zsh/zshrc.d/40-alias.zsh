@@ -13,12 +13,11 @@ alias hs=history
 #alias df=dfc
 #alias top=htop
 #alias diff=colordiff
-alias info=pinfo
 #alias wget="axel -n 10 -v -a"
 alias mirror='wget -r -l inf -k -nc -H'
 alias ks=ls
 alias xs=cd
-alias apt=apt-fast
+#alias apt=apt-fast
 alias apt-get=apt-fast
 alias mkdir='mkdir -p'
 #alias bat="upower -i /org/freedesktop/UPower/devices/battery_BAT0|grep 'percentage'|sed -e 's/ //g'|sed -e 's/percentage://'|sed -e 's/%//'"
@@ -47,6 +46,7 @@ alias reboot='echo do not use'
 
 alias alpine="docker run -it --rm alpine:edge /bin/sh"
 alias ubuntu="docker run -it --rm ubuntu /bin/bash"
+alias archlinux="docker run -it --rm archlinux /bin/bash"
 alias centos="docker run -it --rm centos /bin/bash"
 alias debian="docker run -it --rm debian /bin/bash"
 alias fedora="docker run -it --rm fedora /bin/bash"
@@ -73,6 +73,7 @@ alias myip6='curl -Ss https://ip6.bramp.net/ | head -n1 | cut -c5- '
 alias venv='python3 -m venv venv'
 
 alias man='LANG=ja_JP.UTF-8 man'
+alias info='LANG=ja_JP.UTF-8 pinfo'
 
 # list files in archive
 alias lszip='unzip -l ' # lszip <archive>
@@ -211,4 +212,16 @@ function rclone-tr(){
 	rclone move --delete-empty-src-dirs -P "$1" wasabi-crypt:mp4/tr/new/"$1"
 }
 
+alias rclone='rclone --transfers 64'
+
 alias pacman-autoremove='pacman -Rns $(pacman -Qtdq)'
+
+alias cp='cp --reflink=auto'
+
+alias cols='tput cols'
+alias lines='tput lines'
+
+alias ttyUSB0='cu -l /dev/ttyUSB0 -s 9600'
+
+#alias ffmpeg="ffmpeg -vaapi_device /dev/dri/renderD128 -hwaccel vaapi -hwaccel_output_format vaapi -vf 'format=nv12|vaapi,hwupload' -movflags +faststart"
+alias ffmpeg-vaapi="ffmpeg -vaapi_device /dev/dri/renderD128 -hwaccel vaapi -hwaccel_output_format vaapi"
