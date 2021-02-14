@@ -22,10 +22,14 @@ font pango:Source Han Mono 11
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #ffffff #ffffff #333333 #2e9ef4   #ffffff
-client.focused_inactive #888888 #888888 #333333 #2e9ef4   #285577
-client.unfocused        #888888 #888888 #333333 #2e9ef4   #285577
+client.focused_inactive #888888 #888888 #333333 #2e9ef4   #888888
+client.unfocused        #888888 #888888 #333333 #2e9ef4   #888888
 
-hide_edge_borders vertical
+titlebar_border_thickness 0
+titlebar_padding 0
+hide_edge_borders smart
+smart_gaps on
+default_border pixel 0
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -190,26 +194,37 @@ bindsym $mod+r mode "resize"
 #bar {
 #        status_command i3status
 #}
-bar {
-	workspace_buttons no
-	output eDP-1
-	position top
-	height 23
-	colors {
-		background #00000000
-		statusline #00000000
-	}
-}
-bar {
-	workspace_buttons no
-	output DP-1
-	position top
-	height 23
-	colors {
-		background #00000000
-		statusline #00000000
-	}
-}
+
+#bar {
+#	workspace_buttons no
+#	output eDP-1
+#	position top
+#	height 23
+#	colors {
+#		background #00000000
+#		statusline #00000000
+#	}
+#}
+#bar {
+#	workspace_buttons no
+#	output DP-1
+#	position top
+#	height 23
+#	colors {
+#		background #00000000
+#		statusline #00000000
+#	}
+#}
+#bar {
+#	workspace_buttons no
+#	output HDMI-A-1
+#	position top
+#	height 23
+#	colors {
+#		background #00000000
+#		statusline #00000000
+#	}
+#}
 
 # Show the first scratchpad window
 bindsym $mod+Shift+minus scratchpad show
@@ -230,11 +245,11 @@ for_window [class="Polybar"] sticky enable
 #for_window [class="Polybar"] resize set height 23 px
 for_window [app_id="zenity"] floating enable
 
-bindsym Mod4+space exec albert toggle
+bindsym Mod4+space exec QT_QPA_PLATFORM="xcb" albert toggle
 
 exec nm-applet
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
-exec albert > /dev/null
+exec QT_QPA_PLATFORM="xcb" albert > /dev/null
 #exec picom
 #exec nm-applet
 #exec blueman-applet
@@ -246,9 +261,11 @@ exec albert > /dev/null
 #exec hyper
 exec dex -va | systemd-cat -i 'katio.dex' > /dev/null
 #exec hyper
-exec LANG=en_US.UTF-8 polybar main | systemd-cat -i 'katio.polybar'
+#exec LANG=en_US.UTF-8 polybar main | systemd-cat -i 'katio.polybar'
+#exec waybar
 exec feh -d --bg-fill ~/.conf-to-git/mojave_dynamic_8.png | systemd-cat -i 'katio.feh'
-exec dunst | systemd-cat -i 'katio.dunst'
+#exec dunst | systemd-cat -i 'katio.dunst'
+exec mako
 
 input type:touchpad {
 	natural_scroll enabled
@@ -260,5 +277,15 @@ input type:keyboard {
 }
 
 output HDMI-A-1 bg ~/.conf-to-git/openstack.png fill
+output HDMI-A-1 scale 1
+output HDMI-A-1 mode 1920x1080
+#output HDMI-A-1 adaptive_sync on
 output DP-1 bg ~/.conf-to-git/openstack.png fill
+output DP-1 scale 1
+#output DP-1 mode 3840x2160@60Hz
+output DP-1 mode 2560x1440@60Hz
+#output DP-1 mode 2560x1440
+output DP-1 adaptive_sync on
+#output DP-1 max_render_time 10
 output eDP-1 bg ~/.conf-to-git/openstack.png fill
+output * dpms on

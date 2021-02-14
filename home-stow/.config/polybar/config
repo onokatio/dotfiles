@@ -10,6 +10,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/main]
+bottom=true
 enable-ipc = true
 
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -41,7 +42,7 @@ font-1 = "RobotoMono Nerd Font"
 modules-left = pomodoro
 ;modules-left = i3 xwindow
 ;modules-center = mpd
-modules-right = backlight pulseaudio pasink pasource memory cpu mhz system-cpu-temp system-nvidia-smi filesystem wlan info-pingrtt info-myip info-myip6 system-bluetooth-bluetoothctl battery battery-remain info-tlp network-traffic date
+modules-right = backlight pulseaudio pasink pasource memory cpu mhz system-cpu-temp filesystem wlan info-pingrtt info-pingrttv6 myip info-myip6 system-bluetooth-bluetoothctl battery battery-remain info-tlp network-traffic date
 
 tray-position = right
 tray-padding = 2
@@ -340,7 +341,7 @@ format-underline = #ff6666
 [module/info-myip6]
 type = custom/script
 interval = 1
-exec = curl -Ss https://ip6.bramp.net/ | head -n1 | cut -c5- 
+exec = curl -Ss https://ip6.bramp.net/ | head -n1 | cut -c5-
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #ff6666
 
@@ -348,8 +349,16 @@ format-underline = #ff6666
 type = custom/script
 interval = 1
 format = "<label>"
-#exec = bash ~/script/github.com/polybar/polybar-scripts/polybar-scripts/info-pingrtt/info-pingrtt-v6.sh
-exec = bash ~/script/github.com/polybar/polybar-scripts/polybar-scripts/info-pingrtt/info-pingrtt.sh
+exec = bash ~/script/github.com/onokatio/polybar-scripts/polybar-scripts/info-pingrtt/info-pingrtt.sh
+;format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #ff6666
+
+[module/info-pingrttv6]
+type = custom/script
+interval = 1
+format = "<label>"
+exec = bash ~/script/github.com/onokatio/polybar-scripts/polybar-scripts/info-pingrtt/info-pingrtt-v6.sh
 ;format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #ff6666
