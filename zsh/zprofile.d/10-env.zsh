@@ -52,10 +52,6 @@ export VGL_READBACK=pbo
 
 export WINEDEBUG=-all,+wgl
 
-export MOZ_ACCELERATED=1
-export MOZ_WEBRENDER=1
-export MOZ_USE_XINPUT2=1
-export MOZ_X11_EGL=1
 
 export GO111MODULE=on
 
@@ -68,7 +64,6 @@ eval $(dircolors $CTG/static/dircolors.256dark)
 export N0CLI_API_ENDPOINT=172.16.1.11:20180
 export N0CLI_API_URL=grpc://172.16.1.11:20180
 
-export QT_QPA_PLATFORMTHEME=qt5ct
 
 ##### GUI #####
 
@@ -80,23 +75,32 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # - fcitx & mozc doesn't work,
 # - firefox 76 freezes a lot times.
 #
+export MOZ_ACCELERATED=1
+#export MOZ_WEBRENDER=1
+export MOZ_USE_XINPUT2=1
+export MOZ_X11_EGL=1
 export MOZ_ENABLE_WAYLAND=1
-export XDG_SESSION_TYPE=wayland
-export ECORE_EVAS_ENGINE=wayland_egl
-export ELM_ENGINE=wayland_egl
-export SDL_VIDEODRIVER=wayland
-export _JAVA_AWT_WM_NONREPARENTING=1
-#export GDK_BACKEND=wayland
-export CLUTTER_BACKEND=wayland
-export SDL_VIDEODRIVER=wayland
+#export XDG_SESSION_TYPE=wayland
+#export ECORE_EVAS_ENGINE=wayland_egl
+#export ELM_ENGINE=wayland_egl
+#export SDL_VIDEODRIVER=wayland
+#export _JAVA_AWT_WM_NONREPARENTING=1
+##export GDK_BACKEND=wayland
+#export CLUTTER_BACKEND=wayland
+#export QT_QPA_PLATFORMTHEME=qt5ct
+#export QT_QPA_PLATFORM=wayland-egl
+#export QT_QPA_PLATFORM="xcb" #compatible
+#export XINIT_UNIX_BACKEND=wayland
 
 # print firefox vaapi debug message.
-#export MOZ_LOG="PlatformDecoderModule:5"
+export MOZ_LOG="PlatformDecoderModule:4"
 
 export GTK_IM_MODULE='fcitx'
 export QT_IM_MODULE='fcitx'
 export XMODIFIERS='@im=fcitx'
 
-export LANGUAGE="ja_jp:ja:en_US:en"
+#export LANGUAGE="ja_jp:ja:en_US:en"
 
 export KUBECONFIG=~/.kube/config
+
+export PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME:+$FUNCNAME(): }'
