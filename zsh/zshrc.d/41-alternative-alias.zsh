@@ -1,4 +1,5 @@
 alias ls='exa --all --binary --group --header --links --inode --git --icons --classify --group-directories-first --git'
+alias ls='lsd'
 alias cat='bat --theme="Solarized (dark)"'
 alias find='fd'
 #alias ps='procs'
@@ -31,7 +32,6 @@ alias tcpdump='grc tcpdump'
 alias uptime='grc uptime'
 alias vmstat='grc vmstat'
 alias whois='grc whois'
-alias du='dutree'
-
-export PATH="/usr/lib/colorgcc/bin:$PATH"
-export PATH="/usr/share/perl5/vendor_perl/auto/share/dist/Cope:"$PATH
+alias du='dust'
+alias rg='rga --rga-adapters=+pdfpages,tesseract'
+alias sed='sd'
