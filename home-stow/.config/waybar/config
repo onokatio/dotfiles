@@ -1,11 +1,11 @@
 {
     // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "position": "bottom", // Waybar position (top|bottom|left|right)
     //"height": 23, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
-    //"modules-center": ["sway/window"],
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
     "modules-right": ["backlight", "pulseaudio", "memory", "cpu", "temperature", "disk", "network", "custom/info-pingrtt", "custom/info-pingrttv6", "battery", "clock", "tray"],
     // Modules configuration
     "sway/workspaces": {
@@ -68,11 +68,11 @@
 	"interval": 1,
     },
     "cpu": {
-        "format": " {usage}%",
+        "format": " {usage}% {load}",
 	"interval": 2,
     },
     "memory": {
-        "format": " {avail:0.2f}/{total:0.2f}GB",
+        "format": " {used:0.2f}/{total:0.2f}GB",
 	"interval": 2,
     },
     "temperature": {
@@ -94,8 +94,8 @@
             "critical": 15,
         },
         "format": "{icon} {capacity}% {time}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format-charging": "{capacity}%  {time}",
+        "format-plugged": "{capacity}%  {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""],
@@ -107,8 +107,8 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-ethernet": " {ifname}: {ipaddr}/{cidr} {bandwidthUpBits}:{bandwidthDownBits}",
-        "format-wifi": "直 {ifname}: {essid}({frequency},{signalStrength}%) {ipaddr}/{cidr} {bandwidthUpBits}:{bandwidthDownBits}",
+        "format-ethernet": " {ifname}: {ipaddr}/{cidr} {bandwidthUpBits}:{bandwidthDownBits}",
+        "format-wifi": "直 {ifname}: {essid}({frequency},{signalStrength}%) {ipaddr}/{cidr} {bandwidthUpBits}:{bandwidthDownBits}",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
         // "format-alt": "{ifname}: {ipaddr}/{cidr}"
@@ -134,7 +134,7 @@
         "on-click": "pavucontrol"
     },
     "disk": {
-        "format": "{used}/{total}",
+        "format": " {used}/{total}",
         "interval": 2,
 	"path": "/",
     },
@@ -146,12 +146,14 @@
     "custom/info-pingrtt": {
         "format": "{}",
 	"exec": "bash ~/script/github.com/onokatio/polybar-scripts/polybar-scripts/info-pingrtt/info-pingrtt.sh",
-        "interval": 1,
+	//"exec-if": "ping 1.1.1.1 -c 1 -t 1",
+        "interval": 2,
     },
     "custom/info-pingrttv6": {
         "format": "{}",
 	"exec": "bash ~/script/github.com/onokatio/polybar-scripts/polybar-scripts/info-pingrtt/info-pingrtt-v6.sh",
-        "interval": 1,
+	//"exec-if": "ping 2606:4700:4700::1111 -6 -c 1 -t 1",
+        "interval": 2,
     },
     "custom/media": {
         "format": "{icon} {}",

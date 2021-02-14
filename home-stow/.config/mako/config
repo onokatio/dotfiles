@@ -1,0 +1,6 @@
+on-button-middle=dismiss-all
+width=350
+height=300
+margin=10,104
+border-size=0
+format=<b>%s - %a</b>\n%b

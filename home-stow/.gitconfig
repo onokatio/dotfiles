@@ -66,5 +66,13 @@
 	show = diff-so-fancy | less --tabs=4 -RFX
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
-[help]
-	autocorrect = 20
+#[help]
+	#autocorrect = 20
+#[init]
+#	templateDir = /home/katio/.git_template/
+[pull]
+	rebase = false
+[blame]
+	#ignoreRevsFile = .git-blame-ignore-revs
+[rerere]
+	enabled = true
