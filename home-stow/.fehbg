@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-fill '/home/katio/.conf-to-git/mojave_dynamic_8.png' 

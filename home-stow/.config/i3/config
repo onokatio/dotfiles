@@ -14,7 +14,7 @@ set $mod Mod1
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 15
-font pango:Source Han Mono 11
+font pango:Source Han Mono 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -239,7 +239,7 @@ bindsym Mod4+l exec swaylock -i ~/.conf-to-git/mojave_dynamic_8.png
 for_window [class="Yubico Authenticator"] floating enable
 for_window [class="Yubico Authenticator"] resize set width 400 px
 for_window [class="Yubico Authenticator"] resize set height 800 px
-for_window [class="Polybar"] floating enable,move position pos_x 0px pos_y 0px
+for_window [class="Polybar"] floating enable,move position pos_x 0px pos_y 0pxl
 for_window [class="Polybar"] border pixel 0
 for_window [class="Polybar"] sticky enable
 #for_window [class="Polybar"] resize set height 23 px
@@ -276,16 +276,17 @@ input type:keyboard {
 	xkb_options caps:ctrl_modifier
 }
 
-output HDMI-A-1 bg ~/.conf-to-git/openstack.png fill
+output HDMI-A-1
+#output HDMI-A-1 bg ~/.conf-to-git/openstack.png fill
 output HDMI-A-1 scale 1
 output HDMI-A-1 mode 1920x1080
-#output HDMI-A-1 adaptive_sync on
 output DP-1 bg ~/.conf-to-git/openstack.png fill
-output DP-1 scale 1
-#output DP-1 mode 3840x2160@60Hz
-output DP-1 mode 2560x1440@60Hz
-#output DP-1 mode 2560x1440
+output DP-1 scale 2
+output DP-1 mode 3840x2160@60Hz
 output DP-1 adaptive_sync on
-#output DP-1 max_render_time 10
 output eDP-1 bg ~/.conf-to-git/openstack.png fill
 output * dpms on
+
+output DP-1 pos 0 0
+output eDP-1 pos 1920 0
+output HDMI-A-1 pos 3840 0
