@@ -24,8 +24,20 @@ if [[ "$TTY" == "/dev/tty1" ]];then
 	#export XDG_SESSION_TYPE=
 fi
 
+
 if [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CONNECTION} ]];then
 	tmux new-session -A -s main
+	if [[ $? == 0 ]];then
+		#exit
+	fi
+fi
+
+if [[ -z "$UIMFEP" ]];then
+	export UIMFEP=1
+	#uim-fep
+	if [[ $? == 0 ]];then
+		#exit
+	fi
 fi
 
 #umask 0022
