@@ -17,9 +17,9 @@ window:
   #
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
-  dimensions:
-    columns: 276
-    lines: 68
+  #dimensions:
+    #columns: 349
+    #lines: 95
 
   # Window position (changes require restart)
   #
@@ -38,7 +38,7 @@ window:
   #  y: 0
 
   # Spread additional padding evenly around the terminal content.
-  #dynamic_padding: false
+  dynamic_padding: false
 
   # Window decorations
   #
@@ -100,7 +100,7 @@ window:
 # Some applications, like Emacs, rely on knowing about the width of a tab.
 # To prevent unexpected behavior in these applications, it's also required to
 # change the `it` value in terminfo when altering this setting.
-#tabspaces: 8
+tabspaces: 4
 
 # Font configuration
 font:
@@ -153,7 +153,8 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 8.5
+  #size: 8.5
+  size: 7
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
