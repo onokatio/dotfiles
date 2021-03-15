@@ -37,8 +37,8 @@ repo = 'ryanoasis/vim-devicons'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
+#[[plugins]]
+#repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
 repo = 'vim-jp/cpp-vim'

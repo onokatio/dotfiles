@@ -1,27 +1,22 @@
 {
   "dependencies": {
     "coc-rls": ">=1.1.6",
-    "coc-python": ">=1.2.12",
-    "coc-solargraph": ">=1.1.7",
-    "coc-tabnine": ">=1.2.2",
+    "coc-python": ">=1.2.13",
+    "coc-solargraph": ">=1.2.0",
     "coc-dictionary": ">=1.2.2",
     "coc-tag": ">=1.2.5",
     "coc-word": ">=1.2.2",
-    "coc-emoji": ">=1.2.3",
+    "coc-emoji": ">=1.3.0",
     "coc-omni": ">=1.2.4",
     "coc-syntax": ">=1.2.4",
     "coc-ultisnips": ">=1.2.3",
     "coc-neosnippet": ">=1.2.2",
     "coc-vimtex": ">=1.0.4",
-    "coc-snippets": ">=2.2.0",
     "jest-snippets": "https://github.com/andys8/vscode-jest-snippets",
-    "coc-lists": ">=1.3.3",
-    "coc-json": ">=1.2.3",
-    "coc-git": ">=1.6.6",
-    "coc-yank": ">=1.1.2",
-    "coc-highlight": ">=1.2.4",
-    "coc-docker": ">=0.1.3",
+    "coc-lists": ">=1.4.0",
+    "coc-yank": ">=1.2.0",
+    "coc-docker": ">=0.5.0",
     "coc-github": ">=1.0.1",
-    "coc-calc": ">=1.3.0"
+    "coc-calc": ">=2.0.2"
   }
 }
