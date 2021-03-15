@@ -104,3 +104,5 @@ export XMODIFIERS='@im=fcitx'
 export KUBECONFIG=~/.kube/config
 
 export PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME:+$FUNCNAME(): }'
+
+export LD_PRELOAD=/lib/libSegFault.so
