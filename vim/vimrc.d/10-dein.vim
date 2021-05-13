@@ -1,3 +1,8 @@
+let g:comfortable_motion_no_default_key_mappings = 1
+let g:comfortable_motion_impulse_multiplier = 1  " Feel free to increase/decrease this value.
+
+let g:coc_global_extensions = [ 'coc-python', 'coc-json', 'coc-git' ]
+
 if has('nvim')
 
 	set runtimepath+=$CTG/cache/dein.vim
@@ -20,6 +25,7 @@ if has('nvim')
 	"colorscheme badwolf
 	"colorscheme elflord
 	set background=dark
+	"set background=light
 	colorscheme solarized8
 	let g:solarized_term_italics = 1
 	let g:solarized_extra_hi_groups = 1
@@ -54,3 +60,4 @@ if has('nvim')
 
 	nnoremap <silent> <space><space> :<C-u>Vista!!<CR>
 endif
+

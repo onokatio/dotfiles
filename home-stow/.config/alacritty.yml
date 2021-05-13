@@ -193,6 +193,7 @@ colors:
   # Default colors
   primary:
     background: '#002b36' # base03
+    #background: '#fdf6e3' # base3
     foreground: '#839496' # base0
 
   # Cursor colors
@@ -202,7 +203,9 @@ colors:
 
   # Normal colors
   normal:
+    #black:   '#073641' # base02
     black:   '#073642' # base02
+    #black:   '#eee8d5' # base2
     red:     '#dc322f' # red
     green:   '#859900' # green
     yellow:  '#b58900' # yellow
