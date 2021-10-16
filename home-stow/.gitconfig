@@ -87,3 +87,12 @@
 
 [url "git@bitbucket.org:"]
 	insteadOf = https://bitbucket.org/
+[gc]
+	pruneExpire = 1.weeks.ago
+	auto = 1000
+	autopacklimit = 10
+	reflogexpire = 10
+	reflogExpireUnreachable = 10
+	rerereresolved = 10
+	rerereunresolved = 10
+	worktreePruneExpire = 1.weeks.ago
