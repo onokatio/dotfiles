@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/katio/script/github.com/onokatio/itf/system_program/404'
+let g:netrw_dirhist_9='/Users/katio/script/github.com/onokatio'
+let g:netrw_dirhist_8='/Users/katio/script/github.com/onokatio/alternative-tsukuba-syllabus'
+let g:netrw_dirhist_7='/Users/katio/script/github.com/onokatio/alternative-tsukuba-syllabus/src'
+let g:netrw_dirhist_6='/Users/katio/script/github.com/onokatio/static.katio.net/dynamic'
+let g:netrw_dirhist_5='/Users/katio/script/github.com/anyappinc/anydoc/app/compiler/revel_controller'
+let g:netrw_dirhist_4='/Users/katio/Downloads/cloud-mis/app/controllers'
+let g:netrw_dirhist_3='/Users/katio/script/github.com/kittyworks/go-pir-algebra/.git'
+let g:netrw_dirhist_2='/Users/katio/script/github.com/revel'
+let g:netrw_dirhist_1='/Users/katio/script/github.com/revel/revel'
