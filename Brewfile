@@ -1,7 +1,7 @@
 tap "athrunsun/appimage"
 tap "athrunsun/athruncask"
 tap "athrunsun/genericbinary"
-tap "athrunsun/linuxbinary"
+#tap "athrunsun/linuxbinary"
 tap "athrunsun/osxbinary"
 tap "brewsci/bio"
 tap "cloudflare/cloudflare"
