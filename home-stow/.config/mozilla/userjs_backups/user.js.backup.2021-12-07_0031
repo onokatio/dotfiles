@@ -1449,12 +1449,4 @@ user_pref("fission.autostart", true);
 // now firefox beta use software even wayland/vaapi is enabled.
 
 //override arkenfox
-user_pref("browser.startup.page", 3);
 user_pref("privacy.clearOnShutdown.history", false);
-user_pref("keyword.enabled", true);
-user_pref("intl.accept_languages", "ja");
-user_pref("browser.search.suggest.enabled", true);
-user_pref("browser.urlbar.suggest.searches", true);
-user_pref("browser.cache.disk.enable", true);
-user_pref("media.eme.enabled", true);
-user_pref("webgl.disabled", false);
