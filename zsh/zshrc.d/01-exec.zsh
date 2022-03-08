@@ -66,3 +66,5 @@ case ${TERM} in
     PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
     ;;
 esac
+
+eval "$(anyenv init -)"
