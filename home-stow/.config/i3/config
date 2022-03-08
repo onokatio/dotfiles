@@ -30,6 +30,7 @@ titlebar_padding 0
 hide_edge_borders smart
 smart_gaps on
 default_border pixel 0
+tiling_drag disable
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -40,12 +41,12 @@ default_border pixel 0
 
 # Use pactl to adjust volume in PulseAudio.
 #set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1% && pamixer --get-volume > $SWAYSOCK.wob
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1% && pamixer --get-volume > $SWAYSOCK.wob
-bindsym XF86AudioMute        exec pactl set-sink-mute @DEFAULT_SINK@ toggle && pamixer --get-volume > $SWAYSOCK.wob
-bindsym XF86AudioMicMute     exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && pamixer --get-volume > $SWAYSOCK.wob
-bindsym XF86MonBrightnessUp   exec light -A 0.5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
-bindsym XF86MonBrightnessDown exec light -U 0.5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1% && pamixer --get-volume > $SWAYSOCK.wob
+#bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1% && pamixer --get-volume > $SWAYSOCK.wob
+#bindsym XF86AudioMute        exec pactl set-sink-mute @DEFAULT_SINK@ toggle && pamixer --get-volume > $SWAYSOCK.wob
+#bindsym XF86AudioMicMute     exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && pamixer --get-volume > $SWAYSOCK.wob
+#bindsym XF86MonBrightnessUp   exec light -A 0.5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+#bindsym XF86MonBrightnessDown exec light -U 0.5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 #bindsym XF86MonBrightnessUp echo $(( $( cat /tmp/i2c-4-brighness ) +10 )) > /tmp/i2c-4-brighness.tmp ; mv /tmp/i2c-4-brighness.tmp /tmp/i2c-4-brighness ; ddccontrol -r 0x10 -w $(cat /tmp/i2c-4-brighness) dev:/dev/i2c-4 -f
 #bindsym XF86MonBrightnessDown echo $(( $( cat /tmp/i2c-4-brighness ) - 10 )) > /tmp/i2c-4-brighness.tmp ; mv /tmp/i2c-4-brighness.tmp /tmp/i2c-4-brighness ; ddccontrol -r 0x10 -w $(cat /tmp/i2c-4-brighness) dev:/dev/i2c-4 -f
 
@@ -248,7 +249,7 @@ for_window [app_id="zenity"] floating enable
 bindsym Mod4+space exec QT_QPA_PLATFORM="xcb" albert toggle
 
 exec nm-applet
-exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+#exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 exec QT_QPA_PLATFORM="xcb" albert > /dev/null
 #exec picom
 #exec nm-applet
