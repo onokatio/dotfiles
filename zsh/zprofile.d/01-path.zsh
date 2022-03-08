@@ -63,14 +63,21 @@ export PATH=/home/linuxbrew/.linuxbrew/sbin:$PATH
 #export PATH=$HOME/.linuxbrew:$PATH
 #eval $(brew shellenv)
 
+### HomeBrew ###
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=/opt/homebrew/sbin:$PATH
+
 #export XDG_DATA_DIRS="/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS"
 #export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$XDG_DATA_DIRS"
 #export XDG_DATA_DIRS="/home/katio/.local/share/flatpak/exports/share:$XDG_DATA_DIRS"
 
 export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+#export PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH
 export PATH="/usr/share/perl5/vendor_perl/auto/share/dist/Cope:"$PATH
 #export PATH=/home/linuxbrew/.linuxbrew/opt/coreutils/libexec/gnubin:$PATH
+
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 
 export PATH="/usr/lib/ccache/bin:$PATH"
