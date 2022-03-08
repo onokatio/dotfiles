@@ -18,6 +18,7 @@ export HOMEBREW_EDITOR=nvim
 #export HOMEBREW_CXX="ccache g++"
 #export HOMEBREW_NO_ENV_FILTERING=1
 #export HOMEBREW_CURL=$(which curl)
+HOMEBREW_INSTALL_FROM_API=1
 
 #export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
@@ -57,7 +58,7 @@ export GO111MODULE=on
 
 export PIPENV_VENV_IN_PROJECT=true
 
-eval $(dircolors $CTG/static/dircolors.256dark)
+#eval $(dircolors $CTG/static/dircolors.256dark)
 
 #export SUDO_PROMPT="[sudo] password : "
 
@@ -106,3 +107,6 @@ export KUBECONFIG=~/.kube/config
 export PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME:+$FUNCNAME(): }'
 
 export LD_PRELOAD=/lib/libSegFault.so
+
+#export HTTPS_PROXY=http://127.0.0.1:8731
+#export HTTP_PROXY=http://127.0.0.1:8731
