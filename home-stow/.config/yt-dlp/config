@@ -1,0 +1,7 @@
+--concurrent-fragments 4
+--hls-use-mpegts
+--downloader aria2c
+--embed-thumbnail
+--embed-metadata
+--prefer-free-formats
+--merge-output-format mp4
