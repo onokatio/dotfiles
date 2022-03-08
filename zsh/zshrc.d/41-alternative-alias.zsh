@@ -1,4 +1,4 @@
-alias ls='exa --all --binary --group --header --links --inode --git --icons --classify --group-directories-first --git'
+#alias ls='exa --all --binary --group --header --links --inode --git --icons --classify --group-directories-first --git'
 #alias ls='lsd'
 #alias cat='bat --theme="Solarized (dark)"'
 #alias find='fd'
@@ -7,7 +7,7 @@ alias ls='exa --all --binary --group --header --links --inode --git --icons --cl
 #alias diff='diff-so-fancy-standalone'
 #alias git='hub'
 #alias ssh='xxh'
-alias ping='prettyping'
+#alias ping='prettyping'
 
 
 ## colorize (no feature) ##
