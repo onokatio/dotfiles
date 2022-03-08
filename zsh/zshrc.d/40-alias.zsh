@@ -4,8 +4,10 @@ function tarbzip2(){tar xvf $@ --use-compress-prog=pbzip2 }
 
 #alias sudo='doas'
 alias sudo='sudo '
-alias vi="nvim -u $HOME/.vimrc"
-alias vim="nvim -u $HOME/.vimrc"
+#alias vi="nvim -u $HOME/.vimrc"
+#alias vim="nvim -u $HOME/.vimrc"
+alias vi="code"
+alias vim="code"
 alias d='popd'
 
 alias hs=history
@@ -52,7 +54,7 @@ alias debian="docker run -it --rm debian /bin/bash"
 alias fedora="docker run -it --rm fedora /bin/bash"
 alias kali="docker run -it --rm kalilinux/kali-rolling /bin/bash"
 
-#alias aria2c="aria2c --bt-max-peers=0 --bt-request-peer-speed-limit=1000M --max-concurrent-downloads=100 --max-connection-per-server=16 --split=20 --bt-max-open-files=1000"
+alias aria2c="aria2c --bt-max-peers=0 --bt-request-peer-speed-limit=1000M --max-concurrent-downloads=100 --max-connection-per-server=16 --split=20 --bt-max-open-files=1000"
 
 alias CAPS='echo setxkbmap -option ctrl:swapcaps , setxkbmap -option'
 
@@ -225,3 +227,9 @@ alias ttyUSB0='cu -l /dev/ttyUSB0 -s 9600'
 
 #alias ffmpeg="ffmpeg -vaapi_device /dev/dri/renderD128 -hwaccel vaapi -hwaccel_output_format vaapi -vf 'format=nv12|vaapi,hwupload' -movflags +faststart"
 alias ffmpeg-vaapi="ffmpeg -vaapi_device /dev/dri/renderD128 -hwaccel vaapi -hwaccel_output_format vaapi"
+
+alias ffmpeg='ffmpeg -hide_banner'
+
+function unuri(){
+	printf '%b\n' "${1//\%/\\x}"
+}
