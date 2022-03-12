@@ -24,7 +24,7 @@ alias apt-get=apt-fast
 alias mkdir='mkdir -p'
 #alias bat="upower -i /org/freedesktop/UPower/devices/battery_BAT0|grep 'percentage'|sed -e 's/ //g'|sed -e 's/percentage://'|sed -e 's/%//'"
 alias grep="grep --color=auto -I"
-alias ls='ls -Z -AhqpFvb --group-directories-first --human-readable --almost-all --color=auto'
+#alias ls='ls -AhqpFvb --group-directories-first --human-readable --almost-all --color=auto'
 alias l='ls'
 alias la='ls -l'
 alias ll='ls -l'
