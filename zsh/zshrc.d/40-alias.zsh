@@ -2,6 +2,18 @@ function targz(){tar xvf $@ --use-compress-prog=pigz }
 function tarxz(){tar xvf $@ --use-compress-prog=pixz }
 function tarbzip2(){tar xvf $@ --use-compress-prog=pbzip2 }
 
+if [[ "$(uname -s)" == "Darwin" ]];then
+	alias rm='rm -v'
+	alias ls='ls -AhqpFvb --color=auto'
+	alias ll='ls -l'
+elif [[ "$(uname -s)" == "Linux" ]];then
+	alias rm='rm -v --one-file-system'
+	alias ls='ls -AhqpFvb --group-directories-first --human-readable --almost-all --color=auto'
+	alias ll='ls -lZ --full-time --inode'
+else
+	echo "unknown OS"
+fi
+
 #alias sudo='doas'
 alias sudo='sudo '
 #alias vi="nvim -u $HOME/.vimrc"
@@ -17,20 +29,13 @@ alias hs=history
 #alias diff=colordiff
 #alias wget="axel -n 10 -v -a"
 alias mirror='wget -r -l inf -k -nc -H'
-alias ks=ls
 alias xs=cd
 #alias apt=apt-fast
 alias apt-get=apt-fast
 alias mkdir='mkdir -p'
 #alias bat="upower -i /org/freedesktop/UPower/devices/battery_BAT0|grep 'percentage'|sed -e 's/ //g'|sed -e 's/percentage://'|sed -e 's/%//'"
 alias grep="grep --color=auto -I"
-#alias ls='ls -AhqpFvb --group-directories-first --human-readable --almost-all --color=auto'
-alias l='ls'
-alias la='ls -l'
-alias ll='ls -l'
-#alias l='ls -qpFvb --group-directories-first --human-readable --almost-all --color=auto'
-#alias ll='ls -lZ -AhqpFvb --group-directories-first --human-readable --almost-all --color=auto --full-time --inode'
-#alias la='ls -lZ -AhqpFvb --group-directories-first --human-readable --almost-all --color=auto --full-time --inode'
+alias ks=ls
 #alias make='make -j4'
 alias crontab='echo "dont use crontab !!"'
 alias chromekill='ps ax|/bin/grep [c]hrome|cut -c-6|xargs sudo renice -19'
@@ -40,8 +45,6 @@ alias curlg="curl https://google.com"
 #alias cat='cat -v'
 alias trace-mtr='mtr'
 alias open='xdg-open'
-alias rm='rm -v --one-file-system'
-#alias rm='echo Use gomi command instead of '
 alias poweroff='echo do not use'
 alias reboot='echo do not use'
 #alias sed='gsed'
