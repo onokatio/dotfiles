@@ -63,10 +63,10 @@
 	template = ~/.gitmessage
 	verbose = true
 [pager]
-	diff = diff-so-fancy | less --tabs=4 -RFX
-	show = diff-so-fancy | less --tabs=4 -RFX
+	#diff = diff-so-fancy | less --tabs=4 -RFX
+	#show = diff-so-fancy | less --tabs=4 -RFX
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	#pager = diff-so-fancy | less --tabs=4 -RFX
 	excludesfile = ~/.gitignore_global
 #[help]
 	#autocorrect = 20

@@ -18,8 +18,8 @@ fi
 alias sudo='sudo '
 #alias vi="nvim -u $HOME/.vimrc"
 #alias vim="nvim -u $HOME/.vimrc"
-alias vi="code"
-alias vim="code"
+#alias vi="code"
+#alias vim="code"
 alias d='popd'
 
 alias hs=history
