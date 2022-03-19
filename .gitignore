@@ -5,3 +5,4 @@
 *.zwc
 dists
 .nfs*
+.DS_Store
