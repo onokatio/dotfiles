@@ -46,3 +46,9 @@ $ stow -v home-stow
 $ cat <(pacman -Qent) <(pacman -Qm) | sort | uniq > ./packagelist.pacman
 ```
 
+## pipx
+
+```
+pipx radicale
+pipx inject radicale radicale_storage_decsync
+```
