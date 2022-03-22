@@ -1,0 +1,15 @@
+font:
+  normal:
+    family: "Sauce Code Pro Nerd Font Mono"
+    style: Regular
+  bold:
+    family: "Sauce Code Pro Nerd Font Mono"
+    style: Bold
+  italic:
+    family: "Sauce Code Pro Nerd Font Mono"
+    style: Italic
+  bold_italic:
+    family: "Sauce Code Pro Nerd Font Mono"
+    style: Bold Italic
+  size: 7
+  use_thin_strokes: true
