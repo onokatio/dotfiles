@@ -10,6 +10,7 @@ elif [[ "$(uname -s)" == "Linux" ]];then
 	alias rm='rm -v --one-file-system'
 	alias ls='ls -AhqpFvb --group-directories-first --human-readable --almost-all --color=auto'
 	alias ll='ls -lZ --full-time --inode'
+	alias diff='diff --color=auto'
 else
 	echo "unknown OS"
 fi
@@ -97,8 +98,6 @@ alias hex='hexyl'
 alias tldr='tldr -L en'
 
 alias gcc='gcc -Wall'
-
-alias diff='diff --color=auto'
 
 function license-gpl(){
 	echo "Copyright (C) $(date +%Y) onokatio(おのかちお)"
