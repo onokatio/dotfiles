@@ -1,9 +1,10 @@
 #export LANG=ja_JP.UTF-8
 
 #export set CC='ccache gcc'
-#export XDG_CONFIG_HOME=$HOME/.config
-#export XDG_DATA_HOME=$HOME/.local/share
-#export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_STATE_HOME=$HOME/.local/state
 export XDG_PICTURES_DIR=$HOME/Downloads/Picture
 
 export NO_AT_BRIDGE=1
@@ -22,7 +23,6 @@ HOMEBREW_INSTALL_FROM_API=1
 
 #export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
-
 ##### Shell #####
 export EDITOR=nvim
 export BROWSER=firefox-developer-edition
@@ -35,7 +35,6 @@ export CCACHE_DIR=$HOME/.ccache
 export MAKE_OPTS="-j 4"
 export PROOT_NO_SECCOMP=1
 export XZ_DEFAULTS="--threads 4"
-
 
 export GOPATH=$HOME/gopath
 export PATH=$GOPATH/bin:$PATH
@@ -53,7 +52,6 @@ export VGL_READBACK=pbo
 
 export WINEDEBUG=-all,+wgl
 
-
 export GO111MODULE=on
 
 export PIPENV_VENV_IN_PROJECT=true
@@ -64,7 +62,6 @@ export PIPENV_VENV_IN_PROJECT=true
 
 export N0CLI_API_ENDPOINT=172.16.1.11:20180
 export N0CLI_API_URL=grpc://172.16.1.11:20180
-
 
 ##### GUI #####
 
@@ -102,11 +99,41 @@ export XMODIFIERS='@im=fcitx'
 
 #export LANGUAGE="ja_jp:ja:en_US:en"
 
-export KUBECONFIG=~/.kube/config
-
 export PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME:+$FUNCNAME(): }'
 
-export LD_PRELOAD=/lib/libSegFault.so
+#export LD_PRELOAD=/lib/libSegFault.so
 
 #export HTTPS_PROXY=http://127.0.0.1:8731
 #export HTTP_PROXY=http://127.0.0.1:8731
+
+### XDG Base Directory ###
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+export MYSQL_HISTFILE="$XDG_DATA_HOME"/mysql_history
+export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
+export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME"/aws/credentials
+export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+#export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+export GEM_HOME="$XDG_DATA_HOME"/gem
+export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
+export VAGRANT_HOME="$XDG_DATA_HOME"/vagrant
+export VAGRANT_ALIAS_FILE="$XDG_DATA_HOME"/vagrant/aliases
+export TERMINFO="$XDG_DATA_HOME"/terminfo
+export TERMINFO_DIRS="$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
+export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
+export KUBECONFIG="$XDG_DATA_HOME"/kube/config
+export TF_CLI_CONFIG_FILE="$XDG_CONFIG_HOME"/terraformrc
+export npm_config_userconfig=$XDG_CONFIG_HOME/npm/config
+export npm_config_cache=$XDG_CACHE_HOME/npm
+export npm_config_prefix=$XDG_DATA_HOME/npm
+export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export ENHANCD_DIR="$XDG_DATA_HOME"/enhancd
+export GIBO_BOILERPLATES="$XDG_DATA_HOME"/gibo
+export SSHHOME="$XDG_CONFIG_HOME"/sshrc
+export ADB_VENDOR_KEYS="$XDG_DATA_HOME"/adb/vendor_keys
+export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
+export XSERVERRC="$XDG_CONFIG_HOME"/X11/xserverrc
+export PYTHONHISTFILE="/dev/null"
+alias nvidia-settings='nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings'
+alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'

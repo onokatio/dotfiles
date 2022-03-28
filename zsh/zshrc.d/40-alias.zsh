@@ -11,6 +11,8 @@ elif [[ "$(uname -s)" == "Linux" ]];then
 	alias ls='ls -AhqpFvb --group-directories-first --human-readable --almost-all --color=auto'
 	alias ll='ls -lZ --full-time --inode'
 	alias diff='diff --color=auto'
+	alias open='xdg-open'
+	alias cp='cp --reflink=auto'
 else
 	echo "unknown OS"
 fi
@@ -45,7 +47,6 @@ alias curlg="curl https://google.com"
 #alias cat='vimcat'
 #alias cat='cat -v'
 alias trace-mtr='mtr'
-alias open='xdg-open'
 alias poweroff='echo do not use'
 alias reboot='echo do not use'
 #alias sed='gsed'
@@ -220,7 +221,6 @@ alias rclone='rclone --transfers 64'
 
 alias pacman-autoremove='pacman -Rns $(pacman -Qtdq)'
 
-alias cp='cp --reflink=auto'
 
 alias cols='tput cols'
 alias lines='tput lines'
