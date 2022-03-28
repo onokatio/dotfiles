@@ -30,27 +30,18 @@
 [diff-so-fancy]
 	markEmptyLines = false
 	changeHunkIndicators = true
-#[credential]
-#	helper = /usr/lib/git-core/git-credential-gnome-keyring
-#[init]
+[credential]
+	#helper = /usr/lib/git-core/git-credential-gnome-keyring
+	helper = cache
+[init]
 #	templatedir = ~/.git-templates/git-secrets
-[secrets]
-	providers = git secrets --aws-provider
-	patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
-	patterns = (\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?
-	patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
-	allowed = AKIAIOSFODNN7EXAMPLE
-	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-
+#	templateDir = /home/katio/.git_template/
+#	templateDir = ~/.config/git/template
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
-[ghq]
-	#root = /home/katio/script
-	root = ~/script
-	user = onokatio
 [alias]
 	log2 = log --oneline --graph --all --remotes
 #[remote "origin"]
@@ -60,20 +51,19 @@
 #[remote "orionwl"]
 #	proxy = socks5h://127.0.0.1:9050
 [commit]
-	template = ~/.gitmessage
+	template = ~/.config/git/message
 	verbose = true
 [pager]
 	#diff = diff-so-fancy | less --tabs=4 -RFX
 	#show = diff-so-fancy | less --tabs=4 -RFX
 [core]
 	#pager = diff-so-fancy | less --tabs=4 -RFX
-	excludesfile = ~/.gitignore_global
+	#excludesfile = ~/.gitignore_global
 #[help]
 	#autocorrect = 20
-#[init]
-#	templateDir = /home/katio/.git_template/
 [pull]
 	rebase = false
+	twohead = ort
 [blame]
 	#ignoreRevsFile = .git-blame-ignore-revs
 [rerere]
@@ -81,12 +71,26 @@
 
 [url "git@github.com:"]
 	insteadOf = https://github.com/
-
 [url "git@gitlab.com:"]
 	insteadOf = https://gitlab.com/
-
 [url "git@bitbucket.org:"]
 	insteadOf = https://bitbucket.org/
+
+[ghq]
+	root = ~/script2
+	user = onokatio
+[ghq "https://github.com/onokatio"]
+	root = ~/script
+[ghq "https://github.com/hashcloak"]
+	root = ~/script
+[ghq "https://github.com/areal-vr"]
+	root = ~/script
+[ghq "https://github.com/anyappinc"]
+	root = ~/script
+[ghq "https://github.com/ictsc"]
+	root = ~/script
+[ghq "https://github.com/onokatio"]
+	root = ~/script
 [gc]
 	pruneExpire = 1.weeks.ago
 	auto = 1000
@@ -96,3 +100,11 @@
 	rerereresolved = 10
 	rerereunresolved = 10
 	worktreePruneExpire = 1.weeks.ago
+
+[secrets]
+	providers = git secrets --aws-provider
+	patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
+	patterns = (\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?
+	patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
+	allowed = AKIAIOSFODNN7EXAMPLE
+	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY

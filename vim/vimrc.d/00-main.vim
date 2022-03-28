@@ -25,3 +25,5 @@ augroup swapchoice-readonly "swap発見時に自動readonly
   autocmd!
   autocmd SwapExists * let v:swapchoice = 'o'
 augroup END
+
+if !has('nvim') | set viminfofile=$XDG_CACHE_HOME/vim/viminfo | endif

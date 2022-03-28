@@ -35,6 +35,7 @@ user_pref("network.http.referer.XOriginPolicy", 0);
 user_pref("network.dns.disableIPv6", false);
 user_pref("javascript.use_us_english_locale",false);
 user_pref("privacy.spoof_english",0);
+user_pref("intl.accept_languages","ja");
 
 user_pref("_user.js.parrot", "OVERRIDE: success override arkenfox");
 
