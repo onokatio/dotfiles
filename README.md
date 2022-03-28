@@ -52,3 +52,9 @@ $ cat <(pacman -Qent) <(pacman -Qm) | sort | uniq > ./packagelist.pacman
 pipx radicale
 pipx inject radicale radicale_storage_decsync
 ```
+
+## update
+
+```
+~/.conf-to-git/cache/tmux-plugins/tpm/bindings/update_plugins
+```
