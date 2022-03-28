@@ -1,6 +1,6 @@
 #zmodload zsh/zprof && zprof
 
-if [[ "$TTY" == "/dev/tty1" ]];then
+if [[ "$TTY" == "/dev/tty1" ]]; then
 	#startx -- -logverbose 9 -verbose 9 2>&1 | tee ~/log/startx.log
 	#export XDG_SESSION_TYPE=wayland
 	#export WINIT_UNIX_BACKEND=wayland
@@ -15,7 +15,7 @@ if [[ "$TTY" == "/dev/tty1" ]];then
 	#sway -d -V --my-next-gpu-wont-be-nvidia 2>&1 | tee ~/sway.log
 	#export WLC_BG=0
 	#export WLR_NO_HARDWARE_CURSORS=1
-	sway --my-next-gpu-wont-be-nvidia > ~/sway.log 2>&1
+	sway --my-next-gpu-wont-be-nvidia >~/sway.log 2>&1
 	#| systemd-cat -t 'katio.sway' > /dev/null
 	#| systemd-cat -t 'katio.sway'
 	export LANG=en_US.UTF-8
@@ -24,18 +24,17 @@ if [[ "$TTY" == "/dev/tty1" ]];then
 	#export XDG_SESSION_TYPE=
 fi
 
-
-if [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CONNECTION} ]];then
+if [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CONNECTION} ]]; then
 	tmux new-session -A -s main
-	if [[ $? == 0 ]];then
+	if [[ $? == 0 ]]; then
 		#exit
 	fi
 fi
 
-if [[ -z "$UIMFEP" ]];then
+if [[ -z "$UIMFEP" ]]; then
 	export UIMFEP=1
 	#uim-fep
-	if [[ $? == 0 ]];then
+	if [[ $? == 0 ]]; then
 		#exit
 	fi
 fi
@@ -50,7 +49,7 @@ fi
 AGENT_TIMEOUT=3600
 
 #if [ -z "$SSH_AUTH_SOCK" ];then
-	eval $(ssh-agent -t $AGENT_TIMEOUT) > /dev/null
+eval $(ssh-agent -t $AGENT_TIMEOUT) >/dev/null
 #fi
 
 typeset -U path PATH
@@ -58,13 +57,13 @@ export CCACHE_PATH="/usr/bin"
 
 case ${TERM} in
 
-  xterm*|rxvt*|Eterm|aterm|kterm|gnome*)
-     PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
+xterm* | rxvt* | Eterm | aterm | kterm | gnome*)
+	PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
 
-    ;;
-  screen*)
-    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
-    ;;
+	;;
+screen*)
+	PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
+	;;
 esac
 
 eval "$(anyenv init -)"
