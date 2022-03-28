@@ -1,5 +1,11 @@
 #zmodload zsh/zprof && zprof
 
+export HISTFILE="$XDG_STATE_HOME"/history
+export HISTSIZE=1000000
+export SAVEHIST=1000000
+#REPORTTIME=3
+export HISTTIMEFORMAT="[%Y/%M/%D %H:%M:%S] "
+
 if [[ "$TTY" == "/dev/tty1" ]]; then
 	#startx -- -logverbose 9 -verbose 9 2>&1 | tee ~/log/startx.log
 	#export XDG_SESSION_TYPE=wayland
