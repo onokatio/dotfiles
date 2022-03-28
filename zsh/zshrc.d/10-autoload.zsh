@@ -7,4 +7,3 @@ autoload -Uz compinit
 autoload -Uz bashcompinit
 zmodload zsh/zpty
 #autoload -Uz zed
-

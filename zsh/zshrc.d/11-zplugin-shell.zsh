@@ -3,7 +3,7 @@ ZPLGM[HOME_DIR]=$CTG/cache/zplugin-plugin
 export ZPFX=$CTG/cache/zplugin-plugin-make
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT='alias-tips: '
 
-if [[ ! -d $CTG/cache/zplugin ]];then
+if [[ ! -d $CTG/cache/zplugin ]]; then
 	git clone https://github.com/zdharma/zinit.git $CTG/cache/zplugin
 fi
 
