@@ -9,7 +9,7 @@
 #}
 
 # chpwd(){ ls -qpFv --group-directories-first --human-readable --almost-all --color=auto }
-chpwd(){
+chpwd() {
 	vcs_info
 	ls
 }
@@ -26,9 +26,9 @@ else
 	zstyle ':vcs_info:*' actionformats '[%b|%a]'
 	#LANG=en_US.UTF-8 vcs_info
 	vcs_info
-	
+
 	local PNAME
-	if [[ -n "${REMOTEHOST}${SSH_CONNECTION}" ]];then
+	if [[ -n "${REMOTEHOST}${SSH_CONNECTION}" ]]; then
 		PNAME="%K{yellow}%F{black}SSH "
 	fi
 	UUU="%K{white}%F{black}（」・ω・）」うー"

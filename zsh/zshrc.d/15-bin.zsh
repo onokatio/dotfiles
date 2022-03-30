@@ -1,38 +1,24 @@
-zplugin ice as"program" make"PREFIX=$ZPFX" pick"$ZPFX/bin/git-*"
-zplugin light tj/git-extras
+#zi ice as'program' make"all" pick"bin/history" atload"source misc/zsh/init.zsh"
+#zi light b4b4r07/history
+alias history='command history'
+ZSH_HISTORY_KEYBIND_GET="^r"
+ZSH_HISTORY_FILTER_OPTIONS="--filter-branch --filter-dir"
+ZSH_HISTORY_KEYBIND_ARROW_UP="^p"
+ZSH_HISTORY_KEYBIND_ARROW_DOWN="^n"
 
-zplugin ice as"program" make"PREFIX=$ZPFX" pick"$ZPFX/bin/git-issue"
-zplugin light dspinellis/git-issue
+#zi ice wait'0' as'program' pick'bin/anyenv' atload'export ANYENV_ROOT=$PWD ; eval "$(anyenv init -)"'
+#zi light riywo/anyenv
+#eval "$(anyenv init -)"
 
-zplugin ice as"program" pick"diff-so-fancy"
-zplugin snippet "https://github.com/so-fancy/diff-so-fancy/raw/master/third_party/build_fatpack/diff-so-fancy"
+zi wait lucid as='program' for \
+    'https://raw.githubusercontent.com/znz/anyenv-update/master/bin/anyenv-update' \
+    'https://raw.githubusercontent.com/upa/deadman/master/deadman' \
+    'https://raw.githubusercontent.com/fumiyas/home-commands/master/echo-sd' \
+    'https://gitlab.com/wavexx/screenkey/raw/master/screenkey'
 
-#zplugin ice wait'0' as'program' pick'bin/anyenv' atload'export ANYENV_ROOT=$PWD ; eval "$(anyenv init -)"'
-#zplugin light riywo/anyenv
+zi light 'asdf-vm/asdf'
 
-zplugin ice as'program'
-zplugin snippet 'https://raw.githubusercontent.com/znz/anyenv-update/master/bin/anyenv-update'
-
-zplugin ice as'program'
-zplugin snippet 'https://raw.githubusercontent.com/upa/deadman/master/deadman'
-
-zplugin ice as'program'
-zplugin snippet 'https://raw.githubusercontent.com/fumiyas/home-commands/master/echo-sd'
-
-#zplugin ice as'program'
-#zplugin snippet 'https://raw.githubusercontent.com/simonwhitaker/gibo/master/gibo'
-
-#zplugin ice as'program'
-#zplugin snippet 'https://raw.githubusercontent.com/paulirish/git-open/master/git-open'
-
-#zplugin ice from'gh-r' as'program' mv'*gomi* -> gomi' bpick"*$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m)*"
-#zplugin load 'b4b4r07/gomi'
-
-#zplugin ice from'gh-r' as"program" bpick"*$(uname -s | tr '[:upper:]' '[:lower:]')_amd64*" pick'fzf'
-#zplugin load 'junegunn/fzf-bin'
-
-zplugin ice as'program'
-zplugin snippet 'https://gitlab.com/wavexx/screenkey/raw/master/screenkey'
-
-#zplugin ice
-zplugin light 'asdf-vm/asdf'
+zi ice wait lucid atclone='gdircolors ./dircolors.ansi-universal > color.zsh' \
+    atpull='%atclone' pick="color.zsh" nocompile="!" \
+    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
+zi light 'seebi/dircolors-solarized'
