@@ -1,9 +1,9 @@
 NAME=$CTG/cache/tmux-plugins/tpm
 
-[[ -x "$NAME" ]] || {
-	echo "[WARN]  tpm not found"
-	git clone https://github.com/tmux-plugins/tpm $NAME
-}
+#[[ -x "$NAME" ]] || {
+#	echo "[WARN]  tpm not found"
+#	git clone https://github.com/tmux-plugins/tpm $NAME
+#}
 
 NAME=$CTG/cache/dein.vim
 
