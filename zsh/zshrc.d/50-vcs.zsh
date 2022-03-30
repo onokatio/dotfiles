@@ -9,22 +9,22 @@
 #}
 
 preexec() {
-  _pre="$1"
+    _pre="$1"
 }
 
-precmd(){
-	_r=$?
-	case "${_pre}"  in
-		cd*|git*|vi*|..|:)
-			#psvar=()
-			#LANG=en_US.UTF-8 vcs_info
-			vcs_info
-			#[[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-		;;
-	esac
-	_pre=""
+precmd() {
+    _r=$?
+    case "${_pre}" in
+    cd* | git* | vi* | .. | :)
+        #psvar=()
+        #LANG=en_US.UTF-8 vcs_info
+        vcs_info
+        #[[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+        ;;
+    esac
+    _pre=""
 
-	return ${_r}
+    return ${_r}
 }
 
 do_enter() {

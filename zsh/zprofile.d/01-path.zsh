@@ -5,40 +5,39 @@
 #  XDG_DATA_DIRS   :            : /usr/local/share:/usr/share
 #  XDG_CONFIG_DIRS :            : /etc/xdg
 
-add-local-path(){
+add-local-path() {
 
-		# This is danger.
-		#
-		export PATH=$1/sbin:$PATH
-		export PATH=$1/bin:$PATH
-		export LD_LIBRARY_PATH=$1/usr/lib:$LD_LIBRARY_PATH
-		export LD_LIBRARY_PATH=$1/usr/lib64:$LD_LIBRARY_PATH
-		export LD_LIBRARY_PATH=$1/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
-		export LD_LIBRARY_PATH=$1/usr/lib64/x86_64-linux-gnu:$LD_LIBRARY_PATH
-		export LD_RUN_PATH=$1/usr/lib:$LD_RUN_PATH
-		export LD_RUN_PATH=$1/usr/lib64:$LD_RUN_PATH
-		export LD_RUN_PATH=$1/usr/lib/x86_64-linux-gnu:$LD_RUN_PATH
-		export LD_RUN_PATH=$1/usr/lib64/x86_64-linux-gnu:$LD_RUN_PATH
-		export PKG_CONFIG_PATH=$1/usr/lib/pkgconfig:$PKG_CONFIG_PATH
-		export PKG_CONFIG_PATH=$1/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
-		export MANPATH=$1/share/man:$MANPATH
-		export INFOPATH=$1/share/info:$INFOPATH
-		export XDG_DATA_DIRS=$1/share:$XDG_DATA_DIRS
+	# This is danger.
+	#
+	export PATH=$1/sbin:$PATH
+	export PATH=$1/bin:$PATH
+	export LD_LIBRARY_PATH=$1/usr/lib:$LD_LIBRARY_PATH
+	export LD_LIBRARY_PATH=$1/usr/lib64:$LD_LIBRARY_PATH
+	export LD_LIBRARY_PATH=$1/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
+	export LD_LIBRARY_PATH=$1/usr/lib64/x86_64-linux-gnu:$LD_LIBRARY_PATH
+	export LD_RUN_PATH=$1/usr/lib:$LD_RUN_PATH
+	export LD_RUN_PATH=$1/usr/lib64:$LD_RUN_PATH
+	export LD_RUN_PATH=$1/usr/lib/x86_64-linux-gnu:$LD_RUN_PATH
+	export LD_RUN_PATH=$1/usr/lib64/x86_64-linux-gnu:$LD_RUN_PATH
+	export PKG_CONFIG_PATH=$1/usr/lib/pkgconfig:$PKG_CONFIG_PATH
+	export PKG_CONFIG_PATH=$1/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
+	export MANPATH=$1/share/man:$MANPATH
+	export INFOPATH=$1/share/info:$INFOPATH
+	export XDG_DATA_DIRS=$1/share:$XDG_DATA_DIRS
 }
 
-
 # usage: add-python-path <dst> <src>
-add-python-path(){
+add-python-path() {
 
 	custom_pth="$1/custom.pth"
 
-	if [[ -d "$1" ]];then
+	if [[ -d "$1" ]]; then
 
 		[[ ! -e "${custom_pth}" ]] && touch $custom_pth
 
-		if ! grep "$2" "$custom_pth" >/dev/null 2>&1 ; then
-			echo "$2/"               >> ${custom_pth}
-			echo "$2/site-packages/" >> ${custom_pth}
+		if ! grep "$2" "$custom_pth" >/dev/null 2>&1; then
+			echo "$2/" >>${custom_pth}
+			echo "$2/site-packages/" >>${custom_pth}
 		fi
 	fi
 }
@@ -79,7 +78,6 @@ export PATH="/usr/share/perl5/vendor_perl/auto/share/dist/Cope:"$PATH
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
-
 export PATH="/usr/lib/ccache/bin:$PATH"
 export PATH="/usr/lib/colorgcc/bin:$PATH"
 export PATH="$HOME/node_modules/.bin:$PATH"
@@ -92,3 +90,4 @@ export PATH=./vendor/bin:$PATH
 export PATH=$CTG/bin:$PATH
 
 export PATH=~/script/github.com/onokatio/emilia/global/node_modules/.bin:$PATH
+export PATH="/opt/homebrew/share/git-core/contrib/diff-highlight:$PATH"
