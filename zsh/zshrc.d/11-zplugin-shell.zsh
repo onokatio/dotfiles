@@ -3,6 +3,7 @@
 
 declare -A ZI
 export ZI[HOME_DIR]="$XDG_DATA_HOME/.zi"
+#export ZI[ZCOMPDUMP_PATH]="$XDG_DATA_HOME/.zi/.zcompdump" #ignore bug?
 
 if [[ ! -d "${ZI[HOME_DIR]}"/bin ]];then
 	git clone https://github.com/z-shell/zi.git "${ZI[HOME_DIR]}"/bin
