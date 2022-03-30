@@ -15,21 +15,27 @@
 	grep = true
 	decorate = true
 	showbranch = true
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	func = 146 bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
-[color "diff"]
-	meta = 11
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
 [diff-so-fancy]
 	markEmptyLines = false
 	changeHunkIndicators = true
+[pager]
+	diff = diff-so-fancy | less --tabs=4 -RFX
+	show = diff-so-fancy | less --tabs=4 -RFX
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [credential]
 	#helper = /usr/lib/git-core/git-credential-gnome-keyring
 	helper = cache
@@ -53,12 +59,6 @@
 [commit]
 	template = ~/.config/git/message
 	verbose = true
-[pager]
-	#diff = diff-so-fancy | less --tabs=4 -RFX
-	#show = diff-so-fancy | less --tabs=4 -RFX
-[core]
-	#pager = diff-so-fancy | less --tabs=4 -RFX
-	#excludesfile = ~/.gitignore_global
 #[help]
 	#autocorrect = 20
 [pull]
