@@ -22,6 +22,7 @@ bashcompinit
 #zi ice atload'tmp="/usr/share/bash-completion/bash_completion" ; test -r "$tmp" && source $tmp'
 #zi light chrissicool/zsh-bash
 
+#zpm-zsh/ls \
 zi wait lucid light-mode for \
 	b4b4r07/enhancd \
 	b4b4r07/emoji-cli \
