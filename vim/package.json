@@ -2,7 +2,7 @@
   "dependencies": {
     "coc-rls": "1.1.6",
     "coc-python": "1.2.13",
-    "coc-solargraph": "1.2.3",
+    "coc-solargraph": "1.2.4",
     "coc-dictionary": "1.2.2",
     "coc-tag": "1.2.5",
     "coc-word": "1.2.2",
