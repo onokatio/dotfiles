@@ -17,6 +17,7 @@ defaults write -g KeyRepeat -int 2 #リピート速度(60分の1秒単位)
 defaults write -g InitialKeyRepeat -int 30 #リピート開始までの時間(60分の1秒単位)
 defaults write -g "NSDocumentSaveNewDocumentsToCloud" -bool "false"
 defaults write -g WebKitDeveloperExtras -bool true
+defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
 # Finder
 defaults write com.apple.finder AppleShowAllFiles -bool true #隠しファイル 
@@ -45,7 +46,6 @@ defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/" #�
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool yes
 defaults write com.apple.NetworkBrowser EnableODiskBrowsing -bool true
 defaults write com.apple.NetworkBrowser ODSSupported -bool true
-defaults write com.apple.LaunchServices LSQuarantine -bool false
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true #URLを完全表示
@@ -70,6 +70,11 @@ defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
 defaults write com.google.Chrome.canary DisablePrintPreview -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
+
+# Input
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Other
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
@@ -96,8 +101,11 @@ defaults write com.apple.helpviewer DevMode -bool true
 defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen -bool true #QuickTime Playerを開いた時に動画自動再生
 defaults write com.apple.LaunchServices LSQuarantine -bool false #未確認のアプリのダイアログを無効
 defaults write com.apple.TextEdit RichText -int 0
+defaults write com.apple.universalaccess reduceTransparency -bool true
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
 chflags nohidden ~/Library #LibraryをFinderに表示
 sudo chflags nohidden /Volumes #Volumesを常に表示
 sudo nvram SystemAudioVolume=" " #起動音を消音
