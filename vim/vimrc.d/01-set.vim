@@ -24,7 +24,7 @@ set clipboard=unnamedplus "システムとクリップボード同期
 set relativenumber
 set nocompatible
 set backspace=indent,eol,start "バックスペースで行連結
-set ambiwidth=double "絵文字を2幅化
+"set ambiwidth=double "絵文字を2幅化
 set fileformat=unix "改行コード
 set ttyfast "部分再描画
 "set list "不可視文字表示
