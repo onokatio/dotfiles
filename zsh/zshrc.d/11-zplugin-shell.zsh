@@ -22,6 +22,7 @@ zi wait lucid light-mode for \
 	b4b4r07/emoji-cli \
 	z-shell/zui \
 	z-shell/zzcomplete \
+	z-shell/H-S-MW \
 	atinit"compinit; zicdreplay" z-shell/F-Sy-H \
 	blockf zsh-users/zsh-completions \
 	atload"!_zsh_autosuggest_start" zsh-users/zsh-autosuggestions

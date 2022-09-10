@@ -31,9 +31,17 @@ if [[ "$TTY" == "/dev/tty1" ]]; then
 fi
 
 if [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CONNECTION} ]]; then
-	tmux new-session -A -s main
-	if [[ $? == 0 ]]; then
-		#exit
+	if [[ "$TERM_PROGRAM" == "vscode" ]];then
+		session_fullpath=$(git rev-parse --show-toplevel 2>/dev/null | sed -e 's/\//_/g')
+		session_main=$(git rev-parse --show-toplevel 2>/dev/null | sed -e 's/.*\///')
+		echo tmux new-session -A -s "${session_main}__${session_fullpath}"
+		if [[ $? == 0 ]];then
+			tmux new-session -A -s "${session_main}__${session_fullpath}"
+		else
+			tmux new-session -A -s "vscode"
+		fi
+	else
+		tmux new-session -A -s main
 	fi
 fi
 

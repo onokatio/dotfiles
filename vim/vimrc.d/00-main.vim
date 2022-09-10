@@ -1,3 +1,5 @@
+scriptencoding utf-8
+set encoding=utf8
 
 " ファイルがvueだったときに、ハイライトをファイルの先頭からかけるようにする
 autocmd FileType vue syntax sync fromstart
