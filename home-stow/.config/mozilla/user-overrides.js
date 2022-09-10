@@ -37,6 +37,17 @@ user_pref("javascript.use_us_english_locale",false);
 user_pref("privacy.spoof_english",0);
 user_pref("intl.accept_languages","ja");
 user_pref("dom.disable_window_move_resize", false);
+user_pref("network.cookie.lifetimePolicy",0);
+user_pref("privacy.clearOnShutdown.offlineApps", true);
+user_pref("privacy.clearOnShutdown.cookies", true);
+user_pref("privacy.clearOnShutdown.siteSettings", true);
+user_pref("network.cookie.cookieBehavior",5);
+user_pref("browser.contentblocking.category", "custom");
+user_pref("privacy.trackingprotection.enabled",false);
+user_pref("privacy.trackingprotection.socialtracking.enabled",false);
+user_pref("privacy.trackingprotection.pbmode.enabled",false);
+user_pref("dom.security.https_only_mode",false);
+user_pref("browser.cache.disk.max_entry_size",128);
 
 user_pref("_user.js.parrot", "OVERRIDE: success override arkenfox");
 

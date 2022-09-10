@@ -4,8 +4,10 @@
 	useConfigOnly = true
 [merge]
 	conflictstyle = diff3
+	ff = false
 [diff]
 	#compactionHeuristic = true
+	colorMoved = default
 [color]
 	ui = true
 	status = auto
@@ -28,6 +30,12 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
+[delta]
+	navigate = true
+	light = false
+	side-by-side = true
+	line-numbers = true
+	hyperlinks = true
 [diff-so-fancy]
 	markEmptyLines = false
 	changeHunkIndicators = true
@@ -35,11 +43,17 @@
 	diff = diff-so-fancy | less --tabs=4 -RFX
 	show = diff-so-fancy | less --tabs=4 -RFX
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
+	#pager = diff-so-fancy | less --tabs=4 -RFX
+	quotepath = false
+	safecrlf = true
+[interactive]
+	diffFilter = delta --color-only
 [credential]
 	#helper = /usr/lib/git-core/git-credential-gnome-keyring
 	helper = cache
 [init]
+	defaultBranch = master
 #	templatedir = ~/.git-templates/git-secrets
 #	templateDir = /home/katio/.git_template/
 #	templateDir = ~/.config/git/template
@@ -64,6 +78,7 @@
 [pull]
 	rebase = false
 	twohead = ort
+	ff = only
 [blame]
 	#ignoreRevsFile = .git-blame-ignore-revs
 [rerere]
@@ -108,3 +123,15 @@
 	patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
 	allowed = AKIAIOSFODNN7EXAMPLE
 	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+[feature]
+	manyFiles = true
+	experimental = true
+[push]
+	default = current
+[fetch]
+	prune = true
+[rebase]
+	autosquash = true
+	autoStash = true
+[submodule]
+	recurse = true
