@@ -5,7 +5,7 @@
 #  XDG_DATA_DIRS   :            : /usr/local/share:/usr/share
 #  XDG_CONFIG_DIRS :            : /etc/xdg
 
-add-local-path() {
+add-prefix() {
 
 	# This is danger.
 	#
@@ -47,11 +47,6 @@ add-python-path() {
 #add-python-path "/home/linuxbrew/.linuxbrew/lib/python3.7/site-packages" "/usr/lib/python3.7"
 #add-python-path "/home/linuxbrew/.linuxbrew/lib/python3.7/site-packages" "/usr/lib/python3.8"
 
-#add-local-path "/usr"
-#add-local-path "/usr/local"
-#add-local-path "/home/local"
-#add-local-path "$HOME/local"
-
 ### local ###
 export PATH=$HOME/usr/local/bin:$PATH
 
@@ -66,26 +61,17 @@ export PATH=/home/linuxbrew/.linuxbrew/sbin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/opt/homebrew/sbin:$PATH
 
-#export XDG_DATA_DIRS="/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS"
-#export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$XDG_DATA_DIRS"
-#export XDG_DATA_DIRS="/home/katio/.local/share/flatpak/exports/share:$XDG_DATA_DIRS"
-
-export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-#export PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH
 export PATH="/usr/share/perl5/vendor_perl/auto/share/dist/Cope:"$PATH
-#export PATH=/home/linuxbrew/.linuxbrew/opt/coreutils/libexec/gnubin:$PATH
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 export PATH="/usr/lib/ccache/bin:$PATH"
 export PATH="/usr/lib/colorgcc/bin:$PATH"
-export PATH="$HOME/node_modules/.bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 ### relative PATH ###
-export PATH=./node_modules/.bin:$PATH
-export PATH=./vendor/bin:$PATH
+#export PATH=./node_modules/.bin:$PATH
+#export PATH=./vendor/bin:$PATH
 
 export PATH=$CTG/bin:$PATH
 

@@ -37,7 +37,7 @@ $ brew bundle
 # Use zshrc/zprofile
 
 ```
-$ stow -v home-stow
+$ stow -v --no-folding home-stow
 ```
 
 ## maintenance

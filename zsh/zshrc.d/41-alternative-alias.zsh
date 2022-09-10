@@ -9,7 +9,6 @@
 #alias ssh='xxh'
 #alias ping='prettyping'
 
-
 ## colorize (no feature) ##
 #alias make='colormake'
 #alias df='grc df'
@@ -33,8 +32,9 @@
 #alias vmstat='grc vmstat'
 #alias whois='grc whois'
 #alias du='dust'
+#alias du='duf --hide loops'
 #alias rg='rga --rga-adapters=+pdfpages,tesseract'
 #alias sed='sd'
-if [ -f $(brew --prefix)/etc/brew-wrap ];then
-	  source $(brew --prefix)/etc/brew-wrap
+if [ -f $(brew --prefix)/etc/brew-wrap ]; then
+	source $(brew --prefix)/etc/brew-wrap
 fi
