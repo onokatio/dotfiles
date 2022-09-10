@@ -6,3 +6,6 @@
 dists
 .nfs*
 .DS_Store
+rclone.conf
+.env
+

@@ -1,12 +1,12 @@
-function targz(){tar xvf $@ --use-compress-prog=pigz }
-function tarxz(){tar xvf $@ --use-compress-prog=pixz }
-function tarbzip2(){tar xvf $@ --use-compress-prog=pbzip2 }
+function targz() {tar xvf $@ --use-compress-prog=pigz }
+function tarxz() {tar xvf $@ --use-compress-prog=pixz }
+function tarbzip2() {tar xvf $@ --use-compress-prog=pbzip2 }
 
-if [[ "$(uname -s)" == "Darwin" ]];then
+if [[ "$(uname -s)" == "Darwin" ]]; then
 	alias rm='rm -v'
 	alias ls='ls -AhqpFvb --color=auto'
 	alias ll='ls -l'
-elif [[ "$(uname -s)" == "Linux" ]];then
+elif [[ "$(uname -s)" == "Linux" ]]; then
 	alias rm='rm -v --one-file-system'
 	alias ls='ls -AhqpFvb --group-directories-first --human-readable --almost-all --color=auto'
 	alias ll='ls -lZ --full-time --inode'
@@ -66,8 +66,11 @@ alias CAPS='echo setxkbmap -option ctrl:swapcaps , setxkbmap -option'
 #alias wine='LANG="ja_JP.UTF-8" ; wine'
 alias oculus='scrcpy -p 5555 -c 1441:1200:0:200'
 
-function rot(){
-	for i in {a..z} ;do j=$(echo $i | tr '[a-z]' '[A-Z]'); echo "$@" | tr "[a-z]" "[$i-za-$i]" | tr "[A-Z]" "[$j-ZA-$j]";done
+function rot() {
+	for i in {a..z}; do
+		j=$(echo $i | tr '[a-z]' '[A-Z]')
+		echo "$@" | tr "[a-z]" "[$i-za-$i]" | tr "[A-Z]" "[$j-ZA-$j]"
+	done
 }
 
 alias sqli="echo \' OR 1 == 1 \; -- \' "
@@ -100,7 +103,7 @@ alias tldr='tldr -L en'
 
 alias gcc='gcc -Wall'
 
-function license-gpl(){
+function license-gpl() {
 	echo "Copyright (C) $(date +%Y) onokatio(おのかちお)"
 	echo ""
 	license-gpl-en
@@ -108,8 +111,8 @@ function license-gpl(){
 	license-gpl-ja
 }
 
-function license-gpl-en(){
-cat << EOL
+function license-gpl-en() {
+	cat <<EOL
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -125,8 +128,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 EOL
 }
 
-function license-gpl-ja(){
-cat << EOL
+function license-gpl-ja() {
+	cat <<EOL
 このプログラムはフリーソフトウェアです。あなたはこれを、フリーソフトウェ
 ア財団によって発行された GNU 一般公衆利用許諾契約書(バージョン3か、希
 望によってはそれ以降のバージョンのうちどれか)の定める条件の下で再頒布
@@ -142,8 +145,8 @@ cat << EOL
 EOL
 }
 
-function license-mit(){
-cat << EOL
+function license-mit() {
+	cat <<EOL
 	MIT License
 
 Copyright (c) 2020 onokatio(おのかちお)
@@ -179,11 +182,11 @@ export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
-function mode_simple(){
+function mode_simple() {
 	PROMPT='> '
 }
 
-function systemd-template(){
+function systemd-template() {
 	cat <<EOL
 [Unit]
 Description=
@@ -198,7 +201,7 @@ WantedBy=multi-user.target
 EOL
 }
 
-function txt2img(){
+function txt2img() {
 	silicon -b "#fff" --shadow-blur-radius 50 --theme "Solarized (dark)" -o ~/Downloads/$(basename $1).png $1
 }
 
@@ -213,14 +216,13 @@ alias hdmi-light-100='ddccontrol -r 0x10 -w 100 dev:/dev/i2c-4 -f'
 
 alias mytracker-generate='comm -13 <(sort /tmp/trackers_cache.txt | sed -e "s;/announce;;") <(for i in {1..98};do transmission-remote -t $i -it | grep "Tracker \d"| sed -e "s/  Tracker .*: \(.*:\/\/\)/\1/" ;done | sort tracker | uniq) | sort >> ~/Downloads/mytracker.txt'
 
-function rclone-tr(){
+function rclone-tr() {
 	rclone move --delete-empty-src-dirs -P "$1" wasabi-crypt:mp4/tr/new/"$1"
 }
 
 alias rclone='rclone --transfers 64'
 
 alias pacman-autoremove='pacman -Rns $(pacman -Qtdq)'
-
 
 alias cols='tput cols'
 alias lines='tput lines'
@@ -232,6 +234,6 @@ alias ffmpeg-vaapi="ffmpeg -vaapi_device /dev/dri/renderD128 -hwaccel vaapi -hwa
 
 alias ffmpeg='ffmpeg -hide_banner'
 
-function unuri(){
+function unuri() {
 	printf '%b\n' "${1//\%/\\x}"
 }

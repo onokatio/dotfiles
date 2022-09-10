@@ -1,6 +1,3 @@
-#export ZPFX=$CTG/cache/zplugin-plugin-make
-#export ZSH_PLUGINS_ALIAS_TIPS_TEXT='alias-tips: '
-
 declare -A ZI
 export ZI[HOME_DIR]="$XDG_DATA_HOME/.zi"
 #export ZI[ZCOMPDUMP_PATH]="$XDG_DATA_HOME/.zi/.zcompdump" #ignore bug?
@@ -18,9 +15,6 @@ zi snippet 'OMZP::gnu-utils' #auto prefix 'g' for homebrew gnu-utils
 autoload -Uz bashcompinit
 bashcompinit
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
-
-#zi ice atload'tmp="/usr/share/bash-completion/bash_completion" ; test -r "$tmp" && source $tmp'
-#zi light chrissicool/zsh-bash
 
 #zpm-zsh/ls \
 zi wait lucid light-mode for \
