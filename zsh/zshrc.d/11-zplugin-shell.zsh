@@ -25,8 +25,9 @@ zi wait lucid light-mode for \
 	z-shell/H-S-MW \
 	atinit"compinit; zicdreplay" z-shell/F-Sy-H \
 	blockf zsh-users/zsh-completions \
-	atload"!_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
-	sobolevn/wakatime-zsh-plugin
+	atload"!_zsh_autosuggest_start" zsh-users/zsh-autosuggestions #\
+	#sobolevn/wakatime-zsh-plugin
+	# disable for security
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="bold,underline,standout"
 ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
