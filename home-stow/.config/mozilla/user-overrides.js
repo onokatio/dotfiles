@@ -80,9 +80,9 @@ user_pref("layout.css.grid-template-masonry-value.enabled", true);
 //user_pref("fission.autostart", true); //avaliable on nightly only
 //user_pref("media.ffvpx.enabled", false);
 // now firefox beta use software even wayland/vaapi is enabled.
-user_pref("browser.translation.detectLanguage", true);
+//user_pref("browser.translation.detectLanguage", true);
 user_pref("browser.translation.engine", "Google");
-user_pref("browser.translation.ui.show", true);
+//user_pref("browser.translation.ui.show", true);
 user_pref("network.dns.echconfig.enabled",true);
 user_pref("network.dns.http3_echconfig.enabled",true);
 user_pref("network.dns.use_https_rr_as_altsvc",true);
