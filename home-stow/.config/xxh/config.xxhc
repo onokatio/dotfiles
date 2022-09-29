@@ -30,15 +30,17 @@
 #    +hhr:                # remove host xxh home after disconnect (++host-xxh-home-remove)
 hosts:
   ".*":
-    +i:
-    +v:
-    +heb: 
+    +i: #install xxh without question
+    #+v: #verbose
+    ++pexpect-timeout: "10"
+    +heb: # host execute command via base64
       - "bWtkaXIgLXAgfi8ueHhoLWthdGlv" # mkdir -p ~/.xxh-katio
-      - "bWtkaXIgLXAgL3RtcC94eGg="
-    +hhh: "~/.xxh-katio"
-    +hhx: "~/.xxh-katio"
-    +hh: "/tmp/xxh"
+      - "bWtkaXIgLXAgL3RtcC94eGg=" # mkdir -p /tmp/xxh
+    +hhh: "~/.xxh-katio" # $HOME
+    +hhx: "~/.xxh-katio" # $XDG_CONFIG_HOME
+    +hh: "/tmp/xxh" # xxh home directory
 #    +hhr:
-    +s: zsh
-#    +I:
-#      - xxh-plugin-prerun-dotfiles
+    +s: zsh # shell
+    +I: #plugins
+      - xxh-shell-zsh
+#- xxh-plugin-prerun-dotfiles

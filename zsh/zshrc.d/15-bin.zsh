@@ -9,11 +9,8 @@ ZSH_HISTORY_KEYBIND_ARROW_DOWN="^n"
 export ANYENV_ROOT="$XDG_DATA_HOME/anyenv"
 eval "$(anyenv init -)"
 
-zi wait lucid as='program' for \
-    'https://raw.githubusercontent.com/znz/anyenv-update/master/bin/anyenv-update' \
-    'https://raw.githubusercontent.com/upa/deadman/master/deadman' \
-    'https://raw.githubusercontent.com/fumiyas/home-commands/master/echo-sd' \
-    'https://gitlab.com/wavexx/screenkey/raw/master/screenkey'
+#zi wait lucid as='program' for \
+#    'https://raw.githubusercontent.com/znz/anyenv-update/master/bin/anyenv-update' \
 
 zi light 'asdf-vm/asdf'
 

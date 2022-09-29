@@ -14,3 +14,13 @@ decsync_dir = ~/works/decsync
 #type = htpasswd
 #htpasswd_filename = ~/.var/lib/radicale/users
 #htpasswd_encryption = md5
+
+
+[logging]
+
+# Threshold for the logger
+# Value: debug | info | warning | error | critical
+level = info
+
+# Don't include passwords in logs
+#mask_passwords = True
