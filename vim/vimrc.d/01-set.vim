@@ -1,6 +1,8 @@
 set autoread "ファイル変更時に自動リロード
 set cursorline "カーソル行のハイライト
-set cursorcolumn "カーソル列のハイライト
+if !exists('g:vscode')
+	set cursorcolumn "カーソル列のハイライト
+endif
 set fenc=utf-8 "文字エンコード
 set hidden "未保存時に他ファイルを開ける
 set laststatus=2 "ステータスラインの常時表示
