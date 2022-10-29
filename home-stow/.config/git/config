@@ -78,7 +78,7 @@
 [pull]
 	rebase = false
 	twohead = ort
-	ff = only
+	#ff = only
 [blame]
 	#ignoreRevsFile = .git-blame-ignore-revs
 [rerere]
@@ -90,6 +90,8 @@
 	insteadOf = https://gitlab.com/
 [url "git@bitbucket.org:"]
 	insteadOf = https://bitbucket.org/
+[url "git@git.omni.hpcc.jp:"]
+	insteadOf = https://git.omni.hpcc.jp/
 
 [ghq]
 	root = ~/script2
@@ -105,6 +107,8 @@
 [ghq "https://github.com/ictsc"]
 	root = ~/script
 [ghq "https://github.com/onokatio"]
+	root = ~/script
+[ghq "https://git.omni.hpcc.jp"]
 	root = ~/script
 [gc]
 	pruneExpire = 1.weeks.ago
