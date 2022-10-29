@@ -47,6 +47,8 @@
 	#pager = diff-so-fancy | less --tabs=4 -RFX
 	quotepath = false
 	safecrlf = true
+	fsmonitor = true
+	untrackedcache = true
 [interactive]
 	diffFilter = delta --color-only
 [credential]
@@ -135,3 +137,25 @@
 	autoStash = true
 [submodule]
 	recurse = true
+[scalar]
+	repo = /Users/katio/.conf-to-git
+	repo = /Users/katio/script/github.com/onokatio/itf-differential-privacy
+	repo = /Users/katio/script/github.com/onokatio/blog.katio.net
+	repo = /Users/katio/script/github.com/onokatio/static.katio.net
+	repo = /Users/katio/script/github.com/onokatio/itf
+	repo = /Users/katio/script2/github.com/AFLplusplus/AFLplusplus/src
+	repo = /Users/katio/script/github.com/onokatio/itf-software-eng
+	repo = /Users/katio/script/github.com/onokatio/cloudflare-workers-tutorial
+	repo = /Users/katio/script/github.com/onokatio/radicale-serverless
+	repo = /Users/katio/script/github.com/onokatio/itf-paper-b4-mid
+[maintenance]
+	repo = /Users/katio/.conf-to-git
+	repo = /Users/katio/script/github.com/onokatio/itf-differential-privacy
+	repo = /Users/katio/script/github.com/onokatio/blog.katio.net
+	repo = /Users/katio/script/github.com/onokatio/static.katio.net
+	repo = /Users/katio/script/github.com/onokatio/itf
+	repo = /Users/katio/script2/github.com/AFLplusplus/AFLplusplus/src
+	repo = /Users/katio/script/github.com/onokatio/itf-software-eng
+	repo = /Users/katio/script/github.com/onokatio/cloudflare-workers-tutorial
+	repo = /Users/katio/script/github.com/onokatio/radicale-serverless
+	repo = /Users/katio/script/github.com/onokatio/itf-paper-b4-mid
