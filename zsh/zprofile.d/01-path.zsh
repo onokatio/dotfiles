@@ -77,4 +77,6 @@ export PATH=$CTG/bin:$PATH
 
 export PATH=~/script/github.com/onokatio/emilia/global/node_modules/.bin:$PATH
 export PATH="/opt/homebrew/share/git-core/contrib/diff-highlight:$PATH"
-export PATH="~/.local/share/cargo/bin:$PATH"
+#export PATH="~/.local/share/cargo/bin:$PATH"
+#source ~/.local/share/cargo/env
+source $CARGO_HOME/env
