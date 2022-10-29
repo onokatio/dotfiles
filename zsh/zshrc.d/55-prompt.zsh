@@ -37,3 +37,6 @@ else
 	#PIN="（／・ω・）／ピンチ！"
 	PROMPT='${BINDKEY_MODE}${PNAME}%K{blue}%F{black} %~ %F{blue}%K{white}%k%F{blue}${vcs_info_msg_0_}%k%F{white}%f%k '
 fi
+
+hash -d github.com="$HOME/script/github.com"
+hash -d onokatio="$HOME/script/github.com/onokatio"
