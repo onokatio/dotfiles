@@ -153,6 +153,7 @@
 	repo = /Users/katio/script/github.com/onokatio/radicale-serverless
 	repo = /Users/katio/script/github.com/onokatio/itf-paper-b4-mid
 	repo = /Users/tmaruyama/.conf-to-git
+	repo = /Users/katio/script/github.com/hashcloak/Meson
 [maintenance]
 	repo = /Users/katio/.conf-to-git
 	repo = /Users/katio/script/github.com/onokatio/itf-differential-privacy
@@ -165,3 +166,4 @@
 	repo = /Users/katio/script/github.com/onokatio/radicale-serverless
 	repo = /Users/katio/script/github.com/onokatio/itf-paper-b4-mid
 	repo = /Users/tmaruyama/.conf-to-git
+	repo = /Users/katio/script/github.com/hashcloak/Meson
