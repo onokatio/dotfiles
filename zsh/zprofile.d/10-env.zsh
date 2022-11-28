@@ -19,7 +19,9 @@ export HOMEBREW_EDITOR=nvim
 #export HOMEBREW_CXX="ccache g++"
 #export HOMEBREW_NO_ENV_FILTERING=1
 #export HOMEBREW_CURL=$(which curl)
-HOMEBREW_INSTALL_FROM_API=1
+export HOMEBREW_INSTALL_FROM_API=1
+#export HOMEBREW_BREWFILE_LEAVES=1
+export HOMEBREW_BREWFILE_ON_REQUEST=1
 
 #export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 

@@ -3,7 +3,7 @@
 	name = onokatio
 	useConfigOnly = true
 [merge]
-	conflictstyle = diff3
+	conflictStyle = zdiff3
 	ff = false
 [diff]
 	#compactionHeuristic = true
@@ -49,11 +49,14 @@
 	safecrlf = true
 	fsmonitor = true
 	untrackedcache = true
+	fscache = true
+	preloadindex = true
 [interactive]
 	diffFilter = delta --color-only
 [credential]
 	#helper = /usr/lib/git-core/git-credential-gnome-keyring
 	helper = cache
+	credentialsInUrl = warn
 [init]
 	defaultBranch = master
 #	templatedir = ~/.git-templates/git-secrets
@@ -152,7 +155,8 @@
 	repo = /Users/katio/script/github.com/onokatio/cloudflare-workers-tutorial
 	repo = /Users/katio/script/github.com/onokatio/radicale-serverless
 	repo = /Users/katio/script/github.com/onokatio/itf-paper-b4-mid
-	repo = /Users/tmaruyama/.conf-to-git
+	repo = /Users/katio/.conf-to-git
+	repo = /Users/katio/script/github.com/hashcloak/Meson
 [maintenance]
 	repo = /Users/katio/.conf-to-git
 	repo = /Users/katio/script/github.com/onokatio/itf-differential-privacy
@@ -164,4 +168,7 @@
 	repo = /Users/katio/script/github.com/onokatio/cloudflare-workers-tutorial
 	repo = /Users/katio/script/github.com/onokatio/radicale-serverless
 	repo = /Users/katio/script/github.com/onokatio/itf-paper-b4-mid
-	repo = /Users/tmaruyama/.conf-to-git
+	repo = /Users/katio/.conf-to-git
+	repo = /Users/katio/script/github.com/hashcloak/Meson
+	auto = false
+	strategy = incremental
