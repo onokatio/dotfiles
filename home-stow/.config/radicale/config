@@ -1,8 +1,8 @@
 [server]
 hosts = 127.0.0.1:5232, [::1]:5232
-#ssl = True
-#certificate = ~/.var/lib/radicale/server_cert.pem
-#key = ~/.var/lib/radicale/server_key.pem
+ssl = True
+certificate = ~/.var/lib/radicale/server_cert.pem
+key = ~/.var/lib/radicale/server_key.pem
 #certificate_authority = ~/.var/lib/radicale/client_cert.pem
 
 [storage]
@@ -14,7 +14,6 @@ decsync_dir = ~/works/decsync
 #type = htpasswd
 #htpasswd_filename = ~/.var/lib/radicale/users
 #htpasswd_encryption = md5
-
 
 [logging]
 
