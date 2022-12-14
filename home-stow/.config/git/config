@@ -139,11 +139,13 @@
 	default = current
 [fetch]
 	prune = true
+	parallel = 4
 [rebase]
 	autosquash = true
 	autoStash = true
 [submodule]
 	recurse = true
+	fetchJobs = 4
 [scalar]
 	repo = /Users/katio/.conf-to-git
 	repo = /Users/katio/script/github.com/onokatio/itf-differential-privacy
@@ -157,6 +159,7 @@
 	repo = /Users/katio/script/github.com/onokatio/itf-paper-b4-mid
 	repo = /Users/katio/.conf-to-git
 	repo = /Users/katio/script/github.com/hashcloak/Meson
+	repo = /Users/katio/script/github.com/ictsc/ictsc-github-member
 [maintenance]
 	repo = /Users/katio/.conf-to-git
 	repo = /Users/katio/script/github.com/onokatio/itf-differential-privacy
@@ -172,3 +175,4 @@
 	repo = /Users/katio/script/github.com/hashcloak/Meson
 	auto = false
 	strategy = incremental
+	repo = /Users/katio/script/github.com/ictsc/ictsc-github-member
