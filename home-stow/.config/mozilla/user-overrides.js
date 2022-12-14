@@ -89,6 +89,7 @@ user_pref("network.dns.use_https_rr_as_altsvc",true);
 user_pref("svg.context-properties.content.enabled",true);
 user_pref("extensions.pocket.enabled",false);
 user_pref("browser.translation.google.apiURL","https://translation.googleapis.com/language/translate/v2");
+user_pref("network.dns.force_waiting_https_rr", true);
 
 
 user_pref("_user.js.parrot", "OVERRIDE: success original section");
