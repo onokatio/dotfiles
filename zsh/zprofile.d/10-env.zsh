@@ -11,7 +11,7 @@ export NO_AT_BRIDGE=1
 export EMOJI_CLI_KEYBIND=^f
 
 ##### Homebrew #####
-export HOMEBREW_CACHE=/tmp
+#export HOMEBREW_CACHE=/tmp
 export HOMEBREW_MAKE_JOBS=4
 export HOMEBREW_FORCE_BREWED_CURL=1
 export HOMEBREW_EDITOR=nvim
@@ -21,6 +21,10 @@ export HOMEBREW_EDITOR=nvim
 #export HOMEBREW_CURL=$(which curl)
 export HOMEBREW_INSTALL_FROM_API=1
 #export HOMEBREW_BREWFILE_LEAVES=1
+export HOMEBREW_AUTOREMOVE=1
+export HOMEBREW_BOOTSNAP=1
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_DISPLAY_INSTALL_TIMES=1
 export HOMEBREW_BREWFILE_ON_REQUEST=1
 
 #export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
