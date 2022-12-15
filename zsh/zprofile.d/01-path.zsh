@@ -47,37 +47,26 @@ add-python-path() {
 #add-python-path "/home/linuxbrew/.linuxbrew/lib/python3.7/site-packages" "/usr/lib/python3.7"
 #add-python-path "/home/linuxbrew/.linuxbrew/lib/python3.7/site-packages" "/usr/lib/python3.8"
 
-### local ###
-export PATH=$HOME/usr/local/bin:$PATH
-
-### Linuxbrew ###
-export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
-export PATH=/home/linuxbrew/.linuxbrew/sbin:$PATH
-#export PATH=$HOME/usr/brew:$PATH
-#export PATH=$HOME/.linuxbrew:$PATH
-#eval $(brew shellenv)
-
 ### HomeBrew ###
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/opt/homebrew/sbin:$PATH
-
-export PATH="/usr/share/perl5/vendor_perl/auto/share/dist/Cope:"$PATH
-
 #export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
+### Wrapper ###
+export PATH="/usr/share/perl5/vendor_perl/auto/share/dist/Cope:"$PATH
 export PATH="/usr/lib/ccache/bin:$PATH"
 export PATH="/usr/lib/colorgcc/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
 
-### relative PATH ###
-#export PATH=./node_modules/.bin:$PATH
-#export PATH=./vendor/bin:$PATH
-
-export PATH=$CTG/bin:$PATH
-
-export PATH=~/script/github.com/onokatio/emilia/global/node_modules/.bin:$PATH
-export PATH="/opt/homebrew/share/git-core/contrib/diff-highlight:$PATH"
+### Package Manager ###
 #export PATH="~/.local/share/cargo/bin:$PATH"
 #source ~/.local/share/cargo/env
 source $CARGO_HOME/env
+export PATH="$HOME/.cargo/bin:$PATH"
+#eval $(brew shellenv)
+
+### My local ###
+export PATH=$CTG/bin:$PATH
+export PATH=~/script/github.com/onokatio/emilia/global/node_modules/.bin:$PATH
+export PATH="/opt/homebrew/share/git-core/contrib/diff-highlight:$PATH"
+
 echo hello default shell
