@@ -63,7 +63,7 @@ export PATH=/opt/homebrew/sbin:$PATH
 
 export PATH="/usr/share/perl5/vendor_perl/auto/share/dist/Cope:"$PATH
 
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+#export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 export PATH="/usr/lib/ccache/bin:$PATH"
 export PATH="/usr/lib/colorgcc/bin:$PATH"
@@ -80,3 +80,4 @@ export PATH="/opt/homebrew/share/git-core/contrib/diff-highlight:$PATH"
 #export PATH="~/.local/share/cargo/bin:$PATH"
 #source ~/.local/share/cargo/env
 source $CARGO_HOME/env
+echo hello default shell
