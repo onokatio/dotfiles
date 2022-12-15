@@ -1,12 +1,12 @@
 #export LANG=ja_JP.UTF-8
+#export TERM="xterm-256color"
+#export SUDO_PROMPT="[sudo] password : "
+#export LANGUAGE="ja_jp:ja:en_US:en"
+#export LD_PRELOAD=/lib/libSegFault.so
+export PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME:+$FUNCNAME(): }'
+#export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
 #export set CC='ccache gcc'
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_STATE_HOME=$HOME/.local/state
-export XDG_PICTURES_DIR=$HOME/Downloads/Picture
-
 export NO_AT_BRIDGE=1
 export EMOJI_CLI_KEYBIND=^f
 
@@ -27,7 +27,6 @@ export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_DISPLAY_INSTALL_TIMES=1
 export HOMEBREW_BREWFILE_ON_REQUEST=1
 
-#export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
 ##### Shell #####
 export EDITOR=nvim
@@ -37,7 +36,6 @@ export USE_CCACHE=1
 export CCACHE_COMPRESS=1
 export CCACHE_DIR=$HOME/.ccache
 #which ccache >/dev/null 2>&1 && export CC="ccache gcc"
-#export TERM="xterm-256color"
 export MAKE_OPTS="-j 4"
 export PROOT_NO_SECCOMP=1
 export XZ_DEFAULTS="--threads 4"
@@ -49,7 +47,7 @@ export PATH=$GOPATH/bin:$PATH
 
 #xset -b
 
-export NVM_DIR="$CTG/modules/nvm"
+#export NVM_DIR="$CTG/modules/nvm"
 
 export VGL_READBACK=pbo
 
@@ -64,10 +62,6 @@ export PIPENV_VENV_IN_PROJECT=true
 
 #eval $(dircolors $CTG/static/dircolors.256dark)
 
-#export SUDO_PROMPT="[sudo] password : "
-
-export N0CLI_API_ENDPOINT=172.16.1.11:20180
-export N0CLI_API_URL=grpc://172.16.1.11:20180
 
 ##### GUI #####
 
@@ -95,24 +89,22 @@ export MOZ_ENABLE_WAYLAND=1
 #export QT_QPA_PLATFORM=wayland-egl
 #export QT_QPA_PLATFORM="xcb" #compatible
 #export XINIT_UNIX_BACKEND=wayland
-
-# print firefox vaapi debug message.
-export MOZ_LOG="PlatformDecoderModule:4"
+export MOZ_LOG="PlatformDecoderModule:4" # print firefox vaapi debug message.
 
 export GTK_IM_MODULE='fcitx'
 export QT_IM_MODULE='fcitx'
 export XMODIFIERS='@im=fcitx'
 
-#export LANGUAGE="ja_jp:ja:en_US:en"
-
-export PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME:+$FUNCNAME(): }'
-
-#export LD_PRELOAD=/lib/libSegFault.so
 
 #export HTTPS_PROXY=http://127.0.0.1:8731
 #export HTTP_PROXY=http://127.0.0.1:8731
 
 ### XDG Base Directory ###
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_PICTURES_DIR=$HOME/Downloads/Picture
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export MYSQL_HISTFILE="$XDG_DATA_HOME"/mysql_history
 export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
