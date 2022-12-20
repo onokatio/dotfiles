@@ -60,9 +60,10 @@ export PATH="/usr/lib/colorgcc/bin:$PATH"
 ### Package Manager ###
 #export PATH="~/.local/share/cargo/bin:$PATH"
 #source ~/.local/share/cargo/env
-source $CARGO_HOME/env
+#source $CARGO_HOME/env
 export PATH="$HOME/.cargo/bin:$PATH"
 #eval $(brew shellenv)
+export PATH="$PATH:~/.local/bin" # pipx
 
 ### My local ###
 export PATH=$CTG/bin:$PATH
