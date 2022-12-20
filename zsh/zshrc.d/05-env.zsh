@@ -43,6 +43,9 @@ export XZ_DEFAULTS="--threads 4"
 export GOPATH=$HOME/gopath
 export PATH=$GOPATH/bin:$PATH
 
+export ANYENV_ROOT="$XDG_DATA_HOME/anyenv"
+eval "$(anyenv init -)"
+
 #export npm_config_prefix=~/.node_modules
 
 #xset -b
@@ -60,8 +63,8 @@ export GO111MODULE=on
 
 export PIPENV_VENV_IN_PROJECT=true
 
-#eval $(dircolors $CTG/static/dircolors.256dark)
-
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
 ##### GUI #####
 
