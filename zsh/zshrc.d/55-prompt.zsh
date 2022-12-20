@@ -1,3 +1,9 @@
+alias history='command history'
+ZSH_HISTORY_KEYBIND_GET="^r"
+ZSH_HISTORY_FILTER_OPTIONS="--filter-branch --filter-dir"
+ZSH_HISTORY_KEYBIND_ARROW_UP="^p"
+ZSH_HISTORY_KEYBIND_ARROW_DOWN="^n"
+
 #function command_not_found_handler(){
 #	if [ -e /usr/bin/jp2a ];then
 #		if [ -e ~/kirino.jpg ];then
