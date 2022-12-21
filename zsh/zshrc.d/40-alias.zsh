@@ -25,39 +25,24 @@ alias sudo='sudo '
 #alias vim="code"
 alias d='popd'
 
-alias hs=history
 #alias git=hub
 #alias df=dfc
 #alias top=htop
 #alias diff=colordiff
 #alias wget="axel -n 10 -v -a"
 alias mirror='wget -r -l inf -k -nc -H'
-alias xs=cd
 #alias apt=apt-fast
 alias apt-get=apt-fast
-alias mkdir='mkdir -p'
 #alias bat="upower -i /org/freedesktop/UPower/devices/battery_BAT0|grep 'percentage'|sed -e 's/ //g'|sed -e 's/percentage://'|sed -e 's/%//'"
 alias grep="grep --color=auto -I"
-alias ks=ls
 #alias make='make -j4'
 alias crontab='echo "dont use crontab !!"'
-alias chromekill='ps ax|/bin/grep [c]hrome|cut -c-6|xargs sudo renice -19'
-alias pingg="ping 8.8.8.8"
-alias curlg="curl https://google.com"
 #alias cat='vimcat'
 #alias cat='cat -v'
 alias trace-mtr='mtr'
 alias poweroff='echo do not use'
 alias reboot='echo do not use'
 #alias sed='gsed'
-
-alias alpine="docker run -it --rm alpine:edge /bin/sh"
-alias ubuntu="docker run -it --rm ubuntu /bin/bash"
-alias archlinux="docker run -it --rm archlinux /bin/bash"
-alias centos="docker run -it --rm centos /bin/bash"
-alias debian="docker run -it --rm debian /bin/bash"
-alias fedora="docker run -it --rm fedora /bin/bash"
-alias kali="docker run -it --rm kalilinux/kali-rolling /bin/bash"
 
 alias aria2c="aria2c --bt-max-peers=0 --bt-request-peer-speed-limit=1000M --max-concurrent-downloads=100 --max-connection-per-server=16 --split=20 --bt-max-open-files=1000"
 
@@ -73,16 +58,9 @@ function rot() {
 	done
 }
 
-alias sqli="echo \' OR 1 == 1 \; -- \' "
-
-alias get='ghq get'
-
 alias myip='curl http://inet-ip.info'
 alias myip6='curl -Ss https://ip6.bramp.net/ | head -n1 | cut -c5- '
 
-alias venv='python3 -m venv venv'
-
-alias man='LANG=ja_JP.UTF-8 man'
 alias info='LANG=ja_JP.UTF-8 pinfo'
 
 # list files in archive
@@ -182,10 +160,6 @@ export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
-function mode_simple() {
-	PROMPT='> '
-}
-
 function systemd-template() {
 	cat <<EOL
 [Unit]
@@ -210,9 +184,6 @@ alias addm='\ls *.torrent | while read line;do addt "$line";done'
 
 alias textlint='textlint --experimental --parallel --config ~/.config/textlintrc'
 alias secretlint-globalconfig='secretlint --secretlintrc ~/.config/secretlintrc.json "**/*"'
-
-alias hdmi-light-0='ddccontrol -r 0x10 -w 0 dev:/dev/i2c-4 -f'
-alias hdmi-light-100='ddccontrol -r 0x10 -w 100 dev:/dev/i2c-4 -f'
 
 alias mytracker-generate='comm -13 <(sort /tmp/trackers_cache.txt | sed -e "s;/announce;;") <(for i in {1..98};do transmission-remote -t $i -it | grep "Tracker \d"| sed -e "s/  Tracker .*: \(.*:\/\/\)/\1/" ;done | sort tracker | uniq) | sort >> ~/Downloads/mytracker.txt'
 
