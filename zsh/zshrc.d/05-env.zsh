@@ -50,7 +50,7 @@ eval "$(anyenv init -)"
 
 #xset -b
 
-#export NVM_DIR="$CTG/modules/nvm"
+#export NVM_DIR="~/modules/nvm"
 
 export VGL_READBACK=pbo
 
