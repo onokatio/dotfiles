@@ -31,7 +31,7 @@ else
 	zstyle ':vcs_info:*' formats "%F{green}%K{white}%c%u[%b]%f"
 	zstyle ':vcs_info:*' actionformats '[%b|%a]'
 	#LANG=en_US.UTF-8 vcs_info
-	vcs_info
+	#vcs_info
 
 	local PNAME
 	if [[ -n "${REMOTEHOST}${SSH_CONNECTION}" ]]; then
