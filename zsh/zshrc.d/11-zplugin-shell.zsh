@@ -9,25 +9,40 @@ source "${ZI[HOME_DIR]}"/bin/zi.zsh
 autoload -Uz _zi
 (( ${+_comps} )) && _comps[zi]=_zi
 
+zi ice wait'1'
 zi snippet 'OMZL::completion.zsh' #better completion settings
+
+zi ice wait'1'
 zi snippet 'OMZP::gnu-utils' #auto prefix 'g' for homebrew gnu-utils
 
-autoload -Uz bashcompinit
-bashcompinit
+#autoload -Uz bashcompinit
+#bashcompinit
+
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
-#zpm-zsh/ls \
 zi wait lucid light-mode for \
-	b4b4r07/enhancd \
-	b4b4r07/emoji-cli \
-	z-shell/zui \
-	z-shell/zzcomplete \
-	z-shell/H-S-MW \
-	atinit"compinit; zicdreplay" z-shell/F-Sy-H \
-	blockf zsh-users/zsh-completions \
-	atload"!_zsh_autosuggest_start" zsh-users/zsh-autosuggestions #\
+	atinit"ZI[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+		z-shell/F-Sy-H \
+	blockf \
+		zsh-users/zsh-completions \
+	atload"!_zsh_autosuggest_start" \
+	zsh-users/zsh-autosuggestions #\
 	#sobolevn/wakatime-zsh-plugin
 	# disable for security
+
+zi wait'1' light-mode for \
+	b4b4r07/enhancd \
+	z-shell/H-S-MW
+	#z-shell/zui \
+	#z-shell/zzcomplete \
+
+zi ice wait'1' atclone='gdircolors ./dircolors.ansi-universal > color.zsh' \
+    atpull='%atclone' pick="color.zsh" nocompile="!" \
+    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
+zi light 'seebi/dircolors-solarized'
+
+#zpm-zsh/ls \
+
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="bold,underline,standout"
 ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
