@@ -48,14 +48,6 @@ if [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CONNECTION} ]]; then
 	fi
 fi
 
-if [[ -z "$UIMFEP" ]]; then
-	export UIMFEP=1
-	#uim-fep
-	if [[ $? == 0 ]]; then
-		#exit
-	fi
-fi
-
 #umask 0022
 
 #unset SSH_AGENT_PID
