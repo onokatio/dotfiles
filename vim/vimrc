@@ -1,4 +1,4 @@
-source $CTG/vim/vimrc.d/00-main.vim
-source $CTG/vim/vimrc.d/01-set.vim
-source $CTG/vim/vimrc.d/02-map.vim
-source $CTG/vim/vimrc.d/10-dein.vim
+runtime! 00-main.vim
+runtime! 01-set.vim
+runtime! 02-map.vim
+runtime! 10-dein.vim

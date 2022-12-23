@@ -6,14 +6,14 @@ let g:coc_global_extensions = [ 'coc-python', 'coc-json', 'coc-git' ]
 
 if has('nvim')
 
-	let $CACHE = expand('~/.cache')
-	if !isdirectory($CACHE)
-	  call mkdir($CACHE, 'p')
+	let s:dein_base = empty($XDG_CACHE_HOME) ? expand('$HOME/.cache/vim/dein') : $XDG_CACHE_HOME.'/vim/dein'
+	if !isdirectory(s:dein_base)
+	  call mkdir(s:dein_base, 'p')
 	endif
 	if &runtimepath !~# '/dein.vim'
 	  let s:dein_dir = fnamemodify('dein.vim', ':p')
 	  if !isdirectory(s:dein_dir)
-	    let s:dein_dir = $CACHE . '/dein/repos/github.com/Shougo/dein.vim'
+	    let s:dein_dir = s:dein_base . '/repos/github.com/Shougo/dein.vim'
 	    if !isdirectory(s:dein_dir)
 	      execute '!git clone https://github.com/Shougo/dein.vim' s:dein_dir
 	    endif
@@ -22,10 +22,10 @@ if has('nvim')
 	        \ fnamemodify(s:dein_dir, ':p') , '[/\\]$', '', '')
 	endif
 
-	if dein#load_state("$CTG/cache/vim-plugins")
-		call dein#begin(expand("$CTG/cache/vim-plugins"))
-		call dein#load_toml(expand("$CTG/vim/dein.toml"),{'lazy': 0})
-		call dein#load_toml(expand("$CTG/vim/dein_lazy.toml"),{'lazy': 1})
+	if dein#load_state(s:dein_base)
+		call dein#begin(s:dein_base)
+		call dein#load_toml(expand('<sfile>:h').'/../dein.toml',{'lazy': 0})
+		call dein#load_toml(expand('<sfile>:h').'/../dein_lazy.toml',{'lazy': 1})
 		call dein#end()
 		call dein#save_state()
 	endif
