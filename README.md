@@ -14,16 +14,6 @@ $ cd
 $ git clone https://github.com/onokatio/.conf-to-git
 ```
 
-If you instal another path, add the path to $CTG enviroment variable.
-For example:
-
-```zsh
-$ git clone https://github.com/onokatio/.conf-to-git ~/dotfile
-$ export CTG=$HOME/dotfile # or write this export command to zprofile directory.
-```
-
-The default $CTG is `$HOME/.conf-to-git`
-
 ```
 # for linux
 $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
