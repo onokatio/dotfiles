@@ -4,11 +4,11 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 
-[[plugins]]
-repo = 'nathanaelkane/vim-indent-guides'
+#[[plugins]]
+#repo = 'nathanaelkane/vim-indent-guides'
 
-[[plugins]]
-repo = 'vim-scripts/AnsiEsc.vim'
+#[[plugins]]
+#repo = 'vim-scripts/AnsiEsc.vim'
 
 [[plugins]]
 repo = 'lifepillar/vim-solarized8'
@@ -16,11 +16,11 @@ repo = 'lifepillar/vim-solarized8'
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 
-[[plugins]]
-repo = 'tomlion/vim-solidity'
+#[[plugins]]
+#repo = 'tomlion/vim-solidity'
 
-[[plugins]]
-repo = 'dhruvasagar/vim-table-mode'
+#[[plugins]]
+#repo = 'dhruvasagar/vim-table-mode'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
@@ -40,27 +40,27 @@ repo = 'scrooloose/nerdtree'
 #[[plugins]]
 #repo = 'airblade/vim-gitgutter'
 
-[[plugins]]
-repo = 'vim-jp/cpp-vim'
+#[[plugins]]
+#repo = 'vim-jp/cpp-vim'
 
-[[plugins]]
-repo = 'bfrg/vim-cpp-modern'
+#[[plugins]]
+#repo = 'bfrg/vim-cpp-modern'
 
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
+#[[plugins]]
+#repo = 'leafgarland/typescript-vim'
 
-[[plugins]]
-repo = 'ekalinin/Dockerfile.vim'
+#[[plugins]]
+#repo = 'ekalinin/Dockerfile.vim'
 
-[[plugins]]
-repo = 'edisonljh/vim-scilla'
+#[[plugins]]
+#repo = 'edisonljh/vim-scilla'
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 rev = 'release'
 
-[[plugins]]
-repo = 'posva/vim-vue'
+#[[plugins]]
+#repo = 'posva/vim-vue'
 
 [[plugins]]
 repo = 'Shougo/neco-vim'
@@ -74,17 +74,17 @@ repo = 'Shougo/neoinclude.vim'
 [[plugins]]
 repo = 'jsfaint/coc-neoinclude'
 
-[[plugins]]
-repo = 'liuchengxu/vista.vim'
+#[[plugins]]
+#repo = 'liuchengxu/vista.vim'
 
-[[plugins]]
-repo = 'glacambre/firenvim'
-hook_post_update = '''
-  call firenvim#install(0)
-'''
+#[[plugins]]
+#repo = 'glacambre/firenvim'
+#hook_post_update = '''
+#  call firenvim#install(0)
+#'''
 
-[[plugins]]
-repo = 'mbbill/undotree'
+#[[plugins]]
+#repo = 'mbbill/undotree'
 
-[[plugins]]
-repo = 'yuttie/comfortable-motion.vim'
+#[[plugins]]
+#repo = 'yuttie/comfortable-motion.vim'
