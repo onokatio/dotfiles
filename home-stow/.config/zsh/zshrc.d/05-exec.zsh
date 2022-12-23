@@ -1,7 +1,7 @@
 #zmodload zsh/zprof && zprof
 
-export RUSTC_WRAPPER="${RUSTC_WRAPPER:-`which sccache`}"
-export CARGO_HOME="$XDG_DATA_HOME"/cargo
+#export RUSTC_WRAPPER="${RUSTC_WRAPPER:-`which sccache`}"
+#export CARGO_HOME="$XDG_DATA_HOME"/cargo
 
 export HISTFILE="$XDG_STATE_HOME"/history
 export HISTSIZE=1000000

@@ -43,8 +43,6 @@ export XZ_DEFAULTS="--threads 4"
 export GOPATH=$HOME/gopath
 export PATH=$GOPATH/bin:$PATH
 
-export ANYENV_ROOT="$XDG_DATA_HOME/anyenv"
-eval "$(anyenv init -)"
 
 #export npm_config_prefix=~/.node_modules
 
@@ -113,7 +111,7 @@ export MYSQL_HISTFILE="$XDG_DATA_HOME"/mysql_history
 export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
 export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME"/aws/credentials
 export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config
-export CARGO_HOME="$XDG_DATA_HOME"/cargo
+#export CARGO_HOME="$XDG_DATA_HOME"/cargo
 #export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export GEM_HOME="$XDG_DATA_HOME"/gem
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
@@ -138,3 +136,6 @@ export XSERVERRC="$XDG_CONFIG_HOME"/X11/xserverrc
 export PYTHONHISTFILE="/dev/null"
 alias nvidia-settings='nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings'
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
+export ANYENV_ROOT="$XDG_DATA_HOME/anyenv"
+
+eval "$(anyenv init -)"
