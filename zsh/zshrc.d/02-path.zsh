@@ -72,5 +72,3 @@ export PATH="$HOME/.cargo/bin:$PATH"
 ### My local ###
 export PATH=$CTG/bin:$PATH
 #export PATH=~/script/github.com/onokatio/emilia/global/node_modules/.bin:$PATH
-
-echo hello default shell
