@@ -2,10 +2,26 @@ let g:comfortable_motion_no_default_key_mappings = 1
 let g:comfortable_motion_impulse_multiplier = 1  " Feel free to increase/decrease this value.
 
 let g:coc_global_extensions = [ 'coc-python', 'coc-json', 'coc-git' ]
+"let g:base_dir = fnamemodify(expand('<sfile>'), ':h') .. '/'
 
 if has('nvim')
 
-	set runtimepath+=$CTG/cache/dein.vim
+	let $CACHE = expand('~/.cache')
+	if !isdirectory($CACHE)
+	  call mkdir($CACHE, 'p')
+	endif
+	if &runtimepath !~# '/dein.vim'
+	  let s:dein_dir = fnamemodify('dein.vim', ':p')
+	  if !isdirectory(s:dein_dir)
+	    let s:dein_dir = $CACHE . '/dein/repos/github.com/Shougo/dein.vim'
+	    if !isdirectory(s:dein_dir)
+	      execute '!git clone https://github.com/Shougo/dein.vim' s:dein_dir
+	    endif
+	  endif
+	  execute 'set runtimepath^=' . substitute(
+	        \ fnamemodify(s:dein_dir, ':p') , '[/\\]$', '', '')
+	endif
+
 	if dein#load_state("$CTG/cache/vim-plugins")
 		call dein#begin(expand("$CTG/cache/vim-plugins"))
 		call dein#load_toml(expand("$CTG/vim/dein.toml"),{'lazy': 0})
@@ -14,8 +30,14 @@ if has('nvim')
 		call dein#save_state()
 	endif
 
-	syntax enable
-	filetype plugin indent on
+	if has('filetype')
+	  filetype indent plugin on
+	endif
+
+	" Enable syntax highlighting
+	if has('syntax')
+	  syntax on
+	endif
 
 	if dein#check_install()
 	  call dein#install()
