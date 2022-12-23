@@ -51,11 +51,15 @@ add-python-path() {
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/opt/homebrew/sbin:$PATH
 #export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+if [[ ! -z "$commands[brew]" ]];then
+	BREW_PATH="$(dirname $(dirname $commands[brew]))"
+	export PATH="$BREW_PATH/opt/ccache/libexec:$PATH"
+	export PATH="$BREW_PATH/share/git-core/contrib/diff-highlight:$PATH"
+fi
 
 ### Wrapper ###
-export PATH="/usr/share/perl5/vendor_perl/auto/share/dist/Cope:"$PATH
-export PATH="/usr/lib/ccache/bin:$PATH"
-export PATH="/usr/lib/colorgcc/bin:$PATH"
+#export PATH="/usr/share/perl5/vendor_perl/auto/share/dist/Cope:"$PATH
+#export PATH="/usr/lib/colorgcc/bin:$PATH"
 
 ### Package Manager ###
 #export PATH="~/.local/share/cargo/bin:$PATH"
@@ -63,11 +67,10 @@ export PATH="/usr/lib/colorgcc/bin:$PATH"
 #source $CARGO_HOME/env
 export PATH="$HOME/.cargo/bin:$PATH"
 #eval $(brew shellenv)
-export PATH="$PATH:~/.local/bin" # pipx
+#export PATH="$PATH:~/.local/bin" # pipx
 
 ### My local ###
 export PATH=$CTG/bin:$PATH
-export PATH=~/script/github.com/onokatio/emilia/global/node_modules/.bin:$PATH
-export PATH="/opt/homebrew/share/git-core/contrib/diff-highlight:$PATH"
+#export PATH=~/script/github.com/onokatio/emilia/global/node_modules/.bin:$PATH
 
 echo hello default shell
