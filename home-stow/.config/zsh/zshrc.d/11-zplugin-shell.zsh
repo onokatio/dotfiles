@@ -3,7 +3,7 @@ export ZI[HOME_DIR]="$XDG_DATA_HOME/.zi"
 #export ZI[ZCOMPDUMP_PATH]="$XDG_DATA_HOME/.zi/.zcompdump" #ignore bug?
 
 if [[ ! -d "${ZI[HOME_DIR]}"/bin ]];then
-	git clone https://github.com/z-shell/zi.git "${ZI[HOME_DIR]}"/bin
+	git clone https://github.com/z-shell/zi.git --depth 1 "${ZI[HOME_DIR]}"/bin
 fi
 source "${ZI[HOME_DIR]}"/bin/zi.zsh
 autoload -Uz _zi
@@ -20,24 +20,24 @@ zi snippet 'OMZP::gnu-utils' #auto prefix 'g' for homebrew gnu-utils
 
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
-zi wait lucid light-mode for \
+zi wait depth'1' lucid light-mode for \
 	atinit"ZI[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
 		z-shell/F-Sy-H \
 	blockf \
 		zsh-users/zsh-completions \
 	atload"!_zsh_autosuggest_start" \
-	zsh-users/zsh-autosuggestions #\
+		zsh-users/zsh-autosuggestions #\
 	#sobolevn/wakatime-zsh-plugin
 	# disable for security
 
-zi wait'1' light-mode for \
+zi wait'1' depth'1' light-mode for \
 	b4b4r07/enhancd \
 	z-shell/H-S-MW
 	#z-shell/zui \
 	#z-shell/zzcomplete \
 
 zi ice wait'1' atclone='gdircolors ./dircolors.ansi-universal > color.zsh' \
-    atpull='%atclone' pick="color.zsh" nocompile="!" \
+    depth'1' atpull='%atclone' pick="color.zsh" nocompile="!" \
     atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
 zi light 'seebi/dircolors-solarized'
 
