@@ -137,7 +137,7 @@ export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export XSERVERRC="$XDG_CONFIG_HOME"/X11/xserverrc
 export PYTHONHISTFILE="/dev/null"
 alias nvidia-settings='nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings'
-alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
+#alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 export ANYENV_ROOT="$XDG_DATA_HOME/anyenv"
 
 eval "$(anyenv init -)"
