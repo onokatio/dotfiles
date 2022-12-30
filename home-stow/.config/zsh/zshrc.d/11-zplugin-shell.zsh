@@ -9,6 +9,10 @@ source "${ZI[HOME_DIR]}"/bin/zi.zsh
 autoload -Uz _zi
 (( ${+_comps} )) && _comps[zi]=_zi
 
+
+zi light z-shell/z-a-default-ice
+zi default-ice -q depth'1'
+
 zi ice wait'1'
 zi snippet 'OMZL::completion.zsh' #better completion settings
 
@@ -21,24 +25,24 @@ zi snippet 'OMZP::gnu-utils' #auto prefix 'g' for homebrew gnu-utils
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
 ## load completions
-zi wait'0a' depth'1' lucid light-mode blockf as'completion' for \
+zi wait'0a' light-mode blockf as'completion' for \
 	zsh-users/zsh-completions \
 	zchee/zsh-completions
 
-zi wait'0b' depth'1' lucid light-mode for \
+zi wait'0b' light-mode for \
 	atinit"ZI[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
 		z-shell/F-Sy-H \
 	atload"!_zsh_autosuggest_start" \
 		zsh-users/zsh-autosuggestions
 
-#zi wait'1' depth'1' light-mode for \
+#zi wait'1' light-mode for \
 	#b4b4r07/enhancd \
 
-zi ice wait'0a' depth'1'
+zi ice wait'0a'
 zi light z-shell/H-S-MW
 
 zi ice wait'0a' atclone='gdircolors ./dircolors.ansi-universal > color.zsh' \
-    depth'1' atpull='%atclone' pick="color.zsh" nocompile="!" \
+    atpull='%atclone' pick="color.zsh" nocompile="!" \
     atload'zstyle ":completion:*:default" list-colors “${(s.:.)LS_COLORS}”;'
 zi light 'seebi/dircolors-solarized'
 
@@ -47,3 +51,10 @@ zi light 'seebi/dircolors-solarized'
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="bold,underline,standout"
 ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
+# autoupdate
+#zi ice wait'0' atload'zi update -p -q >/dev/null' silent
+#zi light z-shell/0
+
+#zi ice wait'0' atload'~/.local/share/tmux/plugins/tpm/scripts/update_plugin.sh --shell-echo all'
+#zi light z-shell/0
