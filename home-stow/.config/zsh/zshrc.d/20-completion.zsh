@@ -17,9 +17,9 @@ zstyle ':completion:*' list-separator '-->'
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
 zstyle ':completion:*:sudo:*' command-path /usr/bin
 
-if [ -n "$LS_COLORS" ]; then
-	zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-fi
+#if [ -n "$LS_COLORS" ]; then
+#	zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+#fi
 
 ### 補完候補
 ### _oldlist 前回の補完結果を再利用する。
