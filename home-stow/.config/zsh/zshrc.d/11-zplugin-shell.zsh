@@ -26,20 +26,17 @@ zi snippet 'OMZP::gnu-utils' #auto prefix 'g' for homebrew gnu-utils
 
 ## load completions
 zi wait'0a' light-mode blockf as'completion' for \
-	zsh-users/zsh-completions \
 	zchee/zsh-completions
 
-zi wait'0b' light-mode for \
-	atinit"ZI[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-		z-shell/F-Sy-H \
-	atload"!_zsh_autosuggest_start" \
-		zsh-users/zsh-autosuggestions
+# @z-shell : F-Sy-H, H-S-HW, zsh-diff-so-fancy
+# @zsh-users+fast : F-Sy-H, zsh-autosuggestions, zsh-completions, z-shell/zsh-fancy-completions
+zi light z-shell/z-a-meta-plugins
+zi light-mode for \
+	skip'zsh-diff-so-fancy' @z-shell \
+	@zsh-users+fast
 
 #zi wait'1' light-mode for \
 	#b4b4r07/enhancd \
-
-zi ice wait'0a'
-zi light z-shell/H-S-MW
 
 zi ice wait'0a' atclone='gdircolors ./dircolors.ansi-universal > color.zsh' \
     atpull='%atclone' pick="color.zsh" nocompile="!" \
