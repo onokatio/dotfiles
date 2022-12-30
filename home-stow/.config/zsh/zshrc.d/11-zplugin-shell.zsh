@@ -20,7 +20,7 @@ zi snippet 'OMZP::gnu-utils' #auto prefix 'g' for homebrew gnu-utils
 
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
-zi wait depth'1' lucid light-mode for \
+zi wait depth'2' lucid light-mode for \
 	atinit"ZI[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
 		z-shell/F-Sy-H \
 	blockf \
@@ -30,11 +30,13 @@ zi wait depth'1' lucid light-mode for \
 	#sobolevn/wakatime-zsh-plugin
 	# disable for security
 
-zi wait'1' depth'1' light-mode for \
-	b4b4r07/enhancd \
-	z-shell/H-S-MW
+#zi wait'1' depth'1' light-mode for \
+	#b4b4r07/enhancd \
 	#z-shell/zui \
 	#z-shell/zzcomplete \
+
+zi ice wait'1' depth'1'
+zi light z-shell/H-S-MW
 
 zi ice wait'1' atclone='gdircolors ./dircolors.ansi-universal > color.zsh' \
     depth'1' atpull='%atclone' pick="color.zsh" nocompile="!" \
