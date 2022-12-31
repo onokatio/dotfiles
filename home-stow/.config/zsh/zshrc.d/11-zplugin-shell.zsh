@@ -15,12 +15,16 @@ zi snippet 'OMZL::completion.zsh' #better completion settings
 zi ice wait'1'
 zi snippet 'OMZP::gnu-utils' #auto prefix 'g' for homebrew gnu-utils
 
-autoload -Uz bashcompinit
-bashcompinit
-[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+zi wait'0' light-mode blockf as'completion' for \
+	zchee/zsh-completions \
+	syohex/zsh-misc-completions \
+	vitkabele/complete-mac \
+	scriptingosx/mac-zsh-completions \
+	nocompile nilsonholger/osx-zsh-completions
+#	MenkeTechnologies/zsh-more-completions
 
-zi wait'0a' light-mode blockf as'completion' for \
-	zchee/zsh-completions
+zi ice wait nocd atinit='ZSH_BASH_COMPLETIONS_FALLBACK_LAZYLOAD_DISABLE=true;ZSH_BASH_COMPLETIONS_FALLBACK_PATH=/opt/homebrew/share/bash-completion'
+zi light 3v1n0/zsh-bash-completions-fallback
 
 # @z-shell : F-Sy-H, H-S-HW, zsh-diff-so-fancy
 # @zsh-users+fast : F-Sy-H, zsh-autosuggestions, zsh-completions, z-shell/zsh-fancy-completions
@@ -32,10 +36,19 @@ zi light-mode for \
 #zi wait'1' light-mode for \
 #b4b4r07/enhancd \
 
-zi ice wait'0a' atclone='gdircolors ./dircolors.ansi-universal > color.zsh' \
-	atpull='%atclone' pick="color.zsh" nocompile="!" \
+#zi ice wait'0'
+#zi light sunlei/zsh-ssh
+
+zi ice wait \
+	atclone'(( !${+commands[dircolors]} )) && local P=g; \
+	${P}sed -i "/DIR/c\\DIR 38;5;63;1" dircolors.ansi-universal; \
+    TERM=ansi ${P}dircolors -b dircolors.ansi-universal >! colors.zsh' \
+	atpull='%atclone' pick="color.zsh" nocompile="!" reset \
 	atload'zstyle ":completion:*:default" list-colors “${(s.:.)LS_COLORS}”;'
 zi light 'seebi/dircolors-solarized'
+
+zi ice wait'0' blockf atload'zsh-startify'
+zi load z-shell/zsh-startify
 
 #zi light RobSis/zsh-completion-generator
 
