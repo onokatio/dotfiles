@@ -62,3 +62,6 @@ ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
 #zi ice wait'0' atload'~/.local/share/tmux/plugins/tpm/scripts/update_plugin.sh --shell-echo all'
 #zi light z-shell/0
+
+#[[ -r /usr/share/doc/find-the-command/ftc.zsh ]] && source /usr/share/doc/find-the-command/ftc.zsh quiet info
+#[[ -r /usr/share/doc/pkgfile/command-not-found.zsh ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
