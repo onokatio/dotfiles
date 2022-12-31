@@ -29,7 +29,6 @@ alias d='popd'
 #alias df=dfc
 #alias top=htop
 #alias diff=colordiff
-#alias wget="axel -n 10 -v -a"
 alias mirror='wget -r -l inf -k -nc -H'
 #alias apt=apt-fast
 alias apt-get=apt-fast
@@ -37,12 +36,9 @@ alias apt-get=apt-fast
 alias grep="grep --color=auto -I"
 #alias make='make -j4'
 alias crontab='echo "dont use crontab !!"'
-#alias cat='vimcat'
-#alias cat='cat -v'
 alias trace-mtr='mtr'
 alias poweroff='echo do not use'
 alias reboot='echo do not use'
-#alias sed='gsed'
 
 alias aria2c="aria2c --bt-max-peers=0 --bt-request-peer-speed-limit=1000M --max-concurrent-downloads=100 --max-connection-per-server=16 --split=20 --bt-max-open-files=1000"
 
@@ -72,8 +68,6 @@ alias tarcat='tar --to-stdout -xf' # tarcat <archive> <internal path>
 alias zipcat='unzip -p'            # zipcat <archive> <internal path>
 
 alias quest='scrcpy --always-on-top -b 16M --fullscreen --no-control --crop 1440:1600:0:0'
-
-#alias ssh='sshrc'
 
 alias hex='hexyl'
 
