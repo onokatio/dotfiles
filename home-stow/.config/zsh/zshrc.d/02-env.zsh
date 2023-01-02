@@ -29,7 +29,6 @@ export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_DISPLAY_INSTALL_TIMES=1
 export HOMEBREW_BREWFILE_ON_REQUEST=1
 
-
 ##### Shell #####
 export EDITOR=nvim
 export BROWSER=firefox-developer-edition
@@ -44,7 +43,6 @@ export XZ_DEFAULTS="--threads 4"
 
 export GOPATH=$HOME/gopath
 export PATH=$GOPATH/bin:$PATH
-
 
 #export npm_config_prefix=~/.node_modules
 
@@ -98,7 +96,6 @@ export GTK_IM_MODULE='fcitx'
 export QT_IM_MODULE='fcitx'
 export XMODIFIERS='@im=fcitx'
 
-
 #export HTTPS_PROXY=http://127.0.0.1:8731
 #export HTTP_PROXY=http://127.0.0.1:8731
 
@@ -140,4 +137,4 @@ alias nvidia-settings='nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settin
 #alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 export ANYENV_ROOT="$XDG_DATA_HOME/anyenv"
 
-eval "$(anyenv init -)"
+#eval "$(anyenv init -)"

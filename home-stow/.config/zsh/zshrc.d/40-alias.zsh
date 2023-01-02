@@ -21,8 +21,6 @@ fi
 alias sudo='sudo '
 #alias vi="nvim -u $HOME/.vimrc"
 #alias vim="nvim -u $HOME/.vimrc"
-#alias vi="code"
-#alias vim="code"
 alias d='popd'
 
 #alias git=hub
@@ -39,13 +37,11 @@ alias crontab='echo "dont use crontab !!"'
 alias trace-mtr='mtr'
 alias poweroff='echo do not use'
 alias reboot='echo do not use'
-
 alias aria2c="aria2c --bt-max-peers=0 --bt-request-peer-speed-limit=1000M --max-concurrent-downloads=100 --max-connection-per-server=16 --split=20 --bt-max-open-files=1000"
-
 alias CAPS='echo setxkbmap -option ctrl:swapcaps , setxkbmap -option'
-
 #alias wine='LANG="ja_JP.UTF-8" ; wine'
 alias oculus='scrcpy -p 5555 -c 1441:1200:0:200'
+alias quest='scrcpy --always-on-top -b 16M --fullscreen --no-control --crop 1440:1600:0:0'
 
 function rot() {
 	for i in {a..z}; do
@@ -57,7 +53,7 @@ function rot() {
 alias myip='curl http://inet-ip.info'
 alias myip6='curl -Ss https://ip6.bramp.net/ | head -n1 | cut -c5- '
 
-alias info='LANG=ja_JP.UTF-8 pinfo'
+#alias info='LANG=ja_JP.UTF-8 pinfo'
 
 # list files in archive
 alias lszip='unzip -l ' # lszip <archive>
@@ -66,8 +62,6 @@ alias lstar='tar tf '   # lstar <archive>
 # cat file in archive
 alias tarcat='tar --to-stdout -xf' # tarcat <archive> <internal path>
 alias zipcat='unzip -p'            # zipcat <archive> <internal path>
-
-alias quest='scrcpy --always-on-top -b 16M --fullscreen --no-control --crop 1440:1600:0:0'
 
 alias hex='hexyl'
 

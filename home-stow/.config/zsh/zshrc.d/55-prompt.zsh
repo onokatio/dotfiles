@@ -4,16 +4,6 @@ ZSH_HISTORY_FILTER_OPTIONS="--filter-branch --filter-dir"
 ZSH_HISTORY_KEYBIND_ARROW_UP="^p"
 ZSH_HISTORY_KEYBIND_ARROW_DOWN="^n"
 
-#function command_not_found_handler(){
-#	if [ -e /usr/bin/jp2a ];then
-#		if [ -e ~/kirino.jpg ];then
-#			jp2a ~/kirino.jpg -i
-#		fi
-#	fi
-#	echo "ハァ…？$1とか何言ってんの？
-#コマンドもろくに覚えられないなんて、アンタどうしようもないクズね。"
-#}
-
 # chpwd(){ ls -qpFv --group-directories-first --human-readable --almost-all --color=auto }
 chpwd() {
 	vcs_info
@@ -25,7 +15,6 @@ precmd() {
 	case "${_pre}" in
 	cd* | git* | vi* | .. | :)
 		#psvar=()
-		#LANG=en_US.UTF-8 vcs_info
 		vcs_info
 		#[[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 		;;
@@ -52,11 +41,11 @@ else
 	if [[ -n "${REMOTEHOST}${SSH_CONNECTION}" ]]; then
 		PNAME="%K{yellow}%F{black}SSH "
 	fi
-	UUU="%K{white}%F{black}（」・ω・）」うー"
-	NYA="＼（・ω・＼）にゃー！"
+	#UUU="%K{white}%F{black}（」・ω・）」うー"
+	#NYA="＼（・ω・＼）にゃー！"
 	#SAN="＼（・ω・＼）SAN値！"
 	#PIN="（／・ω・）／ピンチ！"
-	PROMPT='${BINDKEY_MODE}${PNAME}%K{blue}%F{black} %~ %F{blue}%K{white}%k%F{blue}${vcs_info_msg_0_}%k%F{white}%f%k '
+	#PROMPT='${BINDKEY_MODE}${PNAME}%K{blue}%F{black} %~ %F{blue}%K{white}%k%F{blue}${vcs_info_msg_0_}%k%F{white}%f%k '
 fi
 
 hash -d github.com="$HOME/script/github.com"

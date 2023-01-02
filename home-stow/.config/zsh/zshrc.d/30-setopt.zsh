@@ -13,7 +13,6 @@ setopt extended_glob
 setopt glob
 setopt globdots
 setopt ignore_eof
-setopt inc_append_history # Write to the history file immediately, not when the shell exits.
 setopt interactive_comments # Comments even in interactive shells.
 setopt list_packed
 setopt list_types
@@ -45,3 +44,4 @@ setopt hist_reduce_blanks # Remove superfluous blanks from history items.
 setopt hist_save_no_dups # Do not write a duplicate event to the history file.
 setopt hist_verify # Do not execute immediately upon history expansion.
 setopt share_history # Share history between different instances of the shell.
+setopt inc_append_history # Write to the history file immediately, not when the shell exits.

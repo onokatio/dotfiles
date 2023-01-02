@@ -6,17 +6,18 @@ if [[ ! -d "${ZI[HOME_DIR]}"/bin ]]; then
 fi
 source "${ZI[HOME_DIR]}"/bin/zi.zsh
 
+#zi light z-shell/z-a-rust
 zi light z-shell/z-a-default-ice
 zi default-ice -q depth'1'
 
-zi ice wait'1'
+zi ice
 zi snippet 'OMZL::completion.zsh' #better completion settings
 
 zi ice wait'1'
 zi snippet 'OMZP::gnu-utils' #auto prefix 'g' for homebrew gnu-utils
 
 zi wait'0' light-mode blockf as'completion' for \
-	zchee/zsh-completions \
+	pullopts'--recurse-submodule=no' zchee/zsh-completions \
 	syohex/zsh-misc-completions \
 	vitkabele/complete-mac \
 	scriptingosx/mac-zsh-completions \
@@ -56,6 +57,9 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="bold,underline,standout"
 ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
+#zi ice rustup cargo'!exa'
+#zi load z-shell/0
+
 # autoupdate
 #zi ice wait'0' atload'zi update -p -q >/dev/null' silent
 #zi light z-shell/0
@@ -65,3 +69,10 @@ ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
 #[[ -r /usr/share/doc/find-the-command/ftc.zsh ]] && source /usr/share/doc/find-the-command/ftc.zsh quiet info
 #[[ -r /usr/share/doc/pkgfile/command-not-found.zsh ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
+
+zi ice from'gh-r' as'program' \
+	atclone"./starship init zsh --print-full-init > init.zsh; ./starship completions zsh > _starship" \
+	atpull"%atclone" src"init.zsh"
+zi light starship/starship
+
+zi light asdf-vm/asdf
