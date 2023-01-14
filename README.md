@@ -1,6 +1,6 @@
 # Dotfile
 
-# Deploy
+## Install
 
 
 ```zsh
@@ -10,21 +10,16 @@ $ cd .conf-to-git
 $ stow -v --no-folding home-stow
 ```
 
-## maintenance
-
-```
-$ cat <(pacman -Qent) <(pacman -Qm) | sort | uniq > ./packagelist.pacman
-```
-
-## pipx
+## optional
 
 ```
 pipx radicale
 pipx inject radicale radicale_storage_decsync
 ```
 
-## update
+## maintenance
 
 ```
-~/.conf-to-git/cache/tmux-plugins/tpm/bindings/update_plugins
+$ ~/.conf-to-git/cache/tmux-plugins/tpm/bindings/update_plugins
+$ cat <(pacman -Qent) <(pacman -Qm) | sort | uniq > ./packagelist.pacman
 ```
