@@ -40,8 +40,8 @@
 	markEmptyLines = false
 	changeHunkIndicators = true
 [pager]
-	diff = diff-so-fancy | less --tabs=4 -RFX
-	show = diff-so-fancy | less --tabs=4 -RFX
+	#diff = diff-so-fancy | less --tabs=4 -RFX
+	#show = diff-so-fancy | less --tabs=4 -RFX
 [core]
 	pager = delta
 	#pager = diff-so-fancy | less --tabs=4 -RFX
@@ -95,6 +95,9 @@
 	pushInsteadOf = https://github.com/
 [url "git@github.com:onokatio"]
 	insteadOf = https://github.com/onokatio
+[url "git@github.com:ictsc"]
+	insteadOf = https://github.com/ictsc
+[url "git@gitlab.com:"]
 [url "git@gitlab.com:"]
 	pushInsteadOf = https://gitlab.com/
 [url "git@bitbucket.org:"]
