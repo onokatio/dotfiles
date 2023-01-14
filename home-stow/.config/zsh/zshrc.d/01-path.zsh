@@ -55,6 +55,9 @@ if [[ ! -z "$commands[brew]" ]]; then
 	BREW_PATH="$(dirname $(dirname $commands[brew]))"
 	export PATH="$BREW_PATH/opt/ccache/libexec:$PATH"
 	export PATH="$BREW_PATH/share/git-core/contrib/diff-highlight:$PATH"
+else
+	echo 'To install homebrew:'
+	echo '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
 fi
 
 ### Wrapper ###

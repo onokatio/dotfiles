@@ -48,8 +48,8 @@ zi ice wait \
 	atload'zstyle ":completion:*:default" list-colors “${(s.:.)LS_COLORS}”;'
 zi light 'seebi/dircolors-solarized'
 
-zi ice wait'0' blockf atload'zsh-startify'
-zi load z-shell/zsh-startify
+#zi ice wait'0' blockf atload'zsh-startify'
+#zi load z-shell/zsh-startify
 
 #zi light RobSis/zsh-completion-generator
 

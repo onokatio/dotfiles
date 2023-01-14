@@ -33,7 +33,7 @@ if [[ "$TTY" == "/dev/tty1" ]]; then
 	#export XDG_SESSION_TYPE=
 fi
 
-if [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CONNECTION} ]]; then
+if [[ ! -z "$commands[brew]" ]] && [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CONNECTION} ]]; then
 	if [[ "$TERM_PROGRAM" == "vscode" ]];then
 		session_fullpath=$(git rev-parse --show-toplevel 2>/dev/null | sed -e 's/\//_/g')
 		session_main=$(git rev-parse --show-toplevel 2>/dev/null | sed -e 's/.*\///')
@@ -75,7 +75,9 @@ screen*)
 	;;
 esac
 
-HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
+if [[ ! -z "$command[brew]" ]];then
+	HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
+fi
 if [ -f "$HB_CNF_HANDLER" ]; then
 	source "$HB_CNF_HANDLER"
 fi
