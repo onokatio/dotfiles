@@ -8,7 +8,8 @@ $ cd
 $ git clone https://github.com/onokatio/.conf-to-git
 $ cd .conf-to-git
 $ stow -v --no-folding home-stow
-$ brew file set_repo -r https://github.com/onokatio/Brewfile
+$ brew install rcmdnk/file/brew-file
+$ brew-file set_repo -r https://github.com/onokatio/Brewfile
 ```
 
 ## optional
