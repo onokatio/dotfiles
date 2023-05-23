@@ -1,10 +1,13 @@
 declare -A ZI
 export ZI[HOME_DIR]="$XDG_DATA_HOME/.zi"
+#export ZI_REPO="https://github.com/z-shell/zi.git"
+export ZI_REPO="https://github.com/zdharma-continuum/zinit.git"
+function zi(){ zinit $@ }
 
 if [[ ! -d "${ZI[HOME_DIR]}"/bin ]]; then
-	git clone https://github.com/z-shell/zi.git --depth 1 "${ZI[HOME_DIR]}"/bin
+	git clone $ZI_REPO --depth 1 "${ZI[HOME_DIR]}"/bin
 fi
-source "${ZI[HOME_DIR]}"/bin/zi.zsh
+source "${ZI[HOME_DIR]}"/bin/zinit.zsh
 
 #zi light z-shell/z-a-rust
 zi light z-shell/z-a-default-ice
@@ -76,3 +79,6 @@ zi ice from'gh-r' as'program' \
 zi light starship/starship
 
 zi light asdf-vm/asdf
+
+zi ice from'gh-r' as'program' pick'bws'
+zi light bitwarden/sdk

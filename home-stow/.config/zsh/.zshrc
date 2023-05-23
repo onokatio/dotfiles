@@ -17,3 +17,4 @@ do
 	source $i
 done
 
+source ~/.zshrc_local
