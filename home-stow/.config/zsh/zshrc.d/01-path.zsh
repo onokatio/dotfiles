@@ -69,9 +69,12 @@ fi
 #source ~/.local/share/cargo/env
 #source $CARGO_HOME/env
 #export PATH="$HOME/.cargo/bin:$PATH"
-if [[ -d "$HOME/.cargo/env" ]];then
+if [[ -f "$HOME/.cargo/env" ]];then
 	source "$HOME/.cargo/env"
 fi
+
+
+export PATH="${PATH}:${HOME}/.krew/bin"
 #eval $(brew shellenv)
 #export PATH="$PATH:~/.local/bin" # pipx
 

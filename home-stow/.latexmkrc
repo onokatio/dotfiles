@@ -5,14 +5,16 @@
 # %O: 実行時オプション
 # %S: 入力ファイル
 # %D: 出力ファイル
-$latex = 'uplatex -synctex=1 -halt-on-error -interaction=nonstopmode -file-line-error%O %S';
-$pdflatex = 'lualatex %O -synctex=1 -interaction=nonstopmode %S';
+#$latex = 'uplatex -synctex=1 -halt-on-error -interaction=nonstopmode -file-line-error%O %S';
+$latex = 'platex -halt-on-error -interaction=nonstopmode -file-line-error%O %S';
+$lualatex = 'lualatex %O -synctex=1 -interaction=nonstopmode %S';
+$pdflualatex = $lualatex;
 $bibtex = 'upbibtex %O %B';
 $biber = 'biber --bblencoding=utf8 -u -U --output_safechars %O %S';
 $dvipdf = 'dvipdfmx %O -o %D %S';
 $makeindex = 'mendex %O -o %D %S';
 $max_repeat = 10;
-$pdf_mode = 1;
+$pdf_mode = 3;
 # pdf_mode params
 # 0: $latex (tex -> dvi)
 # 1: $pdflatex (tex -> pdf)

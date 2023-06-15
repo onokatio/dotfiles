@@ -14,7 +14,7 @@
 
 [target.aarch64-apple-darwin]
 #rustflags = ["-g","-C", "link-arg=-fuse-ld=/opt/homebrew/bin/ld64.mold", "-Zshare-generics=y"]
-rustflags = ["-g","-C", "link-arg=-fuse-ld=/opt/homebrew/bin/ld64.mold"]
+#rustflags = ["-g","-C", "link-arg=-fuse-ld=/opt/homebrew/bin/ld.mold"]
 
 #[target.x86_64-pc-windows-msvc]
 #linker = "rust-lld.exe"
