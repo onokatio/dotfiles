@@ -33,7 +33,7 @@ if [[ "$TTY" == "/dev/tty1" ]]; then
 	#export XDG_SESSION_TYPE=
 fi
 
-if [[ ! -z "$commands[brew]" ]] && [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CONNECTION} ]]; then
+if [[ ! -z "$commands[tmux]" ]] && [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CONNECTION} ]]; then
 	if [[ "$TERM_PROGRAM" == "vscode" ]];then
 		session_fullpath=$(git rev-parse --show-toplevel 2>/dev/null | sed -e 's/\//_/g')
 		session_main=$(git rev-parse --show-toplevel 2>/dev/null | sed -e 's/.*\///')
