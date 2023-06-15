@@ -5,6 +5,6 @@
 dists
 .nfs*
 .DS_Store
-rclone.conf
+#rclone.conf
 .env
 
