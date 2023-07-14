@@ -10,10 +10,9 @@ fi
 source "${ZI[HOME_DIR]}"/bin/zinit.zsh
 
 #zi light z-shell/z-a-rust
-zi light z-shell/z-a-default-ice
-zi default-ice -q depth'1'
+#zi light z-shell/z-a-default-ice
+#zi default-ice -q depth'1'
 
-zi ice
 zi snippet 'OMZL::completion.zsh' #better completion settings
 
 zi ice wait'1'
@@ -30,12 +29,21 @@ zi wait'0' light-mode blockf as'completion' for \
 zi ice wait nocd atinit='ZSH_BASH_COMPLETIONS_FALLBACK_LAZYLOAD_DISABLE=true;ZSH_BASH_COMPLETIONS_FALLBACK_PATH=/opt/homebrew/share/bash-completion'
 zi light 3v1n0/zsh-bash-completions-fallback
 
-# @z-shell : F-Sy-H, H-S-HW, zsh-diff-so-fancy
+# @z-shell : F-Sy-H, H-S-MW, zsh-diff-so-fancy
 # @zsh-users+fast : F-Sy-H, zsh-autosuggestions, zsh-completions, z-shell/zsh-fancy-completions
-zi light z-shell/z-a-meta-plugins
-zi light-mode for \
-	skip'zsh-diff-so-fancy' @z-shell \
-	@zsh-users+fast
+#zi light z-shell/z-a-meta-plugins
+#zi light-mode for \
+#	skip'zsh-diff-so-fancy' @z-shell \
+#	@zsh-users+fast
+zi light zdharma-continuum/fast-syntax-highlighting
+zi light zdharma-continuum/history-search-multi-word
+zi light zsh-users/zsh-autosuggestions
+zi for \
+    atload"zicompinit; zicdreplay" \
+    blockf \
+    lucid \
+    wait \
+  zsh-users/zsh-completions
 
 #zi wait'1' light-mode for \
 #b4b4r07/enhancd \
