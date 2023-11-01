@@ -97,6 +97,8 @@
 	insteadOf = https://github.com/onokatio
 [url "git@github.com:ictsc"]
 	insteadOf = https://github.com/ictsc
+[url "git@github.com:tsukuba-hpcs"]
+	insteadOf = https://github.com/tsukuba-hpcs
 [url "git@gitlab.com:"]
 [url "git@gitlab.com:"]
 	pushInsteadOf = https://gitlab.com/
@@ -119,6 +121,8 @@
 [ghq "https://github.com/ictsc"]
 	root = ~/script
 [ghq "https://github.com/onokatio"]
+	root = ~/script
+[ghq "https://github.com/tsukuba-hpcs"]
 	root = ~/script
 [ghq "https://git.omni.hpcc.jp"]
 	root = ~/script

@@ -57,9 +57,9 @@ fi
 
 AGENT_TIMEOUT=3600
 
-#if [ -z "$SSH_AUTH_SOCK" ];then
-eval $(ssh-agent -t $AGENT_TIMEOUT) >/dev/null
-#fi
+if [ -z "$SSH_AUTH_SOCK" ];then
+	eval $(ssh-agent -t $AGENT_TIMEOUT)
+fi
 
 typeset -U path PATH
 export CCACHE_PATH="/usr/bin"
