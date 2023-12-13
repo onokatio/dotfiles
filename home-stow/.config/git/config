@@ -99,7 +99,9 @@
 	insteadOf = https://github.com/ictsc
 [url "git@github.com:tsukuba-hpcs"]
 	insteadOf = https://github.com/tsukuba-hpcs
-[url "git@gitlab.com:"]
+[url "git@github.com:hashcloak"]
+	insteadOf = https://github.com/hashcloak
+
 [url "git@gitlab.com:"]
 	pushInsteadOf = https://gitlab.com/
 [url "git@bitbucket.org:"]
