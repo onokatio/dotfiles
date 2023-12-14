@@ -76,7 +76,7 @@ fi
 
 export PATH="${PATH}:${HOME}/.krew/bin"
 #eval $(brew shellenv)
-#export PATH="$PATH:~/.local/bin" # pipx
+export PATH="$PATH:$HOME/.local/bin" # pipx
 
 ### My local ###
 #export PATH=$CTG/bin:$PATH

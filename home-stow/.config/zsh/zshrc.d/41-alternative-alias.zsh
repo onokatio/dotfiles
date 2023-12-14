@@ -6,7 +6,6 @@
 #alias grep='rg'
 #alias diff='diff-so-fancy-standalone'
 #alias git='hub'
-#alias ssh='xxh'
 #alias ping='prettyping'
 
 ## colorize (no feature) ##
@@ -38,3 +37,6 @@
 if [[ ! -z "$commands[brew]" && -f $(brew --prefix)/etc/brew-wrap ]]; then
 	source $(brew --prefix)/etc/brew-wrap
 fi
+
+#[[ ! -z "$commands[xxh]" ]] && alias ssh='xxh'
+[[ ! -z "$commands[nvim]" ]] && alias vi='nvim' && alias vim='nvim'

@@ -31,16 +31,16 @@
 hosts:
   ".*":
     +i: #install xxh without question
-    #+v: #verbose
+#    +v: #verbose
     ++pexpect-timeout: "10"
     +heb: # host execute command via base64
-      - "bWtkaXIgLXAgfi8ueHhoLWthdGlv" # mkdir -p ~/.xxh-katio
+      - "bWtkaXIgLXAgfi8ueHhoLWthdGlvLy5jb25maWc=" # mkdir -p ~/.xxh-katio/.config
       - "bWtkaXIgLXAgL3RtcC94eGg=" # mkdir -p /tmp/xxh
     +hhh: "~/.xxh-katio" # $HOME
-    +hhx: "~/.xxh-katio" # $XDG_CONFIG_HOME
-    +hh: "/tmp/xxh" # xxh home directory
-#    +hhr:
-    +s: zsh # shell
-    +I: #plugins
-      - xxh-shell-zsh
-#- xxh-plugin-prerun-dotfiles
+    +hhx: "~/.xxh-katio" # parent directory for $XDG_CONFIG_HOME
+#    +hhr: # remove xxh after exit ssh
+#    +s: zsh # shell
+#    +I: #plugins
+#      - https://github.com/tminich/xxh-plugin-prerun-dotfiles-conf
+    +e:
+      - PROMPT="%m:%~ %# "

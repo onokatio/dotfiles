@@ -15,16 +15,18 @@ source "${ZI[HOME_DIR]}"/bin/zinit.zsh
 
 zi snippet 'OMZL::completion.zsh' #better completion settings
 
-zi ice wait'1'
+zi ice wait'1' if'[[ `uname` == "Darwin" ]]'
 zi snippet 'OMZP::gnu-utils' #auto prefix 'g' for homebrew gnu-utils
 
 zi wait'0' light-mode blockf as'completion' for \
 	pullopts'--recurse-submodule=no' zchee/zsh-completions \
-	syohex/zsh-misc-completions \
+	syohex/zsh-misc-completions
+#	MenkeTechnologies/zsh-more-completions
+#
+zi wait'0' if'[[ `uname` == "Darwin" ]]' light-mode blockf as'completion' for \
 	vitkabele/complete-mac \
 	scriptingosx/mac-zsh-completions \
 	nocompile nilsonholger/osx-zsh-completions
-#	MenkeTechnologies/zsh-more-completions
 
 zi ice wait nocd atinit='ZSH_BASH_COMPLETIONS_FALLBACK_LAZYLOAD_DISABLE=true;ZSH_BASH_COMPLETIONS_FALLBACK_PATH=/opt/homebrew/share/bash-completion'
 zi light 3v1n0/zsh-bash-completions-fallback
@@ -88,5 +90,5 @@ zi light starship/starship
 
 zi light asdf-vm/asdf
 
-zi ice from'gh-r' as'program' pick'bws'
+zi ice from'gh-r' as'program' pick'bws' if'[[ ! -z "$BWS_ACCESS_TOKEN" ]]'
 zi light bitwarden/sdk
