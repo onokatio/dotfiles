@@ -196,3 +196,13 @@ alias ffmpeg='ffmpeg -hide_banner'
 function unuri() {
 	printf '%b\n' "${1//\%/\\x}"
 }
+
+function pegasus(){
+	if [[ -z "$PEGASUS_SECRET" ]];then
+		echo "PEGASUS_SECRET is empty"
+		return
+	fi
+	TOTP=`oathtool -b --totp "$PEGASUS_SECRET"`
+	echo "[pegasus wrapper] TOTP: $TOTP"
+	sshpass -p "$TOTP" -P "Verification code:" ssh pegasus
+}
