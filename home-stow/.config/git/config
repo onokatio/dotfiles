@@ -199,3 +199,5 @@
 	repo = /Users/katio/script/github.com/ictsc/ictsc-github-member
 [advice]
 	fetchShowForcedUpdates = false
+[diff "json"]
+	textconv = jq -S .
