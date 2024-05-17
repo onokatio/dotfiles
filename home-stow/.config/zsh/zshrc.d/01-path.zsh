@@ -51,13 +51,15 @@ add-python-path() {
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/opt/homebrew/sbin:$PATH
 #export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-if [[ ! -z "$commands[brew]" ]]; then
-	BREW_PATH="$(dirname $(dirname $commands[brew]))"
-	export PATH="$BREW_PATH/opt/ccache/libexec:$PATH"
-	export PATH="$BREW_PATH/share/git-core/contrib/diff-highlight:$PATH"
-else
-	echo 'To install homebrew:'
-	echo '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+if [[ "$(uname -s)" == "Darwin" ]]; then
+	if [[ ! -z "$commands[brew]" ]]; then
+		BREW_PATH="$(dirname $(dirname $commands[brew]))"
+		export PATH="$BREW_PATH/opt/ccache/libexec:$PATH"
+		export PATH="$BREW_PATH/share/git-core/contrib/diff-highlight:$PATH"
+	else
+		echo 'To install homebrew:'
+		echo '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+	fi
 fi
 
 ### Wrapper ###
