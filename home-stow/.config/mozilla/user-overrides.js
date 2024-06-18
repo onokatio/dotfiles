@@ -1,8 +1,8 @@
 //override arkenfox
 
   // browser & app
-user_pref("app.update.auto", true);
-user_pref("app.update.background.scheduling.enabled", true);
+//user_pref("app.update.auto", true);
+//user_pref("app.update.background.scheduling.enabled", true);
 user_pref("browser.startup.page", 3);
 user_pref("browser.cache.disk.max_entry_size",128);
 user_pref("browser.search.suggest.enabled", true);
@@ -45,13 +45,15 @@ user_pref("security.OCSP.enabled", 2);
 user_pref("security.OCSP.require", false);
 user_pref("security.ssl.require_safe_negotiation",false);
 user_pref("security.ssl.treat_unsafe_negotiation_as_broken", false);
-user_pref("privacy.clearOnShutdown.history", false);
 user_pref("privacy.resistFingerprinting.letterboxing", false);
 user_pref("privacy.window.maxInnerWidth", 1600);
 user_pref("privacy.window.maxInnerHeight", 900);
 user_pref("privacy.resistFingerprinting", false);
-user_pref("privacy.clearOnShutdown.offlineApps", true);
-user_pref("privacy.clearOnShutdown.cookies", true);
+user_pref("privacy.clearOnShutdown.history", false);
+user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false);
+user_pref("privacy.clearOnShutdown.cookies", false);
+user_pref("privacy.clearOnShutdown.sessions", false);
+user_pref("privacy.clearOnShutdown_v2.cookiesAndStorage", false);
 user_pref("privacy.clearOnShutdown.siteSettings", true);
 user_pref("privacy.trackingprotection.enabled",false);
 user_pref("privacy.trackingprotection.socialtracking.enabled",false);
@@ -62,10 +64,10 @@ user_pref("intl.accept_languages","ja");
 user_pref("_user.js.parrot", "OVERRIDE: success override arkenfox");
 
   //translation
-user_pref("browser.translation.engine", "Google");
+//user_pref("browser.translation.engine", "Google");
 //user_pref("browser.translation.ui.show", true);
 //user_pref("browser.translation.detectLanguage", true);
-user_pref("browser.translation.google.apiURL","https://translation.googleapis.com/language/translate/v2");
+//user_pref("browser.translation.google.apiURL","https://translation.googleapis.com/language/translate/v2");
 
   //browser
 //user_pref("browser.safebrowsing.malware.enabled", false);
