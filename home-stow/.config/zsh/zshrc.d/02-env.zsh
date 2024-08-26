@@ -76,7 +76,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 #
 export MOZ_ACCELERATED=1
 #export MOZ_WEBRENDER=1
-export MOZ_USE_XINPUT2=1
+#export MOZ_USE_XINPUT2=1
 export MOZ_X11_EGL=1
 export MOZ_ENABLE_WAYLAND=1
 #export XDG_SESSION_TYPE=wayland
@@ -90,7 +90,7 @@ export MOZ_ENABLE_WAYLAND=1
 #export QT_QPA_PLATFORM=wayland-egl
 #export QT_QPA_PLATFORM="xcb" #compatible
 #export XINIT_UNIX_BACKEND=wayland
-export MOZ_LOG="PlatformDecoderModule:4" # print firefox vaapi debug message.
+#export MOZ_LOG="PlatformDecoderModule:4" # print firefox vaapi debug message.
 
 export GTK_IM_MODULE='fcitx'
 export QT_IM_MODULE='fcitx'
