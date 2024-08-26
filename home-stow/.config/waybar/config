@@ -143,18 +143,6 @@
     "wlr/taskbar": {
         "format": "{icon} {title}",
     },
-    "custom/info-pingrtt": {
-        "format": "{}",
-	"exec": "bash ~/script/github.com/onokatio/polybar-scripts/polybar-scripts/info-pingrtt/info-pingrtt.sh",
-	//"exec-if": "ping 1.1.1.1 -c 1 -t 1",
-        "interval": 2,
-    },
-    "custom/info-pingrttv6": {
-        "format": "{}",
-	"exec": "bash ~/script/github.com/onokatio/polybar-scripts/polybar-scripts/info-pingrtt/info-pingrtt-v6.sh",
-	//"exec-if": "ping 2606:4700:4700::1111 -6 -c 1 -t 1",
-        "interval": 2,
-    },
     "custom/media": {
         "format": "{icon} {}",
         "return-type": "json",
