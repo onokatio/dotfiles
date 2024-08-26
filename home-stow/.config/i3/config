@@ -10,6 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
+# Mod1 is Alt key
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -56,7 +57,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec WINIT_UNIX_BACKEND=x11 alacritty --live-config-reload
-bindsym $mod+Return exec alacritty --live-config-reload
+bindsym $mod+Return exec wezterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -160,7 +161,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Shutdown' 'systemctl poweroff' -b 'Reboot' 'systemctl reboot' -b 'Logout' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Shutdown' 'systemctl poweroff' -b 'Reboot' 'systemctl reboot' -b 'Logout' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -264,7 +265,7 @@ exec dex -va | systemd-cat -i 'katio.dex' > /dev/null
 #exec hyper
 #exec LANG=en_US.UTF-8 polybar main | systemd-cat -i 'katio.polybar'
 #exec waybar
-exec feh -d --bg-fill ~/.conf-to-git/mojave_dynamic_8.png | systemd-cat -i 'katio.feh'
+#exec feh -d --bg-fill ~/.conf-to-git/mojave_dynamic_8.png | systemd-cat -i 'katio.feh'
 #exec dunst | systemd-cat -i 'katio.dunst'
 exec mako
 
@@ -277,17 +278,7 @@ input type:keyboard {
 	xkb_options caps:ctrl_modifier
 }
 
-output HDMI-A-1
-#output HDMI-A-1 bg ~/.conf-to-git/openstack.png fill
-output HDMI-A-1 scale 1
-output HDMI-A-1 mode 1920x1080
-output DP-1 bg ~/.conf-to-git/openstack.png fill
-output DP-1 scale 2
-output DP-1 mode 3840x2160@60Hz
-output DP-1 adaptive_sync on
-output eDP-1 bg ~/.conf-to-git/openstack.png fill
-output * dpms on
-
-output DP-1 pos 0 0
-output eDP-1 pos 1920 0
-output HDMI-A-1 pos 3840 0
+##output HDMI-A-1 bg ~/.conf-to-git/openstack.png fill
+#output DP-1 bg ~/.conf-to-git/openstack.png fill
+#output eDP-1 bg ~/.conf-to-git/openstack.png fill
+#output * dpms on
