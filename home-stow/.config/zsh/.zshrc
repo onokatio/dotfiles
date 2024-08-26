@@ -11,7 +11,7 @@ fi
 
 #source $ZDOTDIR/.zprofile
 
-source ~/.zshrc_local
+[[ -e ~/.zshrc_local ]] && source ~/.zshrc_local
 
 for i in $(command ls `dirname ${(%):-%N}`/zshrc.d/*.zsh | grep -v 00-source.zsh | sort)
 do
