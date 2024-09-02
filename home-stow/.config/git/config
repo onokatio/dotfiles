@@ -47,7 +47,7 @@
 	#pager = diff-so-fancy | less --tabs=4 -RFX
 	quotepath = false
 	safecrlf = true
-	fsmonitor = true
+	#fsmonitor = true
 	untrackedcache = true
 	fscache = true
 	preloadindex = true
