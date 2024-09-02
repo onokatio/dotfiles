@@ -3,7 +3,7 @@
 	name = onokatio
 	useConfigOnly = true
 [merge]
-	conflictStyle = zdiff3
+	#conflictStyle = zdiff3
 	ff = false
 [diff]
 	#compactionHeuristic = true
