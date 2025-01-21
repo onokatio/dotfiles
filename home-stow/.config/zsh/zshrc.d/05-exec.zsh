@@ -43,6 +43,8 @@ if [[ ! -z "$commands[tmux]" ]] && [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_
 		else
 			tmux new-session -A -s "vscode"
 		fi
+	elif [[ "$TERM_PROGRAM" == "ghostty" ]];then
+		:
 	else
 		tmux new-session -A -s main
 	fi
