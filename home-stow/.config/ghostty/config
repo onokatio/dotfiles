@@ -5,3 +5,14 @@ macos-titlebar-style = tabs
 auto-update = download
 auto-update-channel = tip
 #term = xterm-256color
+#macos-titlebar-style = hidden
+#macos-non-native-fullscreen = true
+quick-terminal-position = "top"
+quick-terminal-autohide = true
+quick-terminal-animation-duration = 0
+keybind = "global:f11=toggle_quick_terminal"
+shell-integration-features = "cursor, sudo, title"
+background-opacity = 0.7
+background-blur = 20
+window-colorspace = display-p3
+title-report = true
