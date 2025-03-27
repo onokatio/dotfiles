@@ -50,6 +50,8 @@ add-python-path() {
 ### HomeBrew ###
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/opt/homebrew/sbin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
 #export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 if [[ "$(uname -s)" == "Darwin" ]]; then
 	if [[ ! -z "$commands[brew]" ]]; then

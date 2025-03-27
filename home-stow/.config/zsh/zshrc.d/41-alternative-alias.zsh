@@ -34,9 +34,9 @@
 #alias du='duf --hide loops'
 #alias rg='rga --rga-adapters=+pdfpages,tesseract'
 #alias sed='sd'
-if [[ ! -z "$commands[brew]" && -f $(brew --prefix)/etc/brew-wrap ]]; then
-	source $(brew --prefix)/etc/brew-wrap
-fi
+#if [[ ! -z "$commands[brew]" && -f $(brew --prefix)/etc/brew-wrap ]]; then
+#	source $(brew --prefix)/etc/brew-wrap
+#fi
 
 #[[ ! -z "$commands[xxh]" ]] && alias ssh='xxh'
 [[ ! -z "$commands[nvim]" ]] && alias vi='nvim' && alias vim='nvim'

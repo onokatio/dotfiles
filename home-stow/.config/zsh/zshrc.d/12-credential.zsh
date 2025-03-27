@@ -18,5 +18,5 @@ function inject_credential(){
 }
 
 if [[ ! -z "$commands[bws]" ]];then
-	add-zsh-hook preexec inject_credential
+	#add-zsh-hook preexec inject_credential
 fi

@@ -99,6 +99,8 @@
 	insteadOf = https://github.com/ictsc
 [url "git@github.com:tsukuba-hpcs"]
 	insteadOf = https://github.com/tsukuba-hpcs
+[url "git@github.com:preferred-ext"]
+	insteadOf = https://github.com/preferred-ext
 [url "git@github.com:hashcloak"]
 	insteadOf = https://github.com/hashcloak
 
@@ -118,13 +120,13 @@
 	root = ~/script
 [ghq "https://github.com/areal-vr"]
 	root = ~/script
-[ghq "https://github.com/anyappinc"]
-	root = ~/script
 [ghq "https://github.com/ictsc"]
 	root = ~/script
 [ghq "https://github.com/onokatio"]
 	root = ~/script
 [ghq "https://github.com/tsukuba-hpcs"]
+	root = ~/script
+[ghq "https://github.com/preferred-ext"]
 	root = ~/script
 [ghq "https://git.omni.hpcc.jp"]
 	root = ~/script
@@ -201,3 +203,7 @@
 	fetchShowForcedUpdates = false
 [diff "json"]
 	textconv = jq -S .
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
