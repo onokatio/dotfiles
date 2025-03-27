@@ -12,7 +12,7 @@ quick-terminal-autohide = true
 quick-terminal-animation-duration = 0
 keybind = "global:f11=toggle_quick_terminal"
 shell-integration-features = "cursor, sudo, title"
-background-opacity = 0.7
+background-opacity = 0.8
 background-blur = 20
 window-colorspace = display-p3
 title-report = true

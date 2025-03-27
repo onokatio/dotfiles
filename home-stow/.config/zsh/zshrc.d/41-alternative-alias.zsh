@@ -31,7 +31,6 @@
 #alias vmstat='grc vmstat'
 #alias whois='grc whois'
 #alias du='dust'
-#alias du='duf --hide loops'
 #alias rg='rga --rga-adapters=+pdfpages,tesseract'
 #alias sed='sd'
 #if [[ ! -z "$commands[brew]" && -f $(brew --prefix)/etc/brew-wrap ]]; then

@@ -1,33 +1,20 @@
-#export LANG=ja_JP.UTF-8
-#export TERM="xterm-256color"
-#export SUDO_PROMPT="[sudo] password : "
-#export LANGUAGE="ja_jp:ja:en_US:en"
 #export LD_PRELOAD=/lib/libSegFault.so
 export PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME:+$FUNCNAME(): }'
-#export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
 #export set CC='ccache gcc'
-export NO_AT_BRIDGE=1
-export EMOJI_CLI_KEYBIND=^f
+#export NO_AT_BRIDGE=1
+#export EMOJI_CLI_KEYBIND=^f
 
 ##### Homebrew #####
-#export HOMEBREW_CACHE=/tmp
-export HOMEBREW_MAKE_JOBS=4
+export HOMEBREW_API_AUTO_UPDATE_SECS=120
+export HOMEBREW_BOOTSNAP=1
+export HOMEBREW_DISPLAY_INSTALL_TIMES=1
 export HOMEBREW_FORCE_BREWED_CURL=1
 export HOMEBREW_FORCE_BREWED_GIT=1
-export HOMEBREW_FORCE_VENDOR_RUBY=1
-export HOMEBREW_EDITOR=nvim
-#export HOMEBREW_CC="ccache gcc"
-#export HOMEBREW_CXX="ccache g++"
-#export HOMEBREW_NO_ENV_FILTERING=1
-#export HOMEBREW_CURL=$(which curl)
-#export HOMEBREW_INSTALL_FROM_API=1 # disable for performance
-#export HOMEBREW_BREWFILE_LEAVES=1
-export HOMEBREW_AUTOREMOVE=1
-export HOMEBREW_BOOTSNAP=1
+#export HOMEBREW_FORCE_VENDOR_RUBY=1
 export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_DISPLAY_INSTALL_TIMES=1
 export HOMEBREW_BREWFILE_ON_REQUEST=1
+#export HOMEBREW_BREWFILE_LEAVES=1
 
 ##### Shell #####
 export EDITOR=nvim
@@ -46,18 +33,14 @@ export PATH=$GOPATH/bin:$PATH
 
 #export npm_config_prefix=~/.node_modules
 
-#xset -b
-
 #export NVM_DIR="~/modules/nvm"
 
-export VGL_READBACK=pbo
+#export VGL_READBACK=pbo
 
 #export ZIPINFOOPT="-OCP932"
 #export UNZIPOPT="-OCP932"
 
 export WINEDEBUG=-all,+wgl
-
-export GO111MODULE=on
 
 export PIPENV_VENV_IN_PROJECT=true
 

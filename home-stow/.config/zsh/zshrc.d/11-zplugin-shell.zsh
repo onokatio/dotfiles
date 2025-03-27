@@ -28,8 +28,8 @@ zi wait'0' if'[[ `uname` == "Darwin" ]]' light-mode blockf as'completion' for \
 	scriptingosx/mac-zsh-completions \
 	nocompile nilsonholger/osx-zsh-completions
 
-zi ice wait nocd atinit='ZSH_BASH_COMPLETIONS_FALLBACK_LAZYLOAD_DISABLE=true;ZSH_BASH_COMPLETIONS_FALLBACK_PATH=/opt/homebrew/share/bash-completion'
-zi light 3v1n0/zsh-bash-completions-fallback
+#zi ice wait nocd atinit='ZSH_BASH_COMPLETIONS_FALLBACK_LAZYLOAD_DISABLE=true;ZSH_BASH_COMPLETIONS_FALLBACK_PATH=/opt/homebrew/share/bash-completion'
+#zi light 3v1n0/zsh-bash-completions-fallback
 
 # @z-shell : F-Sy-H, H-S-MW, zsh-diff-so-fancy
 # @zsh-users+fast : F-Sy-H, zsh-autosuggestions, zsh-completions, z-shell/zsh-fancy-completions
@@ -88,7 +88,7 @@ zi ice from'gh-r' as'program' \
 	atpull"%atclone" src"init.zsh"
 zi light starship/starship
 
-zi light asdf-vm/asdf
+#zi light asdf-vm/asdf
 
 zi ice from'gh-r' as'program' pick'bws' if'[[ ! -z "$BWS_ACCESS_TOKEN" ]]'
 zi light bitwarden/sdk
