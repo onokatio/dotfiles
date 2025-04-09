@@ -103,6 +103,10 @@
 	insteadOf = https://github.com/preferred-ext
 [url "git@github.com:hashcloak"]
 	insteadOf = https://github.com/hashcloak
+[url "git@github.com:preferred-ext"]
+	insteadOf = https://github.com/preferred-ext
+[url "git@github.com:pfn-cluster"]
+	insteadOf = https://github.com/pfn-cluster
 
 [url "git@gitlab.com:"]
 	pushInsteadOf = https://gitlab.com/

@@ -57,7 +57,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec WINIT_UNIX_BACKEND=x11 alacritty --live-config-reload
-bindsym $mod+Return exec wezterm
+bindsym $mod+Return exec ghostty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -265,13 +265,13 @@ exec dex -va | systemd-cat -i 'katio.dex' > /dev/null
 #exec hyper
 #exec LANG=en_US.UTF-8 polybar main | systemd-cat -i 'katio.polybar'
 #exec waybar
-#exec feh -d --bg-fill ~/.conf-to-git/mojave_dynamic_8.png | systemd-cat -i 'katio.feh'
 #exec dunst | systemd-cat -i 'katio.dunst'
 exec mako
 
 input type:touchpad {
 	natural_scroll enabled
 	tap enabled
+	dwt enabled
 }
 
 input type:keyboard {
@@ -282,3 +282,6 @@ input type:keyboard {
 #output DP-1 bg ~/.conf-to-git/openstack.png fill
 #output eDP-1 bg ~/.conf-to-git/openstack.png fill
 #output * dpms on
+output * bg #aaaaaa solid_color
+
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
