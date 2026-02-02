@@ -4,7 +4,6 @@ export PATH=/opt/homebrew/sbin:$PATH
 if [[ "$(uname -s)" == "Darwin" ]]; then
 	echo 'To install homebrew:'
 	echo '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
-	fi
 fi
 
 ### Package Manager ###
