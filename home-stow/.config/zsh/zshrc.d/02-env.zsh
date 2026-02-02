@@ -125,3 +125,5 @@ export BUNDLE_USER_CACHE="$XDG_CACHE_HOME"/bundle
 export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME"/bundle
 
 #eval "$(anyenv init -)"
+
+export RUST_LOG=info
