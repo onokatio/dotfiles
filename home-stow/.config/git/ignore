@@ -79,13 +79,13 @@ tags
 # Virtualenv
 # http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
 .Python
-[Bb]in
-[Ii]nclude
-[Ll]ib
-[Ll]ib64
-[Ll]ocal
-[Ss]cripts
-pyvenv.cfg
+#[Bb]in
+#[Ii]nclude
+#[Ll]ib
+#[Ll]ib64
+#[Ll]ocal
+#[Ss]cripts
+#pyvenv.cfg
 .venv
 pip-selfcheck.json
 
@@ -98,7 +98,7 @@ pip-selfcheck.json
 !.vscode/*.code-snippets
 
 # Local History for Visual Studio Code
-.history/
+#.history/
 
 # Built Visual Studio Code Extensions
 *.vsix
@@ -137,3 +137,8 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/Ansible,Linux,Patch,Vim,VirtualEnv,VisualStudioCode,Windows,MacOS,dotenv
+
+**/.claude/settings.local.json
+**/.serena/
+**/.vscode/
+.ansible/
