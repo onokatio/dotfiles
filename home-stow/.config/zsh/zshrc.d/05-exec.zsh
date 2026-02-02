@@ -33,23 +33,6 @@ if [[ "$TTY" == "/dev/tty1" ]]; then
 	#export XDG_SESSION_TYPE=
 fi
 
-if [[ ! -z "$commands[tmux]" ]] && [[ -z "$TMUX" ]] && [[ -z ${REMOTEHOST}${SSH_CONNECTION} ]]; then
-	if [[ "$TERM_PROGRAM" == "vscode" ]];then
-		session_fullpath=$(git rev-parse --show-toplevel 2>/dev/null | sed -e 's/\//_/g')
-		session_main=$(git rev-parse --show-toplevel 2>/dev/null | sed -e 's/.*\///')
-		echo tmux new-session -A -s "${session_main}__${session_fullpath}"
-		if [[ $? == 0 ]];then
-			tmux new-session -A -s "${session_main}__${session_fullpath}"
-		else
-			tmux new-session -A -s "vscode"
-		fi
-	elif [[ "$TERM_PROGRAM" == "ghostty" ]];then
-		:
-	else
-		tmux new-session -A -s main
-	fi
-fi
-
 #umask 0022
 
 #unset SSH_AGENT_PID
