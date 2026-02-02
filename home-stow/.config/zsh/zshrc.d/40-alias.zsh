@@ -170,7 +170,8 @@ function txt2img() {
 alias addt='transmission-remote -a'
 alias addm='\ls *.torrent | while read line;do addt "$line";done'
 
-alias textlint='textlint --experimental --parallel --config ~/.config/textlintrc'
+#alias textlint='textlint --experimental --config ~/.config/textlintrc'
+alias textlint='textlint --experimental'
 alias secretlint-globalconfig='secretlint --secretlintrc ~/.config/secretlintrc.json "**/*"'
 
 alias mytracker-generate='comm -13 <(sort /tmp/trackers_cache.txt | sed -e "s;/announce;;") <(for i in {1..98};do transmission-remote -t $i -it | grep "Tracker \d"| sed -e "s/  Tracker .*: \(.*:\/\/\)/\1/" ;done | sort tracker | uniq) | sort >> ~/Downloads/mytracker.txt'
@@ -206,3 +207,5 @@ function pegasus(){
 	echo "[pegasus wrapper] TOTP: $TOTP"
 	sshpass -p "$TOTP" -P "Verification code:" ssh pegasus
 }
+
+alias payload-dumper-go='payload-dumper-go -concurrency 12'
