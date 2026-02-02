@@ -90,5 +90,5 @@ zi light starship/starship
 
 #zi light asdf-vm/asdf
 
-zi ice from'gh-r' as'program' pick'bws' if'[[ ! -z "$BWS_ACCESS_TOKEN" ]]'
-zi light bitwarden/sdk
+#zi ice from'gh-r' as'program' pick'bws' if'[[ ! -z "$BWS_ACCESS_TOKEN" ]]'
+#zi light bitwarden/sdk
