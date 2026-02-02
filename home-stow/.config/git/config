@@ -1,5 +1,5 @@
 [user]
-	email = onokatio@gmail.com
+	email = contact@katio.net
 	name = onokatio
 	useConfigOnly = true
 [merge]
@@ -43,7 +43,7 @@
 	#diff = diff-so-fancy | less --tabs=4 -RFX
 	#show = diff-so-fancy | less --tabs=4 -RFX
 [core]
-	pager = delta
+	#pager = delta
 	#pager = diff-so-fancy | less --tabs=4 -RFX
 	quotepath = false
 	safecrlf = true
@@ -52,7 +52,7 @@
 	fscache = true
 	preloadindex = true
 [interactive]
-	diffFilter = delta --color-only
+	#diffFilter = delta --color-only
 [credential]
 	#helper = /usr/lib/git-core/git-credential-gnome-keyring
 	helper = cache
