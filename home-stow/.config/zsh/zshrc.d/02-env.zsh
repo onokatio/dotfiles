@@ -28,8 +28,8 @@ export MAKE_OPTS="-j 4"
 export PROOT_NO_SECCOMP=1
 export XZ_DEFAULTS="--threads 4"
 
-export GOPATH=$HOME/gopath
-export PATH=$GOPATH/bin:$PATH
+#export GOPATH=$HOME/gopath
+#export PATH=$GOPATH/bin:$PATH
 
 #export npm_config_prefix=~/.node_modules
 
