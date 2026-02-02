@@ -55,3 +55,6 @@ repo = 'jsfaint/coc-neoinclude'
 
 #[[plugins]]
 #repo = 'yuttie/comfortable-motion.vim'
+
+[[plugins]]
+repo = 'lowitea/aw-watcher.nvim'
