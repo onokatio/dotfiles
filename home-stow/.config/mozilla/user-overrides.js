@@ -30,11 +30,14 @@ user_pref("extensions.pocket.enabled",false);
 
   //rendering & ui
 
+user_pref("security.ssl.treat_unsafe_negotiation_as_broken", false);
+user_pref("security.ssl.require_safe_negotiation", false);
 //user_pref("image.avif.enabled", true);
 //user_pref("layout.css.grid-template-masonry-value.enabled", true);
 //user_pref("fission.autostart", true); //avaliable on nightly only
 //user_pref("media.ffvpx.enabled", false);
 // now firefox beta use software even wayland/vaapi is enabled.
 //user_pref("svg.context-properties.content.enabled",true);
+user_pref("xpinstall.signatures.required", false);
 
 user_pref("_user.js.parrot", "OVERRIDE: success original section");
