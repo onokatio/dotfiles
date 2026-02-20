@@ -1,9 +1,0 @@
-#!/bin/bash
-
-set -e
-
-for package in $@; do
-	dpkg -x $package ~/local
-	#dpkg -i --root=$HOME/local $package
-	#dpkg -i --instdir=$HOME/local $package
-done
