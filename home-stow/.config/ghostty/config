@@ -43,6 +43,8 @@ palette = 12=#708284
 palette = 13=#5956ba
 palette = 14=#819090
 palette = 15=#fcf4dc
+minimum-contrast = 1.3
+font-family = "JetBrains Mono", "Noto Sans", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Osaka-等幅", "Osaka", "Noto Sans Mono CJK", "Noto Sans CJK"
 font-feature = -calt,-liga,-dlig
 keybind = "global:f11=toggle_quick_terminal"
 keybind = shift+enter=text:\n
