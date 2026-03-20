@@ -9,7 +9,7 @@ fi
 ### Package Manager ###
 export PATH="$HOME/.local/share/cargo/bin:$PATH"
 #export PATH="$HOME/.krew/bin:$PATH"
-#export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 ### My local ###
 #export PATH=$CTG/bin:$PATH

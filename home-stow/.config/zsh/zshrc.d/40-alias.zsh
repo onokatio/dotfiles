@@ -209,3 +209,5 @@ function pegasus(){
 }
 
 alias payload-dumper-go='payload-dumper-go -concurrency 12'
+
+alias claude='claude --effort max'
