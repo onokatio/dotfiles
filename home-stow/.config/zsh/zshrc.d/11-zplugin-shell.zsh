@@ -1,5 +1,5 @@
 declare -A ZI
-export ZI[HOME_DIR]="$XDG_DATA_HOME/.zi"
+export ZI[HOME_DIR]="${XDG_DATA_HOME:-$HOME/.local/share}/.zi"
 #export ZI_REPO="https://github.com/z-shell/zi.git"
 export ZI_REPO="https://github.com/zdharma-continuum/zinit.git"
 function zi(){ zinit $@ }
