@@ -116,24 +116,8 @@
 	insteadOf = https://git.omni.hpcc.jp/
 
 [ghq]
-	root = ~/script2
-	user = onokatio
-[ghq "https://github.com/onokatio"]
-	root = ~/script
-[ghq "https://github.com/hashcloak"]
-	root = ~/script
-[ghq "https://github.com/areal-vr"]
-	root = ~/script
-[ghq "https://github.com/ictsc"]
-	root = ~/script
-[ghq "https://github.com/onokatio"]
-	root = ~/script
-[ghq "https://github.com/tsukuba-hpcs"]
-	root = ~/script
-[ghq "https://github.com/preferred-ext"]
-	root = ~/script
-[ghq "https://git.omni.hpcc.jp"]
-	root = ~/script
+	root = ~/repo
+	#user = onokatio
 [gc]
 	pruneExpire = 1.weeks.ago
 	auto = 1000
@@ -152,8 +136,8 @@
 	allowed = AKIAIOSFODNN7EXAMPLE
 	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 [feature]
-	manyFiles = true
-	experimental = true
+	#manyFiles = true
+	#experimental = true
 [push]
 	default = current
 	useForceIfIncludes = true
@@ -211,3 +195,5 @@
 	ui = auto
 [branch]
 	sort = -committerdate
+[extensions]
+	refstorage = files
